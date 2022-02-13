@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="COMP_345_A1_v9.cpp" />
     <ClCompile Include="Source Files\Cards.cpp" />
     <ClCompile Include="Source Files\CardsDriver.cpp" />
     <ClCompile Include="Source Files\GameEngine.cpp" />

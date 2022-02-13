@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="COMP_345_A1_v9.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source Files\Cards.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
