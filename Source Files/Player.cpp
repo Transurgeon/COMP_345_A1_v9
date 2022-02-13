@@ -1,4 +1,6 @@
 #include "../Header Files/Player.h"
+#include <vector>
+#include <stack>
 
 Player::Player() {
 
@@ -24,16 +26,24 @@ Player& Player::operator =(const Player& copy) {
 }
 
 void Player::assignTerritories() {
-
+	
 }
 
-void Player::toDefend() {
+void Player::toDefend() { //Might return a list of territory pointers
 	vector<Territory>* territories = getTerritoriesNum();
 
 	for (int i = 0; i < territories->size(); i++)
 	{
 		bool defended = false;
-
+		for (Territory* t : territories){
+			if(defended = true)
+				/*territories.add(territories)
+					
+				
+				
+				*/
+		}
+		territories->insert()//insert a territory
 
 	};
 	/*
@@ -56,9 +66,16 @@ void Player::toAttack() {
 
 	for (int i = 0; i < territories->size(); i++)
 	{
-		bool defended = false;
-		
+		bool attacked = false;
+		for (Territory* t : territories) {
 
+			if (attacked = true)
+				territories->insert(territories.edges);
+
+			territories.removeDuplicates();
+			cout << territories;
+
+		}
 	};
 	/*
 	*
@@ -83,8 +100,16 @@ OrdersList* Player::getPlayerOrders() {
 	return playerOrders;
 }
 
-Order Player::issueOrder() {
-	return NULL;
+vector<OrdersList>* Player::issueOrder() {
+	vector<OrdersList>* playerOrder;
+
+	for (Player p : players) {
+		Order orderedPlayers;
+		
+		playerOrder->insert(orderedPlayers.getPlayerOrders());
+	}
+
+	return playerOrder;
 }
 
 Player::~Player() {

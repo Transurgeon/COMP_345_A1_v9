@@ -29,7 +29,7 @@ public:
 	vector<Territory>* getTerritoriesNum();
 	Hand* getPlayerCards();
 	OrdersList* getPlayerOrders();
-	Order issueOrder();
+	vector<OrdersList>* issueOrder();
 
 	~Player();
 
