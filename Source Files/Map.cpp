@@ -1,102 +1,7 @@
 #include "../Header Files/Map.h"
 using namespace std;
 
-/// <summary>
-/// Map
-/// </summary>
-Map::Map() 
-{
-	
-}
 
-Map::Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b) 
-{
-	territories = t;
-	continents = c;
-	borders = b;
-}
-
-Map::Map(const Map& copy)
-{
-	territories = copy.territories;
-	continents = copy.continents;
-	borders = copy.borders;
-}
-
-Map& Map::operator =(const Map& copy) //added Map::operator and put the Map reference in front to create a deep copy
-{
-	territories = copy.territories;
-	continents = copy.continents;
-	borders = copy.borders;
-	return *this;
-}
-
-bool Map::validate()
-{
-	//should try catch be used?
-
-	/*Pseudo-Code for validate();
-	//NEED TO IMPLEMENT bool DepthSearch(vector<Territory>* territories) RIGHT?
-	check 1: map is a connected graph
-	https://www.geeksforgeeks.org/check-if-a-directed-graph-is-connected-or-not/ 
-
-	if (DepthSearch(Map.getTerritories) == false)
-		return false;
-	check 2: each continent is a connected subgraph
-	for (each continent) {
-		vector<Territories>* Territories_In_continent;
-		for (each Territory) {
-			if (Territory.getContinent == Continent)
-				Territories_In_continent.push_back(Territory);
-		}
-		if (DepthSearch(Territories_In_continent) == false)
-		return false;
-	}
-
-	check 3: each country belongs to one and only one continent
-	for (each territory) {
-		int continentMatch = 0;
-
-		for (each continent) {
-			if (territory.getContinentNum == Continent)
-				continentMatch++;
-		}
-		if (continentMatch != 1) {
-			return false;
-		}
-	}
-
-	*/
-	return true;
-}
-
-vector<Territory>* Map::getTerritories() {
-	return territories;
-}
-
-vector<Continent>* Map::getContinents() {
-	return continents;
-}
-
-vector<Borders>* Map::getBorders() {
-	return borders;
-}
-
-ostream& operator<<(ostream& output, Map& m)
-{
-	output << "Number of territories: " << m.getTerritories() << ", number of continents: " << m.getContinents() << ", number of borders: " << m.getBorders() << endl;
-	return output;
-}
-
-Map::~Map()
-{
-	delete territories;
-	delete continents;
-	delete borders;
-	territories = NULL;
-	continents = NULL;
-	borders = NULL;
-}
 
 /// <summary>
 /// Territory
@@ -109,11 +14,11 @@ Territory::Territory()
 	playerNum = new int(-1);
 }
 
-Territory::Territory(int* con, int* cou, string* t) 
+Territory::Territory(int con, int cou, string t) 
 {
-	continentNum = con;
-	countryNum = cou;
-	title = t;
+	continentNum = new int(con);
+	countryNum = new int (cou);
+	title = new string(t);
 	playerNum = new int(-1);
 }
 
@@ -134,9 +39,9 @@ Territory& Territory::operator =(const Territory& copy)
 	return *this;
 }
 
-void Territory::setPlayer(int* p)
+void Territory::setPlayer(int p)
 {
-	playerNum = p;
+	*playerNum = p;
 }
 
 int Territory::getContinentNum()
@@ -173,8 +78,8 @@ Territory::~Territory()
 
 ostream& operator<<(ostream& output, Territory& t) 
 {
-	output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum()<< endl;
-	output << " This territory is part of the continent number: " << t.getContinentNum() << " it is owned by" << t.getName() << endl;
+	output << " This territory is called " << t.getName() << " the country number is: " << t.getCountryNum()<< endl;
+	output << " This territory is part of the continent number: " << t.getContinentNum() << " it is owned by player " << t.getPlayer() << endl;
 	return output;
 }
 /// <summary>
@@ -241,59 +146,181 @@ Continent::~Continent()
 	continentName = NULL;
 }
 /// <summary>
-/// Borders
+/// Border
 /// </summary>
-Borders::Borders()
+Border::Border()
 {
 	root = new int(-1);
 }
 
-Borders::Borders(int* r, vector<int>* e)
-{
-	root = r;
-	edges = e;
-}
-
-Borders::Borders(const Borders& copy)
+Border::Border(const Border& copy)
 {
 	root = new int(*copy.root);
 	edges = copy.edges;
 }
 
-Borders& Borders::operator =(const Borders& copy)
+Border& Border::operator =(const Border& copy)
 {
 	root = new int(*copy.root);
 	edges = copy.edges;
 	return *this;
 }
 
-int Borders::getRoot()
+void Border:: addRoot(int r)
+{
+	*root = r;
+}
+
+void Border::addEdge(int e)
+{
+	edges.push_back(new int(e));
+}
+
+int Border::getRoot()
 {
 	return *root;
 }
 
-vector<int> Borders::getEdges()
+vector<int*> Border::getEdges()
 {
-	return *edges;
+	return edges;
 }
 
-ostream& operator<<(ostream& output, Borders& b)
+ostream& operator<<(ostream& output, Border& b)
 {
-	output << "The border connects from " << b.getRoot() << "to" << b.getEdges().size() << endl;
+	output << "The border connects from " << b.getRoot() << " to ";
+	for (int* i : b.getEdges())
+	{
+		output << *i << ", ";
+	}
 	return output;
 }
 
-Borders::~Borders()
+Border::~Border()
 {
 	delete root;
-	delete edges;
-	root = NULL;
-	edges = NULL;
+	root = nullptr;
+
+	for (int* i : edges)
+	{
+		delete i;
+		i = nullptr;
+	}
+}
+
+/// <summary>
+/// Map
+/// </summary>
+Map::Map()
+{
+
+}
+
+Map::Map(const Map& copy)
+{
+	territories = copy.territories;
+	continents = copy.continents;
+	borders = copy.borders;
+}
+
+Map& Map::operator =(const Map& copy) //added Map::operator and put the Map reference in front to create a deep copy
+{
+	territories = copy.territories;
+	continents = copy.continents;
+	borders = copy.borders;
+	return *this;
+}
+
+bool Map::validate()
+{
+	//should try catch be used?
+
+	/*Pseudo-Code for validate();
+	//NEED TO IMPLEMENT bool DepthSearch(vector<Territory>* territories) RIGHT?
+	check 1: map is a connected graph
+	https://www.geeksforgeeks.org/check-if-a-directed-graph-is-connected-or-not/
+
+	if (DepthSearch(Map.getTerritories) == false)
+		return false;
+	check 2: each continent is a connected subgraph
+	for (each continent) {
+		vector<Territories>* Territories_In_continent;
+		for (each Territory) {
+			if (Territory.getContinent == Continent)
+				Territories_In_continent.push_back(Territory);
+		}
+		if (DepthSearch(Territories_In_continent) == false)
+		return false;
+	}
+
+	check 3: each country belongs to one and only one continent
+	for (each territory) {
+		int continentMatch = 0;
+
+		for (each continent) {
+			if (territory.getContinentNum == Continent)
+				continentMatch++;
+		}
+		if (continentMatch != 1) {
+			return false;
+		}
+	}*/
+
+	return true;
+}
+
+void Map::addTerritory(Territory* t) {
+	territories.push_back(t);
+}
+
+void Map::addContinent(Continent* c) {
+	continents.push_back(c);
+}
+
+void Map::addBorder(Border* b) {
+	borders.push_back(b);
+}
+
+vector<Territory*> Map::getTerritories() {
+	return territories;
+}
+
+vector<Continent*> Map::getContinents() {
+	return continents;
+}
+
+vector<Border*> Map::getBorders() {
+	return borders;
+}
+
+ostream& operator<<(ostream& output, Map& m)
+{
+	output << "Number of territories: " << m.getTerritories().size() << ", number of continents: " << m.getContinents().size() << ", number of borders: " << m.getBorders().size() << endl;
+	return output;
+}
+
+Map::~Map()
+{
+	for (Territory* i : territories)
+	{
+		delete i;
+		i = nullptr;
+	}
+	for (Continent* i : continents)
+	{
+		delete i;
+		i = nullptr;
+	}
+	for (Border* i : borders)
+	{
+		delete i;
+		i = nullptr;
+	}
 }
 
 /// <summary>
 /// MapLoader
-/// </summary>s
+/// </summary>
 MapLoader::MapLoader()
 {
 
