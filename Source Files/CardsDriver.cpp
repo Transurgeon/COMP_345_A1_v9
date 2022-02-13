@@ -21,11 +21,14 @@ void cardsMain() {
     deckp->print();
 
     // Playing first card and displaying deck and hand
+    // SHOWING PLAY METHOD
+    (*card1).play();
     cout << "After playing card 1 (at position 0)" << endl;
     handp->print();
     deckp->print();
 
     // Drawing first card and displaying deck and hand
+    // SHOWING DRAW METHOD
     deckp->draw(handp);
     cout << "After drawing 1 card from deck to player's hand" << endl;
     handp->print();

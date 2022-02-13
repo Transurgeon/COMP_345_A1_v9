@@ -26,6 +26,7 @@ public:
     friend std::ostream& operator<<(std::ostream& stream, const Card& card);
     string getCardTypeString();
     void setCardType(string cardType);
+    void play();
     //void play(Deck* deck, Player* player, Map* map, GameStarter* gameStarter);
 };
 

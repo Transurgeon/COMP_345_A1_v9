@@ -89,6 +89,9 @@ void Card::setCardType(string cardType)
     }
 }
 
+void Card::play() {
+    cout << "I use my " << Card::getCardTypeString() << " card." << endl;
+}
 /* Deck Class */
 
 Deck::Deck()
