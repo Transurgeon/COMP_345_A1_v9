@@ -237,8 +237,8 @@ Map& Map::operator =(const Map& copy) //added Map::operator and put the Map refe
 
 bool Map::validate()
 {
-	//check 0: are the arrays filled
-	if (continents.size() == 0 || territories.size() == 0 || borders.size() == 0) {
+	//check 0: are the arrays filled, the size of territories are equal to borders, and the size of territories is >= to continents
+	if (continents.size() == 0 || territories.size() == 0 || borders.size() == 0 || borders.size() != territories.size() || continents.size() > territories.size()) {
 		return false;
 	}
 
@@ -329,7 +329,18 @@ vector<Border*> Map::getBorders() {
 
 ostream& operator<<(ostream& output, Map& m)
 {
-	output << "Number of territories: " << m.getTerritories().size() << ", number of continents: " << m.getContinents().size() << ", number of borders: " << m.getBorders().size() << endl;
+	for (Territory* i : m.getTerritories())
+	{
+		output << *i << endl;
+	}
+	for (Continent* i : m.getContinents())
+	{
+		output << *i << endl;
+	}
+	for (Border* i : m.getBorders())
+	{
+		output << *i << endl;
+	} 
 	return output;
 }
 
@@ -390,25 +401,31 @@ void MapLoader::createNewMap()
 bool MapLoader::readMapFile()
 {
 	int section = 0;
+	bool skip;
 
 	cout << "Input map file name: ";
-	string fileName;
-	cin >> fileName;
+	string fileName = "europe.map";
+	//cin >> fileName;
 
 	string myText;
 	ifstream MyReadFile("./Map Files/" + fileName);
 
 	while (getline(MyReadFile, myText)) {
+		skip = false;
+		cout << myText << endl;
 		if (myText == "[continents]") {
 			section = 1;
+			skip = true;
 		}
 		else if(myText == "[countries]") {
 			section = 2;
+			skip = true;
 		}
 		else if(myText == "[borders]") {
 			section = 3;
+			skip = true;
 		}
-		if (!myText.empty()) {
+		if (!myText.empty() & !skip) {
 			vector<string> split = splitString(myText);
 			switch (section) {
 			case 1:
@@ -425,22 +442,25 @@ bool MapLoader::readMapFile()
 				break;
 			}
 		}
-
-		if (!loadedMap->validate()) {
-			cout << "Map is not valid"<<endl;
-			return false;
-		}
-		else
-		{
-			cout << "Map is valid" << endl;
-			return true;
-		}
 	}
+	cout<<*loadedMap<<endl;
+
+	if (!loadedMap->validate()) {
+		cout << "Map is not valid"<<endl;
+		return false;
+	}
+	else
+	{
+		cout << "Map is valid" << endl;
+		return true;
+	}
+	
 
 
 
 	// Close the file
 	MyReadFile.close();
+	return false;
 }
 
 vector<string> splitString(string str) {
