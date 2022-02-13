@@ -83,6 +83,8 @@ public:
     Map& operator =(const Map& copy);
 
     bool validate();
+    void checkTerritoriesAndContinents(int* currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents);
+    bool checkDuplicates(int* currentTerritory, vector<int>* passedTerritories);
 
     void addTerritory(Territory* t);
     void addContinent(Continent* c);

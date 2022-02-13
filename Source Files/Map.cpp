@@ -233,40 +233,60 @@ Map& Map::operator =(const Map& copy) //added Map::operator and put the Map refe
 
 bool Map::validate()
 {
-	//should try catch be used?
+	//check 1: map is a connected graph
+	//check 2: each continent is a connected subgraph
 
-	/*Pseudo-Code for validate();
-	//NEED TO IMPLEMENT bool DepthSearch(vector<Territory>* territories) RIGHT?
-	check 1: map is a connected graph
-	https://www.geeksforgeeks.org/check-if-a-directed-graph-is-connected-or-not/
+	vector<int> reachedTerritories;
+	vector<int> reachedContinents;
+	int start = 1;
 
-	if (DepthSearch(Map.getTerritories) == false)
+	checkTerritoriesAndContinents(&start, &reachedTerritories, &reachedContinents);
+
+	if (reachedTerritories.size() != territories.size() || reachedContinents.size() != continents.size())
 		return false;
-	check 2: each continent is a connected subgraph
-	for (each continent) {
-		vector<Territories>* Territories_In_continent;
-		for (each Territory) {
-			if (Territory.getContinent == Continent)
-				Territories_In_continent.push_back(Territory);
-		}
-		if (DepthSearch(Territories_In_continent) == false)
-		return false;
-	}
+	 
 
-	check 3: each country belongs to one and only one continent
-	for (each territory) {
+	//check 3: each country belongs to one and only one continent
+
+	for (Territory* i : territories) {
+		
 		int continentMatch = 0;
-
-		for (each continent) {
-			if (territory.getContinentNum == Continent)
+		for (Continent* j : continents)
+		{
+			if (i->getContinentNum() == j->getContinentNum())
 				continentMatch++;
 		}
 		if (continentMatch != 1) {
 			return false;
 		}
-	}*/
+	}
 
 	return true;
+}
+
+void Map::checkTerritoriesAndContinents(int* currentTerritory, vector<int> *passedTerritories, vector<int>* passedContinents) {
+
+	int continentNum = territories[(*currentTerritory) - 1]->getContinentNum();
+
+	if (!checkDuplicates(&continentNum, passedContinents))
+		passedContinents->push_back(continentNum);
+	
+	if (!checkDuplicates(currentTerritory, passedTerritories)) {
+
+		passedTerritories->push_back(*currentTerritory);
+		for (int* i : (*borders[(*currentTerritory)-1]).getEdges()) {
+			checkTerritoriesAndContinents(i, passedTerritories, passedContinents);
+		}
+	}
+}
+
+bool Map::checkDuplicates(int *currentTerritory, vector<int>* passedTerritories) {
+
+	for (int i : *passedTerritories) {
+		if (i == *currentTerritory)
+			return true;
+	}
+	return false;
 }
 
 void Map::addTerritory(Territory* t) {
