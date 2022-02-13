@@ -7,53 +7,68 @@
 #include <vector>
 using namespace std;
 
+//Declared empty because we use them before properly declaring
+class Deck;
+class Hand;
+class Player;
+class GameStarter;
+
 class Card {
 private:
-	vector<string> Card_types{ "bomb", "reinforcement", "blockade", "airlift", "displomacy" };
-	string* type;
-public: 
-	Card();
-	Card(const Card& copy);
-	Card& operator =(const Card& copy);
-	
-	void play();
-	string* getCardType();
+	string cardType;
 
-	~Card();
-	friend ostream& operator<<(ostream& output, Card& c);
+public: 
+    Card();
+    Card(string cardType);
+    Card(int intCardType);
+    Card(const Card& initCard);
+    Card& operator=(const Card& card);
+    friend std::ostream& operator<<(std::ostream& stream, const Card& card);
+    string getCardTypeString();
+    void setCardType(string cardType);
+    void play(Deck* deck, Player* player, Map* map, GameStarter* gameStarter);
 };
 
 class Deck
 {
 private:
-	vector<Card> *deck;
+    vector<Card*> cardsInDeck;
 
 public:
-	Deck();
-	Deck(const Deck& copy);
-	Deck& operator =(const Deck& copy);
-
-	void draw();
-	vector<Card> *getDeck();
-
-	~Deck();
-	friend ostream& operator<<(ostream& output, Deck& d);
+    Deck();
+    Deck(vector<Card*> cardsInDeck);
+    Deck(const Deck& initDeck);
+    Deck& operator=(const Deck& deck);
+    friend std::ostream& operator<<(std::ostream& stream, const Deck& deck);
+    ~Deck();
+    vector<Card*> getDeckCards();
+    void setDeckCards(vector<Card*> cardsInDeck);
+    void addCardToDeck(Card* card);
+    void removeCardFromDeck(int index);
+    void draw(Hand* hand);
+    int nbCards();
+    void print();
 };
 
 class Hand
 {
 private:
-	vector<Card>* hand;
+    vector<Card*> cardsInHand;
 
 public:
-	Hand();
-	Hand(Card* c);
-	Hand(const Hand& copy);
-	Hand& operator =(const Hand& copy);
-	vector<Card>* getHand();
-
-	~Hand();
-	friend ostream& operator<<(ostream& output, Hand& h);
+    Hand();
+    Hand(vector<Card*> cardsInHand);
+    Hand(const Hand& initHand);
+    Hand& operator=(const Hand& hand);
+    friend std::ostream& operator<<(std::ostream& stream, const Hand& hand);
+    ~Hand();
+    vector<Card*> getHandCards();
+    void setHandCards(vector<Card*> cardsInHand);
+    void addCardToHand(Card* card);
+    void removeCardFromHand(int index);
+    int getCardIndex(Card* card);
+    int nbCards();
+    void print();
 };
 
 #endif
