@@ -72,5 +72,6 @@
   <ItemGroup>
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
+    <None Include="Map Files\europe.map" />
   </ItemGroup>
 </Project>

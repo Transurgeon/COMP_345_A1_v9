@@ -2,7 +2,6 @@
 using namespace std;
 
 
-
 /// <summary>
 /// Territory
 /// </summary>
@@ -92,11 +91,11 @@ Continent::Continent()
 	continentName = new string("");
 }
 
-Continent::Continent(int* c, int* b, string* n)
+Continent::Continent(int c, int b, string n)
 {
-	continentNum = c;
-	bonus = b;
-	continentName = n;
+	continentNum = new int(c);
+	bonus = new int(b);
+	continentName = new string(n);
 }
 
 Continent::Continent(const Continent& copy)
@@ -151,6 +150,11 @@ Continent::~Continent()
 Border::Border()
 {
 	root = new int(-1);
+}
+
+Border::Border(int r)
+{
+	root = new int(r);
 }
 
 Border::Border(const Border& copy)
@@ -233,6 +237,11 @@ Map& Map::operator =(const Map& copy) //added Map::operator and put the Map refe
 
 bool Map::validate()
 {
+	//check 0: are the arrays filled
+	if (continents.size() == 0 || territories.size() == 0 || borders.size() == 0) {
+		return false;
+	}
+
 	//check 1: map is a connected graph
 	//check 2: each continent is a connected subgraph
 
@@ -289,16 +298,21 @@ bool Map::checkDuplicates(int *currentTerritory, vector<int>* passedTerritories)
 	return false;
 }
 
-void Map::addTerritory(Territory* t) {
-	territories.push_back(t);
+
+void Map::addTerritory(int con, string t) {
+	territories.push_back(new Territory(con, territories.size()+1, t));
 }
 
-void Map::addContinent(Continent* c) {
-	continents.push_back(c);
+void Map::addContinent(int b, string n) {
+	continents.push_back(new Continent(continents.size()+1, b, n));
 }
 
-void Map::addBorder(Border* b) {
-	borders.push_back(b);
+void Map::addBorderRoot(int r) {
+	borders.push_back(new Border(r));
+}
+
+void Map::addBorderEdge(int r, int e) {
+	borders[r-1]->addEdge(e);
 }
 
 vector<Territory*> Map::getTerritories() {
@@ -346,16 +360,6 @@ MapLoader::MapLoader()
 
 }
 
-Map MapLoader::CreateMap()
-{
-	return Map();
-}
-
-void MapLoader::readMapFile()
-{
-
-}
-
 MapLoader::MapLoader(const MapLoader& copy)
 {
 
@@ -368,14 +372,94 @@ MapLoader& MapLoader::operator =(const MapLoader& copy)
 
 MapLoader::~MapLoader()
 {
-
+	
 }
 
 ostream& operator<<(ostream& output, MapLoader& ml)
 {
-	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
-	return output;*/
-	output << "hi";
 	return output;
+}
+
+Map* MapLoader::loadedMap = new Map();
+
+void MapLoader::createNewMap()
+{
+	loadedMap = new Map();
+}
+
+bool MapLoader::readMapFile()
+{
+	int section = 0;
+
+	cout << "Input map file name: ";
+	string fileName;
+	cin >> fileName;
+
+	string myText;
+	ifstream MyReadFile("./Map Files/" + fileName);
+
+	while (getline(MyReadFile, myText)) {
+		if (myText == "[continents]") {
+			section = 1;
+		}
+		else if(myText == "[countries]") {
+			section = 2;
+		}
+		else if(myText == "[borders]") {
+			section = 3;
+		}
+		if (!myText.empty()) {
+			vector<string> split = splitString(myText);
+			switch (section) {
+			case 1:
+				loadedMap->addContinent(stoi(split[1]), split[0]);
+				break;
+			case 2:
+				loadedMap->addTerritory(stoi(split[2]), split[1]);
+				break;
+			case 3:
+				loadedMap->addBorderRoot(stoi(split[0]));
+				for (int i = 1; i < split.size(); i++) {
+					loadedMap->addBorderEdge(stoi(split[0]), stoi(split[i]));
+				}
+				break;
+			}
+		}
+
+		if (!loadedMap->validate()) {
+			cout << "Map is not valid"<<endl;
+			return false;
+		}
+		else
+		{
+			cout << "Map is valid" << endl;
+			return true;
+		}
+	}
+
+
+
+	// Close the file
+	MyReadFile.close();
+}
+
+vector<string> splitString(string str) {
+	vector<string> split;
+	if (!str.empty()) {
+		while (str.find(" ") != -1) {
+			split.push_back(str.substr(0, str.find(" ")));
+			str = str.substr(str.find(" ") + 1);
+		}
+		if (!str.empty()) {
+			split.push_back(str);
+		}
+	}
+
+	return split;
+}
+
+void MapLoader::deleteMap()
+{
+	delete loadedMap;
+	loadedMap = nullptr;
 }
