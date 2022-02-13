@@ -89,16 +89,6 @@ void Card::setCardType(string cardType)
     }
 }
 
-void Card::play(Deck* deck, Player* player, Map* map, GameStarter* gameStarter)
-{
-    // Create order
-    player->issueOrder(map, gameStarter);
-    // Add card to deck
-    deck->addCardToDeck(this);
-    // Remove card from hand
-    player->getCards()->removeCardFromHand(player->getCards()->getCardIndex(this));
-}
-
 /* Deck Class */
 
 Deck::Deck()

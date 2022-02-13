@@ -1,29 +1,71 @@
 #include "../Header Files/GameEngine.h"
-using namespace GameEngine;
 
-void runGame() {
+	GameEngine::GameEngine() {
 
 	}
 
-void loadMap() {
+	GameEngine::~GameEngine() {
 
-}
-void addPlayers() {
+	}
 
-}
+	void GameEngine::runGame() {
 
-void assignReinforcements() {
+		
+		cout << "Starting Game " << endl;
+		
+		bool gameOver = false;
+		bool win = false;
 
-}
+		do {
+			//initialising game 
+			loadMap();
+			addPlayers();
+			assignReinforcements();
 
-void issueOrders() {
+			do {
 
-}
 
-bool executeOrders() {
-	return true;
-}
+			} while (win == true);
 
-bool gameOver() {
-	return true;
-}
+		} while (gameOver == true);
+	}
+
+	void GameEngine::loadMap() {
+		
+		int choice = -1;
+		cout << "Loading Map " << endl;
+		
+		cout << "Press 0 to validate map";
+		cin >> choice;  cout << endl;
+		if (choice == 0) {
+			cout << "Validating Map....." << endl;
+			//Map.validate();
+		}
+		else
+		cout << "Invalid Input: your map might also be invalid!!!" << endl;
+	}
+
+	void GameEngine::addPlayers() {
+		cout << "Adding Players " << endl;
+
+	}
+
+	void GameEngine::assignReinforcements() {
+		cout << "Assigning Reinforcements " << endl;
+
+	}
+
+	void GameEngine::issueOrders() {
+		cout << "Issuing Orders " << endl;
+
+	}
+
+	bool GameEngine::executeOrders() {
+		return true;
+	}
+
+	bool GameEngine::gameOver() {
+		return true;
+	}
+
+

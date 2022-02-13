@@ -2,6 +2,10 @@
 #include "../Header Files/Drivers.h"
 #include <iostream>
 
+
 void gameEngineMain() {
-	cout << 7;
+	
+	//GameEngine *game = new GameEngine();
+	
+	//game.runGame();
 }

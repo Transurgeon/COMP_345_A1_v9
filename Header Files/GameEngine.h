@@ -5,10 +5,12 @@
 #include <iostream>
 using namespace std;
 
-void runGame();
 
-namespace GameEngine {
+class GameEngine {
+	GameEngine();
+	~GameEngine();
 
+	void runGame();
 	void loadMap();
 	void addPlayers();
 	void assignReinforcements();
