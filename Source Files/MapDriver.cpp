@@ -3,5 +3,7 @@
 
 
 void mapMain() {
+	MapLoader::loadMaps();
+	MapLoader::showAllMaps();
 }
 

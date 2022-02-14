@@ -162,6 +162,10 @@
   <ItemGroup>
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
+    <None Include="Map Files\brasil.map" />
+    <None Include="Map Files\europe.map" />
+    <None Include="Map Files\germany2.map" />
+    <None Include="Map Files\Illes_Balears.map" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
