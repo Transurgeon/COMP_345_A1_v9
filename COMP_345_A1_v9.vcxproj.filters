@@ -73,5 +73,6 @@
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
     <None Include="Map Files\europe.map" />
+    <None Include="Map Files\Illes_Balears.map" />
   </ItemGroup>
 </Project>

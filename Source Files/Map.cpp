@@ -496,8 +496,11 @@ void MapLoader::showMap(int index) {
 }
 
 void MapLoader::showAllMaps() {
+	int index = 1;
 	for (Map* i : loadedMaps) {
+		cout << endl <<  "*****************************************" << endl << "              Map "<< index << endl << "*****************************************" << endl << endl;
 		cout << *i;
+		index++;
 	}
 }
 
