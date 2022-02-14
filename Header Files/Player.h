@@ -13,23 +13,23 @@ using namespace std;
 class Player {
 
 private:
-	vector<Territory>* territoriesNum;
+	vector<Territory*> territoriesNum;
 	Hand* playerCards; //changed vector<Cards>* to Hand*
 	OrdersList* playerOrders;
 
 public:
 	Player();
-	Player(vector<Territory>* t, Hand* h, OrdersList* o);
+	Player(vector<Territory*> t, Hand* h, OrdersList* o);
 	Player(const Player& copy);
 	Player& operator =(const Player& copy);
 
 	void assignTerritories();
-	void toDefend(); // might do []Territory* instead of void
+	vector<Territory*> toDefend(); // might do []Territory* instead of void
 	void toAttack(); 
-	vector<Territory>* getTerritoriesNum();
+	vector<Territory*> getTerritoriesNum();
 	Hand* getPlayerCards();
 	OrdersList* getPlayerOrders();
-	vector<OrdersList>* issueOrder();
+	vector<OrdersList*> issueOrder();
 
 	~Player();
 
