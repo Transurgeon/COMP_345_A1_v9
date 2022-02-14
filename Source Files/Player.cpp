@@ -32,20 +32,20 @@ void Player::assignTerritories() {
 void Player::toDefend() { //Might return a list of territory pointers
 	vector<Territory>* territories = getTerritoriesNum();
 
-	for (int i = 0; i < territories->size(); i++)
-	{
-		bool defended = false;
-		for (Territory* t : territories){
-			if(defended = true)
-				/*territories.add(territories)
-					
-				
-				
-				*/
-		}
-		territories->insert()//insert a territory
+	//for (int i = 0; i < territories->size(); i++)
+	//{
+	//	bool defended = false;
+	//	for (Territory* t : territories){
+	//		if(defended = true)
+	//			/*territories.add(territories)
+	//				
+	//			
+	//			
+	//			*/
+	//	}
+	//	territories->insert()//insert a territory
 
-	};
+	//};
 	/*
 	* 
 	array[] = needDefend;
@@ -64,7 +64,7 @@ void Player::toDefend() { //Might return a list of territory pointers
 void Player::toAttack() {
 	vector<Territory>* territories = getTerritoriesNum();
 
-	for (int i = 0; i < territories->size(); i++)
+	/*for (int i = 0; i < territories->size(); i++)
 	{
 		bool attacked = false;
 		for (Territory* t : territories) {
@@ -76,7 +76,7 @@ void Player::toAttack() {
 			cout << territories;
 
 		}
-	};
+	};*/
 	/*
 	*
 	array[] = toAttack;
@@ -100,17 +100,17 @@ OrdersList* Player::getPlayerOrders() {
 	return playerOrders;
 }
 
-vector<OrdersList>* Player::issueOrder() {
-	vector<OrdersList>* playerOrder;
-
-	for (Player p : players) {
-		Order orderedPlayers;
-		
-		playerOrder->insert(orderedPlayers.getPlayerOrders());
-	}
-
-	return playerOrder;
-}
+//vector<OrdersList>* Player::issueOrder() {
+//	vector<OrdersList>* playerOrder;
+//
+//	/*for (Player p : players) {
+//		Order orderedPlayers;
+//		
+//		playerOrder->insert(orderedPlayers.getPlayerOrders());
+//	}*/
+//
+//	return playerOrder;
+//}
 
 Player::~Player() {
 	delete territoriesNum;

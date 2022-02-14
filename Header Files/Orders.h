@@ -42,7 +42,7 @@ public:
 	friend ostream& operator<<(ostream& output, OrdersList& ol);
 };
 
-class Deploy : Order {
+class Deploy : public Order {
 public:
 	Deploy();
 	Deploy(const Deploy& deploy);
@@ -53,7 +53,7 @@ public:
 	~Deploy();
 };
 
-class Advance : Order {
+class Advance : public Order {
 public:
 	Advance();
 	Advance(const Advance& advance);
@@ -64,7 +64,7 @@ public:
 	~Advance();
 };
 
-class Bomb : Order {
+class Bomb : public Order {
 public:
 	Bomb();
 	Bomb(const Bomb& Bomb);
@@ -75,7 +75,7 @@ public:
 	~Bomb();
 };
 
-class Blockade : Order {
+class Blockade : public Order {
 public:
 	Blockade();
 	Blockade(const Blockade& Blockade);
@@ -86,7 +86,7 @@ public:
 	~Blockade();
 };
 
-class AirLift : Order {
+class AirLift : public Order {
 public:
 	AirLift();
 	AirLift(const AirLift& AirLift);
@@ -97,7 +97,7 @@ public:
 	~AirLift();
 };
 
-class Negotiate : Order {
+class Negotiate : public Order {
 public:
 	Negotiate();
 	Negotiate(const Negotiate& Negotiate);

@@ -1,5 +1,8 @@
 #include "../Header Files/Orders.h"
 
+/// <summary>
+/// Order
+/// </summary>
 Order::Order() {
 
 }
@@ -49,6 +52,9 @@ ostream& operator<<(ostream& output, const Order& o) {
 	return output;
 }
 
+/// <summary>
+/// OrdersList
+/// </summary>
 OrdersList::OrdersList() {
 
 }
@@ -103,42 +109,52 @@ OrdersList::~OrdersList() {
 	}
 }
 
-ostream& operator<<(ostream& output, const OrdersList& ol) {
-	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
-	return output;*/
-	output << "hi";
+ostream& operator<<(ostream& output, OrdersList& ol) {
+	
 	return output;
 }
+	/// <summary>
+	/// Deploy
+	/// </summary>
+	Deploy::Deploy() {
 
-Deploy::Deploy() {
 	}
 
-Deploy::Deploy(const Deploy& deploy) {
+	Deploy::Deploy(const Deploy& deploy) {
 
 	}
 
-Deploy& Deploy::operator=(const Deploy& deploy) {
-	
+	Deploy& Deploy::operator=(const Deploy& deploy) {
+		return *this;
 	}
 
-ostream& operator<<(std::ostream& output, const Deploy& deploy) {
+	ostream& operator<<(std::ostream& output, const Deploy& deploy) {
 	output << "The Order is Deploy" << endl;
 	return output;
 	}
 
-bool Deploy::validate() {
-
+	bool Deploy::validate() {
+		return true;
 	}
 
-void Deploy::execute() {
+	void Deploy::execute() {
+		if (validate())
+		{
+			cout << "Executing Deploy Order" << endl;
+		}
+
+		else
+		{
+			cout << "Invalid Deploy Order" << endl;
+		}
+	}
+	
+	Deploy::~Deploy() {
 
 	}
-
-Deploy::~Deploy() {
-
-}
-
+	/// <summary>
+	/// Advance
+	/// </summary>
 	Advance::Advance() {
 	}
 
@@ -147,7 +163,7 @@ Deploy::~Deploy() {
 	}
 
 	Advance& Advance::operator=(const Advance& Advance) {
-
+		return *this;
 	}
 
 	ostream& operator<<(std::ostream& output, const Advance& Advance) {
@@ -156,17 +172,27 @@ Deploy::~Deploy() {
 	}
 
 	bool Advance::validate() {
-
+		return true;
 	}
 
 	void Advance::execute() {
+		if (validate())
+		{
+			cout << "Executing Advance Order" << endl;
+		}
 
+		else
+		{
+			cout << "Invalid Advance Order" << endl;
+		}
 	}
 
 	Advance::~Advance() {
 
 	}
-
+/// <summary>
+/// Bomb
+/// </summary>
 	Bomb::Bomb() {
 	}
 
@@ -175,7 +201,7 @@ Deploy::~Deploy() {
 	}
 
 	Bomb& Bomb::operator=(const Bomb& Bomb) {
-
+		return *this;
 	}
 
 	ostream& operator<<(std::ostream& output, const Bomb& Bomb) {
@@ -184,17 +210,27 @@ Deploy::~Deploy() {
 	}
 
 	bool Bomb::validate() {
-
+		return true;
 	}
 
 	void Bomb::execute() {
+		if (validate())
+		{
+			cout << "Executing Bomb Order" << endl;
+		}
 
+		else
+		{
+			cout << "Invalid Bomb Order" << endl;
+		}
 	}
 
 	Bomb::~Bomb() {
 
 	}
-
+/// <summary>
+/// Blockade
+/// </summary>
 	Blockade::Blockade() {
 	}
 
@@ -203,7 +239,7 @@ Deploy::~Deploy() {
 	}
 
 	Blockade& Blockade::operator=(const Blockade& Blockade) {
-
+		return *this;
 	}
 
 	ostream& operator<<(std::ostream& output, const Blockade& Blockade) {
@@ -212,17 +248,27 @@ Deploy::~Deploy() {
 	}
 
 	bool Blockade::validate() {
-
+		return true;
 	}
 
 	void Blockade::execute() {
+		if (validate())
+		{
+			cout << "Executing Blockade Order" << endl;
+		}
 
+		else
+		{
+			cout << "Invalid Blockade Order" << endl;
+		}
 	}
 
 	Blockade::~Blockade() {
 
 	}
-
+/// <summary>
+/// AirLift
+/// </summary>
 	AirLift::AirLift() {
 	}
 
@@ -231,7 +277,7 @@ Deploy::~Deploy() {
 	}
 
 	AirLift& AirLift::operator=(const AirLift& AirLift) {
-
+		return *this;
 	}
 
 	ostream& operator<<(std::ostream& output, const AirLift& AirLift) {
@@ -240,17 +286,27 @@ Deploy::~Deploy() {
 	}
 
 	bool AirLift::validate() {
-
+		return true;
 	}
 
 	void AirLift::execute() {
+		if (validate())
+		{
+			cout << "Executing AirLift Order" << endl;
+		}
 
+		else
+		{
+			cout << "Invalid AirLift Order" << endl;
+		}
 	}
 
 	AirLift::~AirLift() {
 
 	}
-
+/// <summary>
+/// Negotiate
+/// </summary>
 	Negotiate::Negotiate() {
 	}
 
@@ -259,7 +315,7 @@ Deploy::~Deploy() {
 	}
 
 	Negotiate& Negotiate::operator=(const Negotiate& Negotiate) {
-
+		return *this;
 	}
 
 	ostream& operator<<(std::ostream& output, const Negotiate& Negotiate) {
@@ -268,11 +324,19 @@ Deploy::~Deploy() {
 	}
 
 	bool Negotiate::validate() {
-
+		return true;
 	}
 
 	void Negotiate::execute() {
+		if (validate())
+		{
+			cout << "Executing Negotiate Order" << endl;
+		}
 
+		else
+		{
+			cout << "Invalid Negotiate Order" << endl;
+		}
 	}
 
 	Negotiate::~Negotiate() {

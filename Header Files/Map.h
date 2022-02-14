@@ -2,101 +2,132 @@
 #ifndef COMP_345_Map_h
 #define COMP_345_Map_h
 
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <fstream>
 #include <vector>
+#include <stack>
+
 
 using namespace std;
 
-class Territory{
+class Territory {
 private:
-    int *continentNum;
-    int *countryNum;
+    int* continentNum;
+    int* countryNum;
     string* title;
     int* playerNum;
+    int* numberOfArmies;
 
 public:
     Territory();
-    Territory(int *con, int *cou, string *t); //use constructor initialization list
-    Territory(const Territory &copy);
-    Territory &operator =(const Territory &copy);
-    void setPlayer(int *p);
+    Territory(int con, int cou, string t); //use constructor initialization list
+    Territory(const Territory& copy);
+    Territory& operator =(const Territory& copy);
+
+    void setPlayer(int p);
+    void setArmy(int a);
     int getContinentNum();
     int getCountryNum();
     string getName();
     int getPlayer();
-    ~Territory();
+    int getArmy();
 
-    friend ostream &operator<<(ostream &output, Territory &t);
+    ~Territory();
 };
 
 
-class Continent{
-private: 
-    int *continentNum;
-    int *bonus;
-    string *continentName;
+class Continent {
+private:
+    int* continentNum;
+    int* bonus;
+    string* continentName;
 
 public:
     Continent();
-    Continent(int *c, int *b, string *n);
+    Continent(int c, int b, string n);
     Continent(const Continent& copy);
     Continent& operator =(const Continent& copy);
+
     int getContinentNum();
     int getBonus();
     string getContinentName();
+
     ~Continent();
-    friend ostream& operator<<(ostream& output, const Continent& c);
 };
 
-class Borders {
+class Border {
 
 private:
-    int *root;
-    vector<int> *edges;
+    int* root;
+    vector<int*> edges;
 
 public:
-    Borders();
-    Borders(int *r, vector<int> *e);
-    Borders(const Borders &copy);
-    Borders &operator =(const Borders &copy);
+    Border();
+    Border(int r);
+    Border(const Border& copy);
+
+    Border& operator =(const Border& copy);
+    void addRoot(int r);
+    void addEdge(int e);
     int getRoot();
-    vector<int> getEdges();
-    ~Borders();
-    friend ostream &operator<<(ostream& output, const Borders &b);
+    vector<int*> getEdges();
+
+    ~Border();
 };
 
 class Map {
 private:
-    vector<Territory>* territories;
-    vector<Continent>* continents;
-    vector<Borders>* borders;
+    vector<Territory*> territories;
+    vector<Continent*> continents;
+    vector<Border*> borders;
 
 public:
-
     Map();
-    Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b);
     Map(const Map& copy);
     Map& operator =(const Map& copy);
+
     bool validate();
-    vector<Territory>* getTerritories();
-    vector<Continent>* getContinents();
-    vector<Borders>* getBorders();
+    void checkTerritoriesAndContinents(int* currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents);
+    bool checkDuplicates(int* currentTerritory, vector<int>* passedTerritories);
+
+    void addTerritory(int con, string t);
+    void addContinent(int b, string n);
+    void addBorderRoot(int r);
+    void addBorderEdge(int r, int e);
+    vector<Territory*> getTerritories();
+    vector<Continent*> getContinents();
+    vector<Border*> getBorders();
+
     ~Map();
-    friend ostream& operator<<(ostream& output, const Map& m);
 };
 
 class MapLoader {
+private:
+    static vector<Map*> loadedMaps;
+
 public:
     //should add string = path file, maybe use user input instead
     MapLoader();
-    Map CreateMap(); //create a map object from reading the .map file
-    void readMapFile(); //might need to add input stream or remove completely
     MapLoader(const MapLoader& copy);
     MapLoader& operator =(const MapLoader& copy);
     ~MapLoader();
-    friend ostream& operator<<(ostream& output, const MapLoader& ml);
+
+    static void loadMaps();
+    static bool addMap();
+    static bool readMapFile(int index); //might need to add input stream or remove completely
+    static void showMap(int index);
+    static void showAllMaps();
+    static void deleteMap(int index);
+    static void deleteAllMaps();
 };
+
+vector<string> splitString(string str);
+
+ostream& operator<<(ostream& output, Territory& t);
+ostream& operator<<(ostream& output, Continent& c);
+ostream& operator<<(ostream& output, Border& b);
+ostream& operator<<(ostream& output, Map& m);
+ostream& operator<<(ostream& output, MapLoader& ml);
 
 #endif
