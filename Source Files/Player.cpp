@@ -6,7 +6,7 @@ Player::Player() {
 
 }
 
-Player::Player(vector<Territory>* t, Hand* h, OrdersList* o) {
+Player::Player(vector<Territory*> t, Hand* h, OrdersList* o) {
 	territoriesNum = t;
 	playerCards = h;
 	playerOrders = o;
@@ -29,19 +29,15 @@ void Player::assignTerritories() {
 	
 }
 
-void Player::toDefend() { //Might return a list of territory pointers
-	vector<Territory>* territories = getTerritoriesNum();
+vector<Territory*> Player::toDefend() { //Might return a list of territory pointers
+	vector<Territory*> territories = getTerritoriesNum();
 
 	//for (int i = 0; i < territories->size(); i++)
 	//{
 	//	bool defended = false;
 	//	for (Territory* t : territories){
 	//		if(defended = true)
-	//			/*territories.add(territories)
-	//				
 	//			
-	//			
-	//			*/
 	//	}
 	//	territories->insert()//insert a territory
 
@@ -62,7 +58,7 @@ void Player::toDefend() { //Might return a list of territory pointers
 }
 
 void Player::toAttack() {
-	vector<Territory>* territories = getTerritoriesNum();
+	vector<Territory*> territories = getTerritoriesNum();
 
 	/*for (int i = 0; i < territories->size(); i++)
 	{
@@ -90,7 +86,7 @@ void Player::toAttack() {
 
 	*/
 }
-vector<Territory>* Player::getTerritoriesNum() {
+vector<Territory*> Player::getTerritoriesNum() {
 	return territoriesNum;
 }
 Hand* Player::getPlayerCards() {
@@ -100,8 +96,8 @@ OrdersList* Player::getPlayerOrders() {
 	return playerOrders;
 }
 
-//vector<OrdersList>* Player::issueOrder() {
-//	vector<OrdersList>* playerOrder;
+//vector<OrdersList*> Player::issueOrder() {
+//	vector<OrdersList*> playerOrder;
 //
 //	/*for (Player p : players) {
 //		Order orderedPlayers;
