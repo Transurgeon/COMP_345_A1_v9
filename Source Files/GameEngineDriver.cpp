@@ -7,5 +7,5 @@ void gameEngineMain() {
 	
 	//GameEngine *game = new GameEngine();
 	
-	//game.runGame();
+	GameEngine::runGameEngine();
 }
