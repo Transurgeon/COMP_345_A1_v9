@@ -3,7 +3,11 @@
 #include <stack>
 
 Player::Player() {
-
+	territoriesNum = vector<Territory*>();
+	DefList = vector<Territory*>();
+	AtkList = vector<Territory*>();
+	playerCards = new Hand();
+	playerOrders = new OrdersList();
 }
 
 Player::Player(vector<Territory*> t, Hand* h, OrdersList* o) {
@@ -14,79 +18,57 @@ Player::Player(vector<Territory*> t, Hand* h, OrdersList* o) {
 
 Player::Player(const Player& copy) {
 	territoriesNum = copy.territoriesNum;
+	DefList = copy.DefList;
+	AtkList = copy.AtkList;
 	playerCards = new Hand(*copy.playerCards);
 	playerOrders = new OrdersList(*copy.playerOrders);
 }
 
 Player& Player::operator =(const Player& copy) {
 	territoriesNum = copy.territoriesNum;
+	DefList = copy.DefList;
+	AtkList = copy.AtkList;
 	playerCards = new Hand(*copy.playerCards);
 	playerOrders = new OrdersList(*copy.playerOrders);
 	return *this;
 }
 
-void Player::assignTerritories() {
-	
+vector<Territory*> Player::toDefend() { 
+	cout << '\n' << "Here is the list of territories the player needs to defend: " << '\n' << endl;
+	for (int i = 0; i < DefList.size(); ++i) {
+		cout << DefList.at(i)->getName() << endl;
+	}
+	return DefList;
 }
 
-vector<Territory*> Player::toDefend() { //Might return a list of territory pointers
-	vector<Territory*> territories = getTerritoriesNum();
-
-	//for (int i = 0; i < territories->size(); i++)
-	//{
-	//	bool defended = false;
-	//	for (Territory* t : territories){
-	//		if(defended = true)
-	//			
-	//	}
-	//	territories->insert()//insert a territory
-
-	//};
-	/*
-	* 
-	array[] = needDefend;
-	for (0->territories) {
-	bool defended = false;
-	for each(territory){
-		if ()
+vector<Territory*> Player::toAttack() {
+	cout << '\n' << "Here is the list of territories the player needs to attack: " << '\n' << endl;
+	for (int i = 0; i < AtkList.size(); ++i) {
+		cout << AtkList.at(i)->getName() << endl;
 	}
-	
-
-	needDefend.add(territory)
-	}
-	*/
-	return territories;
+	return AtkList;
 }
 
-void Player::toAttack() {
-	vector<Territory*> territories = getTerritoriesNum();
-
-	/*for (int i = 0; i < territories->size(); i++)
-	{
-		bool attacked = false;
-		for (Territory* t : territories) {
-
-			if (attacked = true)
-				territories->insert(territories.edges);
-
-			territories.removeDuplicates();
-			cout << territories;
-
-		}
-	};*/
-	/*
-	*
-	array[] = toAttack;
-	for (0->territories) {
-	bool attack = false;
-	toAttack.add(territory.edges)
-	toAttack.removeDuplicates();
-
-	cout<< toAttack();
+vector<Territory*> Player::showTerritories() {
+	cout << '\n' << "This is the list of territories that the player owns: " << '\n' << endl;
+	for (int i = 0; i < territoriesNum.size(); ++i) {
+		cout << territoriesNum.at(i)->getName() << endl;
 	}
-
-	*/
+	return territoriesNum;
 }
+
+void Player::attack(Territory* a) {
+	AtkList.push_back(a);
+}
+
+void Player::defend(Territory* d) {
+	DefList.push_back(d);
+}
+
+void Player::add(Territory* t) {
+	territoriesNum.push_back(t);
+}
+
 vector<Territory*> Player::getTerritoriesNum() {
 	return territoriesNum;
 }
@@ -102,10 +84,21 @@ void Player::issueOrder(Order* order) {
 }
 
 Player::~Player() {
-	//delete territoriesNum;
+	
+	for (int i = 0; i < territoriesNum.size(); i++) {
+		delete territoriesNum.at(i);
+		territoriesNum.at(i) = NULL;
+	}
+	for (int i = 0; i < AtkList.size(); i++) {
+		delete AtkList.at(i);
+		AtkList.at(i) = NULL;
+	}
+	for (int i = 0; i < DefList.size(); i++) {
+		delete DefList.at(i);
+		DefList.at(i) = NULL;
+	}
 	delete playerCards;
 	delete playerOrders;
-	//territoriesNum = NULL;
 	playerCards = NULL;
 	playerOrders = NULL;
 }

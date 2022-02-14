@@ -7,11 +7,9 @@
 #include <vector>
 using namespace std;
 
-//Declared empty because we use them before properly declaring
 class Deck;
 class Hand;
 class Player;
-class GameStarter;
 
 class Card {
 private:
