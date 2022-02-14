@@ -20,8 +20,8 @@ Order& Order::operator =(const Order& copy) {
 		return *this;
 }
 
-string* Order::getType() {
-	return type;
+string Order::getType() {
+	return *type;
 }
 
 void Order::execute() {
@@ -35,7 +35,6 @@ void Order::execute() {
 }
 
 bool Order::validate() {
-	if (Order::getType() )
 	return true;
 }
 
@@ -44,12 +43,9 @@ Order::~Order() {
 	type = NULL;
 }
 
-ostream& operator<<(ostream& output, const Order& o) {
-	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
-	return output;*/
-	output << "hi";
-	return output;
+ostream& operator<<(ostream& output, Order& o) {
+	
+	return output << "The Order is of Type: " << o.getType();
 }
 
 /// <summary>
@@ -110,7 +106,10 @@ OrdersList::~OrdersList() {
 }
 
 ostream& operator<<(ostream& output, OrdersList& ol) {
-	
+	for (int i = 0; i < ol.OrderList.size(); i++)
+	{
+		output << "Order Number " << i << " has a type : " << endl;
+	}
 	return output;
 }
 	/// <summary>
