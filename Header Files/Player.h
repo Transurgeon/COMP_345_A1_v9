@@ -16,6 +16,7 @@ private:
 	vector<Territory*> territoriesNum;
 	Hand* playerCards; //changed vector<Cards>* to Hand*
 	OrdersList* playerOrders;
+	//change
 
 public:
 	Player();
