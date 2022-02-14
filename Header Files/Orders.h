@@ -13,10 +13,10 @@ private:
 	string* type;
 public:
 	Order();
-	Order(string*  t);
+	Order(string* t);
 	Order(const Order& copy);
 	Order& operator =(const Order& copy);
-	string* getType();
+	string getType();
 	void execute();
 	bool validate();
 

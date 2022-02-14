@@ -42,14 +42,15 @@ void ordersMain() {
     cout << "\nContents of list: \n"
         << list1 << endl;
 
+    //remove
     list1.remove(1);
 
-    cout << "Contents of list after deletion: \n"
+    cout << "\nContents of list after deletion: \n"
         << list1 << endl;
 
     list1.move(1, 4);
 
-    cout << "Contents of list after move: \n"
+    cout << "\nContents of list after move: \n"
         << list1 << endl;
 }
 

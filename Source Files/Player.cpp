@@ -55,6 +55,7 @@ vector<Territory*> Player::toDefend() { //Might return a list of territory point
 	needDefend.add(territory)
 	}
 	*/
+	return territories;
 }
 
 void Player::toAttack() {
@@ -96,8 +97,8 @@ OrdersList* Player::getPlayerOrders() {
 	return playerOrders;
 }
 
-//vector<OrdersList*> Player::issueOrder() {
-//	vector<OrdersList*> playerOrder;
+vector<OrdersList*> Player::issueOrder() {
+	vector<OrdersList*> playerOrder;
 //
 //	/*for (Player p : players) {
 //		Order orderedPlayers;
@@ -105,14 +106,14 @@ OrdersList* Player::getPlayerOrders() {
 //		playerOrder->insert(orderedPlayers.getPlayerOrders());
 //	}*/
 //
-//	return playerOrder;
-//}
+	return playerOrder;
+}
 
 Player::~Player() {
-	delete territoriesNum;
+	//delete territoriesNum;
 	delete playerCards;
 	delete playerOrders;
-	territoriesNum = NULL;
+	//territoriesNum = NULL;
 	playerCards = NULL;
 	playerOrders = NULL;
 }
