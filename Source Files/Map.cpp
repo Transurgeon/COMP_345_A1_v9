@@ -332,7 +332,7 @@ void Map::addBorderRoot(int r) {
 }
 
 void Map::addBorderEdge(int r, int e) {
-	borders[r - 1]->addEdge(e);
+	borders.back()->addEdge(e);
 }
 
 vector<Territory*> Map::getTerritories() {
@@ -415,28 +415,11 @@ vector<Map*> MapLoader::loadedMaps;
 
 void MapLoader::loadMaps() {
 
-	string input;
-	cout << "Welcome to the map loader function, please choose a file name from the Map Files folder and we will validate them." << endl;
 
-	do {
-		addMap();
-		cout << "Do you want to add another map? (Type \"yes\" if you agree, anything else otherwise) ";
-		cin >> input;
-	} while (input == "yes");
 }
 
-bool MapLoader::addMap()
-{
+void MapLoader::addMap() {
 	loadedMaps.push_back(new Map());
-	if (!readMapFile(loadedMaps.size() - 1)) {
-		deleteMap(loadedMaps.size() - 1);
-		return false;
-	}
-	return true;
-}
-
-bool MapLoader::readMapFile(int index)
-{
 	int section = 0;
 	bool skip;
 
@@ -445,49 +428,67 @@ bool MapLoader::readMapFile(int index)
 	cin >> fileName;
 
 	string myText;
-	ifstream MyReadFile("./Map Files/" + fileName);
-
-	while (getline(MyReadFile, myText)) {
-		skip = false;
-		if (myText == "[continents]") {
-			section = 1;
-			skip = true;
-		}
-		else if (myText == "[countries]") {
-			section = 2;
-			skip = true;
-		}
-		else if (myText == "[borders]") {
-			section = 3;
-			skip = true;
-		}
-		if (!myText.empty() & !skip) {
-			vector<string> split = splitString(myText);
-			switch (section) {
-			case 1:
-				loadedMaps[index]->addContinent(stoi(split[1]), split[0]);
-				break;
-			case 2:
-				loadedMaps[index]->addTerritory(stoi(split[2]), split[1]);
-				break;
-			case 3:
-				loadedMaps[index]->addBorderRoot(stoi(split[0]));
-				for (int i = 1; i < split.size(); i++) {
-					loadedMaps[index]->addBorderEdge(stoi(split[0]), stoi(split[i]));
+	ifstream myReadFile("./Map Files/" + fileName);
+	if (myReadFile.good()) {
+		while (getline(myReadFile, myText)) {
+			skip = false;
+			if (myText == "[continents]") {
+				section = 1;
+				skip = true;
+			}
+			else if (myText == "[countries]") {
+				section = 2;
+				skip = true;
+			}
+			else if (myText == "[borders]") {
+				section = 3;
+				skip = true;
+			}
+			if (!myText.empty() & !skip) {
+				vector<string> split = splitString(myText);
+				switch (section) {
+				case 1:
+					loadedMaps.back()->addContinent(stoi(split[1]), split[0]);
+					break;
+				case 2:
+					loadedMaps.back()->addTerritory(stoi(split[2]), split[1]);
+					break;
+				case 3:
+					loadedMaps.back()->addBorderRoot(stoi(split[0]));
+					for (int i = 1; i < split.size(); i++) {
+						loadedMaps.back()->addBorderEdge(stoi(split[0]), stoi(split[i]));
+					}
+					break;
 				}
-				break;
 			}
 		}
 	}
-	MyReadFile.close();
-	if (!loadedMaps[index]->validate()) {
-		cout << "Map is not valid" << endl;
-		return false;
-	}
-	else
-	{
-		cout << "Map is valid" << endl;
-		return true;
+	myReadFile.close();
+}
+
+void MapLoader::validateMaps() {
+	int i = 1;
+	for (Map* m : loadedMaps) {
+		try {
+			if (!m->validate()) {
+				cout << "Map " << i << " is not valid" << endl;
+				delete m;
+				m = nullptr;
+				loadedMaps.erase(loadedMaps.begin() + i - 1);
+			}
+			else
+			{
+				cout << "Map " << i << " is valid" << endl;
+			}
+			i++;
+		}
+		catch (const std::exception&) {
+
+			cout << "Map " << i << " is not valid" << endl;
+			delete m;
+			m = nullptr;
+			loadedMaps.erase(loadedMaps.begin() + i - 1);
+		}
 	}
 }
 
@@ -498,7 +499,10 @@ void MapLoader::showMap(int index) {
 void MapLoader::showAllMaps() {
 	int index = 1;
 	for (Map* i : loadedMaps) {
-		cout << endl << "*****************************************" << endl << "              Map " << index << endl << "*****************************************" << endl << endl;
+		cout << endl << "*****************************************"
+			<< endl << "               Map " << index
+			<< endl << "*****************************************"
+			<< endl << endl;
 		cout << *i;
 		index++;
 	}
@@ -517,14 +521,6 @@ vector<string> splitString(string str) {
 	}
 
 	return split;
-}
-
-void MapLoader::deleteMap(int index)
-{
-	delete loadedMaps[index];
-	loadedMaps[index] = nullptr;
-	loadedMaps.pop_back();
-
 }
 
 void MapLoader::deleteAllMaps() {

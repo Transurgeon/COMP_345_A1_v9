@@ -97,16 +97,8 @@ OrdersList* Player::getPlayerOrders() {
 	return playerOrders;
 }
 
-vector<OrdersList*> Player::issueOrder() {
-	vector<OrdersList*> playerOrder;
-//
-//	/*for (Player p : players) {
-//		Order orderedPlayers;
-//		
-//		playerOrder->insert(orderedPlayers.getPlayerOrders());
-//	}*/
-//
-	return playerOrder;
+void Player::issueOrder(Order* order) {
+	playerOrders->add(order);
 }
 
 Player::~Player() {
@@ -118,9 +110,7 @@ Player::~Player() {
 	playerOrders = NULL;
 }
 
-ostream& operator<<(ostream& output, const Player& p) {
-	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;*/
-	output << "hi";
+ostream& operator<<(ostream& output, Player& p) {
+	output << "Ready Player -- ;)";
 	return output;
 }
