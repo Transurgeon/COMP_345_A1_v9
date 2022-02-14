@@ -1,8 +1,11 @@
 #include "../Header Files/GameEngine.h"
 #include "../Header Files/Drivers.h"
+#include <iostream>
 
 
 void gameEngineMain() {
 	
-	GameEngine::runGameEngine();
+	//GameEngine *game = new GameEngine();
+	
+	//game.runGame();
 }

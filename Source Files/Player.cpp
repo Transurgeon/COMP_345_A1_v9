@@ -3,8 +3,7 @@
 #include <stack>
 
 Player::Player() {
-	playerCards = new Hand();
-	playerOrders = new OrdersList();
+
 }
 
 Player::Player(vector<Territory*> t, Hand* h, OrdersList* o) {
@@ -32,7 +31,7 @@ void Player::assignTerritories() {
 
 vector<Territory*> Player::toDefend() { //Might return a list of territory pointers
 	vector<Territory*> territories = getTerritoriesNum();
-	return territories;
+
 	//for (int i = 0; i < territories->size(); i++)
 	//{
 	//	bool defended = false;
@@ -110,10 +109,10 @@ OrdersList* Player::getPlayerOrders() {
 //}
 
 Player::~Player() {
-	//delete territoriesNum;
+	delete territoriesNum;
 	delete playerCards;
 	delete playerOrders;
-	//territoriesNum = NULL;
+	territoriesNum = NULL;
 	playerCards = NULL;
 	playerOrders = NULL;
 }

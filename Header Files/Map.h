@@ -114,10 +114,11 @@ public:
     ~MapLoader();
 
     static void loadMaps();
-    static void addMap();
-    static void validateMaps();
+    static bool addMap();
+    static bool readMapFile(int index); //might need to add input stream or remove completely
     static void showMap(int index);
     static void showAllMaps();
+    static void deleteMap(int index);
     static void deleteAllMaps();
 };
 
