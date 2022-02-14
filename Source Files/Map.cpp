@@ -7,10 +7,11 @@ using namespace std;
 /// </summary>
 Territory::Territory() 
 {
-	continentNum = new int(-1);
-	countryNum = new int(-1);
+	continentNum = new int(0);
+	countryNum = new int(0);
 	title = new string("");
-	playerNum = new int(-1);
+	playerNum = new int(0);
+	numberOfArmies = new int(0);
 }
 
 Territory::Territory(int con, int cou, string t) 
@@ -18,7 +19,8 @@ Territory::Territory(int con, int cou, string t)
 	continentNum = new int(con);
 	countryNum = new int (cou);
 	title = new string(t);
-	playerNum = new int(-1);
+	playerNum = new int(0);
+	numberOfArmies = new int(0);
 }
 
 Territory::Territory(const Territory& copy)
@@ -27,6 +29,7 @@ Territory::Territory(const Territory& copy)
 	countryNum = new int(*copy.countryNum);
 	title = new string(*copy.title);
 	playerNum = new int(*copy.playerNum);
+	numberOfArmies = new int(*copy.numberOfArmies);
 }
 
 Territory& Territory::operator =(const Territory& copy)
@@ -35,12 +38,18 @@ Territory& Territory::operator =(const Territory& copy)
 	countryNum = new int(*copy.countryNum);
 	title = new string(*copy.title);
 	playerNum = new int(*copy.playerNum);
+	numberOfArmies = new int(*copy.numberOfArmies);
 	return *this;
 }
 
 void Territory::setPlayer(int p)
 {
 	*playerNum = p;
+}
+
+void Territory::setArmy(int a)
+{
+	*numberOfArmies = a;
 }
 
 int Territory::getContinentNum()
@@ -63,22 +72,33 @@ int Territory::getPlayer()
 	return *playerNum;
 }
 
+int Territory::getArmy() {
+
+	return *numberOfArmies;
+}
+
 Territory::~Territory()
 {
 	delete continentNum;
 	delete countryNum;
 	delete title;
 	delete playerNum;
+	delete numberOfArmies;
 	continentNum = NULL;
 	countryNum = NULL;
 	title = NULL;
 	playerNum =	NULL;
+	numberOfArmies = NULL;
 }
 
 ostream& operator<<(ostream& output, Territory& t) 
 {
-	output << " This territory is called " << t.getName() << " the country number is: " << t.getCountryNum()<< endl;
-	output << " This territory is part of the continent number: " << t.getContinentNum() << " it is owned by player " << t.getPlayer() << endl;
+	if (t.getPlayer() == 0) {
+		output << "Territory number " << t.getCountryNum() << ", " << t.getName() << ", is in continent number "<< t.getContinentNum() << ", and is owned by no player." << endl;
+	}
+	else {
+		output << "Territory number " << t.getCountryNum() << ", " << t.getName() << ", is in continent number " << t.getContinentNum() << "is owned by player "<< t.getPlayer()<<" and has " << t.getArmy()<< " armies on it." << endl;
+	}
 	return output;
 }
 /// <summary>
@@ -130,8 +150,7 @@ string Continent::getContinentName()
 
 ostream& operator<<(ostream& output, Continent& c)
 {
-	output << " This continent is called : " << c.getContinentName() << " and is the continent number :" << c.getContinentNum() << endl;
-	output << " Holding this continent gives a bonus of : " << c.getBonus() << " troups per round" << endl;
+	output << "Continent " << c.getContinentNum() <<", " << c.getContinentName() << ", gives " << c.getBonus() << " bonus troop(s)." << endl;
 	return output;
 }
 
@@ -197,6 +216,7 @@ ostream& operator<<(ostream& output, Border& b)
 	{
 		output << *i << ", ";
 	}
+	output << endl;
 	return output;
 }
 
@@ -391,28 +411,44 @@ ostream& operator<<(ostream& output, MapLoader& ml)
 	return output;
 }
 
-Map* MapLoader::loadedMap = new Map();
+vector<Map*> MapLoader::loadedMaps;
 
-void MapLoader::createNewMap()
-{
-	loadedMap = new Map();
+void MapLoader::loadMaps() {
+
+	string input;
+	cout << "Welcome to the map loader function, please choose a file name from the Map Files folder and we will validate them." << endl;
+	
+	do {
+		addMap();
+		cout << "Do you want to add another map? (Type \"yes\" if you agree, anything else otherwise) ";
+		cin >> input;
+	} while (input == "yes");
 }
 
-bool MapLoader::readMapFile()
+bool MapLoader::addMap()
+{
+	loadedMaps.push_back(new Map());
+	if (!readMapFile(loadedMaps.size()-1)) {
+		deleteMap(loadedMaps.size() - 1);
+		return false;
+	}
+	return true;
+}
+
+bool MapLoader::readMapFile(int index)
 {
 	int section = 0;
 	bool skip;
 
 	cout << "Input map file name: ";
-	string fileName = "europe.map";
-	//cin >> fileName;
+	string fileName; //= "europe.map";
+	cin >> fileName;
 
 	string myText;
 	ifstream MyReadFile("./Map Files/" + fileName);
 
 	while (getline(MyReadFile, myText)) {
 		skip = false;
-		cout << myText << endl;
 		if (myText == "[continents]") {
 			section = 1;
 			skip = true;
@@ -429,23 +465,22 @@ bool MapLoader::readMapFile()
 			vector<string> split = splitString(myText);
 			switch (section) {
 			case 1:
-				loadedMap->addContinent(stoi(split[1]), split[0]);
+				loadedMaps[index]->addContinent(stoi(split[1]), split[0]);
 				break;
 			case 2:
-				loadedMap->addTerritory(stoi(split[2]), split[1]);
+				loadedMaps[index]->addTerritory(stoi(split[2]), split[1]);
 				break;
 			case 3:
-				loadedMap->addBorderRoot(stoi(split[0]));
+				loadedMaps[index]->addBorderRoot(stoi(split[0]));
 				for (int i = 1; i < split.size(); i++) {
-					loadedMap->addBorderEdge(stoi(split[0]), stoi(split[i]));
+					loadedMaps[index]->addBorderEdge(stoi(split[0]), stoi(split[i]));
 				}
 				break;
 			}
 		}
 	}
-	cout<<*loadedMap<<endl;
-
-	if (!loadedMap->validate()) {
+	MyReadFile.close();
+	if (!loadedMaps[index]->validate()) {
 		cout << "Map is not valid"<<endl;
 		return false;
 	}
@@ -454,13 +489,16 @@ bool MapLoader::readMapFile()
 		cout << "Map is valid" << endl;
 		return true;
 	}
-	
+}
 
+void MapLoader::showMap(int index) {
+	cout << *loadedMaps[index];
+}
 
-
-	// Close the file
-	MyReadFile.close();
-	return false;
+void MapLoader::showAllMaps() {
+	for (Map* i : loadedMaps) {
+		cout << *i;
+	}
 }
 
 vector<string> splitString(string str) {
@@ -478,8 +516,18 @@ vector<string> splitString(string str) {
 	return split;
 }
 
-void MapLoader::deleteMap()
+void MapLoader::deleteMap(int index)
 {
-	delete loadedMap;
-	loadedMap = nullptr;
+	delete loadedMaps[index];
+	loadedMaps[index] = nullptr;
+	loadedMaps.pop_back();
+
+}
+
+void MapLoader::deleteAllMaps() {
+
+	for (Map* i : loadedMaps) {
+		delete i;
+		i = nullptr;
+	}
 }

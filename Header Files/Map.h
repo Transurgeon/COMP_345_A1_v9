@@ -17,6 +17,7 @@ private:
     int *countryNum;
     string* title;
     int* playerNum;
+    int* numberOfArmies;
 
 public:
     Territory();
@@ -25,10 +26,12 @@ public:
     Territory &operator =(const Territory &copy);
 
     void setPlayer(int p);
+    void setArmy(int a);
     int getContinentNum();
     int getCountryNum();
     string getName();
     int getPlayer();
+    int getArmy();
 
     ~Territory();
 };
@@ -101,7 +104,7 @@ public:
 
 class MapLoader {
 private:
-    static Map* loadedMap;
+    static vector<Map*> loadedMaps;
 
 public:
     //should add string = path file, maybe use user input instead
@@ -109,10 +112,14 @@ public:
     MapLoader(const MapLoader& copy);
     MapLoader& operator =(const MapLoader& copy);
     ~MapLoader();
-
-    static void createNewMap();
-    static bool readMapFile(); //might need to add input stream or remove completely
-    static void deleteMap();
+    
+    static void loadMaps();
+    static bool addMap();
+    static bool readMapFile(int index); //might need to add input stream or remove completely
+    static void showMap(int index);
+    static void showAllMaps();
+    static void deleteMap(int index);
+    static void deleteAllMaps();
 };
 
 vector<string> splitString(string str);
