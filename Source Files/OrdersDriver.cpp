@@ -31,6 +31,7 @@ void ordersMain() {
 
     OrdersList list1;
 
+    //adding orders
     list1.add(deployOrder);
     list1.add(advanceOrder);
     list1.add(bombOrder);
