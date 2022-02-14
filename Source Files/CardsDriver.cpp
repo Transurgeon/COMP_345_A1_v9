@@ -4,7 +4,7 @@
 
 void cardsMain() {
     //initialising hand
-    Card* card1 = new Card(2);
+    Card* card1 = new Card(0);
     vector<Card*> vcards1;
     vcards1.push_back(card1);
     Hand* handp = new Hand(vcards1);
@@ -23,7 +23,7 @@ void cardsMain() {
     // Playing first card and displaying deck and hand
     // SHOWING PLAY METHOD
     (*card1).play();
-    cout << "After playing card 1 (at position 0)" << endl;
+    cout << "After playing card 1 at position 0" << endl;
     handp->print();
     deckp->print();
 
