@@ -6,13 +6,13 @@ using namespace std;
 #include "../Header Files/Cards.h"
 void cardsMain() {
     srand(time(NULL));
-    Deck deckA(10);
-    Hand playerA(15);
+    Deck deckA(5);
+    Hand playerA(5);
 
-    cout << "DECK: " << deckA << endl;
+    cout << "DECK: " << endl << deckA << endl;
 
     // Draw cards from deck
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 6; i++) {
         deckA.draw(playerA);
     }
 
@@ -20,7 +20,7 @@ void cardsMain() {
 
     // Play cards from hand
     for (int i = 0; i < playerA.getHandSize(); i++) {
-        Card* chosen = playerA.getCardAtIndex(3);
+        Card* chosen = playerA.searchCard(3);
         chosen->play(3, playerA, deckA);
     }
 
@@ -29,8 +29,6 @@ void cardsMain() {
         deckA.draw(playerA);
     }
 
-    // Some testing
-    cout << endl;
     Card* c1 = new Card();
     cout << *c1 << endl;
     Card* c2;
@@ -38,14 +36,5 @@ void cardsMain() {
     cout << *c2 << endl;
 
     cout << endl;
-    cout << deckA << endl;
-    Deck deckB;
-    deckB = deckA;
-    cout << deckB << endl;
-
-    cout << endl;
     cout << playerA << endl;
-    Hand playerB;
-    playerB = playerA;
-    cout << playerB;
 }
