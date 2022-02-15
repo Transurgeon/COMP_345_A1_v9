@@ -9,14 +9,14 @@ using namespace std;
 
 class Order {
 private:
-	vector<string> Order_types{ "deploy", "advance", "bomb", "blockade", "airlift", "negotiate" };
-	string* type;
+	vector<string> Order_types{ "DEPLOY", "ADVANCE", "BOMB", "BLOCKADE", "AIRLIFT", "NEGOTIATE" };
+	int orderNum;
 public:
 	Order();
-	Order(string* t);
 	Order(const Order& copy);
 	Order& operator =(const Order& copy);
 	string getType();
+	void set_orderNum(int o);
 	void execute();
 	bool validate();
 

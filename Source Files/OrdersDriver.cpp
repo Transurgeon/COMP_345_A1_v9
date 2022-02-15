@@ -39,17 +39,15 @@ void ordersMain() {
     list1.add(airliftOrder);
     list1.add(negotiateOrder);
 
-    cout << "\nContents of list: \n"
+    cout << "\nOutputting list of orders: \n"
+        << list1 << endl;
+    list1.move(1, 5);
+    cout << "\nAfter moving an order: \n"
+        << list1 << endl;
+    list1.remove(3);
+    cout << "\nAfter deleting an order: \n"
         << list1 << endl;
 
-    list1.remove(1);
-
-    cout << "\nContents of list after deletion: \n"
-        << list1 << endl;
-
-    list1.move(1, 4);
-
-    cout << "\nContents of list after move: \n"
-        << list1 << endl;
+    
 }
 

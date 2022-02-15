@@ -8,12 +8,12 @@ void playerMain() {
     cout << "player says yallah hi: " << *player << endl;
 
     Territory* t1 = new Territory(1, 1, "gabby");
-    Territory* t2 = new Territory( 2, 2, "legend");
-    Territory* t3 = new Territory( 3, 3, "hans");
-    Territory* t4 = new Territory( 4, 4, "zimmer");
-    Territory* t5 = new Territory( 5, 5,"hit-fan");
-    Territory* t6 = new Territory( 6, 6, "william");
-    Territory* t7 = new Territory( 7, 7, "kendrick");
+    Territory* t2 = new Territory(2, 2, "legend");
+    Territory* t3 = new Territory(3, 3, "hans");
+    Territory* t4 = new Territory(4, 4, "zimmer");
+    Territory* t5 = new Territory(5, 5, "hit-fan");
+    Territory* t6 = new Territory(6, 6, "william");
+    Territory* t7 = new Territory(7, 7, "kendrick");
     Territory* t8 = new Territory(8, 8, "lamar");
     Territory* t9 = new Territory(9, 9, "cole");
     
