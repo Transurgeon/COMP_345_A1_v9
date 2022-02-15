@@ -2,7 +2,7 @@
 
 int main() {
 	
-	switch (2) {
+	switch (5) {
 	case 1:
 		mapMain();
 		break;

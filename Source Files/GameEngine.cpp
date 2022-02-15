@@ -74,7 +74,7 @@ void GameEngine::addPlayers() {
 	int players = 0;
 	do {
 		players++;
-		cout << "Number of players :" << players << endl;
+		cout << "Number of players: " << players << endl;
 		cout << "Do you want to add another player? (Type \"yes\" if you agree, anything else otherwise) ";
 		cin >> input;
 	} while (input == "yes");
