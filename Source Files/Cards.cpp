@@ -1,48 +1,33 @@
 #include "../Header Files/Cards.h"
 
-Card::Card(CardType ct) {
-    cardType = ct;
-}
+
+/// <summary>
+/// Card
+/// </summary>
 
 Card::Card() {
-    int val = rand() % 5 + 1;
 
-    switch (val) {
-    case 1: cardType = CardType::bomb; break;
-    case 2: cardType = CardType::reinforcement; break;
-    case 3: cardType = CardType::blockade; break;
-    case 4: cardType = CardType::airlift; break;
-    case 5: cardType = CardType::diplomacy; break;
+    switch (rand() % 5) 
+    {
+    case 0: cardType = Card_Types::bomb; 
+        break;
+    case 1: cardType = Card_Types::reinforcement; 
+        break;
+    case 2: cardType = Card_Types::blockade;
+        break;
+    case 3: cardType = Card_Types::airlift;
+        break;
+    case 4: cardType = Card_Types::diplomacy; 
+        break;
     }
+}
+
+Card::Card(Card_Types c) {
+    cardType = c;
 }
 
 Card::Card(const Card& c) {
     cardType = c.cardType;
-}
-
-void Card::play(int index, Hand& player, Deck& deck) {
-    // Take played card
-    Card usedCard;
-    cout << "HAND: " << player << endl;
-    usedCard = player.removeCardAtIndex(index);    // Remove from hand and shift
-    cout << "Played a card of type: " << usedCard << endl;
-    cout << "HAND: " << player << endl;
-
-    // Return card to deck
-    deck.returnToDeck(usedCard);
-}
-
-ostream& operator<<(ostream& output, Card& C) {
-    switch (C.cardType)
-    {
-    case bomb: output << "Bomb"; break;
-    case reinforcement: output << "Reinforcement"; break;
-    case blockade: output << "Blockade"; break;
-    case airlift: output << "AirLift"; break;
-    case diplomacy: output << "Diplomacy"; break;
-    default: output << "[Unknown cardType]"; break;
-    }
-    return output;
 }
 
 Card& Card::operator=(const Card& c)
@@ -51,20 +36,61 @@ Card& Card::operator=(const Card& c)
     return *this;
 }
 
-///////
+void Card::play(int pos, Hand& p, Deck& d) {
+    Card played;
+    cout << endl;
+
+    cout << "Outputting hand content: " << p << endl;
+    played = p.removeCard(pos);  
+    cout << endl;
+
+    cout << "The card that was played is of type: " << played << endl;
+    cout << endl;
+
+    cout << "Outputting hand content after card was played: " << p << endl;
+
+    d.returnToDeck(played);
+}
+
+Card::~Card() {
+
+}
+
+ostream& operator<<(ostream& output, Card& c) {
+    switch (c.cardType)
+    {
+    case bomb: output << "BOMB"; 
+        break;
+    case reinforcement: output << "REINFORCEMENT"; 
+        break;
+    case blockade: output << "BLOCKADE"; 
+        break;
+    case airlift: output << "AIRLIFT"; 
+        break;
+    case diplomacy: output << "DIPLOMACY"; 
+        break;
+    default: output << "No card type or card type is invalid";
+        break;
+    }
+    return output;
+}
+
+/// <summary>
+/// Deck
+/// </summary>
+/// 
+Deck::Deck() {
+    size = 52;
+    cards = new Card[size];
+    front = 0;
+    back = 51;
+}
 
 Deck::Deck(int s) {
     size = s;
     cards = new Card[size];
     front = 0;
     back = s - 1;
-}
-
-Deck::Deck() {
-    size = 52;
-    cards = new Card[size];
-    front = 0;
-    back = 51;
 }
 
 Deck::Deck(const Deck& d)
@@ -77,65 +103,6 @@ Deck::Deck(const Deck& d)
     for (int i = 0; i < d.size; i++) {
         this->cards[i] = d.cards[i];
     }
-}
-
-Deck::~Deck() {
-    delete[] cards;
-    cards = nullptr;
-}
-
-void Deck::draw(Hand& player) {
-    // Player is no longer able to draw a new card
-    if (size <= 0) {
-        cout << "Unable to pick up any more cards. Deck is empty." << endl;
-        return;
-    }
-
-    // Player's hand is full and they cannot pick up another card
-    if (player.getHandSize() >= player.getHandLimit()) {
-        cout << "Unable to pick up any more cards. Player's hand is full." << endl;
-        return;
-    }
-
-    // Take top card
-    Card* topCard;
-    topCard = &cards[front];
-    if (front >= back) {      //only one element in queue
-        front = -1;
-        back = -1;
-    }
-    else {
-        front++;
-    }
-    cout << "Drawing a card => " << *topCard << " from Deck" << endl;
-
-    // Give hand the card
-    player.addCard(topCard);
-    size--;
-
-    cout << "DECK: " << *this << endl << endl;
-}
-
-void Deck::returnToDeck(Card& newCard) {
-    // Was the deck just empty?
-    if (front == -1)
-        front = 0;
-
-    back++;
-    cards[back] = newCard;
-    size++;
-    cout << endl << "Adding a card => " << cards[back] << " back to Deck" << endl;
-    cout << "DECK: " << *this << endl << endl;
-}
-
-ostream& operator<<(ostream& output, const Deck& D) {
-    int limit = D.front + D.size;
-    for (int i = D.front; i < limit; i++) {
-        output << D.cards[i];
-        if (i < limit - 1)
-            output << " --- ";
-    }
-    return output;
 }
 
 Deck& Deck::operator=(const Deck& d)
@@ -153,69 +120,137 @@ Deck& Deck::operator=(const Deck& d)
     return *this;
 }
 
-///////
-
-Hand::Hand(int s) {
-    limit = s;
-    size = 0;
-    cards = new Card[limit];
-}
-
-Hand::Hand() {
-    limit = 12;
-    size = 0;
-    cards = new Card[limit];
-}
-
-Hand::Hand(const Hand& h)
-{
-    this->limit = h.limit;
-    this->size = h.size;
-    this->cards = new Card[limit];
-
-    for (int i = 0; i < h.size; i++) {
-        this->cards[i] = h.cards[i];
-    }
-}
-
-Hand::~Hand() {
+Deck::~Deck() {
     delete[] cards;
     cards = nullptr;
 }
 
-void Hand::addCard(Card* newCard) {
-    cards[size] = *newCard;
-    size++;
-}
+void Deck::draw(Hand& p) {
 
-Card Hand::removeCardAtIndex(int index) {
-    Card removed = cards[index];
-
-    for (int i = index; i < size - 1; i++) {
-        cards[i] = cards[i + 1];
+    if (size <= 0) {
+        cout << "Unable to pick up any more cards. Deck is empty." << endl;
+        return;
     }
 
-    cout << "Removed -> " << removed << endl;
+    if (p.getHandSize() >= p.getMaxSize()) {
+        cout << "Unable to pick up any more cards. Player's hand is full." << endl;
+        return;
+    }
+
+    Card* topCard;
+    topCard = &cards[front];
+    if (front >= back) {    
+        front = -1;
+        back = -1;
+    }
+    else {
+        front++;
+    }
+    cout << "Drawing a card => " << *topCard << " from Deck" << endl;
+
+    p.addCard(topCard);
     size--;
-    return removed;
+
+    cout << "DECK: " << endl << *this << endl << endl;
 }
 
-ostream& operator<<(ostream& output, const Hand& H) {
-    for (int i = 0; i < H.size; i++) {
-        output << H.cards[i];
-        if (i < H.size - 1)
-            output << " --- ";
+void Deck::returnToDeck(Card& nC) {
+    if (front == -1)
+        front = 0;
+
+    back++;
+    cards[back] = nC;
+    size++;
+    cout << endl << "Returning a " << cards[back] << " card back to Deck" << endl;
+    cout << "DECK: " << *this << endl << endl;
+}
+
+ostream& operator<<(ostream& output, Deck& D) {
+    int limit = D.front + D.size;
+    for (int i = D.front; i < limit; i++) {
+        output << D.cards[i];
+        if (i < limit - 1)
+            output << endl;
     }
     return output;
 }
+
+/// <summary>
+/// Hand
+/// </summary>
+
+Hand::Hand() {
+    maxSize = 6;
+    handSize = 0;
+    handCards = new Card[maxSize];
+}
+
+Hand::Hand(int s) {
+    maxSize = s;
+    handSize = 0;
+    handCards = new Card[maxSize];
+}
+
+Hand::Hand(const Hand& h)
+{
+    for (int i = 0; i < h.handSize; i++) {
+        this->handCards[i] = h.handCards[i];
+    }
+    this->maxSize = h.maxSize;
+    this->handSize = h.handSize;
+    this->handCards = new Card[maxSize];
+}
+
 Hand& Hand::operator=(const Hand& h)
 {
-    this->limit = h.limit;
-    this->size = h.size;
-    this->cards = new Card[limit];
-
-    for (int i = 0; i < h.size; i++) {
-        this->cards[i] = h.cards[i];
+    for (int i = 0; i < h.handSize; i++) {
+        this->handCards[i] = h.handCards[i];
     }
+    this->maxSize = h.maxSize;
+    this->handSize = h.handSize;
+    this->handCards = new Card[maxSize];
     return *this;
+}
+
+Hand::~Hand() {
+    delete[] handCards;
+    handCards = nullptr;
+}
+
+void Hand::addCard(Card* nC) {
+    handCards[handSize] = *nC;
+    handSize++;
+}
+
+int Hand::getHandSize() { 
+    return handSize; 
+}
+
+int Hand::getMaxSize() { 
+    return maxSize; 
+}
+
+Card* Hand::searchCard(int pos) {
+    return &handCards[pos]; 
+}
+
+Card Hand::removeCard(int pos) {
+    Card removed = handCards[pos];
+
+    for (int i = pos; i < handSize - 1; i++) {
+        handCards[i] = handCards[i + 1];
+    }
+
+    cout << "Removed -> " << removed << endl;
+    handSize--;
+    return removed;
+}
+
+ostream& operator<<(ostream& output, Hand& H) {
+    for (int i = 0; i < H.handSize; i++) {
+        output << H.handCards[i];
+        if (i < H.handSize - 1)
+            output << endl;
+    }
+    return output;
 }
