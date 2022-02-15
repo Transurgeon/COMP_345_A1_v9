@@ -2,7 +2,7 @@
 #include <vector>
 #include <stack>
 
-Player::Player() {
+Player::Player() { //Default Constructor.
 	territoriesNum = vector<Territory*>();
 	DefList = vector<Territory*>();
 	AtkList = vector<Territory*>();
@@ -10,21 +10,21 @@ Player::Player() {
 	playerOrders = new OrdersList();
 }
 
-Player::Player(vector<Territory*> t, Hand* h, OrdersList* o) {
+Player::Player(vector<Territory*> t, Hand* h, OrdersList* o) { //Paramatrized Constructor.
 	territoriesNum = t;
 	playerCards = h;
 	playerOrders = o;
 }
 
-Player::Player(const Player& copy) {
+Player::Player(const Player& copy) { //Copy Constructor.
 	territoriesNum = copy.territoriesNum;
 	DefList = copy.DefList;
 	AtkList = copy.AtkList;
-	playerCards = new Hand(*copy.playerCards);
-	playerOrders = new OrdersList(*copy.playerOrders);
+	playerCards = new Hand(*copy.playerCards); //By adding new this allows a deep copy of the player Cards.
+	playerOrders = new OrdersList(*copy.playerOrders); //By adding new this allows a deep copy of player orders.
 }
 
-Player& Player::operator =(const Player& copy) {
+Player& Player::operator =(const Player& copy) { //Operator method for player.
 	territoriesNum = copy.territoriesNum;
 	DefList = copy.DefList;
 	AtkList = copy.AtkList;
@@ -33,7 +33,7 @@ Player& Player::operator =(const Player& copy) {
 	return *this;
 }
 
-vector<Territory*> Player::toDefend() { 
+vector<Territory*> Player::toDefend() { //To defend method shows the list of territories the player has and must defend from opponent.
 	cout << '\n' << "Here is the list of territories the player needs to defend: " << '\n' << endl;
 	for (int i = 0; i < DefList.size(); ++i) {
 		cout << DefList.at(i)->getName() << endl;
@@ -41,7 +41,7 @@ vector<Territory*> Player::toDefend() {
 	return DefList;
 }
 
-vector<Territory*> Player::toAttack() {
+vector<Territory*> Player::toAttack() { //To attack method displays the list of territories the players need to attack.
 	cout << '\n' << "Here is the list of territories the player needs to attack: " << '\n' << endl;
 	for (int i = 0; i < AtkList.size(); ++i) {
 		cout << AtkList.at(i)->getName() << endl;
@@ -49,7 +49,7 @@ vector<Territory*> Player::toAttack() {
 	return AtkList;
 }
 
-vector<Territory*> Player::showTerritories() {
+vector<Territory*> Player::showTerritories() { //This method outputs a list of territories each player owns.
 	cout << '\n' << "This is the list of territories that the player owns: " << '\n' << endl;
 	for (int i = 0; i < territoriesNum.size(); ++i) {
 		cout << territoriesNum.at(i)->getName() << endl;
@@ -57,25 +57,25 @@ vector<Territory*> Player::showTerritories() {
 	return territoriesNum;
 }
 
-void Player::attack(Territory* a) {
+void Player::attack(Territory* a) { //A method that adds a territory to the end of ATK list.
 	AtkList.push_back(a);
 }
 
-void Player::defend(Territory* d) {
+void Player::defend(Territory* d) { //A method that adds a territory to the end of Def List.
 	DefList.push_back(d);
 }
 
-void Player::add(Territory* t) {
+void Player::add(Territory* t) { //A method that adds a territory to the number of territories you have.
 	territoriesNum.push_back(t);
 }
 
-vector<Territory*> Player::getTerritoriesNum() {
+vector<Territory*> Player::getTerritoriesNum() { //Accessor for territoriesNum.
 	return territoriesNum;
 }
-Hand* Player::getPlayerCards() {
+Hand* Player::getPlayerCards() {//Accessor for playerCards
 	return playerCards;
 }
-OrdersList* Player::getPlayerOrders() {
+OrdersList* Player::getPlayerOrders() { //Accessor for playerOrders.
 	cout << endl;
 	cout << "Showing player's orders list" << endl;
 	cout << endl;
@@ -83,11 +83,11 @@ OrdersList* Player::getPlayerOrders() {
 	return playerOrders;
 }
 
-void Player::issueOrder(Order* order) {
+void Player::issueOrder(Order* order) { //Adds an order pointer to playerOrders OrdersList. Uses class OrdersList method add.
 	playerOrders->add(order);
 }
 
-Player::~Player() {
+Player::~Player() { //Destructor for player and its pointers. Deletes all vectors, pointers, and object pointers.
 	
 	for (int i = 0; i < territoriesNum.size(); i++) {
 		delete territoriesNum.at(i);
@@ -107,7 +107,7 @@ Player::~Player() {
 	playerOrders = NULL;
 }
 
-ostream& operator<<(ostream& output, Player& p) {
+ostream& operator<<(ostream& output, Player& p) { //Output stream for basic ready player
 	output << "Ready Player -- ;)";
 
 	return output;
