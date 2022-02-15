@@ -26,24 +26,27 @@ ostream& operator<<(ostream& output, GameEngine& t) {
 	return output;
 }
 
+//runs game and follow structure of flow chart
 void GameEngine::runGameEngine() {
 
 
 	cout << "Starting Game " << endl;
 
 	loadAndValidateMap();
-	addPlayers();
+	int players = addPlayers();
+	int currentPlayer = 0;
 	do {
+		cout << endl << "Player " << currentPlayer + 1 << " is playing:" << endl << endl;
 		assignReinforcements();
 		issueOrders();
-
+		currentPlayer = (currentPlayer + 1) % players;
 	} while (!executeOrders());
 
 	string input;
 	cout << "Do you want to play again? (Type \"yes\" if you agree, anything else otherwise) ";
 	cin >> input;
+	MapLoader::deleteAllMaps();
 	if (input == "yes") {
-		MapLoader::deleteAllMaps();
 		runGameEngine();
 	}
 	else {
@@ -67,17 +70,18 @@ void GameEngine::loadAndValidateMap() {
 
 }
 
-void GameEngine::addPlayers() {
+int GameEngine::addPlayers() {
 
 	cout << "Adding Players " << endl;
 	string input;
-	int players = 0;
+	int players = 1;
 	do {
 		players++;
 		cout << "Number of players: " << players << endl;
 		cout << "Do you want to add another player? (Type \"yes\" if you agree, anything else otherwise) ";
 		cin >> input;
 	} while (input == "yes");
+	return players;
 }
 
 void GameEngine::assignReinforcements() {
@@ -109,7 +113,7 @@ bool GameEngine::executeOrders() {
 		cout << "**Executing Orders**" << endl;
 
 	}
-	cout << "Do you feel like you won? (Type \"yes\" if you agree, anything else otherwise) ";
+	cout << "Did you capture all territories? This means you won (Type \"yes\" if you agree, anything else otherwise) ";
 	cin >> input;
 	if (input == "yes")
 		return true;
@@ -118,5 +122,5 @@ bool GameEngine::executeOrders() {
 
 void GameEngine::gameOver() {
 	cout << "Thank you for playing!!" << endl <<
-		"Please don't make us lose to many marks :)";
+			"Please don't make us lose to many marks :)";
 }

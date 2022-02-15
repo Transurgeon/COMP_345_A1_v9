@@ -20,11 +20,14 @@ private:
     int* numberOfArmies;
 
 public:
+    //Constructors, Assignment Operator and Destructor
     Territory();
-    Territory(int con, int cou, string t); //use constructor initialization list
+    Territory(int con, int cou, string t); 
     Territory(const Territory& copy);
     Territory& operator =(const Territory& copy);
+    ~Territory();
 
+    //Setters and Getters
     void setPlayer(int p);
     void setArmy(int a);
     int getContinentNum();
@@ -33,7 +36,7 @@ public:
     int getPlayer();
     int getArmy();
 
-    ~Territory();
+    
 };
 
 
@@ -44,16 +47,19 @@ private:
     string* continentName;
 
 public:
+    //Constructors, Assignment Operator and Destructor
     Continent();
     Continent(int c, int b, string n);
     Continent(const Continent& copy);
     Continent& operator =(const Continent& copy);
+    ~Continent();
 
+    //Getters
     int getContinentNum();
     int getBonus();
     string getContinentName();
 
-    ~Continent();
+    
 };
 
 class Border {
@@ -63,17 +69,20 @@ private:
     vector<int*> edges;
 
 public:
+    //Constructors, Assignment Operator and Destructor
     Border();
     Border(int r);
     Border(const Border& copy);
-
     Border& operator =(const Border& copy);
+    ~Border();
+
+    //Setters and Getters
     void addRoot(int r);
     void addEdge(int e);
     int getRoot();
     vector<int*> getEdges();
 
-    ~Border();
+    
 };
 
 class Map {
@@ -83,14 +92,20 @@ private:
     vector<Border*> borders;
 
 public:
+    //Constructors, Assignment Operator and Destructor
     Map();
     Map(const Map& copy);
     Map& operator =(const Map& copy);
+    ~Map();
 
+    //Validate method, used to check if class is valid
     bool validate();
+    //Method used to check if all nodes are connected
     void checkTerritoriesAndContinents(int* currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents);
+    //Custom defined .contains() function for vector since C++ does not have one
     bool checkDuplicates(int* currentTerritory, vector<int>* passedTerritories);
 
+    //Adds objects to map object using constructors
     void addTerritory(int con, string t);
     void addContinent(int b, string n);
     void addBorderRoot(int r);
@@ -98,8 +113,6 @@ public:
     vector<Territory*> getTerritories();
     vector<Continent*> getContinents();
     vector<Border*> getBorders();
-
-    ~Map();
 };
 
 class MapLoader {
@@ -107,21 +120,29 @@ private:
     static vector<Map*> loadedMaps;
 
 public:
-    //should add string = path file, maybe use user input instead
+    //Constructors, Assignment Operator and Destructor
+    //Not used, only here to fulfill assignment rubric
     MapLoader();
     MapLoader(const MapLoader& copy);
     MapLoader& operator =(const MapLoader& copy);
     ~MapLoader();
 
+    //Add maps and reads file user inputs
     static void addMap();
+
+    //Validates all maps user added
     static void validateMaps();
-    static void showMap(int index);
+
+    //Print all maps for user
     static void showAllMaps();
+
+    //Deletes all maps for later use
     static void deleteAllMaps();
 };
-
+//Helper .split() method for reading lines in map files
 vector<string> splitString(string str);
 
+//OutputStream operators for all classes
 ostream& operator<<(ostream& output, Territory& t);
 ostream& operator<<(ostream& output, Continent& c);
 ostream& operator<<(ostream& output, Border& b);

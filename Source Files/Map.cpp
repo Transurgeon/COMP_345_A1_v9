@@ -293,6 +293,7 @@ bool Map::validate()
 	return true;
 }
 
+//Checks if all territories can be reached from one node
 void Map::checkTerritoriesAndContinents(int* currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents) {
 
 	int continentNum = territories[(*currentTerritory) - 1]->getContinentNum();
@@ -414,14 +415,16 @@ ostream& operator<<(ostream& output, MapLoader& ml)
 vector<Map*> MapLoader::loadedMaps;
 
 void MapLoader::addMap() {
+	//adds empty map object
 	loadedMaps.push_back(new Map());
 	int section = 0;
 	bool skip;
 
 	cout << "Input map file name: ";
-	string fileName; //= "europe.map";
+	string fileName;
 	cin >> fileName;
 
+	//reads file and fill map object
 	string myText;
 	ifstream myReadFile("./Map Files/" + fileName);
 	if (myReadFile.good()) {
@@ -470,11 +473,11 @@ void MapLoader::addMap() {
 	myReadFile.close();
 }
 
+//Validates maps, deletes them if not valid
 void MapLoader::validateMaps() {
 	int i = 0;
 	int index = 0;
 	while (index < loadedMaps.size()) {
-		cout << "test";
 		i++;
 		if (!loadedMaps[index]->validate()) {
 			cout << "Map " << i << " is not valid" << endl;
@@ -489,14 +492,10 @@ void MapLoader::validateMaps() {
 	
 }
 
-void MapLoader::showMap(int index) {
-	cout << *loadedMaps[index];
-}
-
 void MapLoader::showAllMaps() {
 	int index = 1;
 	for (Map* i : loadedMaps) {
-		cout << endl << "*****************************************"
+		cout<< endl << "*****************************************"
 			<< endl << "               Map " << index
 			<< endl << "*****************************************"
 			<< endl << endl;
