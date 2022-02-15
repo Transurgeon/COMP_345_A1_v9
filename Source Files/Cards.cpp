@@ -5,6 +5,7 @@
 /// Card
 /// </summary>
 
+//Constructors, Destructors and Operators
 Card::Card() {
 
     switch (rand() % 5) 
@@ -36,24 +37,6 @@ Card& Card::operator=(const Card& copy)
     return *this;
 }
 
-void Card::play(int pos, Hand& p, Deck& d) {
-    //initialising card to be played
-    Card played;
-    cout << endl;
-
-    cout << "Outputting hand content: " << p << endl;
-    //calling remove card which deletes a card from the hand
-    played = p.removeCard(pos);  
-    cout << endl;
-    //cout information about the card
-    cout << "The card that was played is of type: " << played << endl;
-    cout << endl;
-    //cout information about the hand after card is played
-    cout << "Outputting hand content after card was played: " << p << endl;
-    //returning card back to the deck
-    d.returnToDeck(played);
-}
-
 Card::~Card() {
 
 }
@@ -77,10 +60,30 @@ ostream& operator<<(ostream& output, Card& c) {
     return output;
 }
 
+//play method
+void Card::play(int pos, Hand& p, Deck& d) {
+    //initialising card to be played
+    Card played;
+    cout << endl;
+
+    cout << "Outputting hand content: " << p << endl;
+    //calling remove card which deletes a card from the hand
+    played = p.removeCard(pos);
+    cout << endl;
+    //cout information about the card
+    cout << "The card that was played is of type: " << played << endl;
+    cout << endl;
+    //cout information about the hand after card is played
+    cout << "Outputting hand content after card was played: " << p << endl;
+    //returning card back to the deck
+    d.returnToDeck(played);
+}
+
 /// <summary>
 /// Deck
 /// </summary>
-/// 
+
+//Constructors, Destructors and Operators
 Deck::Deck() {
     top = 0;
     bot = 19;
@@ -123,6 +126,28 @@ Deck::~Deck() {
     deckCards = nullptr;
 }
 
+void Deck::returnToDeck(Card& nC) {
+    if (top == -1)
+        top = 0;
+
+    bot++;
+    deckCards[bot] = nC;
+    deckSize++;
+    cout << endl << "Returning a " << deckCards[bot] << " card back to the Deck" << endl;
+    cout << "The deck contains: " << *this << endl << endl;
+}
+
+ostream& operator<<(ostream& output, Deck& D) {
+    int limit = D.top + D.deckSize;
+    for (int i = D.top; i < limit; i++) {
+        output << D.deckCards[i];
+        if (i < limit - 1)
+            output << endl;
+    }
+    return output;
+}
+
+//draw method
 void Deck::draw(Hand& p) {
     //if hand has more cards than its max size
     if (p.getHandSize() >= p.getMaxSize()) {
@@ -154,31 +179,11 @@ void Deck::draw(Hand& p) {
     cout << "The deck contains: " << endl << *this << endl << endl;
 }
 
-void Deck::returnToDeck(Card& nC) {
-    if (top == -1)
-        top = 0;
-
-    bot++;
-    deckCards[bot] = nC;
-    deckSize++;
-    cout << endl << "Returning a " << deckCards[bot] << " card back to the Deck" << endl;
-    cout << "The deck contains: " << *this << endl << endl;
-}
-
-ostream& operator<<(ostream& output, Deck& D) {
-    int limit = D.top + D.deckSize;
-    for (int i = D.top; i < limit; i++) {
-        output << D.deckCards[i];
-        if (i < limit - 1)
-            output << endl;
-    }
-    return output;
-}
-
 /// <summary>
 /// Hand
 /// </summary>
 
+//Constructors, Destructors and Operators
 Hand::Hand() {
     maxSize = 6;
     handSize = 0;

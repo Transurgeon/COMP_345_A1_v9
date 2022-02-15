@@ -15,14 +15,17 @@ class Card {
 private:
     Card_Types cardType;
 public:
+    //Constructors, Destructors and Operators
     Card();
     Card(Card_Types c);
     Card(const Card& c);
     Card& operator=(const Card& c);
-    void play(int pos, Hand& p, Deck& d);
-
     ~Card();
     friend ostream& operator<<(ostream& output, Card& c);
+
+    //Play method
+    void play(int pos, Hand& p, Deck& d);
+
 };
 
 class Deck {
@@ -32,16 +35,17 @@ private:
     int bot;
     Card* deckCards;
 public:
+    //Constructors, Destructors and Operators
     Deck();
     Deck(int s);
     Deck(const Deck& d);
     Deck& operator=(const Deck& d);
-
-    void draw(Hand& p);
-    void returnToDeck(Card& nC);
-
     ~Deck();
     friend ostream& operator<<(ostream& output, Deck& D);
+
+    //Draw methods
+    void draw(Hand& p);
+    void returnToDeck(Card& nC);
 };
 
 class Hand {
@@ -50,19 +54,24 @@ private:
     int maxSize;
     Card* handCards;
 public:
+    //Constructors, Destructors and Operators
     Hand();
     Hand(int s);
     Hand(const Hand& h);
     Hand& operator=(const Hand& h);
+    ~Hand();
+    friend ostream& operator<<(ostream& output, Hand& H);
 
-    void addCard(Card* nC);
+    //Getters
     int getHandSize();
     int getMaxSize();
+
+    //Add, search and remove methods
+    void addCard(Card* nC);
     Card* searchCard(int pos);
     Card removeCard(int pos);
 
-    ~Hand();
-    friend ostream& operator<<(ostream& output, Hand& H);
+
     
 };
 
