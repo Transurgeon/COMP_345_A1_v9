@@ -27,13 +27,13 @@ public:
 
 class Deck {
 private:
-    int size;
-    int front;
-    int back;
-    Card* cards;
+    int deckSize;
+    int top;
+    int bot;
+    Card* deckCards;
 public:
     Deck();
-    Deck(int deckSize);
+    Deck(int s);
     Deck(const Deck& d);
     Deck& operator=(const Deck& d);
 

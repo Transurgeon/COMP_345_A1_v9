@@ -26,29 +26,31 @@ Card::Card(Card_Types c) {
     cardType = c;
 }
 
-Card::Card(const Card& c) {
-    cardType = c.cardType;
+Card::Card(const Card& copy) {
+    cardType = copy.cardType;
 }
 
-Card& Card::operator=(const Card& c)
+Card& Card::operator=(const Card& copy)
 {
-    cardType = c.cardType;
+    cardType = copy.cardType;
     return *this;
 }
 
 void Card::play(int pos, Hand& p, Deck& d) {
+    //initialising card to be played
     Card played;
     cout << endl;
 
     cout << "Outputting hand content: " << p << endl;
+    //calling remove card which deletes a card from the hand
     played = p.removeCard(pos);  
     cout << endl;
-
+    //cout information about the card
     cout << "The card that was played is of type: " << played << endl;
     cout << endl;
-
+    //cout information about the hand after card is played
     cout << "Outputting hand content after card was played: " << p << endl;
-
+    //returning card back to the deck
     d.returnToDeck(played);
 }
 
@@ -80,95 +82,93 @@ ostream& operator<<(ostream& output, Card& c) {
 /// </summary>
 /// 
 Deck::Deck() {
-    size = 52;
-    cards = new Card[size];
-    front = 0;
-    back = 51;
+    top = 0;
+    bot = 19;
+    deckSize = 20;
+    deckCards = new Card[deckSize];
 }
 
 Deck::Deck(int s) {
-    size = s;
-    cards = new Card[size];
-    front = 0;
-    back = s - 1;
+    top = 0;
+    bot = s - 1;
+    deckSize = s;
+    deckCards = new Card[deckSize];
 }
 
-Deck::Deck(const Deck& d)
+Deck::Deck(const Deck& copy)
 {
-    this->front = d.front;
-    this->back = d.back;
-    this->size = d.size;
-    this->cards = new Card[size];
-
-    for (int i = 0; i < d.size; i++) {
-        this->cards[i] = d.cards[i];
+    this->top = copy.top;
+    this->bot = copy.bot;
+    this->deckSize = copy.deckSize;
+    this->deckCards = new Card[deckSize];
+    for (int i = 0; i < copy.deckSize; i++) {
+        this->deckCards[i] = copy.deckCards[i];
     }
 }
 
-Deck& Deck::operator=(const Deck& d)
+Deck& Deck::operator=(const Deck& copy)
 {
-    this->front = d.front;
-    this->back = d.back;
-    this->size = d.size;
-    this->cards = new Card[size];
-
-    int limit = d.front + d.size;
-
-    for (int i = d.front; i < limit; i++) {
-        this->cards[i] = d.cards[i];
+    this->top = copy.top;
+    this->bot = copy.bot;
+    this->deckSize = copy.deckSize;
+    this->deckCards = new Card[deckSize];
+    for (int i = copy.top; i < copy.top + copy.deckSize; i++) {
+        this->deckCards[i] = copy.deckCards[i];
     }
     return *this;
 }
 
 Deck::~Deck() {
-    delete[] cards;
-    cards = nullptr;
+    delete[] deckCards;
+    deckCards = nullptr;
 }
 
 void Deck::draw(Hand& p) {
-
-    if (size <= 0) {
-        cout << "Unable to pick up any more cards. Deck is empty." << endl;
-        return;
-    }
-
+    //if hand has more cards than its max size
     if (p.getHandSize() >= p.getMaxSize()) {
-        cout << "Unable to pick up any more cards. Player's hand is full." << endl;
+        cout << "Player hand is full!!! Cannot Draw Anymore cards" << endl;
         return;
     }
-
+    //if deck doesn't have anymore cards it outputs this below
+    else if (deckSize <= 0) {
+        cout << "Deck contains no more deckCards!!! Cannot Draw Anymore cards" << endl;
+        return;
+    }
+    //initialise card to be drawn and set it equal to reference of the top card
     Card* topCard;
-    topCard = &cards[front];
-    if (front >= back) {    
-        front = -1;
-        back = -1;
+    topCard = &deckCards[top];
+    if (top >= bot) {    
+        top --;
+        bot --;
     }
     else {
-        front++;
+        top++;
     }
-    cout << "Drawing a card => " << *topCard << " from Deck" << endl;
-
+    //outputting information about the card that has been drawn
+    cout << "Drawing a " << *topCard << " card from the top of the Deck" << endl;
+    //adding card to the hand
     p.addCard(topCard);
-    size--;
+    //reducing the deck size 
+    deckSize--;
 
-    cout << "DECK: " << endl << *this << endl << endl;
+    cout << "The deck contains: " << endl << *this << endl << endl;
 }
 
 void Deck::returnToDeck(Card& nC) {
-    if (front == -1)
-        front = 0;
+    if (top == -1)
+        top = 0;
 
-    back++;
-    cards[back] = nC;
-    size++;
-    cout << endl << "Returning a " << cards[back] << " card back to Deck" << endl;
-    cout << "DECK: " << *this << endl << endl;
+    bot++;
+    deckCards[bot] = nC;
+    deckSize++;
+    cout << endl << "Returning a " << deckCards[bot] << " card back to the Deck" << endl;
+    cout << "The deck contains: " << *this << endl << endl;
 }
 
 ostream& operator<<(ostream& output, Deck& D) {
-    int limit = D.front + D.size;
-    for (int i = D.front; i < limit; i++) {
-        output << D.cards[i];
+    int limit = D.top + D.deckSize;
+    for (int i = D.top; i < limit; i++) {
+        output << D.deckCards[i];
         if (i < limit - 1)
             output << endl;
     }
@@ -191,23 +191,23 @@ Hand::Hand(int s) {
     handCards = new Card[maxSize];
 }
 
-Hand::Hand(const Hand& h)
+Hand::Hand(const Hand& copy)
 {
-    for (int i = 0; i < h.handSize; i++) {
-        this->handCards[i] = h.handCards[i];
+    for (int i = 0; i < copy.handSize; i++) {
+        this->handCards[i] = copy.handCards[i];
     }
-    this->maxSize = h.maxSize;
-    this->handSize = h.handSize;
+    this->maxSize = copy.maxSize;
+    this->handSize = copy.handSize;
     this->handCards = new Card[maxSize];
 }
 
-Hand& Hand::operator=(const Hand& h)
+Hand& Hand::operator=(const Hand& copy)
 {
-    for (int i = 0; i < h.handSize; i++) {
-        this->handCards[i] = h.handCards[i];
+    for (int i = 0; i < copy.handSize; i++) {
+        this->handCards[i] = copy.handCards[i];
     }
-    this->maxSize = h.maxSize;
-    this->handSize = h.handSize;
+    this->maxSize = copy.maxSize;
+    this->handSize = copy.handSize;
     this->handCards = new Card[maxSize];
     return *this;
 }
@@ -241,7 +241,7 @@ Card Hand::removeCard(int pos) {
         handCards[i] = handCards[i + 1];
     }
 
-    cout << "Removed -> " << removed << endl;
+    cout << "This card has been removed from the hand: " << removed << endl;
     handSize--;
     return removed;
 }
