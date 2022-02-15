@@ -296,7 +296,8 @@ bool Map::validate()
 //Checks if all territories can be reached from one node
 void Map::checkTerritoriesAndContinents(int* currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents) {
 
-	int continentNum = territories[(*currentTerritory) - 1]->getContinentNum();
+	int index = (*currentTerritory) - 1;
+	int continentNum = territories[index]->getContinentNum();
 
 	if (!checkDuplicates(&continentNum, passedContinents))
 		passedContinents->push_back(continentNum);
@@ -304,7 +305,7 @@ void Map::checkTerritoriesAndContinents(int* currentTerritory, vector<int>* pass
 	if (!checkDuplicates(currentTerritory, passedTerritories)) {
 
 		passedTerritories->push_back(*currentTerritory);
-		for (int* i : (*borders[(*currentTerritory) - 1]).getEdges()) {
+		for (int* i : (*borders[index]).getEdges()) {
 			checkTerritoriesAndContinents(i, passedTerritories, passedContinents);
 		}
 	}
