@@ -43,13 +43,15 @@ void playerMain() {
     player->issueOrder(negotiateOrder);
     player->getPlayerOrders();
 
+    //showing player owns a set of cards and outputting maxSize, handSize, and searchCard
     Card* c1 = new Card();
     Card* c2 = new Card();
     Card* c3 = new Card();
-    vector<Card*> v1;
-    v1.push_back(c1);
-    v1.push_back(c2);
-    v1.push_back(c3);
-    Hand* playerH = new Hand();
+    player->getPlayerCards()->addCard(c1);
+    player->getPlayerCards()->addCard(c2);
+    player->getPlayerCards()->addCard(c3);
+    cout << "Player owns this many cards: " << player->getPlayerCards()->getHandSize() << endl;
+    cout << "The player's max hand size is: " << player->getPlayerCards()->getMaxSize() << endl;
+    cout << "The player's card at position 2 is: " << *player->getPlayerCards()->searchCard(2) << endl;
 
 }
