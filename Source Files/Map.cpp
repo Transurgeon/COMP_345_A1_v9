@@ -413,11 +413,6 @@ ostream& operator<<(ostream& output, MapLoader& ml)
 
 vector<Map*> MapLoader::loadedMaps;
 
-void MapLoader::loadMaps() {
-
-
-}
-
 void MapLoader::addMap() {
 	loadedMaps.push_back(new Map());
 	int section = 0;
@@ -431,65 +426,67 @@ void MapLoader::addMap() {
 	ifstream myReadFile("./Map Files/" + fileName);
 	if (myReadFile.good()) {
 		while (getline(myReadFile, myText)) {
-			skip = false;
-			if (myText == "[continents]") {
-				section = 1;
-				skip = true;
-			}
-			else if (myText == "[countries]") {
-				section = 2;
-				skip = true;
-			}
-			else if (myText == "[borders]") {
-				section = 3;
-				skip = true;
-			}
-			if (!myText.empty() & !skip) {
-				vector<string> split = splitString(myText);
-				switch (section) {
-				case 1:
-					loadedMaps.back()->addContinent(stoi(split[1]), split[0]);
-					break;
-				case 2:
-					loadedMaps.back()->addTerritory(stoi(split[2]), split[1]);
-					break;
-				case 3:
-					loadedMaps.back()->addBorderRoot(stoi(split[0]));
-					for (int i = 1; i < split.size(); i++) {
-						loadedMaps.back()->addBorderEdge(stoi(split[0]), stoi(split[i]));
+			try {
+				skip = false;
+				if (myText == "[continents]") {
+					section = 1;
+					skip = true;
+				}
+				else if (myText == "[countries]") {
+					section = 2;
+					skip = true;
+				}
+				else if (myText == "[borders]") {
+					section = 3;
+					skip = true;
+				}
+				if (!myText.empty() & !skip) {
+					vector<string> split = splitString(myText);
+					switch (section) {
+					case 1:
+						if (split.size() >= 3) {
+							loadedMaps[loadedMaps.size() - 1]->addContinent(stoi(split[1]), split[0]);
+						}
+						break;
+					case 2:
+						if (split.size() >= 3) {
+							loadedMaps[loadedMaps.size() - 1]->addTerritory(stoi(split[2]), split[1]);
+						}
+						break;
+					case 3:
+						if (split.size() >= 1) {
+							loadedMaps[loadedMaps.size() - 1]->addBorderRoot(stoi(split[0]));
+							for (int i = 1; i < split.size(); i++) {
+								loadedMaps[loadedMaps.size() - 1]->addBorderEdge(stoi(split[0]), stoi(split[i]));
+							}
+						}
+						break;
 					}
-					break;
 				}
 			}
+			catch (const std::exception&) {}
 		}
 	}
 	myReadFile.close();
 }
 
 void MapLoader::validateMaps() {
-	int i = 1;
-	for (Map* m : loadedMaps) {
-		try {
-			if (!m->validate()) {
-				cout << "Map " << i << " is not valid" << endl;
-				delete m;
-				m = nullptr;
-				loadedMaps.erase(loadedMaps.begin() + i - 1);
-			}
-			else
-			{
-				cout << "Map " << i << " is valid" << endl;
-			}
-			i++;
-		}
-		catch (const std::exception&) {
-
+	int i = 0;
+	int index = 0;
+	while (index < loadedMaps.size()) {
+		cout << "test";
+		i++;
+		if (!loadedMaps[index]->validate()) {
 			cout << "Map " << i << " is not valid" << endl;
-			delete m;
-			m = nullptr;
-			loadedMaps.erase(loadedMaps.begin() + i - 1);
+			loadedMaps.erase(loadedMaps.begin() + index);
+		}
+		else
+		{
+			cout << "Map " << i << " is valid" << endl;
+			index++;
 		}
 	}
+	
 }
 
 void MapLoader::showMap(int index) {
@@ -525,8 +522,5 @@ vector<string> splitString(string str) {
 
 void MapLoader::deleteAllMaps() {
 
-	for (Map* i : loadedMaps) {
-		delete i;
-		i = nullptr;
-	}
+	loadedMaps.clear();
 }

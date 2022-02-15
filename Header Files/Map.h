@@ -113,7 +113,6 @@ public:
     MapLoader& operator =(const MapLoader& copy);
     ~MapLoader();
 
-    static void loadMaps();
     static void addMap();
     static void validateMaps();
     static void showMap(int index);
