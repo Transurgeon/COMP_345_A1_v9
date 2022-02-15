@@ -48,5 +48,4 @@ void cardsMain() {
     Hand playerB;
     playerB = playerA;
     cout << playerB;
-
 }

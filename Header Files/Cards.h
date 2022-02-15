@@ -1,6 +1,6 @@
 #pragma once
-#ifndef COMP_345_Cards_h
-#define COMP_345_Cards_h
+#ifndef COMP345_P_CARDS_H
+#define COMP345_P_CARDS_H
 #pragma once
 #include <iostream>
 using namespace std;
@@ -13,8 +13,11 @@ class Hand;
 
 class Card {
 public:
+    // Constructor that initializes the card as the specified card type
     Card(CardType ct);
+    // Constructor that initializes the card to a random card type
     Card();
+    // Copy Constructor
     Card(const Card& c);
     void play(int index, Hand& player, Deck& deck);
     friend ostream& operator<<(ostream& output, Card& C);
@@ -25,9 +28,13 @@ private:
 
 class Deck {
 public:
+    // Constructor that initializes the deck with a specified deck size
     Deck(int deckSize);
+    // Constructor that initializes the deck with the set size of 52
     Deck();
+    // Copy Constructor
     Deck(const Deck& d);
+    // Destructor
     ~Deck();
     void draw(Hand& player);
     void returnToDeck(Card& newCard);
@@ -42,9 +49,13 @@ private:
 
 class Hand {
 public:
+    // Constructor that initializes the hand with a specified hand size
     Hand(int handSize);
+    // Constructor that initializes the hand with the set size of 12
     Hand();
+    // Copy Constructor
     Hand(const Hand& h);
+    // Destructor
     ~Hand();
     void addCard(Card* newCard);
     int getHandSize() { return size; }
@@ -59,4 +70,4 @@ private:
     Card* cards;
 };
 
-#endif 
+#endif //COMP345_P_CARDS_H

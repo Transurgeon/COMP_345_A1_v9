@@ -76,6 +76,10 @@ Hand* Player::getPlayerCards() {
 	return playerCards;
 }
 OrdersList* Player::getPlayerOrders() {
+	cout << endl;
+	cout << "Showing player's orders list" << endl;
+	cout << endl;
+	cout << *playerOrders << endl;
 	return playerOrders;
 }
 
@@ -105,5 +109,6 @@ Player::~Player() {
 
 ostream& operator<<(ostream& output, Player& p) {
 	output << "Ready Player -- ;)";
+
 	return output;
 }
