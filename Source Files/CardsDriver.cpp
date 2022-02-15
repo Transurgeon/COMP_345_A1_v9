@@ -1,40 +1,52 @@
-#include "../Header Files/Cards.h"
-#include "../Header Files/Drivers.h"
 #include <iostream>
+#include <cstdlib>
+#include <time.h>
+using namespace std;
 
+#include "../Header Files/Cards.h"
 void cardsMain() {
-    //initialising hand
-    Card* card1 = new Card(0);
-    vector<Card*> vcards1;
-    vcards1.push_back(card1);
-    Hand* handp = new Hand(vcards1);
+    srand(time(NULL));
+    Deck deckA(10);
+    Hand playerA(15);
 
-    //initialising deck
-    Card* card2 = new Card(1);
-    vector<Card*> vdeck1;
-    vdeck1.push_back(card2);
-    Deck* deckp = new Deck(vdeck1);
+    cout << "DECK: " << deckA << endl;
 
-    // Displaying deck and hand
-    cout << "Creating deck and hand" << endl;
-    handp->print();
-    deckp->print();
+    // Draw cards from deck
+    for (int i = 0; i < 15; i++) {
+        deckA.draw(playerA);
+    }
 
-    // Playing first card and displaying deck and hand
-    // SHOWING PLAY METHOD
-    (*card1).play();
-    cout << "After playing card 1 at position 0" << endl;
-    handp->print();
-    deckp->print();
+    cout << "HAND: " << playerA << endl;
 
-    // Drawing first card and displaying deck and hand
-    // SHOWING DRAW METHOD
-    deckp->draw(handp);
-    cout << "After drawing 1 card from deck to player's hand" << endl;
-    handp->print();
-    deckp->print();
+    // Play cards from hand
+    for (int i = 0; i < playerA.getHandSize(); i++) {
+        Card* chosen = playerA.getCardAtIndex(3);
+        chosen->play(3, playerA, deckA);
+    }
 
-    delete deckp;
-    delete handp;
+    // Draw cards from deck (again)
+    for (int i = 0; i < 3; i++) {
+        deckA.draw(playerA);
+    }
+
+    // Some testing
+    cout << endl;
+    Card* c1 = new Card();
+    cout << *c1 << endl;
+    Card* c2;
+    c2 = c1;
+    cout << *c2 << endl;
+
+    cout << endl;
+    cout << deckA << endl;
+    Deck deckB;
+    deckB = deckA;
+    cout << deckB << endl;
+
+    cout << endl;
+    cout << playerA << endl;
+    Hand playerB;
+    playerB = playerA;
+    cout << playerB;
+
 }
-

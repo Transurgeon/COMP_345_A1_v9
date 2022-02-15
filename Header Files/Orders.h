@@ -43,6 +43,9 @@ public:
 };
 
 class Deploy : public Order {
+private:
+	string type = "Deploy";
+
 public:
 	Deploy();
 	Deploy(const Deploy& deploy);
@@ -50,10 +53,14 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Deploy& deploy);
 	bool validate();
 	void execute();
+	string* getType();
 	~Deploy();
 };
 
 class Advance : public Order {
+private:
+	string type = "Advance";
+
 public:
 	Advance();
 	Advance(const Advance& advance);
@@ -61,10 +68,14 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Advance& advance);
 	bool validate();
 	void execute();
+	string* getType();
 	~Advance();
 };
 
 class Bomb : public Order {
+private:
+	string type = "Bomb";
+
 public:
 	Bomb();
 	Bomb(const Bomb& Bomb);
@@ -72,10 +83,14 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Bomb& Bomb);
 	bool validate();
 	void execute();
+	string* getType();
 	~Bomb();
 };
 
 class Blockade : public Order {
+private:
+	string type = "Blockade";
+
 public:
 	Blockade();
 	Blockade(const Blockade& Blockade);
@@ -83,10 +98,14 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Blockade& Blockade);
 	bool validate();
 	void execute();
+	string* getType();
 	~Blockade();
 };
 
 class AirLift : public Order {
+private:
+	string type = "AirLift";
+
 public:
 	AirLift();
 	AirLift(const AirLift& AirLift);
@@ -94,10 +113,14 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const AirLift& AirLift);
 	bool validate();
 	void execute();
+	string* getType();
 	~AirLift();
 };
 
 class Negotiate : public Order {
+private:
+	string type = "Negotiate";
+
 public:
 	Negotiate();
 	Negotiate(const Negotiate& Negotiate);
@@ -105,6 +128,7 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Negotiate& Negotiate);
 	bool validate();
 	void execute();
+	string* getType();
 	~Negotiate();
 };
 #endif

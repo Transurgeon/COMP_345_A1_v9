@@ -1,74 +1,62 @@
 #pragma once
 #ifndef COMP_345_Cards_h
 #define COMP_345_Cards_h
-
+#pragma once
 #include <iostream>
-#include <string>
-#include <vector>
 using namespace std;
 
+enum CardType { bomb = 1, reinforcement = 2, blockade = 3, airlift = 4, diplomacy = 5 };
+
+class Card;
 class Deck;
 class Hand;
-class Player;
 
 class Card {
-private:
-	string cardType;
-
-public: 
+public:
+    Card(CardType ct);
     Card();
-    Card(string cardType);
-    Card(int intCardType);
-    Card(const Card& initCard);
-    Card& operator=(const Card& card);
-    friend std::ostream& operator<<(std::ostream& stream, const Card& card);
-    string getCardTypeString();
-    void setCardType(string cardType);
-    void play();
-    //void play(Deck* deck, Player* player, Map* map, GameStarter* gameStarter);
+    Card(const Card& c);
+    void play(int index, Hand& player, Deck& deck);
+    friend ostream& operator<<(ostream& output, Card& C);
+    Card& operator=(const Card& c);
+private:
+    CardType cardType;
 };
 
-class Deck
-{
-private:
-    vector<Card*> cardsInDeck;
-
+class Deck {
 public:
+    Deck(int deckSize);
     Deck();
-    Deck(vector<Card*> cardsInDeck);
-    Deck(const Deck& initDeck);
-    Deck& operator=(const Deck& deck);
-    friend std::ostream& operator<<(std::ostream& stream, const Deck& deck);
+    Deck(const Deck& d);
     ~Deck();
-    vector<Card*> getDeckCards();
-    void setDeckCards(vector<Card*> cardsInDeck);
-    void addCardToDeck(Card* card);
-    void removeCardFromDeck(int index);
-    void draw(Hand* hand);
-    int nbCards();
-    void print();
-};
-
-class Hand
-{
+    void draw(Hand& player);
+    void returnToDeck(Card& newCard);
+    friend ostream& operator<<(ostream& output, const Deck& D);
+    Deck& operator=(const Deck& d);
 private:
-    vector<Card*> cardsInHand;
-
-public:
-    Hand();
-    Hand(vector<Card*> cardsInHand);
-    Hand(const Hand& initHand);
-    Hand& operator=(const Hand& hand);
-    friend std::ostream& operator<<(std::ostream& stream, const Hand& hand);
-    ~Hand();
-    vector<Card*> getHandCards();
-    void setHandCards(vector<Card*> cardsInHand);
-    void addCardToHand(Card* card);
-    void removeCardFromHand(int index);
-    int getCardIndex(Card* card);
-    int nbCards();
-    void print();
+    int size;
+    int front;
+    int back;
+    Card* cards;
 };
 
-#endif
+class Hand {
+public:
+    Hand(int handSize);
+    Hand();
+    Hand(const Hand& h);
+    ~Hand();
+    void addCard(Card* newCard);
+    int getHandSize() { return size; }
+    int getHandLimit() { return limit; }
+    Card removeCardAtIndex(int index);
+    Card* getCardAtIndex(int index) { return &cards[index]; }
+    friend ostream& operator<<(ostream& output, const Hand& H);
+    Hand& operator=(const Hand& h);
+private:
+    int size;
+    int limit;
+    Card* cards;
+};
 
+#endif 

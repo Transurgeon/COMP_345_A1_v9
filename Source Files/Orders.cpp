@@ -108,7 +108,7 @@ OrdersList::~OrdersList() {
 ostream& operator<<(ostream& output, OrdersList& ol) {
 	for (int i = 0; i < ol.OrderList.size(); i++)
 	{
-		output << "Order Number " << i << " has a type : " << endl;
+		output << "Order Number " << i << " is of type : "  << endl;
 	}
 	return output;
 }
@@ -117,6 +117,7 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	/// </summary>
 	Deploy::Deploy() {
 
+		cout << "Deploy has been added" << endl;
 	}
 
 	Deploy::Deploy(const Deploy& deploy) {
@@ -139,13 +140,17 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	void Deploy::execute() {
 		if (validate())
 		{
-			cout << "Executing Deploy Order" << endl;
+			cout << "Order is Valid: Executing Deploy Order" << endl;
 		}
 
 		else
 		{
-			cout << "Invalid Deploy Order" << endl;
+			cout << "Order is Invalid: Invalid Deploy Order" << endl;
 		}
+	}
+
+	string* Deploy::getType() {
+		return &type;
 	}
 	
 	Deploy::~Deploy() {
@@ -155,6 +160,8 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	/// Advance
 	/// </summary>
 	Advance::Advance() {
+
+		cout << "Advance has been added" << endl;
 	}
 
 	Advance::Advance(const Advance& Advance) {
@@ -177,13 +184,17 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	void Advance::execute() {
 		if (validate())
 		{
-			cout << "Executing Advance Order" << endl;
+			cout << "Order is Valid: Executing Advance Order" << endl;
 		}
 
 		else
 		{
-			cout << "Invalid Advance Order" << endl;
+			cout << "Order is Invalid: Invalid Advance Order" << endl;
 		}
+	}
+
+	string* Advance::getType() {
+		return &type;
 	}
 
 	Advance::~Advance() {
@@ -193,6 +204,8 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 /// Bomb
 /// </summary>
 	Bomb::Bomb() {
+
+		cout << "Bomb has been added" << endl;
 	}
 
 	Bomb::Bomb(const Bomb& Bomb) {
@@ -215,13 +228,17 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	void Bomb::execute() {
 		if (validate())
 		{
-			cout << "Executing Bomb Order" << endl;
+			cout << "Order is Valid: Executing Bomb Order" << endl;
 		}
 
 		else
 		{
-			cout << "Invalid Bomb Order" << endl;
+			cout << "Order is Invalid: Invalid Bomb Order" << endl;
 		}
+	}
+
+	string* Bomb::getType() {
+		return &type;
 	}
 
 	Bomb::~Bomb() {
@@ -231,6 +248,8 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 /// Blockade
 /// </summary>
 	Blockade::Blockade() {
+
+		cout << "Blockade has been added" << endl;
 	}
 
 	Blockade::Blockade(const Blockade& Blockade) {
@@ -253,13 +272,17 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	void Blockade::execute() {
 		if (validate())
 		{
-			cout << "Executing Blockade Order" << endl;
+			cout << "Order is Valid: Executing Blockade Order" << endl;
 		}
 
 		else
 		{
-			cout << "Invalid Blockade Order" << endl;
+			cout << "Order is Invalid: Invalid Blockade Order" << endl;
 		}
+	}
+
+	string* Blockade::getType() {
+		return &type;
 	}
 
 	Blockade::~Blockade() {
@@ -269,6 +292,8 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 /// AirLift
 /// </summary>
 	AirLift::AirLift() {
+
+		cout << "AirLift has been added" << endl;
 	}
 
 	AirLift::AirLift(const AirLift& AirLift) {
@@ -291,13 +316,17 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	void AirLift::execute() {
 		if (validate())
 		{
-			cout << "Executing AirLift Order" << endl;
+			cout << "Order is Valid: Executing AirLift Order" << endl;
 		}
 
 		else
 		{
-			cout << "Invalid AirLift Order" << endl;
+			cout << "Order is Invalid: Invalid AirLift Order" << endl;
 		}
+	}
+
+	string* AirLift::getType() {
+		return &type;
 	}
 
 	AirLift::~AirLift() {
@@ -307,6 +336,8 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 /// Negotiate
 /// </summary>
 	Negotiate::Negotiate() {
+
+		cout << "Negotiate has been added" << endl;
 	}
 
 	Negotiate::Negotiate(const Negotiate& Negotiate) {
@@ -329,13 +360,17 @@ ostream& operator<<(ostream& output, OrdersList& ol) {
 	void Negotiate::execute() {
 		if (validate())
 		{
-			cout << "Executing Negotiate Order" << endl;
+			cout << "Order is Valid: Executing Negotiate Order" << endl;
 		}
 
 		else
 		{
-			cout << "Invalid Negotiate Order" << endl;
+			cout << "Order is Invalid: Invalid Negotiate Order" << endl;
 		}
+	}
+
+	string* Negotiate::getType() {
+		return &type;
 	}
 
 	Negotiate::~Negotiate() {

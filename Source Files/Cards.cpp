@@ -1,279 +1,221 @@
 #include "../Header Files/Cards.h"
-#include "../Header Files/Player.h"
-#include <iostream>
-#include <string>
-#include <vector>
-#include <cstdlib>
-#include <algorithm>
-#include <random>
-using namespace std;
 
-Card::Card()
-{
-    this->cardType = "BOMB";
+Card::Card(CardType ct) {
+    cardType = ct;
 }
 
-Card::Card(string cardType)
-{
-    this->cardType = cardType;
+Card::Card() {
+    int val = rand() % 5 + 1;
+
+    switch (val) {
+    case 1: cardType = CardType::bomb; break;
+    case 2: cardType = CardType::reinforcement; break;
+    case 3: cardType = CardType::blockade; break;
+    case 4: cardType = CardType::airlift; break;
+    case 5: cardType = CardType::diplomacy; break;
+    }
 }
 
-Card::Card(const Card& initCard)
-{
-    this->cardType = initCard.cardType;
+Card::Card(const Card& c) {
+    cardType = c.cardType;
 }
 
-Card& Card::operator=(const Card& card)
+void Card::play(int index, Hand& player, Deck& deck) {
+    // Take played card
+    Card usedCard;
+    cout << "HAND: " << player << endl;
+    usedCard = player.removeCardAtIndex(index);    // Remove from hand and shift
+    cout << "Played a card of type: " << usedCard << endl;
+    cout << "HAND: " << player << endl;
+
+    // Return card to deck
+    deck.returnToDeck(usedCard);
+}
+
+ostream& operator<<(ostream& output, Card& C) {
+    switch (C.cardType)
+    {
+    case bomb: output << "Bomb"; break;
+    case reinforcement: output << "Reinforcement"; break;
+    case blockade: output << "Blockade"; break;
+    case airlift: output << "AirLift"; break;
+    case diplomacy: output << "Diplomacy"; break;
+    default: output << "[Unknown cardType]"; break;
+    }
+    return output;
+}
+
+Card& Card::operator=(const Card& c)
 {
-    cout << "Inside operator = of Card" << endl;
-    this->cardType = card.cardType;
+    cardType = c.cardType;
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& stream, const Card& card)
-{
-    return stream << "Card details: type " << card.cardType << endl;
+///////
+
+Deck::Deck(int s) {
+    size = s;
+    cards = new Card[size];
+    front = 0;
+    back = s - 1;
 }
 
-// Set card type with numerical equivalence of cardType
-Card::Card(int intCardType)
+Deck::Deck() {
+    size = 52;
+    cards = new Card[size];
+    front = 0;
+    back = 51;
+}
+
+Deck::Deck(const Deck& d)
 {
-    switch (intCardType)
-    {
-    case 0:
-    {
-        this->cardType = "BOMB";
-    }
-    break;
-    case 1:
-    {
-        this->cardType = "REINFORCEMENT";
-    }
-    break;
-    case 2:
-    {
-        this->cardType = "BLOCKADE";
-    }
-    break;
-    case 3:
-    {
-        this->cardType = "AIRLIFT";
-    }
-    break;
-    case 4:
-    {
-        this->cardType = "NEGOTIATE";
-    }
-    break;
-    default:
-        throw logic_error("Invalid nb");
+    this->front = d.front;
+    this->back = d.back;
+    this->size = d.size;
+    this->cards = new Card[size];
+
+    for (int i = 0; i < d.size; i++) {
+        this->cards[i] = d.cards[i];
     }
 }
 
-string Card::getCardTypeString()
-{
-    return this->cardType;
+Deck::~Deck() {
+    delete[] cards;
+    cards = nullptr;
 }
 
-void Card::setCardType(string cardType)
-{
-    transform(cardType.begin(), cardType.end(), cardType.begin(), ::toupper);
-
-    if (cardType.compare("BOMB") == 0 || cardType.compare("REINFORCEMENT") == 0 || cardType.compare("BLOCKADE") == 0 || cardType.compare("AIRLIFT") == 0 || cardType.compare("NEGOTIATE") == 0)
-    {
-        this->cardType = cardType;
+void Deck::draw(Hand& player) {
+    // Player is no longer able to draw a new card
+    if (size <= 0) {
+        cout << "Unable to pick up any more cards. Deck is empty." << endl;
+        return;
     }
-    else
-    {
-        throw logic_error("Invalid card type");
+
+    // Player's hand is full and they cannot pick up another card
+    if (player.getHandSize() >= player.getHandLimit()) {
+        cout << "Unable to pick up any more cards. Player's hand is full." << endl;
+        return;
     }
-}
 
-void Card::play() {
-    cout << "I use my " << Card::getCardTypeString() << " card." << endl;
-}
-/* Deck Class */
-
-Deck::Deck()
-{
-}
-
-Deck::Deck(vector<Card*> cardsInDeck)
-{
-    this->cardsInDeck = cardsInDeck;
-}
-
-Deck::Deck(const Deck& initDeck)
-{
-    for (int i = 0; i < initDeck.cardsInDeck.size(); i++)
-    {
-        this->cardsInDeck.push_back(new Card(*(initDeck.cardsInDeck[i])));
+    // Take top card
+    Card* topCard;
+    topCard = &cards[front];
+    if (front >= back) {      //only one element in queue
+        front = -1;
+        back = -1;
     }
-}
-
-Deck& Deck::operator=(const Deck& deck)
-{
-    cout << "Inside operator = of Deck" << endl;
-    for (int i = 0; i < deck.cardsInDeck.size(); i++)
-    {
-        this->cardsInDeck.push_back(new Card(*(deck.cardsInDeck[i])));
+    else {
+        front++;
     }
-    return *this;
+    cout << "Drawing a card => " << *topCard << " from Deck" << endl;
+
+    // Give hand the card
+    player.addCard(topCard);
+    size--;
+
+    cout << "DECK: " << *this << endl << endl;
 }
 
-std::ostream& operator<<(std::ostream& stream, const Deck& deck)
-{
-    cout << "There are " << deck.cardsInDeck.size() << " in the deck\n";
-    for (Card* t : deck.cardsInDeck)
-    {
-        cout << *(t);
-    };
-    return stream;
+void Deck::returnToDeck(Card& newCard) {
+    // Was the deck just empty?
+    if (front == -1)
+        front = 0;
+
+    back++;
+    cards[back] = newCard;
+    size++;
+    cout << endl << "Adding a card => " << cards[back] << " back to Deck" << endl;
+    cout << "DECK: " << *this << endl << endl;
 }
 
-Deck::~Deck()
-{
-    for (Card* t : cardsInDeck)
-    {
-        delete t;
-        t = nullptr;
+ostream& operator<<(ostream& output, const Deck& D) {
+    int limit = D.front + D.size;
+    for (int i = D.front; i < limit; i++) {
+        output << D.cards[i];
+        if (i < limit - 1)
+            output << " --- ";
     }
+    return output;
 }
 
-vector<Card*> Deck::getDeckCards()
+Deck& Deck::operator=(const Deck& d)
 {
-    return cardsInDeck;
-}
+    this->front = d.front;
+    this->back = d.back;
+    this->size = d.size;
+    this->cards = new Card[size];
 
-void Deck::setDeckCards(vector<Card*> cardsInDeck)
-{
-    this->cardsInDeck = cardsInDeck;
-}
+    int limit = d.front + d.size;
 
-void Deck::addCardToDeck(Card* card)
-{
-    cardsInDeck.push_back(card);
-}
-
-void Deck::removeCardFromDeck(int index)
-{
-    cardsInDeck.erase(cardsInDeck.begin() + index);
-}
-
-void Deck::draw(Hand* hand)
-{
-    int randIndex = rand() % hand->getHandCards().size();
-    hand->addCardToHand(cardsInDeck[randIndex]);
-    cout << "Drawing " << *(cardsInDeck[randIndex]) << " at index " << randIndex << endl;
-    removeCardFromDeck(randIndex);
-}
-
-int Deck::nbCards()
-{
-    return cardsInDeck.size();
-}
-
-void Deck::print()
-{
-    cout << "This deck has " + to_string(nbCards()) + " cards" << endl;
-    for (int i = 0; i < nbCards(); i++)
-    {
-        cout << "The card at position " + to_string(i) + " has type " + cardsInDeck[i]->getCardTypeString() << endl;
-    }
-}
-
-/* Hand Class */
-
-Hand::Hand()
-{
-}
-
-Hand::Hand(vector<Card*> cardsInHand)
-{
-    this->cardsInHand = cardsInHand;
-}
-
-Hand::Hand(const Hand& initHand)
-{
-    for (int i = 0; i < initHand.cardsInHand.size(); i++)
-    {
-        this->cardsInHand.push_back(new Card(*(initHand.cardsInHand[i])));
-    }
-}
-
-Hand& Hand::operator=(const Hand& hand)
-{
-    cout << "Inside operator = of Hand" << endl;
-    for (int i = 0; i < hand.cardsInHand.size(); i++)
-    {
-        this->cardsInHand.push_back(new Card(*(hand.cardsInHand[i])));
+    for (int i = d.front; i < limit; i++) {
+        this->cards[i] = d.cards[i];
     }
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& stream, const Hand& hand)
-{
-    cout << "There are " << hand.cardsInHand.size() << " cards in the hand\n";
-    for (Card* t : hand.cardsInHand)
-    {
-        cout << *(t);
-    };
-    return stream;
+///////
+
+Hand::Hand(int s) {
+    limit = s;
+    size = 0;
+    cards = new Card[limit];
 }
 
-Hand::~Hand()
+Hand::Hand() {
+    limit = 12;
+    size = 0;
+    cards = new Card[limit];
+}
+
+Hand::Hand(const Hand& h)
 {
-    for (Card* t : cardsInHand)
-    {
-        delete t;
-        t = nullptr;
+    this->limit = h.limit;
+    this->size = h.size;
+    this->cards = new Card[limit];
+
+    for (int i = 0; i < h.size; i++) {
+        this->cards[i] = h.cards[i];
     }
 }
 
-vector<Card*> Hand::getHandCards()
-{
-    return cardsInHand;
+Hand::~Hand() {
+    delete[] cards;
+    cards = nullptr;
 }
 
-void Hand::setHandCards(vector<Card*> cardsInHand)
-{
-    this->cardsInHand = cardsInHand;
+void Hand::addCard(Card* newCard) {
+    cards[size] = *newCard;
+    size++;
 }
 
-void Hand::addCardToHand(Card* card)
-{
-    cardsInHand.push_back(card);
-}
+Card Hand::removeCardAtIndex(int index) {
+    Card removed = cards[index];
 
-void Hand::removeCardFromHand(int index)
-{
-    cardsInHand.erase(cardsInHand.begin() + index);
-}
-
-void Hand::print()
-{
-    cout << "This hand has " + to_string(nbCards()) + " cards" << endl;
-    for (int i = 0; i < nbCards(); i++)
-    {
-        cout << "The card at position " + to_string(i) + " has type " + getHandCards()[i]->getCardTypeString() << endl;
+    for (int i = index; i < size - 1; i++) {
+        cards[i] = cards[i + 1];
     }
+
+    cout << "Removed -> " << removed << endl;
+    size--;
+    return removed;
 }
 
-int Hand::nbCards()
-{
-    return cardsInHand.size();
-}
-
-int Hand::getCardIndex(Card* card)
-{
-    int i = 0;
-    for (Card* t : cardsInHand)
-    {
-        if (card == t)
-        {
-            return i;
-        }
-        i++;
+ostream& operator<<(ostream& output, const Hand& H) {
+    for (int i = 0; i < H.size; i++) {
+        output << H.cards[i];
+        if (i < H.size - 1)
+            output << " --- ";
     }
-    exit(EXIT_FAILURE);
+    return output;
+}
+Hand& Hand::operator=(const Hand& h)
+{
+    this->limit = h.limit;
+    this->size = h.size;
+    this->cards = new Card[limit];
+
+    for (int i = 0; i < h.size; i++) {
+        this->cards[i] = h.cards[i];
+    }
+    return *this;
 }

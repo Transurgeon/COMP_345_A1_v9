@@ -7,31 +7,32 @@ void playerMain() {
 
     cout << "player says yallah hi: " << *player << endl;
 
-    Territory* territory1 = new Territory(1, 1, "gabby");
-    Territory* territory2 = new Territory( 2, 2, "legend");
-    Territory* territory3 = new Territory( 3, 3, "hans");
-    Territory* territory4 = new Territory( 4, 4, "zimmer");
-    Territory* territory5 = new Territory( 5, 5,"hit-fan");
-    Territory* territory6 = new Territory( 6, 6, "william");
-    Territory* territory7 = new Territory( 7, 7, "kendrick");
-    Territory* territory8 = new Territory(8, 8, "lamar");
-    Territory* territory9 = new Territory(9, 9, "cole");
+    Territory* t1 = new Territory(1, 1, "gabby");
+    Territory* t2 = new Territory( 2, 2, "legend");
+    Territory* t3 = new Territory( 3, 3, "hans");
+    Territory* t4 = new Territory( 4, 4, "zimmer");
+    Territory* t5 = new Territory( 5, 5,"hit-fan");
+    Territory* t6 = new Territory( 6, 6, "william");
+    Territory* t7 = new Territory( 7, 7, "kendrick");
+    Territory* t8 = new Territory(8, 8, "lamar");
+    Territory* t9 = new Territory(9, 9, "cole");
     
-    player->attack(territory1);
-    player->attack(territory2);
-    player->attack(territory3);
+    player->attack(t1);
+    player->attack(t2);
+    player->attack(t3);
     player->toAttack();
 
-    player->defend(territory4);
-    player->defend(territory5);
-    player->defend(territory6);
+    player->defend(t4);
+    player->defend(t5);
+    player->defend(t6);
     player->toDefend();
 
-    player->add(territory7);
-    player->add(territory8);
-    player->add(territory9);
+    player->add(t7);
+    player->add(t8);
+    player->add(t9);
     player->showTerritories();
 
+    cout << endl;
     Deploy* deployOrder = new Deploy;
     Advance* advanceOrder = new Advance;
     Bomb* bombOrder = new Bomb;

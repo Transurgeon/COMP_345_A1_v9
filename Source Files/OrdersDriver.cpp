@@ -11,27 +11,27 @@ void ordersMain() {
     AirLift* airliftOrder = new AirLift;
     Negotiate* negotiateOrder = new Negotiate;
 
-    cout << "\nDeploy is a valid Order: " << deployOrder->validate() << endl;
+    cout << endl;
+
     deployOrder->execute();
 
-    cout << "\nAdvance is a valid Order: " << advanceOrder->validate() << endl;
+    advanceOrder->validate();
     advanceOrder->execute();
 
-    cout << "\nBomb is a valid Order: " << bombOrder->validate() << endl;
+    bombOrder->validate();
     bombOrder->execute();
 
-    cout << "\nBlockade is a valid Order: " << blockadeOrder->validate() << endl;
+    blockadeOrder->validate();
     blockadeOrder->execute();
 
-    cout << "\nAirlift is a valid Order: " << airliftOrder->validate() << endl;
+    airliftOrder->validate();
     airliftOrder->execute();
 
-    cout << "\nNegotiate is a valid Order: " << negotiateOrder->validate() << endl;
+    negotiateOrder->validate();
     negotiateOrder->execute();
 
     OrdersList list1;
 
-    //adding orders
     list1.add(deployOrder);
     list1.add(advanceOrder);
     list1.add(bombOrder);
@@ -42,7 +42,6 @@ void ordersMain() {
     cout << "\nContents of list: \n"
         << list1 << endl;
 
-    //remove
     list1.remove(1);
 
     cout << "\nContents of list after deletion: \n"
