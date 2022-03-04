@@ -154,6 +154,9 @@ void OrdersList::remove(int pos) {
 /// Deploy
 /// </summary>
 
+Deploy::Deploy(Player* p1, int t1, int troopNum) {
+
+}
 //Constructors, Destructors and Operators
 Deploy::Deploy() {
 	set_orderNum(0);
@@ -191,6 +194,7 @@ bool Deploy::validate() {
 void Deploy::execute() {
 	if (validate())
 	{
+
 		cout << "Order is Valid: Executing Deploy Order" << endl;
 	}
 
@@ -204,6 +208,9 @@ void Deploy::execute() {
 /// Advance
 /// </summary>
 
+Advance::Advance(Player* p1, int t1, int t2, int troopNum) {
+
+}
 //Constructors, Destructors and Operators
 Advance::Advance() {
 	set_orderNum(1);
@@ -254,6 +261,9 @@ void Advance::execute() {
 /// Bomb
 /// </summary>
 
+Bomb::Bomb(Player* p1, int target) {
+
+}
 //Constructors, Destructors and Operators
 Bomb::Bomb() {
 	set_orderNum(2);
@@ -304,6 +314,9 @@ void Bomb::execute() {
 /// Blockade
 /// </summary>
 
+Blockade::Blockade(Player* p1, int t1) {
+
+}
 //Constructors, Destructors and Operators
 Blockade::Blockade() {
 	set_orderNum(3);
@@ -355,6 +368,9 @@ void Blockade::execute() {
 /// AirLift
 /// </summary>
 
+AirLift::AirLift(Player* p1, int t1, int t2, int troopNum) {
+
+}
 //Constructors, Destructors and Operators
 AirLift::AirLift() {
 	set_orderNum(4);
@@ -405,6 +421,9 @@ void AirLift::execute() {
 /// Negotiate
 /// </summary>
 
+Negotiate::Negotiate(Player* p1, Player* p2) {
+
+}
 //Constructors, Destructors and Operators
 Negotiate::Negotiate() {
 	set_orderNum(5);

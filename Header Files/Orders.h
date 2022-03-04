@@ -7,6 +7,8 @@
 #include <vector>
 using namespace std;
 
+class Player;
+
 class Order {
 private:
 	vector<string> Order_types{ "DEPLOY", "ADVANCE", "BOMB", "BLOCKADE", "AIRLIFT", "NEGOTIATE" };
@@ -28,7 +30,7 @@ public:
 	bool validate();
 
 	//Executes the order
-	void execute();
+	virtual void execute() = 0;
 	
 };
 
@@ -53,11 +55,16 @@ public:
 	
 };
 
+//place some armies on one of the current players territories
 class Deploy : public Order {
 private:
 	string type = "Deploy";
-
+	//attributes for executing the deploy order
+	Player* p1;
+	int t1;
+	int troopNum;
 public:
+	Deploy(Player* p1, int t1, int troopNum);
 	//Constructors, Destructors and Operators
 	Deploy(); 
 	Deploy(const Deploy& deploy);
@@ -70,15 +77,22 @@ public:
 	bool validate();
 
 	//Executes the order
-	void execute();
+	void execute() override;
 
 };
 
+//move some armies from one of the current players territories (source) to an adjacent territory (target).If the target territory 
+//belongs to the current player, the armies are moved to the target territory. Else an attack happens between the two territories
 class Advance : public Order {
 private:
 	string type = "Advance";
-
+	//attributes for executing the advance order
+	Player* p1;
+	int t1;
+	int t2;
+	int troopNum;
 public:
+	Advance(Player* p1, int t1, int t2, int troopNum);
 	//Constructors, Destructors and Operators
 	Advance(); 
 	Advance(const Advance& advance);
@@ -95,11 +109,15 @@ public:
 
 };
 
+//destroy half of the armies located on an opponents territory that is adjacent to one of the current players territories
 class Bomb : public Order {
 private:
 	string type = "Bomb";
-
+	//attributes for executing the bomb order
+	Player* p1;
+	int target;
 public:
+	Bomb(Player* p1, int target);
 	//Constructors, Destructors and Operators
 	Bomb();
 	Bomb(const Bomb& Bomb);
@@ -116,11 +134,15 @@ public:
 
 };
 
+//triple the number of armies on one of the current players territories and make it a neutral territory
 class Blockade : public Order {
 private:
 	string type = "Blockade";
-
+	//attributes for executing the blockade order
+	Player* p1;
+	int t1;
 public:
+	Blockade(Player* p1, int t1);
 	//Constructors, Destructors and Operators
 	Blockade(); 
 	Blockade(const Blockade& Blockade);
@@ -137,11 +159,17 @@ public:
 
 };
 
+//advance some armies from one of the current players territories to any another territory
 class AirLift : public Order {
 private:
 	string type = "AirLift";
-
+	//attributes for executing the airlift order
+	Player* p1;
+	int t1;
+	int t2;
+	int troopNum;
 public:
+	AirLift(Player* p1, int t1, int t2, int troopNum);
 	//Constructors, Destructors and Operators
 	AirLift(); 
 	AirLift(const AirLift& AirLift);
@@ -158,11 +186,15 @@ public:
 
 };
 
+//prevent attacks between the current player and another player until the end of the turn
 class Negotiate : public Order {
 private:
 	string type = "Negotiate";
-
+	//attributes for executing the negotiate order
+	Player* p1;
+	Player* p2;
 public:
+	Negotiate(Player* p1, Player* p2);
 	//Constructors, Destructors and Operators
 	Negotiate(); 
 	Negotiate(const Negotiate& Negotiate);
