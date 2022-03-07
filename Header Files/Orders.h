@@ -59,11 +59,13 @@ public:
 class Deploy : public Order {
 private:
 	string type = "Deploy";
+	
+public:
 	//attributes for executing the deploy order
 	Player* p1;
 	int t1;
 	int troopNum;
-public:
+
 	Deploy(Player* p1, int t1, int troopNum);
 	//Constructors, Destructors and Operators
 	Deploy(); 
@@ -86,12 +88,14 @@ public:
 class Advance : public Order {
 private:
 	string type = "Advance";
+	
+public:
 	//attributes for executing the advance order
 	Player* p1;
 	int t1;
 	int t2;
 	int troopNum;
-public:
+
 	Advance(Player* p1, int t1, int t2, int troopNum);
 	//Constructors, Destructors and Operators
 	Advance(); 
@@ -113,10 +117,12 @@ public:
 class Bomb : public Order {
 private:
 	string type = "Bomb";
+	
+public:
 	//attributes for executing the bomb order
 	Player* p1;
 	int target;
-public:
+
 	Bomb(Player* p1, int target);
 	//Constructors, Destructors and Operators
 	Bomb();
@@ -138,10 +144,12 @@ public:
 class Blockade : public Order {
 private:
 	string type = "Blockade";
+	
+public:
 	//attributes for executing the blockade order
 	Player* p1;
 	int t1;
-public:
+
 	Blockade(Player* p1, int t1);
 	//Constructors, Destructors and Operators
 	Blockade(); 
@@ -163,12 +171,14 @@ public:
 class AirLift : public Order {
 private:
 	string type = "AirLift";
+	
+public:
 	//attributes for executing the airlift order
 	Player* p1;
 	int t1;
 	int t2;
 	int troopNum;
-public:
+
 	AirLift(Player* p1, int t1, int t2, int troopNum);
 	//Constructors, Destructors and Operators
 	AirLift(); 
@@ -190,10 +200,12 @@ public:
 class Negotiate : public Order {
 private:
 	string type = "Negotiate";
+	
+public:
 	//attributes for executing the negotiate order
 	Player* p1;
 	Player* p2;
-public:
+
 	Negotiate(Player* p1, Player* p2);
 	//Constructors, Destructors and Operators
 	Negotiate(); 

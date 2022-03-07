@@ -69,6 +69,22 @@ void Player::add(Territory* t) { //A method that adds a territory to the number 
 	territoriesNum.push_back(t);
 }
 
+int Player::getTroops() {
+	return troops;
+}
+
+void Player::setTroops(int t) {
+	troops = t;
+}
+
+int Player::getPlayerNum() {
+	return playerNum;
+}
+
+void Player::setPlayerNum(int p) {
+	playerNum = p;
+}
+
 vector<Territory*> Player::getTerritoriesNum() { //Accessor for territoriesNum.
 	return territoriesNum;
 }

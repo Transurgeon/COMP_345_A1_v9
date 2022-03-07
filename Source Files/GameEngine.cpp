@@ -27,7 +27,7 @@ ostream& operator<<(ostream& output, GameEngine& t) {
 }
 
 //runs game and follow structure of flow chart
-void GameEngine::runGameEngine() {
+void GameEngine::startupPhase() {
 
 
 	cout << "Starting Game " << endl;
@@ -47,7 +47,7 @@ void GameEngine::runGameEngine() {
 	cin >> input;
 	MapLoader::deleteAllMaps();
 	if (input == "yes") {
-		runGameEngine();
+		startupPhase();
 	}
 	else {
 		gameOver();
@@ -82,6 +82,32 @@ int GameEngine::addPlayers() {
 		cin >> input;
 	} while (input == "yes");
 	return players;
+}
+
+void GameEngine::gameStart() {
+	cout << "Fairly distributing territories to the players" << endl;
+
+	cout << "Determining a random order of play for the players" << endl;
+
+	cout << "Giving 50 troops to each player" << endl;
+	for (int j = 0; j < playersNum; j++) {
+		playerList.at(j)->setTroops(50);
+	}
+
+	cout << "Each player draws 2 cards from the deck to their hand" << endl;
+	for (int j = 0; j < playersNum; j++) {
+		//playerList.at(j)->getPlayerCards.draw();
+		//playerList.at(j)->getPlayerCards.draw();
+	}
+}
+
+void GameEngine::mainGameLoop() {
+	cout << "reinforcementPhase" << endl;
+	assignReinforcements();
+	cout << "issueOrdersPhase" << endl;
+	issueOrders();
+	cout << "executeOrdersPhase" << endl;
+	executeOrders();
 }
 
 void GameEngine::assignReinforcements() {

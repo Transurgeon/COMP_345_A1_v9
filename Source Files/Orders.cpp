@@ -155,7 +155,10 @@ void OrdersList::remove(int pos) {
 /// </summary>
 
 Deploy::Deploy(Player* p1, int t1, int troopNum) {
-
+	set_orderNum(0);
+	this->p1 = p1;
+	this->t1 = t1;
+	this->troopNum = troopNum;
 }
 //Constructors, Destructors and Operators
 Deploy::Deploy() {
@@ -164,11 +167,17 @@ Deploy::Deploy() {
 }
 
 Deploy::Deploy(const Deploy& deploy) {
-	this->type = *new string(deploy.type);
+	this->type = deploy.type;
+	this->p1 = deploy.p1;
+	this->t1 = deploy.t1;
+	this->troopNum = deploy.troopNum;
 }
 
 Deploy& Deploy::operator=(const Deploy& deploy) {
 	this->type = *new string(deploy.type);
+	this->p1 = deploy.p1;
+	this->t1 = *new int(deploy.t1);
+	this->troopNum = *new int(deploy.troopNum);
 	return *this;
 }
 
@@ -187,14 +196,13 @@ Deploy::~Deploy() {
 
 //Validates the order
 bool Deploy::validate() {
-	return true;
+
 }
 
 //Executes the order
 void Deploy::execute() {
 	if (validate())
 	{
-
 		cout << "Order is Valid: Executing Deploy Order" << endl;
 	}
 
