@@ -14,8 +14,6 @@ Observer::Observer() {
 Observer::~Observer() {
 }
 
-LogObserver::LogObserver() = default;
-
 LogObserver::LogObserver(Subject* s) {
 	_subjects = s;
 	_subjects->Attach(this);
@@ -33,11 +31,10 @@ void LogObserver::Update(ILoggable* i) {
 }
 
 Subject::Subject() {
-	_observers = new list<Observer*>;
+	new LogObserver(this);
 }
 
 Subject::~Subject() {
-	delete _observers;
 }
 
 void Subject::Attach(Observer* o) {

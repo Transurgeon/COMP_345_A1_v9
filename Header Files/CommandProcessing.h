@@ -11,11 +11,21 @@ enum class GameState {
 };
 
 class Command : public ILoggable, Subject {
+private:
+	string cmd;
+	string effect;
 public:
 	//Constructors, Destructors and Operators
-	Command();
+	Command(string c);
 	Command(const Command& copy);
 	Command& operator =(const Command& copy);
+	
+	//getters
+	string getEffect();
+	string getCommand();
+	string stringToLog();
+	void saveEffect(string e);
+
 	~Command();
 	friend ostream& operator<<(ostream& output, Command& o);
 };
@@ -31,9 +41,9 @@ public:
 	~CommandProcessor();
 	friend ostream& operator<<(ostream& output, CommandProcessor& o);
 
-	void readCommand();
+	string stringToLog();
+	string readCommand();
 	void getCommand();
-	void saveEffect();
 	void saveCommand();
 	bool validate();
 };
@@ -42,12 +52,6 @@ class FileCommandProcessorAdapter : public CommandProcessor {
 private:
 	Command* commandList;
 public:
-	//Constructors, Destructors and Operators
-	FileCommandProcessorAdapter();
-	FileCommandProcessorAdapter(const FileCommandProcessorAdapter& copy);
-	FileCommandProcessorAdapter& operator =(const FileCommandProcessorAdapter& copy);
-	~FileCommandProcessorAdapter();
-	friend ostream& operator<<(ostream& output, FileCommandProcessorAdapter& o);
-
+	
 };
 #endif

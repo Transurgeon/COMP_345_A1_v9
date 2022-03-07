@@ -10,9 +10,10 @@ using namespace std;
 
 class ILoggable {
 public:
-	ILoggable();
 	~ILoggable();
 	virtual string stringToLog() = 0;
+protected:
+	ILoggable();
 };
 
 class Observer {
@@ -25,11 +26,12 @@ protected:
 
 class Subject {
 public:
+	Subject();
+	~Subject();
 	virtual void Attach(Observer* o);
 	virtual void Detach(Observer* o);
 	virtual void Notify(ILoggable* i);
-	Subject();
-	~Subject();
+	
 private:
 	list<Observer*>* _observers;
 };
@@ -39,9 +41,8 @@ public:
 	~LogObserver();
 
 	LogObserver(Subject* s);
-	void Update(ILoggable* i) override;
+	void Update(ILoggable* i);
 protected:
-	LogObserver();
 	Subject* _subjects;
 };
 
