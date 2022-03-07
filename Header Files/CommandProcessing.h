@@ -3,9 +3,14 @@
 #define COMP_345_CommandProcessing_h
 
 #include <iostream>;
+#include "../Header Files/LoggingObserver.h"
 using namespace std;
 
-class Command {
+enum class GameState {
+	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win,
+};
+
+class Command : public ILoggable, Subject {
 public:
 	//Constructors, Destructors and Operators
 	Command();
@@ -15,7 +20,7 @@ public:
 	friend ostream& operator<<(ostream& output, Command& o);
 };
 
-class CommandProcessor {
+class CommandProcessor : public ILoggable, Subject {
 private:
 	Command* commandList;
 public:
@@ -33,7 +38,7 @@ public:
 	bool validate();
 };
 
-class FileCommandProcessorAdapter {
+class FileCommandProcessorAdapter : public CommandProcessor {
 private:
 	Command* commandList;
 public:

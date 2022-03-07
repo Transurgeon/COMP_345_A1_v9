@@ -3,14 +3,22 @@
 #define COMP_345_LoggingObserver_h
 
 #include <list>;
+#include <iostream>;
+#include <fstream>;
+
 using namespace std;
 
-//Needs to have a forward reference due to 
-//circular reference between Observer and Subject
+class ILoggable {
+public:
+	ILoggable();
+	~ILoggable();
+	virtual string stringToLog() = 0;
+};
+
 class Observer {
 public:
 	~Observer();
-	virtual void Update() = 0;
+	virtual void Update(ILoggable* i) = 0;
 protected:
 	Observer();
 };
@@ -19,12 +27,24 @@ class Subject {
 public:
 	virtual void Attach(Observer* o);
 	virtual void Detach(Observer* o);
-	virtual void Notify();
+	virtual void Notify(ILoggable* i);
 	Subject();
 	~Subject();
 private:
 	list<Observer*>* _observers;
 };
+
+class LogObserver : public Observer {
+public:
+	~LogObserver();
+
+	LogObserver(Subject* s);
+	void Update(ILoggable* i) override;
+protected:
+	LogObserver();
+	Subject* _subjects;
+};
+
 
 
 #endif

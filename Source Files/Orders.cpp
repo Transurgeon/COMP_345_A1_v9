@@ -196,7 +196,7 @@ Deploy::~Deploy() {
 
 //Validates the order
 bool Deploy::validate() {
-
+	return true;
 }
 
 //Executes the order
