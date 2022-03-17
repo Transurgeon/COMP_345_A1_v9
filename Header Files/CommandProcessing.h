@@ -35,11 +35,7 @@ private:
 	Command* commandList;
 public:
 	//Constructors, Destructors and Operators
-	CommandProcessor();
-	CommandProcessor(const CommandProcessor& copy);
-	CommandProcessor& operator =(const CommandProcessor& copy);
 	~CommandProcessor();
-	friend ostream& operator<<(ostream& output, CommandProcessor& o);
 
 	string stringToLog();
 	string readCommand();

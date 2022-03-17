@@ -37,23 +37,7 @@ ostream& operator<<(ostream& output, Command& o) {
 	return output;
 }
 
-CommandProcessor::CommandProcessor() {
-
-}
-
-CommandProcessor::CommandProcessor(const CommandProcessor& copy) {
-
-}
-
-CommandProcessor& CommandProcessor::operator =(const CommandProcessor& copy) {
-
-}
-
 CommandProcessor::~CommandProcessor() {
-
-}
-
-ostream& operator<<(ostream& output, CommandProcessor& o) {
 
 }
 
@@ -63,7 +47,7 @@ string CommandProcessor::stringToLog() {
 }
 
 string CommandProcessor::readCommand() {
-
+	return "test";
 }
 
 void CommandProcessor::getCommand() {
@@ -75,5 +59,5 @@ void CommandProcessor::saveCommand() {
 }
 
 bool CommandProcessor::validate() {
-
+	return true;
 }
