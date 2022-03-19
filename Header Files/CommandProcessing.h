@@ -32,7 +32,7 @@ public:
 
 class CommandProcessor : public ILoggable, Subject {
 private:
-	Command* commandList;
+	list<Command>* commandList;
 public:
 	//Constructors, Destructors and Operators
 	~CommandProcessor();
@@ -40,14 +40,23 @@ public:
 	string stringToLog();
 	string readCommand();
 	void getCommand();
-	void saveCommand();
+	void saveCommand(const string& c);
 	bool validate();
+};
+
+class FileLineReader {
+private:
+	ifstream inputFileStream;
+public:
+	FileLineReader(const string& filename);
+	string readLine();
 };
 
 class FileCommandProcessorAdapter : public CommandProcessor {
 private:
-	Command* commandList;
+	FileLineReader* fileLineReader;
 public:
-	
+	FileCommandProcessorAdapter(FileLineReader* flr);
+	string readCommand();
 };
 #endif

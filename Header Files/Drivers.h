@@ -7,5 +7,5 @@ void playerMain();
 void ordersMain();
 void cardsMain();
 void gameEngineMain();
- 
+void commandProcessorMain();
 #endif

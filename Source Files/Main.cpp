@@ -18,7 +18,8 @@ int main() {
 	case 5:
 		gameEngineMain();
 		break;
+	case 6:
+		commandProcessorMain();
 	}
-	 
 	return 0;
 }
