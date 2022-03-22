@@ -6,7 +6,7 @@
 #include "../Header Files/LoggingObserver.h"
 using namespace std;
 
-enum class GameState {
+enum GameState {
 	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win,
 };
 
@@ -41,7 +41,7 @@ public:
 	string readCommand();
 	void getCommand();
 	void saveCommand(const string& c);
-	bool validate();
+	string validate(GameState gs);
 };
 
 class FileLineReader {

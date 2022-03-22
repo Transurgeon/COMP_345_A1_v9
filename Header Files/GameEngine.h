@@ -6,6 +6,7 @@
 #include "../Header Files/Cards.h"
 #include "../Header Files/Orders.h"
 #include "../Header Files/Player.h"
+#include "../Header Files/CommandProcessing.h"
 #include <iostream>
 using namespace std;
 
@@ -15,6 +16,7 @@ private:
 	//adding private variables for the GameEngine
 	int playersNum;
 	vector<Player*> playerList;
+	GameState state;
 public:
 	//Dummy Constructors, Assignment Operator and Destructor
 	GameEngine();

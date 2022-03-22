@@ -1,0 +1,13 @@
+loadmap europe
+validatemap
+addplayer p1
+addplayer p2
+gamestart
+replay
+loadmap germany2
+incorrect command
+validatemap
+addplayer p3
+addplayer p4
+gamestart
+quit

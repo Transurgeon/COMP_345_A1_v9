@@ -172,6 +172,9 @@
     <None Include="Map Files\germany2.map" />
     <None Include="Map Files\Illes_Balears.map" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Map Files\test.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
