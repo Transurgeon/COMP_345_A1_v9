@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-void commandProcessorMain() {
+void commandProcessingMain() {
 
     string input = "";
     cout << "Hello" << endl;

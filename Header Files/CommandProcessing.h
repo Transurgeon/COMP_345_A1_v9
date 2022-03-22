@@ -2,7 +2,7 @@
 #ifndef COMP_345_CommandProcessing_h
 #define COMP_345_CommandProcessing_h
 
-#include <iostream>;
+#include <iostream>
 #include "../Header Files/LoggingObserver.h"
 using namespace std;
 

@@ -2,9 +2,9 @@
 #ifndef COMP_345_LoggingObserver_h
 #define COMP_345_LoggingObserver_h
 
-#include <list>;
-#include <iostream>;
-#include <fstream>;
+#include <list>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 

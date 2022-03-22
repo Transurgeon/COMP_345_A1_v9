@@ -2,7 +2,7 @@
 
 int main() {
 	
-	switch (6) {
+	switch (1) {
 	case 1:
 		mapMain();
 		break;
@@ -19,7 +19,7 @@ int main() {
 		gameEngineMain();
 		break;
 	case 6:
-		commandProcessorMain();
+		commandProcessingMain();
 	}
 	return 0;
 }

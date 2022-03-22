@@ -18,16 +18,16 @@
     <ClCompile Include="Source Files\Cards.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\CardsDriver.cpp">
+    <ClCompile Include="Driver Files\CardsDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\GameEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\GameEngineDriver.cpp">
+    <ClCompile Include="Driver Files\GameEngineDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\Main.cpp">
+    <ClCompile Include="Driver Files\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\Map.cpp">
@@ -39,13 +39,13 @@
     <ClCompile Include="Source Files\Orders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\OrdersDriver.cpp">
+    <ClCompile Include="Driver Files\OrdersDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\PlayerDriver.cpp">
+    <ClCompile Include="Driver Files\PlayerDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\LoggingObserver.cpp">
@@ -54,7 +54,10 @@
     <ClCompile Include="Source Files\CommandProcessing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\CommandDriver.cpp">
+    <ClCompile Include="Driver Files\CommandProcessingDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver Files\LoggingObserverDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
