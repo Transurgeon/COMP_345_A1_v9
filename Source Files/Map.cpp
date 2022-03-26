@@ -303,7 +303,8 @@ void Map::addTerritory(int con, string t) {
 }
 
 void Map::addContinent(int b, string n) {
-	continents.push_back(new Continent(continents.size() + 1, b, n));
+	int size = continents.size() + 1;
+	continents.push_back(new Continent(continents.size(), b, n));
 }
 
 void Map::addBorderRoot(int r) {

@@ -6,8 +6,8 @@
 #include "../Header Files/LoggingObserver.h"
 using namespace std;
 
-enum GameState {
-	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win,
+enum class GameState {
+	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win
 };
 
 class Command : public ILoggable, Subject {
@@ -32,9 +32,10 @@ public:
 
 class CommandProcessor : public ILoggable, Subject {
 private:
-	list<Command>* commandList;
+	list<Command*> commandList;
 public:
 	//Constructors, Destructors and Operators
+	CommandProcessor();
 	~CommandProcessor();
 
 	string stringToLog();

@@ -2,11 +2,11 @@
 #include <regex>
 
 Command::Command(string c) {
-	cmd = std::move(c);
+	cmd = c;
 }
 
 Command::Command(const Command& copy) {
-
+	cmd = copy.cmd;
 }
 
 Command& Command::operator =(const Command& copy) {
@@ -27,7 +27,7 @@ string Command::stringToLog() {
 }
 
 void Command::saveEffect(string e) {
-	effect = std::move(e);
+	effect = e;
 	Notify(this);
 }
 
@@ -43,9 +43,13 @@ CommandProcessor::~CommandProcessor() {
 
 }
 
+CommandProcessor::CommandProcessor() {
+
+}
+
 string CommandProcessor::stringToLog() {
 
-	return "Calling the CommandProcessor stringToLog \n The command is : " + commandList->back().getCommand();
+	return "Calling the CommandProcessor stringToLog \n The command is : " + commandList.back()->getCommand();
 }
 
 string CommandProcessor::readCommand() {
@@ -60,34 +64,33 @@ void CommandProcessor::getCommand() {
 }
 
 void CommandProcessor::saveCommand(const string& c) {
-	Command cmd (c);
-	commandList->push_back(cmd);
+	commandList.push_back(new Command(c));
 	Notify(this);
 }
 
 string CommandProcessor::validate(GameState gs) {
-	string cmd = commandList->back().getCommand();
+	string cmd = commandList.back()->getCommand();
 
 	if (regex_match(cmd, regex("loadmap\\s.+")) && (gs == GameState::start || gs == GameState::mapLoaded))
-		commandList->back().saveEffect("mapLoaded");
+		commandList.back()->saveEffect("mapLoaded");
 
 	else if (cmd == "validatemap" && gs == GameState::mapLoaded)
-		commandList->back().saveEffect("mapValidated");
+		commandList.back()->saveEffect("mapValidated");
 
 	else if (regex_match(cmd, regex("addplayer\\s.+")) && (gs == GameState::mapValidated || gs == GameState::playersAdded))
-		commandList->back().saveEffect("playersAdded");
+		commandList.back()->saveEffect("playersAdded");
 
 	else if (cmd == "gamestart" && gs == GameState::playersAdded)
-		commandList->back().saveEffect("assignReinforcements");
+		commandList.back()->saveEffect("assignReinforcements");
 
 	else if (cmd == "replay" && gs == GameState::win)
-		commandList->back().saveEffect("starting a new game");
+		commandList.back()->saveEffect("starting a new game");
 
 	else if (cmd == "quit" && gs == GameState::win)
-		commandList->back().saveEffect("exiting the program");
+		commandList.back()->saveEffect("exiting the program");
 
 	else
-		commandList->back().saveEffect("Error: Invalid input.");
+		commandList.back()->saveEffect("Error: Invalid input.");
 	return cmd;
 }
 
