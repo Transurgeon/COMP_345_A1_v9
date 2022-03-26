@@ -3,11 +3,14 @@
 
 GameEngine::GameEngine() {
 
+	cmdProc = new CommandProcessor();
+}
 
+GameEngine::GameEngine(CommandProcessor* cp) {
+	cmdProc = cp;
 }
 
 GameEngine::GameEngine(GameEngine& copy) {
-
 
 }
 
@@ -26,6 +29,21 @@ ostream& operator<<(ostream& output, GameEngine& t) {
 	return output;
 }
 
+void GameEngine::setState(GameState gs) {
+	state = gs;
+}
+
+GameState GameEngine::getState() {
+	return state;
+}
+
+void GameEngine::Transition() {
+	Notify(this);
+}
+
+string GameEngine::stringToLog() {
+	return "Running Game Engine: " + userCmd;
+}
 //runs game and follow structure of flow chart
 void GameEngine::startupPhase() {
 
@@ -91,7 +109,7 @@ void GameEngine::gameStart() {
 
 	cout << "Giving 50 troops to each player" << endl;
 	for (int j = 0; j < playersNum; j++) {
-		playerList.at(j)->setTroops(50);
+		//playerList.at(j)->setTroops(50);
 	}
 
 	cout << "Each player draws 2 cards from the deck to their hand" << endl;

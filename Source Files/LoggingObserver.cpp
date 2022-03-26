@@ -1,52 +1,53 @@
 #include "../Header Files/LoggingObserver.h"
-#include <iostream>
 using namespace std;
 
-ILoggable::ILoggable() {
+
+Subject::Subject() {
+    new LogObserver(this);
 }
 
-ILoggable::~ILoggable() {
+Subject::~Subject() {}
+
+void Subject::Attach(Observer* obs) {
+    _observers.push_back(obs);
 }
 
-Observer::Observer() {
+void Subject::Detach(Observer* obs) {
+    _observers.remove(obs);
 }
 
-Observer::~Observer() {
+void Subject::Notify(ILoggable* il) {
+    for (Observer* o : _observers) {
+        o->Update(il);
+    }
 }
+
+// Observer
+
+Observer::Observer() {}
+Observer::~Observer() {}
+// LogObserver class methods
 
 LogObserver::LogObserver(Subject* s) {
-	_subjects = s;
-	_subjects->Attach(this);
+    _subjects = s;
+    _subjects->Attach(this);
 }
 
 LogObserver::~LogObserver() {
-	_subjects->Detach(this);
+    _subjects->Detach(this);
 }
 
-void LogObserver::Update(ILoggable* i) {
-	ofstream fileStream;
-	fileStream.open("gamelog.txt", ofstream::app);
-	fileStream << i->stringToLog() << endl;
-	fileStream.close();
+void LogObserver::Update(ILoggable* il) {
+    ofstream ofs;
+    ofs.open("gameLog.txt", ofstream::app);
+    ofs << il->stringToLog() << endl;
+    ofs.close();
 }
 
-Subject::Subject() {
-	new LogObserver(this);
+ILoggable::ILoggable() {
+
 }
 
-Subject::~Subject() {
-}
+ILoggable::~ILoggable() {
 
-void Subject::Attach(Observer* o) {
-	_observers->push_back(o);
-}
-			
-void Subject::Detach(Observer* o) {
-	_observers->remove(o);
-}
-
-void Subject::Notify(ILoggable* i) {
-	for (Observer* o : *_observers) {
-		o->Update(i);
-	}
 }

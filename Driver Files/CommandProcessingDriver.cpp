@@ -6,92 +6,104 @@
 
 void commandProcessingMain() {
 
-	string input = "";
-	cout << "Hello" << endl;
-	cout << "Do you want to read commands from a file(1) or console(2)?" << endl;
-	cin >> input;
+    bool play = true;
+    bool* playPtr = &play;
+    bool readFromFile = false;
+    // Initialize var for keeping user's choice
+    string userChoice;
+    string* userChoicePtr = &userChoice;
 
-	bool play = true;
+        cout << "test" << endl;
+    // Initialize logObserver
+    auto* logObserver = new LogObserver();
+    auto* cp = new CommandProcessor();
 
-	GameState state = GameState::start;
-	GameEngine game;
-	auto* processor = new CommandProcessor();
-	string in = "";
+    if (readFromFile) {
+        string filename = "C:\\Users\\Admin\\Documents\\Github-VS_projects\\COMP_345_A1_v9\\Map Files\\test.txt";
+        auto* flr = new FileLineReader(filename);
+        cp = new FileCommandProcessorAdapter(flr);
+    }
+    else
+        cp = new CommandProcessor();
 
-	if (input == "1") {
-		cout << "Input command file name: ";
-		string fileName;
-		cin >> fileName;
+    auto* gameState = new GameEngine(cp);
+    GameEngine ge = *gameState;
 
-		auto* flr = new FileLineReader(fileName);
-		processor = new FileCommandProcessorAdapter(flr);
-	}
+    ge.setState(GameState::start);
 
-	else if (input == "2") {
-
-	}
-
-	/*
-		while (play) {
-
-			switch (state) {
-			case start:
-				//in = game.startFunc();
-				if (in == "loadmap") {
-					state = mapLoaded;
-				}
-				continue;
-			case mapLoaded:
-				//in = game.maploadedFunc();
-				if (in == "validatemap") {
-					state = mapValidated;
-				}
-				continue;
-			case mapValidated:
-				//in = game.mapvalidatedFunc();
-				if (in == "addplayer") {
-					state = playersAdded;
-				}
-				continue;
-			case playersAdded:
-				//in = game.playeraddedFunc();
-				if (in == "assigncountries") {
-					state = assignReinforcement;
-				}
-				continue;
-			case assignReinforcement:
-				//in = game.assignreinforcementFunc();
-				if (in == "issueorder") {
-					state = issueOrders;
-				}
-				continue;
-			case issueOrders:
-				//in = game.issueordersFunc();
-				if (in == "endissuorders") {
-					state = executeOrders;
-				}
-				continue;
-			case executeOrders:
-				//in = game.executeordersFunc();
-				if (in == "endexecorders") {
-					state = assignReinforcement;
-				}
-				else if (in == "win") {
-					state = win;
-				}
-				continue;
-			case win:
-				//in = game.winFunc();
-				if (in == "play") {
-					state = start;
-				}
-				else if (in == "end") {
-					play = false;
-					break;
-				}
-				continue;
-			default:
-				cout << "Error: Invalid input\n";
-			}
-	}*/
+    // while true keep the game playing.
+    while (*playPtr) {
+        switch (ge.getState()) {
+        case GameState::start:
+            //call 
+            *userChoicePtr = "loadmap";
+            if (*userChoicePtr == "loadmap") {
+                ge.Transition();
+                ge.setState(GameState::mapLoaded);
+            }
+        case GameState::mapLoaded:
+            //
+            *userChoicePtr = "validatemap";
+            if (*userChoicePtr == "validatemap") {
+                ge.Transition();
+                ge.setState(GameState::mapValidated);
+            }
+        case GameState::mapValidated:
+            //
+            *userChoicePtr = "addplayer";
+            if (*userChoicePtr == "addplayer") {
+                ge.Transition();
+                ge.setState(GameState::playersAdded);
+            }
+            /*case playeradded:
+                *userChoicePtr = ge.playeraddedFunc();
+                if (userChoice == "gamestart") {
+                    ge.setState(assignreignforcement);
+                }*/
+        case GameState::assignReinforcement:
+            //
+            *userChoicePtr = "issueorder";
+            if (userChoice == "issueorder") {
+                ge.setState(GameState::issueOrders);
+            }
+        case GameState::issueOrders:
+            //
+            *userChoicePtr = "endissuorders";
+            if (userChoice == "endissuorders") {
+                ge.setState(GameState::executeOrders);
+            }
+        case GameState::executeOrders:
+            //
+            *userChoicePtr = "endexecorders";
+            if (userChoice == "endexecorders") {
+                ge.setState(GameState::assignReinforcement);
+            }
+            else if (userChoice == "win") {
+                ge.setState(GameState::win);
+            }
+        case GameState::playersAdded:
+            //
+            *userChoicePtr = "assigncountries";
+            if (*userChoicePtr == "assigncountries") {
+                ge.Transition();
+                ge.setState(GameState::win);
+            }
+        case GameState::win:
+            //
+            *userChoicePtr = "quit";
+            if (*userChoicePtr == "replay") {
+                ge.Transition();
+                ge.setState(GameState::start);
+            }
+            else if (*userChoicePtr == "quit") {
+                // since the user chose to quit, therefore, change the bool to play false, to close.
+                ge.Transition();
+                *playPtr = false;
+                break;
+            }
+            continue;
+        default:
+            cout << "Error: Invalid input\n";
+        }
+    }
 };

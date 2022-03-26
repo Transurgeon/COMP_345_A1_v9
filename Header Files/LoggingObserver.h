@@ -2,48 +2,54 @@
 #ifndef COMP_345_LoggingObserver_h
 #define COMP_345_LoggingObserver_h
 
-#include <list>
 #include <iostream>
 #include <fstream>
+#include <list>
+#pragma once
 
 using namespace std;
+class ILoggable;
+class LogObserver;
+class Observer;
 
-class ILoggable {
+class Subject {
 public:
-	~ILoggable();
-	virtual string stringToLog() = 0;
-protected:
-	ILoggable();
+    Subject();
+    ~Subject();
+
+    void Detach(Observer* obs);
+    void Notify(ILoggable* il);
+
+    void Attach(Observer* obs);
+
+private:
+    list<Observer*> _observers;
 };
 
 class Observer {
 public:
-	~Observer();
-	virtual void Update(ILoggable* i) = 0;
-protected:
-	Observer();
+    Observer();
+    ~Observer();
+    virtual void Update(ILoggable* il) = 0;
 };
 
-class Subject {
+class ILoggable {
 public:
-	Subject();
-	~Subject();
-	virtual void Attach(Observer* o);
-	virtual void Detach(Observer* o);
-	virtual void Notify(ILoggable* i);
-	
-private:
-	list<Observer*>* _observers;
+    ILoggable();
+    ~ILoggable();
+    virtual string stringToLog() = 0;
+
 };
 
 class LogObserver : public Observer {
 public:
-	~LogObserver();
+    LogObserver() = default;
+    LogObserver(Subject* s);
+    ~LogObserver();
+    void Update(ILoggable* il) override;
 
-	LogObserver(Subject* s);
-	void Update(ILoggable* i);
 protected:
-	Subject* _subjects;
+    Subject* _subjects;
 };
 
 

@@ -1,129 +1,100 @@
 #include "../Header Files/CommandProcessing.h"
 #include <regex>
+#include <utility>
 
-Command::Command(string c) {
-	cmd = c;
-}
-
-Command::Command(const Command& copy) {
-	cmd = copy.cmd;
-}
-
-Command& Command::operator =(const Command& copy) {
-	return *this;
-}
-
-string Command::getEffect() {
-	return effect;
-}
-
-string Command::getCommand() {
-	return cmd;
-}
-
-string Command::stringToLog() {
-
-	return "Calling the Command stringToLog \n The effect is : " + effect;
+Command::Command(string cmd) {
+    command = std::move(cmd);
 }
 
 void Command::saveEffect(string e) {
-	effect = e;
-	Notify(this);
+    effect = std::move(e);
+    Notify(this);
 }
-
-Command::~Command() {
-
+string Command::stringToLog() {
+    return "Command stringToLog: " + effect;
 }
+/////////////////
 
-ostream& operator<<(ostream& output, Command& o) {
-	return output;
-}
-
-CommandProcessor::~CommandProcessor() {
-
-}
-
-CommandProcessor::CommandProcessor() {
-
-}
-
-string CommandProcessor::stringToLog() {
-
-	return "Calling the CommandProcessor stringToLog \n The command is : " + commandList.back()->getCommand();
+void CommandProcessor::getCommand() {
+    string cmd = readCommand();
+    saveCommand(cmd);
 }
 
 string CommandProcessor::readCommand() {
-	string input;
-	cout << "Hello, please enter a command: ";
-	cin >> input;
-	return input;
+    string cmd;
+    cout << "Please enter a command: \n";
+    getline(cin, cmd);
+    return cmd;
 }
 
-void CommandProcessor::getCommand() {
-	saveCommand(readCommand());
+void CommandProcessor::saveCommand(const string& cmd) {
+    Command c(cmd);
+    // Save effect
+    lc->push_back(c);
+    Notify(this);
 }
 
-void CommandProcessor::saveCommand(const string& c) {
-	commandList.push_back(new Command(c));
-	Notify(this);
-}
-
+// If valid, returns the passing command
 string CommandProcessor::validate(GameState gs) {
-	string cmd = commandList.back()->getCommand();
+    string c = lc->back().getCommandText();
 
-	if (regex_match(cmd, regex("loadmap\\s.+")) && (gs == GameState::start || gs == GameState::mapLoaded))
-		commandList.back()->saveEffect("mapLoaded");
+    regex loadRegex("loadmap\\s.+");
+    regex playerRegex("addplayer\\s.+");
 
-	else if (cmd == "validatemap" && gs == GameState::mapLoaded)
-		commandList.back()->saveEffect("mapValidated");
-
-	else if (regex_match(cmd, regex("addplayer\\s.+")) && (gs == GameState::mapValidated || gs == GameState::playersAdded))
-		commandList.back()->saveEffect("playersAdded");
-
-	else if (cmd == "gamestart" && gs == GameState::playersAdded)
-		commandList.back()->saveEffect("assignReinforcements");
-
-	else if (cmd == "replay" && gs == GameState::win)
-		commandList.back()->saveEffect("starting a new game");
-
-	else if (cmd == "quit" && gs == GameState::win)
-		commandList.back()->saveEffect("exiting the program");
-
-	else
-		commandList.back()->saveEffect("Error: Invalid input.");
-	return cmd;
+    // Loadmap is usable
+    if (regex_match(c, loadRegex) && (gs == GameState::start || gs == GameState::mapLoaded))
+        lc->back().saveEffect("maploaded");
+    // Validatemap is usable
+    else if (c == "validatemap" && gs == GameState::mapLoaded)
+        lc->back().saveEffect("mapvalidated");
+    // Addplayer is usable
+    else if (regex_match(c, playerRegex) && (gs == GameState::mapValidated || gs == GameState::playersAdded))
+        lc->back().saveEffect("playersadded");
+    // Gamestart is usable
+    else if (c == "gamestart" && gs == GameState::playersAdded)
+        lc->back().saveEffect("assignreinforcement");
+    // Replay is usable
+    else if (c == "replay" && gs == GameState::win)
+        lc->back().saveEffect("start");
+    // Quit is usable
+    else if (c == "quit" && gs == GameState::win)
+        lc->back().saveEffect("exit program");
+    // Command is not usable
+    else
+        lc->back().saveEffect("Error: Invalid input.");
+    return c;
 }
-
-
-FileLineReader::FileLineReader(const string& filename) {
-	inputFileStream.open(filename, ios::in);
-	if (!inputFileStream.is_open()) {
-		cout << "File cannot be opened, please try again (it might not even exist...).\n";
-		exit(0);
-	}
+string CommandProcessor::stringToLog() {
+    return "CommandProcessor stringToLog: " + lc->back().getCommandText();
 }
-
-string FileLineReader::readLine() {
-	string cmd;
-
-	// End if file is empty
-	if (inputFileStream.eof())
-	{
-		cout << "We have reached the end of the file.\n";
-		inputFileStream.close();
-		exit(0);
-	}
-
-	getline(inputFileStream, cmd);
-	cout << "Input from file is the following : " << cmd << endl;
-	return cmd;
-}
-
-FileCommandProcessorAdapter::FileCommandProcessorAdapter(FileLineReader* flr) { 
-	this->fileLineReader = flr;
-}
+//////////////
 
 string FileCommandProcessorAdapter::readCommand() {
+    return flr->readLineFromFile();
+}
 
-	return fileLineReader->readLine();
+//////////////
+
+FileLineReader::FileLineReader(const string& filename) {
+    inputFileStream.open(filename, ios::in);
+    if (!inputFileStream.is_open()) {
+        cout << "File does not exist or cannot be opened.\n";
+        exit(0);
+    }
+}
+
+string FileLineReader::readLineFromFile() {
+    string cmd;
+
+    // End if file is empty
+    if (inputFileStream.eof())
+    {
+        cout << "End of file.\n";
+        inputFileStream.close();
+        exit(0);
+    }
+
+    getline(inputFileStream, cmd);
+    cout << "INPUT: " << cmd << endl;
+    return cmd;
 }

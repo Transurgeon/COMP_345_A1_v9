@@ -10,54 +10,57 @@ enum class GameState {
 	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win
 };
 
-class Command : public ILoggable, Subject {
-private:
-	string cmd;
-	string effect;
+class Command :public ILoggable, public Subject {
 public:
-	//Constructors, Destructors and Operators
-	Command(string c);
-	Command(const Command& copy);
-	Command& operator =(const Command& copy);
-	
-	//getters
-	string getEffect();
-	string getCommand();
-	string stringToLog();
-	void saveEffect(string e);
+    Command() = default;
+    Command(string cmd);
+    ~Command() = default;
+    void saveEffect(string e);
+    string getEffect() { return effect; }
+    string getCommandText() { return command; }
+    string stringToLog() override;
+private:
+    string command;
+    string effect;
 
-	~Command();
-	friend ostream& operator<<(ostream& output, Command& o);
 };
 
-class CommandProcessor : public ILoggable, Subject {
-private:
-	list<Command*> commandList;
-public:
-	//Constructors, Destructors and Operators
-	CommandProcessor();
-	~CommandProcessor();
 
-	string stringToLog();
-	string readCommand();
-	void getCommand();
-	void saveCommand(const string& c);
-	string validate(GameState gs);
+// TARGET
+class CommandProcessor : public ILoggable, public Subject {
+public:
+    CommandProcessor() = default;
+    ~CommandProcessor() = default;
+    void getCommand();
+    string validate(GameState gs);
+    string stringToLog() override;
+protected:
+
+
+private:
+    virtual string readCommand();
+    void saveCommand(const string& cmd);
+    list<Command>* lc = new list<Command>();
 };
 
+// ADAPTEE
 class FileLineReader {
-private:
-	ifstream inputFileStream;
 public:
-	FileLineReader(const string& filename);
-	string readLine();
+    FileLineReader(const string& filename);
+    ~FileLineReader() = default;
+    string readLineFromFile();
+private:
+    ifstream inputFileStream;
 };
 
+// ADAPTER
 class FileCommandProcessorAdapter : public CommandProcessor {
-private:
-	FileLineReader* fileLineReader;
 public:
-	FileCommandProcessorAdapter(FileLineReader* flr);
-	string readCommand();
+    FileCommandProcessorAdapter(FileLineReader* flr) { this->flr = flr; }
+    ~FileCommandProcessorAdapter() = default;
+protected:
+    string readCommand();
+private:
+    FileLineReader* flr;
 };
 #endif
