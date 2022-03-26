@@ -20,6 +20,10 @@ int main() {
 		break;
 	case 6:
 		commandProcessingMain();
+		break;
+	case 7:
+		loggingObserverMain();
+		break;
 	}
 	return 0;
 }
