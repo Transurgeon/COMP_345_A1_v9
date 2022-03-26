@@ -149,7 +149,7 @@
     <ClCompile Include="Source Files\LoggingObserver.cpp" />
     <ClCompile Include="Driver Files\Main.cpp" />
     <ClCompile Include="Source Files\Map.cpp" />
-    <ClCompile Include="Source Files\MapDriver.cpp" />
+    <ClCompile Include="Driver Files\MapDriver.cpp" />
     <ClCompile Include="Source Files\Orders.cpp" />
     <ClCompile Include="Driver Files\OrdersDriver.cpp" />
     <ClCompile Include="Source Files\Player.cpp" />

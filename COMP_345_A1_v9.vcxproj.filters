@@ -33,7 +33,7 @@
     <ClCompile Include="Source Files\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source Files\MapDriver.cpp">
+    <ClCompile Include="Driver Files\MapDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\Orders.cpp">
