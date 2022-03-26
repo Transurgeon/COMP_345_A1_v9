@@ -100,28 +100,27 @@ public:
 class Advance : public Order, public ILoggable, public Subject {
 private:
 	Territory* targetTerritory;
-	
+	Territory* t1;
+	Territory* t2;
+	int troopNum;
 public:
 	//attributes for executing the advance order
 	Player* p1;
-	int t1;
-	int t2;
-	int troopNum;
 
-	Advance(Player* p1, int t1, int t2, int troopNum);
 	//Constructors, Destructors and Operators
 	Advance(); 
 	Advance(const Advance& advance);
+	Advance(Player* p1, Territory* t1, Territory* t2, int troopNum);
 	Advance& operator=(const Advance& advance);
 	friend std::ostream& operator<<(std::ostream& out, const Advance& advance);
 	string* getType();
 	~Advance();
 
 	//Validates the order
-	bool validate();
+	virtual bool validate();
 
 	//Executes the order
-	void execute();
+	virtual void execute();
 
 	//stringTolog from observer
 	string stringToLog() override;
@@ -140,7 +139,7 @@ public:
 	//Constructors, Destructors and Operators
 	Bomb();
 	Bomb(const Bomb& Bomb);
-	Bomb(Player* p1, Territory* targetTerritory;);
+	Bomb(Player* p1, Territory* targetTerritory);
 	Bomb& operator=(const Bomb& Bomb);
 	friend std::ostream& operator<<(std::ostream& out, const Bomb& Bomb);
 	string* getType();
@@ -165,12 +164,12 @@ private:
 public:
 	//attributes for executing the blockade order
 	Player* p1;
-	int t1;
 
-	Blockade(Player* p1, int t1);
+	
 	//Constructors, Destructors and Operators
 	Blockade(); 
 	Blockade(const Blockade& Blockade);
+	Blockade(Player* p1, Territory* targetTerritory);
 	Blockade& operator=(const Blockade& Blockade);
 	friend std::ostream& operator<<(std::ostream& out, const Blockade& Blockade);
 	string* getType();
@@ -191,18 +190,18 @@ public:
 class AirLift : public Order, public ILoggable, public Subject {
 private:
 	Territory* targetTerritory;
-	
+	Territory* t1;
+	Territory* t2;
+	int troopNum;
 public:
 	//attributes for executing the airlift order
 	Player* p1;
-	int t1;
-	int t2;
-	int troopNum;
 
-	AirLift(Player* p1, int t1, int t2, int troopNum);
+	
 	//Constructors, Destructors and Operators
 	AirLift(); 
 	AirLift(const AirLift& AirLift);
+	AirLift(Player* p1, Territory* t1, Territory* t2, int troopNum);
 	AirLift& operator=(const AirLift& AirLift);
 	friend std::ostream& operator<<(std::ostream& out, const AirLift& AirLift);
 	string* getType();
