@@ -7,88 +7,78 @@ using namespace std;
 /// </summary>
 Territory::Territory()
 {
-	continentNum = new int(0);
-	countryNum = new int(0);
-	title = new string("");
-	playerNum = new int(0);
-	numberOfArmies = new int(0);
+	continentNum = 0;
+	countryNum = 0;
+	title = "";
+	playerNum = 0;
+	numberOfArmies = 0;
 }
 
 Territory::Territory(int con, int cou, string t)
 {
-	continentNum = new int(con);
-	countryNum = new int(cou);
-	title = new string(t);
-	playerNum = new int(0);
-	numberOfArmies = new int(0);
+	continentNum = con;
+	countryNum = cou;
+	title = t;
+	playerNum = 0;
+	numberOfArmies = 0;
 }
 
 Territory::Territory(const Territory& copy)
 {
-	continentNum = new int(*copy.continentNum);
-	countryNum = new int(*copy.countryNum);
-	title = new string(*copy.title);
-	playerNum = new int(*copy.playerNum);
-	numberOfArmies = new int(*copy.numberOfArmies);
+	continentNum = copy.continentNum;
+	countryNum = copy.countryNum;
+	title = copy.title;
+	playerNum = copy.playerNum;
+	numberOfArmies = copy.numberOfArmies;
 }
 
 Territory& Territory::operator =(const Territory& copy)
 {
-	continentNum = new int(*copy.continentNum);
-	countryNum = new int(*copy.countryNum);
-	title = new string(*copy.title);
-	playerNum = new int(*copy.playerNum);
-	numberOfArmies = new int(*copy.numberOfArmies);
+	continentNum = copy.continentNum;
+	countryNum = copy.countryNum;
+	title = copy.title;
+	playerNum = copy.playerNum;
+	numberOfArmies = copy.numberOfArmies;
 	return *this;
 }
 
 void Territory::setPlayer(int p)
 {
-	*playerNum = p;
+	playerNum = p;
 }
 
 void Territory::setArmy(int a)
 {
-	*numberOfArmies = a;
+	numberOfArmies = a;
 }
 
 int Territory::getContinentNum()
 {
-	return *continentNum;
+	return continentNum;
 }
 
 int Territory::getCountryNum()
 {
-	return *countryNum;
+	return countryNum;
 }
 
 string Territory::getName()
 {
-	return *title;
+	return title;
 }
 
 int Territory::getPlayer()
 {
-	return *playerNum;
+	return playerNum;
 }
 
 int Territory::getArmy() {
 
-	return *numberOfArmies;
+	return numberOfArmies;
 }
 
 Territory::~Territory()
 {
-	delete continentNum;
-	delete countryNum;
-	delete title;
-	delete playerNum;
-	delete numberOfArmies;
-	continentNum = NULL;
-	countryNum = NULL;
-	title = NULL;
-	playerNum = NULL;
-	numberOfArmies = NULL;
 }
 
 ostream& operator<<(ostream& output, Territory& t)
@@ -106,46 +96,46 @@ ostream& operator<<(ostream& output, Territory& t)
 /// </summary>
 Continent::Continent()
 {
-	continentNum = new int(-1);
-	bonus = new int(-1);
-	continentName = new string("");
+	continentNum = -1;
+	bonus = -1;
+	continentName = "";
 }
 
 Continent::Continent(int c, int b, string n)
 {
-	continentNum = new int(c);
-	bonus = new int(b);
-	continentName = new string(n);
+	continentNum = c;
+	bonus = b;
+	continentName = n;
 }
 
 Continent::Continent(const Continent& copy)
 {
-	continentNum = new int(*copy.continentNum);
-	bonus = new int(*copy.bonus);
-	continentName = new string(*copy.continentName);
+	continentNum = copy.continentNum;
+	bonus = copy.bonus;
+	continentName = copy.continentName;
 }
 
 Continent& Continent::operator =(const Continent& copy)
 {
-	continentNum = new int(*copy.continentNum);
-	bonus = new int(*copy.bonus);
-	continentName = new string(*copy.continentName);
+	continentNum = copy.continentNum;
+	bonus = copy.bonus;
+	continentName = copy.continentName;
 	return *this;
 }
 
 int Continent::getContinentNum()
 {
-	return *continentNum;
+	return continentNum;
 }
 
 int Continent::getBonus()
 {
-	return *bonus;
+	return bonus;
 }
 
 string Continent::getContinentName()
 {
-	return *continentName;
+	return continentName;
 }
 
 ostream& operator<<(ostream& output, Continent& c)
@@ -156,55 +146,49 @@ ostream& operator<<(ostream& output, Continent& c)
 
 Continent::~Continent()
 {
-	delete continentNum;
-	delete bonus;
-	delete continentName;
-	continentNum = NULL;
-	bonus = NULL;
-	continentName = NULL;
 }
 /// <summary>
 /// Border
 /// </summary>
 Border::Border()
 {
-	root = new int(-1);
+	root = -1;
 }
 
 Border::Border(int r)
 {
-	root = new int(r);
+	root = r;
 }
 
 Border::Border(const Border& copy)
 {
-	root = new int(*copy.root);
+	root = copy.root;
 	edges = copy.edges;
 }
 
 Border& Border::operator =(const Border& copy)
 {
-	root = new int(*copy.root);
+	root = copy.root;
 	edges = copy.edges;
 	return *this;
 }
 
 void Border::addRoot(int r)
 {
-	*root = r;
+	root = r;
 }
 
 void Border::addEdge(int e)
 {
-	edges.push_back(new int(e));
+	edges.push_back(e);
 }
 
 int Border::getRoot()
 {
-	return *root;
+	return root;
 }
 
-vector<int*> Border::getEdges()
+vector<int> Border::getEdges()
 {
 	return edges;
 }
@@ -212,9 +196,9 @@ vector<int*> Border::getEdges()
 ostream& operator<<(ostream& output, Border& b)
 {
 	output << "The border connects from " << b.getRoot() << " to ";
-	for (int* i : b.getEdges())
+	for (int i : b.getEdges())
 	{
-		output << *i << ", ";
+		output << i << ", ";
 	}
 	output << endl;
 	return output;
@@ -222,14 +206,7 @@ ostream& operator<<(ostream& output, Border& b)
 
 Border::~Border()
 {
-	delete root;
-	root = nullptr;
-
-	for (int* i : edges)
-	{
-		delete i;
-		i = nullptr;
-	}
+	edges.clear();
 }
 
 /// <summary>
@@ -269,7 +246,7 @@ bool Map::validate()
 	vector<int> reachedContinents;
 	int start = 1;
 
-	checkTerritoriesAndContinents(&start, &reachedTerritories, &reachedContinents);
+	checkTerritoriesAndContinents(start, &reachedTerritories, &reachedContinents);
 
 	if (reachedTerritories.size() != territories.size() || reachedContinents.size() != continents.size())
 		return false;
@@ -294,27 +271,27 @@ bool Map::validate()
 }
 
 //Checks if all territories can be reached from one node
-void Map::checkTerritoriesAndContinents(int* currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents) {
+void Map::checkTerritoriesAndContinents(int currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents) {
 
-	int index = (*currentTerritory) - 1;
+	int index = currentTerritory - 1;
 	int continentNum = territories[index]->getContinentNum();
 
-	if (!checkDuplicates(&continentNum, passedContinents))
+	if (!checkDuplicates(continentNum, passedContinents))
 		passedContinents->push_back(continentNum);
 
 	if (!checkDuplicates(currentTerritory, passedTerritories)) {
 
-		passedTerritories->push_back(*currentTerritory);
-		for (int* i : (*borders[index]).getEdges()) {
+		passedTerritories->push_back(currentTerritory);
+		for (int i : (*borders[index]).getEdges()) {
 			checkTerritoriesAndContinents(i, passedTerritories, passedContinents);
 		}
 	}
 }
 
-bool Map::checkDuplicates(int* currentTerritory, vector<int>* passedTerritories) {
+bool Map::checkDuplicates(int currentTerritory, vector<int>* passedTerritories) {
 
 	for (int i : *passedTerritories) {
-		if (i == *currentTerritory)
+		if (i == currentTerritory)
 			return true;
 	}
 	return false;
@@ -368,21 +345,9 @@ ostream& operator<<(ostream& output, Map& m)
 
 Map::~Map()
 {
-	for (Territory* i : territories)
-	{
-		delete i;
-		i = nullptr;
-	}
-	for (Continent* i : continents)
-	{
-		delete i;
-		i = nullptr;
-	}
-	for (Border* i : borders)
-	{
-		delete i;
-		i = nullptr;
-	}
+	territories.clear();
+	continents.clear();
+	borders.clear();
 }
 
 /// <summary>

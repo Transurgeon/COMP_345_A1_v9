@@ -13,11 +13,11 @@ using namespace std;
 
 class Territory {
 private:
-    int* continentNum;
-    int* countryNum;
-    string* title;
-    int* playerNum;
-    int* numberOfArmies;
+    int continentNum;
+    int countryNum;
+    string title;
+    int playerNum;
+    int numberOfArmies;
 
 public:
     //Constructors, Assignment Operator and Destructor
@@ -42,9 +42,9 @@ public:
 
 class Continent {
 private:
-    int* continentNum;
-    int* bonus;
-    string* continentName;
+    int continentNum;
+    int bonus;
+    string continentName;
 
 public:
     //Constructors, Assignment Operator and Destructor
@@ -65,8 +65,8 @@ public:
 class Border {
 
 private:
-    int* root;
-    vector<int*> edges;
+    int root;
+    vector<int> edges;
 
 public:
     //Constructors, Assignment Operator and Destructor
@@ -80,7 +80,7 @@ public:
     void addRoot(int r);
     void addEdge(int e);
     int getRoot();
-    vector<int*> getEdges();
+    vector<int> getEdges();
 
     
 };
@@ -101,9 +101,9 @@ public:
     //Validate method, used to check if class is valid
     bool validate();
     //Method used to check if all nodes are connected
-    void checkTerritoriesAndContinents(int* currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents);
+    void checkTerritoriesAndContinents(int currentTerritory, vector<int>* passedTerritories, vector<int>* passedContinents);
     //Custom defined .contains() function for vector since C++ does not have one
-    bool checkDuplicates(int* currentTerritory, vector<int>* passedTerritories);
+    bool checkDuplicates(int currentTerritory, vector<int>* passedTerritories);
 
     //Adds objects to map object using constructors
     void addTerritory(int con, string t);
