@@ -116,8 +116,6 @@ public:
 };
 
 class MapLoader {
-private:
-    static vector<Map*> loadedMaps;
 
 public:
     //Constructors, Assignment Operator and Destructor
@@ -128,16 +126,7 @@ public:
     ~MapLoader();
 
     //Add maps and reads file user inputs
-    static void addMap();
-
-    //Validates all maps user added
-    static void validateMaps();
-
-    //Print all maps for user
-    static void showAllMaps();
-
-    //Deletes all maps for later use
-    static void deleteAllMaps();
+    static Map addMap(string fileName);
 };
 //Helper .split() method for reading lines in map files
 vector<string> splitString(string str);

@@ -5,7 +5,5 @@
 
 void gameEngineMain() {
 	
-	//GameEngine *game = new GameEngine();
-	
 	GameEngine::startupPhase();
 }

@@ -354,43 +354,24 @@ Map::~Map()
 /// <summary>
 /// MapLoader
 /// </summary>
-MapLoader::MapLoader()
-{
+MapLoader::MapLoader() {}
 
-}
+MapLoader::MapLoader(const MapLoader& copy) {}
 
-MapLoader::MapLoader(const MapLoader& copy)
-{
+MapLoader& MapLoader::operator =(const MapLoader& copy) { return *this; }
 
-}
+MapLoader::~MapLoader() {}
 
-MapLoader& MapLoader::operator =(const MapLoader& copy)
-{
-	return *this;
-}
+ostream& operator<<(ostream& output, MapLoader& ml) { return output; }
 
-MapLoader::~MapLoader()
-{
 
-}
-
-ostream& operator<<(ostream& output, MapLoader& ml)
-{
-	return output;
-}
-
-vector<Map*> MapLoader::loadedMaps;
-
-void MapLoader::addMap() {
+Map MapLoader::addMap(string fileName) {
 	//adds empty map object
-	loadedMaps.push_back(new Map());
+	Map returnMap;
 	int section = 0;
 	bool skip;
 
-	cout << "Input map file name: ";
-	string fileName;
-	cin >> fileName;
-
+	
 	//reads file and fill map object
 	string myText;
 	ifstream myReadFile("./Map Files/" + fileName);
@@ -415,19 +396,19 @@ void MapLoader::addMap() {
 					switch (section) {
 					case 1:
 						if (split.size() >= 3) {
-							loadedMaps[loadedMaps.size() - 1]->addContinent(stoi(split[1]), split[0]);
+							returnMap.addContinent(stoi(split[1]), split[0]);
 						}
 						break;
 					case 2:
 						if (split.size() >= 3) {
-							loadedMaps[loadedMaps.size() - 1]->addTerritory(stoi(split[2]), split[1]);
+							returnMap.addTerritory(stoi(split[2]), split[1]);
 						}
 						break;
 					case 3:
 						if (split.size() >= 1) {
-							loadedMaps[loadedMaps.size() - 1]->addBorderRoot(stoi(split[0]));
+							returnMap.addBorderRoot(stoi(split[0]));
 							for (int i = 1; i < split.size(); i++) {
-								loadedMaps[loadedMaps.size() - 1]->addBorderEdge(stoi(split[0]), stoi(split[i]));
+								returnMap.addBorderEdge(stoi(split[0]), stoi(split[i]));
 							}
 						}
 						break;
@@ -438,37 +419,6 @@ void MapLoader::addMap() {
 		}
 	}
 	myReadFile.close();
-}
-
-//Validates maps, deletes them if not valid
-void MapLoader::validateMaps() {
-	int i = 0;
-	int index = 0;
-	while (index < loadedMaps.size()) {
-		i++;
-		if (!loadedMaps[index]->validate()) {
-			cout << "Map " << i << " is not valid" << endl;
-			loadedMaps.erase(loadedMaps.begin() + index);
-		}
-		else
-		{
-			cout << "Map " << i << " is valid" << endl;
-			index++;
-		}
-	}
-	
-}
-
-void MapLoader::showAllMaps() {
-	int index = 1;
-	for (Map* i : loadedMaps) {
-		cout<< endl << "*****************************************"
-			<< endl << "               Map " << index
-			<< endl << "*****************************************"
-			<< endl << endl;
-		cout << *i;
-		index++;
-	}
 }
 
 vector<string> splitString(string str) {
@@ -484,9 +434,4 @@ vector<string> splitString(string str) {
 	}
 
 	return split;
-}
-
-void MapLoader::deleteAllMaps() {
-
-	loadedMaps.clear();
 }

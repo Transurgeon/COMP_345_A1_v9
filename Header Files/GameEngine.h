@@ -16,40 +16,48 @@ class GameEngine : public ILoggable, public Subject {
 private:
 	//adding private variables for the GameEngine
 	int playersNum;
-	//vector<Player*> playerList;
-	GameState state;
+	// vector<Player*> playerList;
+	GameState* state;
 	CommandProcessor* cmdProc;
-	string userCmd;
+	Map* currentMap;
 public:
-	//Dummy Constructors, Assignment Operator and Destructor
-	GameEngine();
-	GameEngine(CommandProcessor* cp);
-	GameEngine(GameEngine& copy);
-	GameEngine& operator =(const GameEngine& copy);
-	~GameEngine();
+	
 
-	void setState(GameState gs);
-	GameState getState();
-	void Transition();
-	string stringToLog() override;
+	
 	//Begins game engine
 	//changed runGameEngine to startupPhase();
-	static void startupPhase();
+	void startupPhase();
 	
 	//Follows structure of flow chart
-	static void loadAndValidateMap();
-	static int addPlayers();
+	void loadMap(string fileName);
+	bool validateMap();
+	void deleteMap();
+	void addPlayer();
 	
 	//added new function called gameStart() and mainGameLoop;
 	void gameStart();
 	void mainGameLoop();
 
-	static void assignReinforcements();
-	static void issueOrders();
-	static bool executeOrders();
+	void assignReinforcements();
+	void issueOrders();
+	void executeOrders();
 	
 	
-	static void gameOver();
+	void gameOver();
+
+
+
+	//Methods for Game
+	/*void setState(GameState gs);
+	GameState getState();
+	void Transition();
+	string stringToLog() override;*/
+
+	//Constructors, Assignment Operator and Destructor
+	GameEngine();
+	GameEngine(GameEngine& copy);
+	GameEngine& operator =(const GameEngine& copy);
+	~GameEngine();
 };
 
 ostream& operator<<(ostream& output, GameEngine& t);
