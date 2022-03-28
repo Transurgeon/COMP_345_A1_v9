@@ -225,7 +225,7 @@ bool Player::containsTerritory(Territory* territory) {
 
 bool Player::canAttack(Territory* territory) {
     for (int i = 0; i < playerAttackList->size(); i++) {
-        if (playerAttackList->at(i)->getTerritoryId() == territory->getTerritoryId()) {
+        if (playerAttackList->at(i)->getCountryNum() == territory->getCountryNum()) {
             return false;
         }
 
@@ -235,7 +235,7 @@ bool Player::canAttack(Territory* territory) {
 
 bool Player::alreadyOwn(Territory* territory) {
     for (int i = 0; i < playerTerritoryList->size(); i++) {
-        if (playerTerritoryList->at(i)->getTerritoryId() == territory->getTerritoryId()) {
+        if (playerTerritoryList->at(i)->getCountryNum() == territory->getCountryNum()) {
             return true;
         }
 
@@ -334,34 +334,7 @@ Territory* Player::getTerritoryByName(string name, vector<Territory*>* territory
 
 }
 void Player::issueOrders(Order* order) {
-    //add the order in the order list
-
-//    cout<<"Player "<<playerName<<"'s turn:"<<endl;
-//    while(armyNum>0){
-//        cout<<"Your army number is: "<<armyNum<<endl;
-//        cout<<"Your attack list is: "<<endl;
-//        displayTerritory(playerAttackList);
-//        cout<<"Your defending list is: "<<endl;
-//        displayTerritory(playerTerritoryList);
-//        string input;
-//        cout<<"You can now deploy, which territory you would like to deploy?"<<endl;
-//        cin>>input;
-//        string territoryName=input;
-//        cout<<"\n";
-//        if(this->containTerritoryByName(territoryName,playerAttackList)){
-//            cout<<"How many armies you want to deploy to this territory?"<<endl;
-//            cin>>input;
-//            Deploy *deploy1 = new Deploy(this, getTerritoryByName(territoryName,playerAttackList), stoi(input));
-//
-//            orderList->setOrderList(deploy1);
-//
-//        }else{
-//            cout<<"you cannot attack this territory"<<endl;
-//        }
-//
-//
-//
-//    }
+ 
     orderList->setOrderList(order);
 
 }
@@ -442,7 +415,7 @@ void Player::switchTerritories(Territory* territory, Player* player1, Player* pl
 int Player::getPlayerNumOfTerritoriesInContinent(int id) {
     int numOfTerritories = 0;
     for (int index = 0; index < playerTerritoryList->size(); index++) {
-        if (playerTerritoryList->at(index)->getContinentId() == id) {
+        if (playerTerritoryList->at(index)->getContinentNum() == id) {
             numOfTerritories++;
         }
     }
@@ -502,16 +475,3 @@ Order* Player::getOrderbyType(string orderType) {
     cout << "this player does not contain this order" << endl;
     return nullptr;
 }
-/*
-void Player::printOrder()
-{
-
-        vector<Order*> *listOfOrders = orderList->getOrderList();
-    vector<Order*>::iterator it = listOfOrders->begin();
-    for (; it != listOfOrders->end(); it++)
-    {
-        cout << (*it)->getOrderType() << " ";
-    }
-    cout << endl;
-}
-*/

@@ -2,15 +2,15 @@
 
 int main() {
 	
-	switch (6) {
+	switch (3) {
 	case 1:
 		mapMain();
 		break;
 	case 2:
-		//playerMain();
+		playerMain();
 		break;
 	case 3:
-		//ordersMain();
+		ordersMain();
 		break;
 	case 4:
 		cardsMain();

@@ -37,7 +37,7 @@ public:
     int getPlayer();
     int getArmy();
 
-    
+    void neutralState();
 };
 
 
@@ -114,6 +114,12 @@ public:
     vector<Territory*> getTerritories();
     vector<Continent*> getContinents();
     vector<Border*> getBorders();
+    //new functions
+    bool isAdjacentTerritory(Territory* source, Territory* target); 
+    vector<Territory*> getAllAdjacentTerritories(Territory territory);
+    int getNumOfTerritoriesInContinent(int id);
+    int getLastContinentId();
+    int getArmyContinentBonus(int continentId);
 };
 
 class MapLoader {

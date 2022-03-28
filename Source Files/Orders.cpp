@@ -183,7 +183,7 @@ void Deploy::execute() {
 
     if (validate()) {
         //        player->removeArmyNum(armies);
-        targetTerritory->setNumArmies(targetTerritory->getNumArmies() + armies);
+        targetTerritory->setArmy(targetTerritory->getArmy() + armies);
         cout << "Deploy is executed: " << armies << " armies has been deployed to the territory " << targetTerritory->getName() << "\n" << endl;
     }
     else {
@@ -200,7 +200,7 @@ void Deploy::execute2(Map* map) {
 
     if (validate2(map)) {
         //        player->removeArmyNum(armies);
-        targetTerritory->setNumArmies(targetTerritory->getNumArmies() + armies);
+        targetTerritory->setArmy(targetTerritory->getArmy() + armies);
         cout << "Deploy is executed: " << armies << " armies has been deployed to the territory " << targetTerritory->getName() << "\n" << endl;
     }
     else {
@@ -259,7 +259,7 @@ Advance& Advance::operator = (const Advance& Ao) {
 
 
 bool Advance::validate() {
-    if (player->containsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getNumArmies() >= armies) {
+    if (player->containsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getArmy() >= armies) {
         cout << "Advance is valid and can be executed.\n" << endl;
         return true;
     }// &&map->isAdjacentTerritory(fromTerritory, toTerritory)
@@ -273,7 +273,7 @@ bool Advance::validate() {
 //If the source territory does not belong to the player that issued the order, the order is invalid.
 //If the target territory is not adjacent to the source territory, the order is invalid.
 bool Advance::validate2(Map* map) {
-    if (player->containsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getNumArmies() >= armies) {
+    if (player->containsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getArmy() >= armies) {
         cout << "Advance is valid and can be executed.\n" << endl;
         return true;
     }// &&map->isAdjacentTerritory(fromTerritory, toTerritory)
@@ -290,19 +290,19 @@ void Advance::execute() {
         if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory))
         {
 
-            fromTerritory->setNumArmies(fromTerritory->getNumArmies() - armies);
-            toTerritory->setNumArmies(toTerritory->getNumArmies() + armies);
+            fromTerritory->setArmy(fromTerritory->getArmy() - armies);
+            toTerritory->setArmy(toTerritory->getArmy() + armies);
             cout << "Advance is executed: Advance " << armies << " armies from " << fromTerritory->getName() << " to " << toTerritory->getName() << "\n" << endl;
             //  advanceExecute = "Advance is executed: Advance "+armyNumber+" armies from "+fromTerritory->getName()+" to "+toTerritory->getName()+"\n";
         }
         else {
             if (getAttackable()) {
-                fromTerritory->setNumArmies(fromTerritory->getNumArmies() - armies);
-                while (toTerritory->getNumArmies() > 0 && armies > 0) {
+                fromTerritory->setArmy(fromTerritory->getArmy() - armies);
+                while (toTerritory->getArmy() > 0 && armies > 0) {
 
                     srand(time(NULL));
                     if (rand() % 10 < 6) {// Each attacking army unit involved has 60% chances of killing one defending army
-                        toTerritory->setNumArmies(toTerritory->getNumArmies() - 1);
+                        toTerritory->setArmy(toTerritory->getArmy() - 1);
                         cout << "Advance is executed: There is one army on " << toTerritory->getName() << "has been killed.\n";
                         advanceExecute = "Advance is executed: There is one army on " + toTerritory->getName() + " as defender has been killed.\n";
                     }
@@ -311,15 +311,15 @@ void Advance::execute() {
                         cout << "Advance is executed: There is one army from" + fromTerritory->getName() + " as attacker has been killed. \n";
                         advanceExecute = "Advance is executed: There is one army on " + fromTerritory->getName() + " as attacker has been killed. \n";
                     }
-                    cout << "Now there is " << toTerritory->getNumArmies() << " armies left on the " << toTerritory->getName() << endl;
+                    cout << "Now there is " << toTerritory->getArmy() << " armies left on the " << toTerritory->getName() << endl;
                 }
-                if (toTerritory->getNumArmies() == 0) {
+                if (toTerritory->getArmy() == 0) {
                     toTerritory->setPlayer(player->getPlayerId());
                     player->addTerritory(toTerritory);
                     targetPlayer->removeTerritory(toTerritory);
                     //                    switch territory from 2 players
                     //                    targetPlayer->switchTerritories(toTerritory,targetPlayer,player);
-                    toTerritory->setNumArmies(toTerritory->getNumArmies() + armies);
+                    toTerritory->setArmy(toTerritory->getArmy() + armies);
                     player->getHand()->addCard(card);
                     cout << "The target territory now is belongs to player" + player->getPlayerName() + " and gets a random card" << endl;
                     advanceExecute += "The target territory now is belongs to player" + player->getPlayerName() + " and gets a random card";
@@ -347,19 +347,19 @@ void Advance::execute2(Map* map) {
         if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory))
         {
 
-            fromTerritory->setNumArmies(fromTerritory->getNumArmies() - armies);
-            toTerritory->setNumArmies(toTerritory->getNumArmies() + armies);
+            fromTerritory->setArmy(fromTerritory->getArmy() - armies);
+            toTerritory->setArmy(toTerritory->getArmy() + armies);
             cout << "Advance is executed: Advance " << armies << " armies from " << fromTerritory->getName() << " to " << toTerritory->getName() << "\n" << endl;
             //  advanceExecute = "Advance is executed: Advance "+armyNumber+" armies from "+fromTerritory->getName()+" to "+toTerritory->getName()+"\n";
         }
         else {
             if (getAttackable()) {
-                fromTerritory->setNumArmies(fromTerritory->getNumArmies() - armies);
-                while (toTerritory->getNumArmies() > 0 && armies > 0) {
+                fromTerritory->setArmy(fromTerritory->getArmy() - armies);
+                while (toTerritory->getArmy() > 0 && armies > 0) {
 
                     srand(time(NULL));
                     if (rand() % 10 < 6) {// Each attacking army unit involved has 60% chances of killing one defending army
-                        toTerritory->setNumArmies(toTerritory->getNumArmies() - 1);
+                        toTerritory->setArmy(toTerritory->getArmy() - 1);
                         cout << "Advance is executed: There is one army on " << toTerritory->getName() << "has been killed.\n";
                         advanceExecute = "Advance is executed: There is one army on " + toTerritory->getName() + " as defender has been killed.\n";
                     }
@@ -368,14 +368,14 @@ void Advance::execute2(Map* map) {
                         cout << "Advance is executed: There is one army from" + fromTerritory->getName() + " as attacker has been killed. \n";
                         advanceExecute = "Advance is executed: There is one army on " + fromTerritory->getName() + " as attacker has been killed. \n";
                     }
-                    cout << "Now there is " << toTerritory->getNumArmies() << " armies left on the " << toTerritory->getName() << endl;
+                    cout << "Now there is " << toTerritory->getArmy() << " armies left on the " << toTerritory->getName() << endl;
                     // advanceExecute = "Now there is " +armyOnTarget+" armies left on the "+toTerritory->getName()+"\n.";
                 }
-                if (toTerritory->getNumArmies() == 0) {
+                if (toTerritory->getArmy() == 0) {
                     toTerritory->setPlayer(player->getPlayerId());
                     //                    player->addTerritory(toTerritory);
                     targetPlayer->switchTerritories(toTerritory, targetPlayer, player);
-                    toTerritory->setNumArmies(toTerritory->getNumArmies() + armies);
+                    toTerritory->setArmy(toTerritory->getArmy() + armies);
                     player->getHand()->addCard(card);
                     cout << "The target territory now is belongs to player" + player->getPlayerName() + " and gets a random card" << endl;
                     advanceExecute += "The target territory now is belongs to player" + player->getPlayerName() + " and gets a random card";
@@ -464,7 +464,7 @@ bool Bomb::validate2(Map* map) {
 
 void Bomb::execute() {
     if (validate() && player->getHand()->getCardByType(bomb) && getAttackable()) {
-        targetTerritory->setNumArmies(targetTerritory->getNumArmies() / 2);
+        targetTerritory->setArmy(targetTerritory->getArmy() / 2);
         cout << "Bomb is executed: the armies on target Territory " << targetTerritory->getName() << " has been removed half by the issuer. \n" << endl;
         bombExecute = "Bomb is executed: the armies on target Territory " + targetTerritory->getName() + " has been removed half by the issuer. \n";
     }
@@ -478,7 +478,7 @@ void Bomb::execute() {
 //If the target belongs to an enemy player, half of the armies are removed from this territory.
 void Bomb::execute2(Map* map) {
     if (validate2(map) && player->getHand()->getCardByType(bomb) && getAttackable()) {
-        targetTerritory->setNumArmies(targetTerritory->getNumArmies() / 2);
+        targetTerritory->setArmy(targetTerritory->getArmy() / 2);
         cout << "Bomb is executed: the armies on target Territory " << targetTerritory->getName() << " has been removed half by the issuer. \n" << endl;
         bombExecute = "Bomb is executed: the armies on target Territory " + targetTerritory->getName() + " has been removed half by the issuer. \n";
     }
@@ -560,7 +560,7 @@ bool Blockade::validate2(Map* map) {
 
 void Blockade::execute() {
     if (validate() && player->getHand()->getCardByType(blockade)) {
-        targetTerritory->setNumArmies(targetTerritory->getNumArmies() * 2);
+        targetTerritory->setArmy(targetTerritory->getArmy() * 2);
         targetTerritory->neutralState();
         cout << "Blockade is executed: The army on territory " << targetTerritory->getName() << " has been doubled ,and the ownership of this territory has been transferred to neutral.\n" << endl;
         blockadeExecute = "Blockade is executed: The army on territory " + targetTerritory->getName() + " has been doubled ,and the ownership of this territory has been transferred to neutral.\n";
@@ -577,7 +577,7 @@ void Blockade::execute() {
 // which must be created if it does not already exist.
 void Blockade::execute2(Map* map) {
     if (validate2(map) && player->getHand()->getCardByType(blockade)) {
-        targetTerritory->setNumArmies(targetTerritory->getNumArmies() * 2);
+        targetTerritory->setArmy(targetTerritory->getArmy() * 2);
         targetTerritory->neutralState();
         cout << "Blockade is executed: The army on territory " << targetTerritory->getName() << " has been doubled ,and the ownership of this territory has been transferred to neutral.\n" << endl;
         blockadeExecute = "Blockade is executed: The army on territory " + targetTerritory->getName() + " has been doubled ,and the ownership of this territory has been transferred to neutral.\n";
@@ -634,7 +634,7 @@ Airlift& Airlift::operator = (const Airlift& Airo) {
 };
 
 bool Airlift::validate() {
-    if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory) && fromTerritory->getNumArmies() > armies) {
+    if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory) && fromTerritory->getArmy() > armies) {
         cout << "airlift is valid and can be executed\n" << endl;
         return true;
     }
@@ -646,7 +646,7 @@ bool Airlift::validate() {
 //• The target territory does not need to be adjacent to the source territory.
 //• If the source or target does not belong to the player that issued the order, the order is invalid.
 bool Airlift::validate2(Map* map) {
-    if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory) && fromTerritory->getNumArmies() > armies) {
+    if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory) && fromTerritory->getArmy() > armies) {
         cout << "airlift is valid and can be executed\n" << endl;
         return true;
     }
@@ -657,8 +657,8 @@ bool Airlift::validate2(Map* map) {
 
 void Airlift::execute() {
     if (validate() && player->getHand()->getCardByType(airlift)) {
-        fromTerritory->setNumArmies(fromTerritory->getNumArmies() - armies);
-        toTerritory->setNumArmies(toTerritory->getNumArmies() + armies);
+        fromTerritory->setArmy(fromTerritory->getArmy() - armies);
+        toTerritory->setArmy(toTerritory->getArmy() + armies);
         cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory " << fromTerritory->getName() << " to the target territory " << toTerritory->getName() << "\n" << endl;
 
     }
@@ -673,8 +673,8 @@ void Airlift::execute() {
 // then the selected number of armies is moved from the source to the target territory.
 void Airlift::execute2(Map* map) {
     if (validate2(map) && player->getHand()->getCardByType(airlift)) {
-        fromTerritory->setNumArmies(fromTerritory->getNumArmies() - armies);
-        toTerritory->setNumArmies(toTerritory->getNumArmies() + armies);
+        fromTerritory->setArmy(fromTerritory->getArmy() - armies);
+        toTerritory->setArmy(toTerritory->getArmy() + armies);
         cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory " << fromTerritory->getName() << " to the target territory " << toTerritory->getName() << "\n" << endl;
 
     }

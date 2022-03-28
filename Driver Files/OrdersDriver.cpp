@@ -34,25 +34,6 @@ void ordersMain() {
     player2->addTerritory(territory3);
     player2->addTerritory(territory4);
 
-   /* territory1->setContinentName("North-America");
-    territory2->setContinentName("North-America");
-    territory3->setContinentName("North-America");
-    territory4->setContinentName("North-America");
-
-
-    map->addTerritory(*territory1, 0);
-    map->addTerritory(*territory2, 0);
-    map->addTerritory(*territory3, 2);
-    map->addTerritory(*territory4, 3);*/
-
-    //verify player has hand by adding cards
-    // player1->getHandLimit();
-
-
-
-
-/*    void callOrdersDriver() {*/
-        //Orders
     cout << "creating deploy order---------" << endl;
     Deploy* deploy1 = new Deploy(player1, territory1, 3);
 

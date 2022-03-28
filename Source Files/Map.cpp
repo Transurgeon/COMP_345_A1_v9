@@ -82,6 +82,10 @@ int Territory::getArmy() {
 	return numberOfArmies;
 }
 
+void Territory::neutralState() {
+	playerNum = -1;
+}
+
 Territory::~Territory()
 {
 }
@@ -304,7 +308,7 @@ bool Map::checkDuplicates(int currentTerritory, vector<int>* passedTerritories) 
 
 
 void Map::addTerritory(int con, string t) {
-	territories.push_back(new Territory(con, territories.size() + 1, t));
+	territories.push_back(new Territory(con, territories.size() + 1, 0, t));
 }
 
 void Map::addContinent(int b, string n) {
@@ -332,6 +336,43 @@ vector<Border*> Map::getBorders() {
 	return borders;
 }
 
+bool Map::isAdjacentTerritory(Territory* source, Territory* target) {
+	for (int i = 0; i < this->territories.size(); ++i) {
+		
+	}
+	return false;
+}
+//needs updating
+vector<Territory*> Map::getAllAdjacentTerritories(Territory territory) {
+	int territoryId = territory.getCountryNum();
+	vector<Territory*> adjTerritories;
+
+	return adjTerritories;
+}
+
+int Map::getNumOfTerritoriesInContinent(int id) {
+	int numOfTerritories = 0;
+	for (int index = 0; index < this->territories.size(); ++index) {
+		if (territories[index][0].getContinentNum() == id) {
+			numOfTerritories++;
+		}
+	}
+	return numOfTerritories;
+}
+
+int Map::getLastContinentId() {
+	Territory lastTerritory = territories[this->territories.size() - 1][0];
+	return lastTerritory.getContinentNum();
+}
+
+int Map::getArmyContinentBonus(int continentId) {
+	for (int index = 0; index < this->territories.size(); ++index) {
+		if (territories[index][0].getContinentNum() == continentId) {
+
+		}
+	}
+	return 0;
+}
 ostream& operator<<(ostream& output, Map& m)
 {
 	for (Territory* i : m.getTerritories())
@@ -424,6 +465,7 @@ Map MapLoader::addMap(string fileName) {
 		}
 	}
 	myReadFile.close();
+	return returnMap;
 }
 
 vector<string> splitString(string str) {

@@ -3,8 +3,8 @@
 #define COMP_345_Drivers_h
 
 void mapMain();
-//void playerMain();
-//void ordersMain();
+void playerMain();
+void ordersMain();
 void cardsMain();
 void gameEngineMain();
 void commandProcessingMain();

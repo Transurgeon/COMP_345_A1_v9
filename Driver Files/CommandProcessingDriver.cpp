@@ -26,32 +26,4 @@ void commandProcessingMain() {
     else
         cp = new CommandProcessor();
 
-    auto* gameState = new GameEngine(cp);
-    GameEngine ge = *gameState;
-
-    ge.setState(GameState::start);
-
-    while (*playPtr) {
-        switch (ge.getState()) {
-        case GameState::start:
-            ge.startupPhase();
-            ge.mainGameLoop();
-            
-        case GameState::win:
-            *userChoicePtr = ge.winFunc();
-            if (*userChoicePtr == "replay") {
-                ge.Transition();
-                ge.setState(GameState::start);
-            }
-            else if (*userChoicePtr == "quit") {
-                // since the user chose to quit, therefore, change the bool to play false, to close.
-                ge.Transition();
-                *playPtr = false;
-                break;
-            }
-            continue;
-        default:
-            cout << "Error: Invalid input\n";
-        }
-    }
 };
