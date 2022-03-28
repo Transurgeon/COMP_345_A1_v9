@@ -257,8 +257,8 @@ public:
 	~Negotiate();
 
 	//Validates the order
-	virtual bool validate()
-		virtual bool validate2(Map* map) override;
+	virtual bool validate();
+	virtual bool validate2(Map* map) override;
 
 	//Executes the order
 	virtual void execute();

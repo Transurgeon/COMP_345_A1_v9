@@ -5,7 +5,6 @@
 //runs game and follow structure of flow chart
 void GameEngine::startupPhase() {
 
-	cmdProc = new CommandProcessor();
 	cout << "Starting Game " << endl;
 	//int players = addPlayer();
 	int currentPlayer = 0;
@@ -28,20 +27,23 @@ void GameEngine::startupPhase() {
 }
 
 void GameEngine::loadMap(string fileName) {
-	*state = GameState::mapLoaded;
+	state = GameState::mapLoaded;
 	deleteMap();
 	*currentMap = MapLoader::addMap(fileName);
+	cout << "Adding or changing Map";
 }
 
 bool GameEngine::validateMap() {
 
 	if (currentMap->validate()) {
-		*state = GameState::mapValidated;
+		state = GameState::mapValidated;
 		return true;
+		cout << "Map is valid, please add players";
 	}
 
-	*state = GameState::start;
+	state = GameState::start;
 	deleteMap();
+	cout << "Map is not valid, return to start screen";
 	return false;
 }
 
@@ -53,17 +55,16 @@ void GameEngine::deleteMap() {
 
 }
 
-void GameEngine::addPlayer() {
+void GameEngine::addPlayer(string name) {
 
-	cout << "Adding Players " << endl;
-	string input;
-	int players = 1;
-	do {
-		players++;
-		cout << "Number of players: " << players << endl;
-		cout << "Do you want to add another player? (Type \"yes\" if you agree, anything else otherwise) ";
-		cin >> input;
-	} while (input == "yes");
+	state = GameState::playersAdded;
+	if (playerList.size() < 6) {
+		playerList.push_back(name);
+		cout << "Player " + name + " was added";
+	}
+	else {
+		cout << "Too many players, " + name + " was not added";
+	}
 }
 
 void GameEngine::gameStart() {
@@ -147,8 +148,8 @@ void GameEngine::gameOver() {
 //}
 
 GameEngine::GameEngine() {
-	playersNum = 0;
-	state = new GameState(GameState::start);
+	playerList = vector<string>();
+	state = GameState::start;
 	cmdProc = new CommandProcessor();
 	currentMap = nullptr;
 }
@@ -157,6 +158,11 @@ GameEngine::GameEngine(GameEngine& copy) {}
 
 GameEngine& GameEngine::operator =(const GameEngine& copy) { return *this; }
 
-GameEngine::~GameEngine() {}
+GameEngine::~GameEngine() {
+	delete cmdProc;
+	delete currentMap;
+	cmdProc = nullptr;
+	currentMap = nullptr;
+}
 
 ostream& operator<<(ostream& output, GameEngine& t) { return output; }
