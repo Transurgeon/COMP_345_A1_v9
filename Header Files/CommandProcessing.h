@@ -7,7 +7,7 @@
 using namespace std;
 
 enum class GameState {
-	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win
+	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win, exitProgram
 };
 
 class Command :public ILoggable, public Subject {

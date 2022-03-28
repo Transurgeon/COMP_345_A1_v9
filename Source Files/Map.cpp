@@ -10,7 +10,7 @@ Territory::Territory()
 	continentNum = 0;
 	countryNum = 0;
 	title = "";
-	playerNum = 0;
+	playerNum = -1;
 	numberOfArmies = 0;
 }
 
@@ -19,7 +19,7 @@ Territory::Territory(int con, int cou, string t)
 	continentNum = con;
 	countryNum = cou;
 	title = t;
-	playerNum = 0;
+	playerNum = -1;
 	numberOfArmies = 0;
 }
 
@@ -50,6 +50,11 @@ void Territory::setPlayer(int p)
 void Territory::setArmy(int a)
 {
 	numberOfArmies = a;
+}
+
+void Territory::addArmy(int a) 
+{
+	numberOfArmies += a;
 }
 
 int Territory::getContinentNum()

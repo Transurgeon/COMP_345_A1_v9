@@ -9,6 +9,7 @@
 #include "../Header Files/CommandProcessing.h"
 #include "../Header Files/LoggingObserver.h"
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 
@@ -59,6 +60,9 @@ public:
 	GameEngine& operator =(const GameEngine& copy);
 	~GameEngine();
 };
+
+int random(int min, int max);
+bool checkNumber(string str);
 
 ostream& operator<<(ostream& output, GameEngine& t);
 

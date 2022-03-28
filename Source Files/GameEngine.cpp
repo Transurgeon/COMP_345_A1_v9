@@ -5,25 +5,36 @@
 //runs game and follow structure of flow chart
 void GameEngine::startupPhase() {
 
-	cout << "Starting Game " << endl;
-	//int players = addPlayer();
-	int currentPlayer = 0;
-	do {
-		cout << endl << "Player " << currentPlayer + 1 << " is playing:" << endl << endl;
-		assignReinforcements();
-		issueOrders();
-		currentPlayer = (currentPlayer + 1) ;
-	} while (false);//(!executeOrders());
+	cout << "Starting Game\n";
+	cout << "Enter a command\n";
 
-	string input;
-	cout << "Do you want to play again? (Type \"yes\" if you agree, anything else otherwise) ";
-	cin >> input;
-	if (input == "yes") {
-		startupPhase();
-	}
-	else {
-		gameOver();
-	}
+	do {
+		cmdProc->getCommand();
+		cmdProc->validate(state);
+		switch (state)
+		{
+		case GameState::mapLoaded:
+			loadMap("map");
+			break;
+		case GameState::mapValidated:
+			validateMap();
+			break;
+		case GameState::playersAdded:
+			addPlayer("name");
+			break;
+		case GameState::assignReinforcement:
+			if (playerList.size() >= 2) {
+				gameStart();
+			}
+			else {
+				cout << "Too few players, game can't start until reach 2";
+				state = GameState::playersAdded;
+			}
+			break;
+		} state: {
+
+		}
+	} while (state != GameState::exitProgram);
 }
 
 void GameEngine::loadMap(string fileName) {
@@ -69,19 +80,76 @@ void GameEngine::addPlayer(string name) {
 
 void GameEngine::gameStart() {
 	cout << "Fairly distributing territories to the players" << endl;
-
+	vector<Territory*> territories = currentMap->getTerritories();
+	int leftOverTerritories = territories.size();
+	int currentTerritory = random(0, territories.size() -1);
+	int currentPlayer = 0;
+	while (leftOverTerritories > 0) {
+		if (territories[currentTerritory]->getPlayer() == -1) {
+			territories[currentTerritory]->setPlayer(currentPlayer);
+			//playerList[currentPlayer].addTerritory(currentTerritory);
+			currentPlayer = (currentPlayer + 1) % playerList.size();
+			leftOverTerritories--;
+		}
+		currentTerritory = (currentTerritory + random(1, leftOverTerritories)) % territories.size();
+	}
 	cout << "Determining a random order of play for the players" << endl;
 
+	std::random_shuffle(playerList.begin(), playerList.end());
+
+	cout << "The order will be: ";
+	for (int i = 0; i < playerList.size()-1;i++)
+	{
+		cout << playerList[i] + ", ";
+	}
+	cout << playerList[playerList.size() - 1] << endl;
+
 	cout << "Giving 50 troops to each player" << endl;
-	for (int j = 0; j < playersNum; j++) {
-		//playerList.at(j)->setTroops(50);
+	int troops;
+	string input;
+	for (int i = 0; i < playerList.size(); i++) {
+		cout << playerList[i] << " will choose where to place their troops:\n";
+		troops = 50;
+		currentTerritory = 0;
+		do {
+			cout << "Remaining troops: " + troops << endl;
+			while (territories[currentTerritory]->getPlayer() == i) {currentTerritory++;}
+
+			cout << "How many troops do you want to place on " << territories[currentTerritory]->getName() <<"?\n";
+			cin >> input;
+			while (!checkNumber(input) || stoi(input) < 0 || stoi(input) > troops) {
+				cout << "Incorrect input! Please make sure to write a whole number between 0 and " + troops << endl;
+			}
+			territories[currentTerritory]->addArmy(stoi(input));
+			cout << input + " troops were added to " + territories[currentTerritory]->getName() + ", making the total troops "
+				<< territories[currentTerritory]->getArmy() << " on that terrtitory.\n";
+
+		} while (troops > 0);
+		cout << "\n\n\n";
 	}
 
 	cout << "Each player draws 2 cards from the deck to their hand" << endl;
-	for (int j = 0; j < playersNum; j++) {
-		//playerList.at(j)->getPlayerCards.draw();
-		//playerList.at(j)->getPlayerCards.draw();
+	for (int j = 0; j < playerList.size(); j++) {
+		//playerList[j]->getPlayerCards.draw();
+		//playerList[j]->getPlayerCards.draw();
 	}
+}
+
+int random(int min, int max)
+{
+	static bool first = true;
+	if (first){
+		srand(time(NULL));
+		first = false;
+	}
+	return min + rand() % ((max + 1) - min);
+}
+
+bool checkNumber(string str) {
+	for (int i = 0; i < str.length(); i++)
+		if (isdigit(str[i]) == false)
+			return false;
+	return true;
 }
 
 void GameEngine::mainGameLoop() {

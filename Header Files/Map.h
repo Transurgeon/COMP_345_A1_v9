@@ -30,6 +30,7 @@ public:
     //Setters and Getters
     void setPlayer(int p);
     void setArmy(int a);
+    void addArmy(int a);
     int getContinentNum();
     int getCountryNum();
     string getName();
