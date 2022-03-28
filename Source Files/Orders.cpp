@@ -593,8 +593,10 @@ string Bomb::stringToLog() {
 /// Blockade
 /// </summary>
 
-Blockade::Blockade(Player* p1, int t1) {
-
+Blockade::Blockade(Player* player, Territory* targetTerritory) : Order(player) {
+	this->targetTerritory = targetTerritory;
+	this->player = player;
+	cout << "The order Blockade is been placed with issuer " << player->getPlayerId() << " targeting to the territory " << targetTerritory->getName() << "\n" << endl;
 }
 //Constructors, Destructors and Operators
 Blockade::Blockade() {
@@ -603,51 +605,94 @@ Blockade::Blockade() {
 }
 
 Blockade::Blockade(const Blockade& Blockade) {
-	this->type = *new string(Blockade.type);
+	this->player = Blockade.player;
+	this->targetTerritory = Blockade.targetTerritory;
 }
 
 Blockade& Blockade::operator=(const Blockade& Blockade) {
-	this->type = *new string(Blockade.type);
+	Order::operator=(Blockade);
+	player = Blockade.player;
+	targetTerritory = Blockade.targetTerritory;
 	return *this;
-}
+};
 
-ostream& operator<<(std::ostream& output, Blockade& Blockade) {
-	output << "The Order is Blockade" << endl;
-	return output;
-}
-
-string* Blockade::getType() {
-	return &type;
-}
+//string* Blockade::getType() {
+//	return &type;
+//}
 
 Blockade::~Blockade() {
-
+	delete this->targetTerritory;
+	delete this;
 }
 
 //Validates the order
 bool Blockade::validate() {
-	return true;
+	if (player->containsTerritory(targetTerritory)) {
+		cout << "blockade is valid and can be executed.\n" << endl;
+		return true;
+	}
+	else
+		cout << "this territory is not belongs to the order issuer, the blockade is invalid" << endl;
+	return false;
+}
+
+bool Blockade::validate2(Map* map) {
+	if (player->containsTerritory(targetTerritory)) {
+		cout << "blockade is valid and can be executed.\n" << endl;
+		return true;
+	}
+	else
+		cout << "this territory is not belongs to the order issuer, the blockade is invalid" << endl;
+	return false;
 }
 
 //Executes the order
 void Blockade::execute() {
-	if (validate())
-	{
-		cout << "Order is Valid: Executing Blockade Order" << endl;
+	if (validate() && player->getHand()->getCardByType(blockade)) {
+		targetTerritory->setNumArmies(targetTerritory->getNumArmies() * 2);
+		targetTerritory->neutralState();
+		cout << "Blockade is executed: The army on territory " << targetTerritory->getName() << " has been doubled ,and the ownership of this territory has been transferred to neutral.\n" << endl;
+		blockadeExecute = "Blockade is executed: The army on territory " + targetTerritory->getName() + " has been doubled ,and the ownership of this territory has been transferred to neutral.\n";
+	}
+	else {
+		cout << "Blockade cannot be executed" << endl;
+		blockadeExecute = "Blockade cannot be executed";
 	}
 
-	else
-	{
-		cout << "Order is Invalid: Invalid Blockade Order" << endl;
+	Notify(this);
+}
+//If the target territory belongs to the player issuing the order,
+// the number of armies on the territory is doubled and the ownership of the territory is transferred to the Neutral player,
+// which must be created if it does not already exist.
+void Blockade::execute2(Map* map) {
+	if (validate2(map) && player->getHand()->getCardByType(blockade)) {
+		targetTerritory->setNumArmies(targetTerritory->getNumArmies() * 2);
+		targetTerritory->neutralState();
+		cout << "Blockade is executed: The army on territory " << targetTerritory->getName() << " has been doubled ,and the ownership of this territory has been transferred to neutral.\n" << endl;
+		blockadeExecute = "Blockade is executed: The army on territory " + targetTerritory->getName() + " has been doubled ,and the ownership of this territory has been transferred to neutral.\n";
 	}
+	else {
+		cout << "Blockade cannot be executed" << endl;
+		blockadeExecute = "Blockade cannot be executed";
+	}
+
+	Notify(this);
 }
 
+
+string Blockade::stringToLog() {
+	return blockadeExecute;
+}
 
 /// <summary>
 /// AirLift
 /// </summary>
 
-AirLift::AirLift(Player* p1, int t1, int t2, int troopNum) {
+AirLift(Player* p1, Territory* t1, Territory* t2, int troopNum) {
+	this->t1 = t1;
+	this->t2 = t2;
+	this->troopNum = troopNum;
+	cout << "The order Blockade is been placed with issuer " << player->getPlayerId() << " from territory " << t1->getName() << " to territory " << t2->getName() << "\n" << endl;
 
 }
 //Constructors, Destructors and Operators
@@ -657,43 +702,84 @@ AirLift::AirLift() {
 }
 
 AirLift::AirLift(const AirLift& AirLift) {
-	this->type = *new string(AirLift.type);
+	this->t1 = AirLift.t1;
+	this->t2 = AirLift.t2;
 }
 
 AirLift& AirLift::operator=(const AirLift& AirLift) {
-	this->type = *new string(AirLift.type);
+	Order::operator=(AirLift);
+	t1 = AirLift.t1;
+	t2 = AirLift.t2;
 	return *this;
 }
 
-ostream& operator<<(std::ostream& output, AirLift& AirLift) {
-	output << "The Order is AirLift" << endl;
-	return output;
-}
-
-string* AirLift::getType() {
-	return &type;
-}
+//string* AirLift::getType() {
+//	return &type;
+//}
 
 AirLift::~AirLift() {
-
+	delete this->t1;
+	delete this->t2;
+	delete this;
 }
 
-//Validates the order
 bool AirLift::validate() {
-	return true;
+	if (player->containsTerritory(t1) && player->containsTerritory(t2) && t1->getNumArmies() > armies) {
+		cout << "airlift is valid and can be executed\n" << endl;
+		return true;
+	}
+	else
+		cout << "The airlift order is invalid\n";
+	return false;
 }
 
-//Executes the order
-void AirLift::execute() {
-	if (validate())
-	{
-		cout << "Order is Valid: Executing AirLift Order" << endl;
+//• The target territory does not need to be adjacent to the source territory.
+//• If the source or target does not belong to the player that issued the order, the order is invalid.
+bool Airlift::validate2(Map* map) {
+	if (player->containsTerritory(t1) && player->containsTerritory(t2) && t1->getNumArmies() > armies) {
+		cout << "airlift is valid and can be executed\n" << endl;
+		return true;
+	}
+	else
+		cout << "The airlift order is invalid\n";
+	return false;
+}
+
+void Airlift::execute() {
+	if (validate() && player->getHand()->getCardByType(airlift)) {
+		auto armyNumber = std::to_string(troopNum);
+		fromTerritory->setNumArmies(fromTerritory->getNumArmies() - troopNum);
+		t2->setNumArmies(t2->getNumArmies() + armies);
+		cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory " << fromTerritory->getName() << " to the target territory " << toTerritory->getName() << "\n" << endl;
+		airliftExecute = "Airlift is executed: The player has moved " + armyNumber + " armies from the source territory " + fromTerritory->getName() + " to the target territory " + toTerritory->getName() + "\n";
+	}
+	else {
+		cout << "No airlift card is creating or airlift order is invalid" << endl;
+		airliftExecute = "No airlift card is creating or airlift order is invalid";
 	}
 
-	else
-	{
-		cout << "Order is Invalid: Invalid AirLift Order" << endl;
+	Notify(this);
+}
+//If both the source and target territories belong to the player that issue the airlift order,
+// then the selected number of armies is moved from the source to the target territory.
+void Airlift::execute2(Map* map) {
+	if (validate2(map) && player->getHand()->getCardByType(airlift)) {
+		auto armyNumber = std::to_string(armies);
+		fromTerritory->setNumArmies(fromTerritory->getNumArmies() - armies);
+		toTerritory->setNumArmies(toTerritory->getNumArmies() + armies);
+		cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory " << fromTerritory->getName() << " to the target territory " << toTerritory->getName() << "\n" << endl;
+		airliftExecute = "Airlift is executed: The player has moved " + armyNumber + " armies from the source territory " + fromTerritory->getName() + " to the target territory " + toTerritory->getName() + "\n";
 	}
+	else {
+		cout << "No airlift card is creating or airlift order is invalid" << endl;
+		airliftExecute = "No airlift card is creating or airlift order is invalid";
+	}
+
+	Notify(this);
+}
+
+string Airlift::stringToLog() {
+	return airliftExecute;
 }
 
 /// <summary>
