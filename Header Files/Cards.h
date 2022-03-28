@@ -5,74 +5,69 @@
 #include <iostream>
 using namespace std;
 
-enum Card_Types {bomb,reinforcement, blockade, airlift, diplomacy};
+enum CardType { bomb = 1, reinforcement = 2, blockade = 3, airlift = 4, diplomacy = 5 };
 
 class Card;
 class Deck;
 class Hand;
 
 class Card {
-private:
-    Card_Types cardType;
 public:
-    //Constructors, Destructors and Operators
+    // Constructor that initializes the card as the specified card type
+    Card(CardType ct);
+    // Constructor that initializes the card to a random card type
     Card();
-    Card(Card_Types c);
+    // Copy Constructor
     Card(const Card& c);
+    void play(int index, Hand& player, Deck& deck);
+    friend ostream& operator<<(ostream& output, Card& C);
     Card& operator=(const Card& c);
-    ~Card();
-    friend ostream& operator<<(ostream& output, Card& c);
-
-    //Play method
-    void play(int pos, Hand& p, Deck& d);
-
+    CardType getCardType() { return cardType; }
+private:
+    CardType cardType;
 };
 
 class Deck {
-private:
-    int deckSize;
-    int top;
-    int bot;
-    Card* deckCards;
 public:
-    //Constructors, Destructors and Operators
+    // Constructor that initializes the deck with a specified deck size
+    Deck(int deckSize);
+    // Constructor that initializes the deck with the set size of 52
     Deck();
-    Deck(int s);
+    // Copy Constructor
     Deck(const Deck& d);
-    Deck& operator=(const Deck& d);
+    // Destructor
     ~Deck();
-    friend ostream& operator<<(ostream& output, Deck& D);
-
-    //Draw methods
-    void draw(Hand& p);
-    void returnToDeck(Card& nC);
+    void draw(Hand& player);
+    void returnToDeck(Card& newCard);
+    friend ostream& operator<<(ostream& output, const Deck& D);
+    Deck& operator=(const Deck& d);
+private:
+    int size;
+    Card* cards;
 };
 
 class Hand {
-private:
-    int handSize;
-    int maxSize;
-    Card* handCards;
 public:
-    //Constructors, Destructors and Operators
+    // Constructor that initializes the hand with a specified hand size
+    Hand(int handSize);
+    // Constructor that initializes the hand with the set size of 12
     Hand();
-    Hand(int s);
+    // Copy Constructor
     Hand(const Hand& h);
-    Hand& operator=(const Hand& h);
+    // Destructor
     ~Hand();
-    friend ostream& operator<<(ostream& output, Hand& H);
-
-    //Getters
-    int getHandSize();
-    int getMaxSize();
-
-    //Add, search and remove methods
-    void addCard(Card* nC);
-    Card* searchCard(int pos);
-    Card removeCard(int pos);
-
-
-    
+    void addCard(Card* newCard);
+    int getHandSize() { return size; }
+    int getHandLimit() { return limit; }
+    Card removeCardAtIndex(int index);
+    Card* getCardAtIndex(int index) { return &cards[index]; }
+    friend ostream& operator<<(ostream& output, const Hand& H);
+    Hand& operator=(const Hand& h);
+    bool getCardByType(CardType ct);
+private:
+    int size;
+    int limit;
+    Card* cards;
 };
 
 #endif 

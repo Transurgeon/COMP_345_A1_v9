@@ -14,13 +14,13 @@ Territory::Territory()
 	numberOfArmies = 0;
 }
 
-Territory::Territory(int con, int cou, string t)
+Territory::Territory(int con, int cou, int arm, string t)
 {
 	continentNum = con;
 	countryNum = cou;
 	title = t;
 	playerNum = -1;
-	numberOfArmies = 0;
+	numberOfArmies = arm;
 }
 
 Territory::Territory(const Territory& copy)

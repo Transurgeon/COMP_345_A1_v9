@@ -25,8 +25,6 @@ private:
 
 };
 
-
-// TARGET
 class CommandProcessor : public ILoggable, public Subject {
 public:
     CommandProcessor() = default;
@@ -43,7 +41,6 @@ private:
     list<Command>* lc = new list<Command>();
 };
 
-// ADAPTEE
 class FileLineReader {
 public:
     FileLineReader(const string& filename);
@@ -53,7 +50,6 @@ private:
     ifstream inputFileStream;
 };
 
-// ADAPTER
 class FileCommandProcessorAdapter : public CommandProcessor {
 public:
     FileCommandProcessorAdapter(FileLineReader* flr) { this->flr = flr; }

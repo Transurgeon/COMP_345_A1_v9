@@ -31,66 +31,14 @@ void commandProcessingMain() {
 
     ge.setState(GameState::start);
 
-    // while true keep the game playing.
     while (*playPtr) {
         switch (ge.getState()) {
         case GameState::start:
-            //call 
-            *userChoicePtr = "loadmap";
-            if (*userChoicePtr == "loadmap") {
-                ge.Transition();
-                ge.setState(GameState::mapLoaded);
-            }
-        case GameState::mapLoaded:
-            //
-            *userChoicePtr = "validatemap";
-            if (*userChoicePtr == "validatemap") {
-                ge.Transition();
-                ge.setState(GameState::mapValidated);
-            }
-        case GameState::mapValidated:
-            //
-            *userChoicePtr = "addplayer";
-            if (*userChoicePtr == "addplayer") {
-                ge.Transition();
-                ge.setState(GameState::playersAdded);
-            }
-            /*case playeradded:
-                *userChoicePtr = ge.playeraddedFunc();
-                if (userChoice == "gamestart") {
-                    ge.setState(assignreignforcement);
-                }*/
-        case GameState::assignReinforcement:
-            //
-            *userChoicePtr = "issueorder";
-            if (userChoice == "issueorder") {
-                ge.setState(GameState::issueOrders);
-            }
-        case GameState::issueOrders:
-            //
-            *userChoicePtr = "endissuorders";
-            if (userChoice == "endissuorders") {
-                ge.setState(GameState::executeOrders);
-            }
-        case GameState::executeOrders:
-            //
-            *userChoicePtr = "endexecorders";
-            if (userChoice == "endexecorders") {
-                ge.setState(GameState::assignReinforcement);
-            }
-            else if (userChoice == "win") {
-                ge.setState(GameState::win);
-            }
-        case GameState::playersAdded:
-            //
-            *userChoicePtr = "assigncountries";
-            if (*userChoicePtr == "assigncountries") {
-                ge.Transition();
-                ge.setState(GameState::win);
-            }
+            ge.startupPhase();
+            ge.mainGameLoop();
+            
         case GameState::win:
-            //
-            *userChoicePtr = "quit";
+            *userChoicePtr = ge.winFunc();
             if (*userChoicePtr == "replay") {
                 ge.Transition();
                 ge.setState(GameState::start);

@@ -22,7 +22,7 @@ private:
 public:
     //Constructors, Assignment Operator and Destructor
     Territory();
-    Territory(int con, int cou, string t); 
+    Territory(int con, int cou, int arm, string t); 
     Territory(const Territory& copy);
     Territory& operator =(const Territory& copy);
     ~Territory();

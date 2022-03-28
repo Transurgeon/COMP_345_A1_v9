@@ -6,266 +6,224 @@
 #include <string>
 #include <vector>
 #include "../Header Files/LoggingObserver.h"
-#include "Map.h"
+#include "../Header Files/Cards.h"
+#include "../Header Files/Player.h"
+#include "../Header Files/Map.h"
 using namespace std;
-
 class Player;
+class Territory;
+class Map;
+class Card;
+class Deck;
+class Hand;
 
-class Order {
-private:
-	vector<string> Order_types{ "DEPLOY", "ADVANCE", "BOMB", "BLOCKADE", "AIRLIFT", "NEGOTIATE" };
-	int orderNum;
 
-	//For implementation
-	bool isValid;
-	bool isAttackable = true;
-
+struct Order
+{
 public:
-	//Constructors, Destructors and Operators
-	Order(); 
-	Order(const Order& copy); 
-	Order(Player* player); //for implementation
-	Order& operator =(const Order& copy); 
-	~Order(); 
-	friend ostream& operator<<(ostream& output, Order& o);
+    //constructor & destructor
+    Order();
+    Order(Player* player);
+    ~Order();
+    Order(const Order& copiedO);
+    Order& operator = (const Order& O);
+    friend ostream& operator <<(ostream& out, const Order& o);
+    friend istream& operator >> (istream& in, Order& o);
 
-	//Getters and Setters
-	string getType();
-	void set_orderNum(int o);
+    virtual bool validate() = 0;
+    virtual void execute() = 0;
+    virtual bool validate2(Map* map) = 0;
+    virtual void execute2(Map* map) = 0;
 
-	//Validates the order
-	virtual bool validate() = 0 ; //to make Order an abstract class
-	virtual bool validate2(Map* map) = 0;
-	
-	//Executes the order
-	virtual void execute() = 0;
-	virtual void execute2(Map* map) = 0;
+    void setID(int i);
 
-	//Implementation items required
-	Map* map;
-	Player* player;
-	bool getAttackable() { return isAttackable; };
-	void setAttackable(bool attackable) { isAttackable = attackable; };
-	const Player* getOrderIssuer();
-	void setOrderIssuer(Player* issuer);
-	
-};
-
-class OrdersList: public ILoggable, public Subject { //maybe well add ILoggable stuff later
+    string getOrderType();
+    Map* map;
+    Player* player;
+    bool getAttackable() { return attackable; };
+    void setAttackable(bool isAttackable) { attackable = isAttackable; };
+    const Player* getOrderIssuer();
+    void setOrderIssuer(Player* issuer);
 private:
-	vector<Order*> OrderList;
-
-public:
-	//Constructors, Destructors and Operators
-	OrdersList(); 
-	OrdersList(vector<Order*> o);
-	OrdersList(const OrdersList& copy); 
-	OrdersList& operator =(const OrdersList& copy); 
-	vector<Order*> getOrderList(); //getter
-	~OrdersList(); 
-	friend ostream& operator<<(ostream& output, OrdersList& ol);
-	
-	//add, move and remove orders in the list
-	void add(Order* order);
-	void move(int currentPos, int newPos);
-	void remove(Order* order);
-
-	//method from ILoggable and Subject for Observer
-	string stringToLog() override;
-};
-
-//place some armies on one of the current players territories
-class Deploy : public Order, public ILoggable, public Subject {
-private:
-	Territory* targetTerritory;
-	int troopNum;
-	string deployExecute;
-public:
-	//attributes for executing the deploy order
-	Player* p1;
-
-	//Constructors, Destructors and Operators
-	Deploy(); 
-	Deploy(Player* p1, Territory* targetTerritory, int troopNum);
-	Deploy(const Deploy& deploy);
-	Deploy& operator=(const Deploy& deploy);
-	friend std::ostream& operator<<(std::ostream& out, const Deploy& deploy);
-	string* getType();
-	~Deploy();
-
-	//Validates the order
-	virtual bool validate() override;
-	virtual bool validate2(Map* map) override;
-	
-	//Executes the order
-	virtual void execute() override;
-	virtual void execute2(Map* map) override;
-
-	//stringTolog from observer
-	string stringToLog() override;
+    int id;
+    bool valid;
+    vector<string> orders = { "deploy","advance","bomb","blockade","airlift","negotiate" };
+    bool attackable = true;
 
 };
 
-//move some armies from one of the current players territories (source) to an adjacent territory (target).If the target territory 
-//belongs to the current player, the armies are moved to the target territory. Else an attack happens between the two territories
-class Advance : public Order, public ILoggable, public Subject {
-private:
-	Territory* targetTerritory;
-	Territory* t1;
-	Player* p1;
-	Player* p2;
-	int troopNum;
+
+struct Deploy : public Order, public ILoggable, public Subject {
 public:
-	//attributes for executing the advance order
-	
+    Deploy();
+    Deploy(Player* player, Territory* targetTerritory, unsigned int armies);
+    ~Deploy();
+    Deploy(const Deploy& copiedDe);
+    Deploy& operator = (const Deploy& Do);
+    virtual bool validate()override;
+    virtual void execute()override;
+    virtual bool validate2(Map* map) override;
+    virtual void execute2(Map* map) override;
 
-	//Constructors, Destructors and Operators
-	Advance(); 
-	Advance(const Advance& advance);
-	Advance(Player* p1, Player* p2, Territory* t1, Territory* targetTerritory, int troopNum);
-	Advance& operator=(const Advance& advance);
-	friend std::ostream& operator<<(std::ostream& out, const Advance& advance);
-	string* getType();
-	~Advance();
+    //stringTolog from observer
+    string stringToLog() override;
+private:
+    Territory* targetTerritory;
+    unsigned int armies;
+    string deployExecute;
 
-	//Validates the order
-	virtual bool validate();
-	virtual bool validate2(Map* map) override;
 
-	//Executes the order
-	virtual void execute();
-	virtual void execute2(Map* map) override;
+};
+struct Bomb : public Order, public ILoggable, public Subject {
+public:
 
-	//stringTolog from observer
-	string stringToLog() override;
+
+    Bomb();
+    Bomb(Player* player, Territory* targetTerritory);
+    ~Bomb();
+    Bomb(const Bomb& copiedBo);
+    Bomb& operator = (const Bomb& Bo);
+
+    virtual bool validate()override;
+    virtual void execute()override;
+    virtual bool validate2(Map* map) override;
+    virtual void execute2(Map* map) override;
+
+    //stringTolog from observer
+    string stringToLog() override;
+private:
+    Territory* targetTerritory;
+    string bombExecute;
 
 };
 
-//destroy half of the armies located on an opponents territory that is adjacent to one of the current players territories
-class Bomb : public Order, public ILoggable, public Subject {
-private:
-	Territory* targetTerritory;
-	Player* p1;
+
+
+
+
+struct Advance : public Order, public ILoggable, public Subject {
 public:
-	//attributes for executing the bomb order
-	
 
-	//Constructors, Destructors and Operators
-	Bomb();
-	Bomb(const Bomb& Bomb);
-	Bomb(Player* p1, Territory* targetTerritory);
-	Bomb& operator=(const Bomb& Bomb);
-	friend std::ostream& operator<<(std::ostream& out, const Bomb& Bomb);
-	string* getType();
-	~Bomb();
+    Advance();
+    Advance(Player* player, Player* targetPlayer, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
+    ~Advance();
+    Advance(const Advance& copiedAd);
+    Advance& operator = (const Advance& Ao);
 
-	//Validates the order
-	virtual bool validate();
-	virtual bool validate2(Map* map) override;
-	
-	//Executes the order
-	virtual void execute();
-	virtual void execute2(Map* map) override;
+    virtual bool validate()override;
+    virtual void execute()override;
+    virtual bool validate2(Map* map) override;
+    virtual void execute2(Map* map) override;
 
-	//stringTolog from observer
-	string stringToLog() override;
+    //stringTolog from observer
+    string stringToLog() override;
+private:
+    Territory* fromTerritory;
+    Territory* toTerritory;
+    Player* targetPlayer;
+    unsigned int armies;
+    string advanceExecute;
+    Card* card = new Card();
+};
+
+struct Blockade : public Order, public ILoggable, public Subject {
+public:
+
+    Blockade();
+    Blockade(Player* player, Territory* targetTerritory);
+    ~Blockade();
+    Blockade(const Blockade& copiedBl);
+    Blockade& operator = (const Blockade& Blo);
+
+    virtual bool validate()override;
+    virtual void execute()override;
+    virtual bool validate2(Map* map) override;
+    virtual void execute2(Map* map) override;
+
+    //stringTolog from observer
+    string stringToLog() override;
+private:
+    Territory* targetTerritory;
+    string blockadeExecute;
+};
+
+struct Airlift : public Order, public ILoggable, public Subject {
+public:
+
+    Airlift();
+    Airlift(Player* player, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
+    ~Airlift();
+    Airlift(const Airlift& copoedAir);
+    Airlift& operator = (const Airlift& Airo);
+
+    virtual bool validate()override;
+    virtual void execute()override;
+    virtual bool validate2(Map* map) override;
+    virtual void execute2(Map* map) override;
+
+    //stringTolog from observer
+    string stringToLog() override;
+
+private:
+    Territory* fromTerritory;
+    Territory* toTerritory;
+    unsigned int armies;
+    string airliftExecute;
+};
+
+struct Negotiate : public Order, public ILoggable, public Subject {
+public:
+
+
+    Negotiate();
+    Negotiate(Player* player, Player* targetPlayer);
+    ~Negotiate();
+    Negotiate(const Negotiate& copiedNe);
+    Negotiate& operator = (const Negotiate& Neo);
+
+    virtual bool validate()override;
+    virtual void execute()override;
+    virtual bool validate2(Map* map) override;
+    virtual void execute2(Map* map) override;
+
+    //stringTolog from observer
+    string stringToLog() override;
+private:
+    Player* targetPlayer;
+    string negotiateExecute;
 
 };
 
-//triple the number of armies on one of the current players territories and make it a neutral territory
-class Blockade : public Order, public ILoggable, public Subject {
-private:
-	Territory* targetTerritory;
-	
+
+
+
+
+
+
+class Orderslist :public ILoggable, public Subject {
 public:
-	//attributes for executing the blockade order
-	Player* p1;
 
-	
-	//Constructors, Destructors and Operators
-	Blockade(); 
-	Blockade(const Blockade& Blockade);
-	Blockade(Player* p1, Territory* targetTerritory);
-	Blockade& operator=(const Blockade& Blockade);
-	friend std::ostream& operator<<(std::ostream& out, const Blockade& Blockade);
-	string* getType();
-	~Blockade();
+    Orderslist();
+    Orderslist(const Orderslist& copiedOl);
+    ~Orderslist();
+    Orderslist& operator = (const Orderslist& Ol);
+    friend ostream& operator <<(ostream& out, const Orderslist& ol);
+    friend istream& operator >> (istream& in, Orderslist& ol);
+    //getter setter of the orderlist
+    void setOrderList(Order* order);
+    vector<Order*>* getOrderList();
 
-	//Validates the order
-	virtual bool validate();
-	virtual bool validate2(Map* map) override;
+    //methods to modify the list
+    void remove(Order* order);
+    void move(int origin, int targetPosition);
+    void printOrderlist();
+    //method from ILoggable and Subject for Observer
+    string stringToLog() override;
+private:
+    vector<Order*> orderlist;
+    string orderForObs;
 
-	//Executes the order
-	virtual void execute();
-	virtual void execute2(Map* map) override;
-
-	//stringTolog from observer
-	string stringToLog() override;
 
 };
 
-//advance some armies from one of the current players territories to any another territory
-class AirLift : public Order, public ILoggable, public Subject {
-private:
-	Territory* targetTerritory;
-	Territory* t1;
-	Territory* t2;
-	int troopNum;
-public:
-	//attributes for executing the airlift order
-	Player* p1;
-
-	
-	//Constructors, Destructors and Operators
-	AirLift(); 
-	AirLift(const AirLift& AirLift);
-	AirLift(Player* p1, Territory* t1, Territory* t2, int troopNum);
-	AirLift& operator=(const AirLift& AirLift);
-	friend std::ostream& operator<<(std::ostream& out, const AirLift& AirLift);
-	string* getType();
-	~AirLift();
-
-	//Validates the order
-	virtual bool validate();
-	virtual bool validate2(Map* map) override;
-
-	//Executes the order
-	virtual void execute();
-	virtual void execute2(Map* map) override;
-
-	//stringTolog from observer
-	string stringToLog() override;
-};
-
-//prevent attacks between the current player and another player until the end of the turn
-class Negotiate : public Order, public ILoggable, public Subject {
-private:
-	Territory* targetTerritory;
-	
-public:
-	//attributes for executing the negotiate order
-	Player* p1;
-	Player* p2;
-
-	Negotiate(Player* p1, Player* p2);
-	//Constructors, Destructors and Operators
-	Negotiate(); 
-	Negotiate(const Negotiate& Negotiate);
-	Negotiate& operator=(const Negotiate& Negotiate);
-	friend std::ostream& operator<<(std::ostream& out, const Negotiate& Negotiate);
-	string* getType();
-	~Negotiate();
-
-	//Validates the order
-	virtual bool validate();
-	virtual bool validate2(Map* map) override;
-
-	//Executes the order
-	virtual void execute();
-	virtual void execute2(Map* map) override;
-
-	//stringTolog from observer
-	string stringToLog() override;
-	
-};
 #endif

@@ -13,7 +13,6 @@ void Command::saveEffect(string e) {
 string Command::stringToLog() {
     return "Command stringToLog: " + effect;
 }
-/////////////////
 
 void CommandProcessor::getCommand() {
     string cmd = readCommand();
@@ -29,37 +28,28 @@ string CommandProcessor::readCommand() {
 
 void CommandProcessor::saveCommand(const string& cmd) {
     Command c(cmd);
-    // Save effect
     lc->push_back(c);
     Notify(this);
 }
 
-// If valid, returns the passing command
 string CommandProcessor::validate(GameState gs) {
     string c = lc->back().getCommandText();
 
     regex loadRegex("loadmap\\s.+");
     regex playerRegex("addplayer\\s.+");
 
-    // Loadmap is usable
     if (regex_match(c, loadRegex) && (gs == GameState::start || gs == GameState::mapLoaded))
         lc->back().saveEffect("maploaded");
-    // Validatemap is usable
     else if (c == "validatemap" && gs == GameState::mapLoaded)
         lc->back().saveEffect("mapvalidated");
-    // Addplayer is usable
     else if (regex_match(c, playerRegex) && (gs == GameState::mapValidated || gs == GameState::playersAdded))
         lc->back().saveEffect("playersadded");
-    // Gamestart is usable
     else if (c == "gamestart" && gs == GameState::playersAdded)
         lc->back().saveEffect("assignreinforcement");
-    // Replay is usable
     else if (c == "replay" && gs == GameState::win)
         lc->back().saveEffect("start");
-    // Quit is usable
     else if (c == "quit" && gs == GameState::win)
         lc->back().saveEffect("exit program");
-    // Command is not usable
     else
         lc->back().saveEffect("Error: Invalid input.");
     return c;
@@ -67,13 +57,12 @@ string CommandProcessor::validate(GameState gs) {
 string CommandProcessor::stringToLog() {
     return "CommandProcessor stringToLog: " + lc->back().getCommandText();
 }
-//////////////
+
 
 string FileCommandProcessorAdapter::readCommand() {
     return flr->readLineFromFile();
 }
 
-//////////////
 
 FileLineReader::FileLineReader(const string& filename) {
     inputFileStream.open(filename, ios::in);
@@ -86,7 +75,6 @@ FileLineReader::FileLineReader(const string& filename) {
 string FileLineReader::readLineFromFile() {
     string cmd;
 
-    // End if file is empty
     if (inputFileStream.eof())
     {
         cout << "End of file.\n";
