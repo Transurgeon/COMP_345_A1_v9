@@ -348,11 +348,9 @@ bool Map::isAdjacentTerritory(Territory* source, Territory* target) {
 	return false;
 }
 
-vector<Territory*> Map::getAllAdjacentTerritories(Territory territory) {
-	int territoryId = territory.getCountryNum();
-	vector<Territory*> adjTerritories;
+vector<int> Map::getAllAdjacentTerritories(Territory territory) {
 
-	return adjTerritories;
+	return borders[territory.getCountryNum()-1]->getEdges();
 }
 
 int Map::getNumOfTerritoriesInContinent(int id) {
@@ -416,9 +414,9 @@ MapLoader::~MapLoader() {}
 ostream& operator<<(ostream& output, MapLoader& ml) { return output; }
 
 
-Map MapLoader::addMap(string fileName) {
+Map* MapLoader::addMap(string fileName) {
 	//adds empty map object
-	Map returnMap;
+	Map* returnMap = new Map();
 	int section = 0;
 	bool skip;
 
@@ -447,20 +445,20 @@ Map MapLoader::addMap(string fileName) {
 					switch (section) {
 					case 1:
 						if (split.size() >= 3) {
-							returnMap.addContinent(stoi(split[1]), split[0]);
+							returnMap->addContinent(stoi(split[1]), split[0]);
 						}
 						break;
 					case 2:
 						if (split.size() >= 3) {
-							returnMap.addTerritory(stoi(split[2]), split[1]);
+							returnMap->addTerritory(stoi(split[2]), split[1]);
 						}
 						break;
 					case 3:
 						if (split.size() >= 1) {
-							returnMap.addBorderRoot(stoi(split[0]));
+							returnMap->addBorderRoot(stoi(split[0]));
 							for (int i = 1; i < split.size(); i++) {
-								returnMap.addBorderEdge(stoi(split[0]), stoi(split[i]));
-							}
+								returnMap->addBorderEdge(stoi(split[0]), stoi(split[i]));
+						}
 						}
 						break;
 					}
@@ -468,8 +466,8 @@ Map MapLoader::addMap(string fileName) {
 			}
 			catch (const std::exception&) {}
 		}
+		myReadFile.close();
 	}
-	myReadFile.close();
 	return returnMap;
 }
 

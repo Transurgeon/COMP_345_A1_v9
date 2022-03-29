@@ -116,7 +116,7 @@ public:
     vector<Border*> getBorders();
     //new functions
     bool isAdjacentTerritory(Territory* source, Territory* target); 
-    vector<Territory*> getAllAdjacentTerritories(Territory territory);
+    vector<int> getAllAdjacentTerritories(Territory territory);
     int getNumOfTerritoriesInContinent(int id);
     int getLastContinentId();
     int getArmyContinentBonus(int continentId);
@@ -133,7 +133,7 @@ public:
     ~MapLoader();
 
     //Add maps and reads file user inputs
-    static Map addMap(string fileName);
+    static Map* addMap(string fileName);
 };
 //Helper .split() method for reading lines in map files
 vector<string> splitString(string str);
