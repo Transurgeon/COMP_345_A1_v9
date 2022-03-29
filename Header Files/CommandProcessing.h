@@ -7,7 +7,7 @@
 using namespace std;
 
 enum class GameState {
-	start, mapLoaded, mapValidated, playersAdded, assignReinforcement, issueOrders, executeOrders, win, exitProgram
+	start, mapLoaded, mapValidated, playersAdded, assignReinforcements, issueOrders, executeOrders, win, exitProgram
 };
 
 class Command :public ILoggable, public Subject {
@@ -32,7 +32,6 @@ public:
     void getCommand();
     string validate(GameState gs);
     string stringToLog() override;
-protected:
 
 
 private:

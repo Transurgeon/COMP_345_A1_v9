@@ -16,8 +16,7 @@ using namespace std;
 class GameEngine : public ILoggable, public Subject {
 private:
 	//adding private variables for the GameEngine
-	// vector<Player*> playerList;
-	vector<string> playerList;
+	vector<Player*> playerList;
 	GameState state;
 	CommandProcessor* cmdProc;
 	Map* currentMap;
@@ -37,11 +36,11 @@ public:
 	
 	//added new function called gameStart() and mainGameLoop;
 	void gameStart();
-	void mainGameLoop();
+	bool mainGameLoop();
 
 	void assignReinforcements();
 	void issueOrders();
-	void executeOrders();
+	bool executeOrders();
 	
 	
 	void gameOver();

@@ -109,13 +109,13 @@ void GameEngine::gameStart() {
 	{
 		cout << playerList[i]->getPlayerName() + ", ";
 	}
-	cout << playerList[playerList.size() - 1]->getPlayerName() << endl;
+	cout << playerList[playerList.size() - 1] << endl;
 
 	cout << "Giving 50 troops to each player" << endl;
 	int troops;
 	string input;
 	for (int i = 0; i < playerList.size(); i++) {
-		cout << playerList[i]->getPlayerName() << " will choose where to place their troops:\n";
+		cout << playerList[i] << " will choose where to place their troops:\n";
 		troops = 50;
 		currentTerritory = 0;
 		do {
