@@ -100,7 +100,6 @@ void Deck::draw(Hand& player) {
         return;
     }
 
-    // Take random card from deck
     int r = rand() % size;
     Card topCard = cards[r];
 
@@ -114,7 +113,6 @@ void Deck::draw(Hand& player) {
     player.addCard(&topCard);
     size--;
 
-    //cout << "DECK: " << *this << endl;
     cout << "HAND: " << player << endl << endl;
 }
 

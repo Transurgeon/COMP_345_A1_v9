@@ -6,13 +6,10 @@
 Player::Player() {
     //player owns a hand
     playerHand = new Hand();
-    //player owns a territory list
     playerTerritoryList = new vector<Territory*>;
-    //player owns a defend territory list
     playerDefendList = new vector<Territory*>();
-    //player owns an attack territory list
     playerAttackList = new vector<Territory*>();
-    //player owns an order list
+    
     orderList = new Orderslist();
     playerId = 0;
     playerName;
@@ -21,15 +18,12 @@ Player::Player() {
 
 //Player constructor (with name)
 Player::Player(string name) {
-    //player owns a hand
+    
     playerHand = new Hand();
-    //player owns a territory list
     playerTerritoryList = new vector<Territory*>;
-    //player owns a defend territory list
     playerDefendList = new vector<Territory*>();
-    //player owns an attack territory list
     playerAttackList = new vector<Territory*>();
-    //player owns an order list
+    
     orderList = new Orderslist();
     int playerId = 0;
     armyNum = 50;
@@ -55,10 +49,6 @@ Player::~Player()
     delete orderList;
 }
 
-
-//Player copy constructor
-//it should call the copy constructor of the other classes
-//to avoid copy the pointer
 Player::Player(
     const Player& player1) {
     this->playerHand = player1.playerHand;
@@ -81,10 +71,6 @@ Player::Player(
     this->playerId = player1.playerId;
 }
 
-
-//Player assignment operator overload
-//it should call the copy constructor of the other classes
-//to avoid copy the pointer
 Player& Player::operator=(const Player& player1) {
     this->playerHand = player1.playerHand;
     for (int i = 0; i < player1.playerTerritoryList->size(); i++) {
@@ -116,26 +102,17 @@ std::ostream& operator<<(ostream& os, const Player& player) {
     return os;
 }
 
-
-//once a player want to attack a territory, the territory
-//is added to the attack list
 void Player::attackTerritory(Territory* territory) {
     //validating if the territory already in the list
     if (std::count(playerAttackList->begin(), playerAttackList->end(), territory)) {
-        //            std::cout << "Element already existed, cannot be added to the player " << playerName << "'s attack list: "
-        //                      << territory->getName() << endl;
     }
     else {
         //add territory to the attack list
         playerAttackList->push_back(territory);
-        //            std::cout << "Element has been added to the player " << playerName << "'s attack list: "
-        //                      << territory->getName() << endl;
     }
 
 }
 
-//once some other player want to attack a territory, the territory
-//is added to the defend list
 void Player::defendTerritory(Territory* territory) {
 
     //validating if the territory already in the list
@@ -151,21 +128,13 @@ void Player::defendTerritory(Territory* territory) {
     }
 }
 
-//assignment a territory to the player class
 void Player::addTerritory(Territory* territory) {
-    //check if the territory already in the
 
-
-    //validating if the territory already in the list
     if (std::count(playerTerritoryList->begin(), playerTerritoryList->end(), territory)) {
-        //            std::cout << "Element already existed, cannot be added to the player " << playerName << "'s defend list: "
-        //                      << territory->getName() << endl;
     }
     else {
         //add territory to the list
         playerTerritoryList->push_back(territory);
-        //            std::cout << "Element has been added to the player " << playerName << "'s territories list: "
-        //                      << territory->getName() << endl;
     }
 }
 
@@ -190,11 +159,9 @@ void Player::removeTerritory(Territory* territory) {
 
 }
 
-//cancel the attack
 void Player::cancelAttack(Territory* territory) {
-    //validating if the territory already in the list
     if (std::count(playerAttackList->begin(), playerAttackList->end(), territory)) {
-        //remove the territory from the list
+
         playerAttackList->erase(std::remove(playerAttackList->begin(), playerAttackList->end(), territory),
             playerAttackList->end());
 
@@ -243,9 +210,6 @@ bool Player::alreadyOwn(Territory* territory) {
     return false;
 }
 
-
-//take a territory as parameters
-//a boolean function to know if the territory is in the attack list
 bool Player::containTerritoryByName(string territoryName, vector<Territory*>* territoryList) {
     for (int i = 0; i < territoryList->size(); i++) {
         if (territoryList->at(i)->getName().compare(territoryName)) {
@@ -259,11 +223,8 @@ bool Player::containTerritoryByName(string territoryName, vector<Territory*>* te
 
 }
 
-//cancel the defend
 void Player::cancelDefend(Territory* territory) {
-    //validating if the territory already in the list
     if (std::count(playerDefendList->begin(), playerDefendList->end(), territory)) {
-        //remove the territory from the list
         playerDefendList->erase(std::remove(playerDefendList->begin(), playerDefendList->end(), territory),
             playerDefendList->end());
 
@@ -281,24 +242,12 @@ void Player::cancelDefend(Territory* territory) {
 
 }
 
-//the player attack action, returns a list of territories being attacked
 vector<Territory*>* Player::toAttack(Map* map) {
-    /*for (int i = 0; i < playerTerritoryList->size(); i++) {
-        vector<Territory*> adjList = map->getAllAdjacentTerritories(*playerTerritoryList->at(i));
-
-        for (int j = 0; j < adjList.size(); j++) {
-
-            if (this->canAttack(adjList.at(j)) && this->alreadyOwn(adjList.at(j)) == false) {
-                this->attackTerritory(adjList.at(j));
-            }
-        }
-    }*/
 
     return playerAttackList;
 
 }
 
-//the player defend action, returns a list of territories being defended
 vector<Territory*>* Player::toDefend() {
 
     return playerTerritoryList;
@@ -306,7 +255,6 @@ vector<Territory*>* Player::toDefend() {
 
 void Player::displayTerritory(vector<Territory*>* territoryList) {
 
-    //print out all territory of this player in the list in the console
     std::cout << '\n' << "Player " << playerName << "'s Territory List:" << '\n' << endl;
 
     for (int i = 0; i < territoryList->size(); ++i) {
@@ -317,7 +265,6 @@ void Player::displayTerritory(vector<Territory*>* territoryList) {
 
 int Player::getHandLimit() {
 
-    //display the number of hand of this player
     cout << '\n' << "Hand Limit for this player " << playerName << ": " << '\n' << endl;
     cout << playerHand->getHandLimit() << '\n' << endl;
 
@@ -339,21 +286,16 @@ void Player::issueOrders(Order* order) {
 
 }
 
-
-
-//getTerritoryList
 vector<Territory*>* Player::getTerritoryList() {
 
     return playerTerritoryList;
 }
 
-//getAttackList
 vector<Territory*>* Player::getAttackList() {
 
     return playerAttackList;
 }
 
-//getDefendList
 vector<Territory*>* Player::getDefendList() {
 
     return playerDefendList;
@@ -374,7 +316,6 @@ void Player::setPlayerName(string name) {
 
 }
 
-//get the orderList
 Orderslist* Player::getOrderList() {
     return orderList;
 }
@@ -397,13 +338,6 @@ int Player::removeArmyNum(int number) {
     return armyNum;
 }
 
-
-//int Player::updateArmyNum(int continentBonus) {
-//    //need to update the code
-//    return armyNum;
-//}
-//
-//switchTerritories between two player, remove from player 1, add to player 2.
 void Player::switchTerritories(Territory* territory, Player* player1, Player* player2) {
     player1->removeTerritory(territory);
     player2->addTerritory(territory);
@@ -428,12 +362,10 @@ void Player::calculateBonus(Map* map) {
     cout << "Init" << endl;
     int continentNum = map->getLastContinentId();
     for (int i = 1; i <= continentNum; i++) {
-        //            cout << "for loop " << i << endl;
         int x = this->getPlayerNumOfTerritoriesInContinent(i);
         int y = map->getNumOfTerritoriesInContinent(i);
 
         if (x == y) {
-            //                cout << "player have one complete continent: " << endl;
             armyNum += map->getArmyContinentBonus(i);
         }
     }
@@ -446,8 +378,6 @@ void Player::calculateArmy(Map* map) {
     if (armyNum < 3) {
         armyNum = 3;
     }
-    //        cout << "Army Value is ..." << armyNum << endl;
-
 }
 
 bool Player::containsOrder(string orderType) {
