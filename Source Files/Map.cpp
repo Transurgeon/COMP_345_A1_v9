@@ -337,12 +337,17 @@ vector<Border*> Map::getBorders() {
 }
 
 bool Map::isAdjacentTerritory(Territory* source, Territory* target) {
-	for (int i = 0; i < this->territories.size(); ++i) {
-		
+	for (int i = 0; i < this->borders.size(); ++i) {
+		if (borders[i]->getRoot() == source->getCountryNum()) {
+			for (int j = 0; j < borders[i]->getEdges().size(); j++) {
+				if (borders[i]->getEdges()[j] == target->getCountryNum())
+					return true;
+			}
+		}
 	}
 	return false;
 }
-//needs updating
+
 vector<Territory*> Map::getAllAdjacentTerritories(Territory territory) {
 	int territoryId = territory.getCountryNum();
 	vector<Territory*> adjTerritories;
