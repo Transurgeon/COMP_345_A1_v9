@@ -1,0 +1,93 @@
+CommandProcessor stringToLog: -loadmap <test>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: dd
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: dsdsd
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: sds
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: s
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: dds
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmapa
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap a
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap\s.+
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: 
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: sas
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap a
+CommandProcessor stringToLog: loadmap <>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <a>
+CommandProcessor stringToLog: loadmap <a.>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <a.a>
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <aa>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <as>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: -loadmap <> test;
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: addplayer <a>\
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: validatemap
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <a>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <europe.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated

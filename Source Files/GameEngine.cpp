@@ -10,52 +10,48 @@ void GameEngine::startupPhase() {
 
 	do {
 		cmdProc->getCommand();
-		cmdProc->validate(state);
-		switch (state)
+		string commandType = cmdProc->validate(state);
+		string commandArgument;
+		if (commandType.find_first_of("<") != -1)
 		{
-		case GameState::mapLoaded:
-			loadMap("map");
-			break;
-		case GameState::mapValidated:
-			validateMap();
-			break;
-		case GameState::playersAdded:
-			addPlayer("name");
-			break;
-		case GameState::assignReinforcement:
-			if (playerList.size() >= 2) {
-				gameStart();
-			}
-			else {
-				cout << "Too few players, game can't start until reach 2";
-				state = GameState::playersAdded;
-			}
-			break;
-		} state: {
-
+			commandArgument = commandType.substr(commandType.find_first_of("<") + 1,
+			commandType.find_first_of(">") - commandType.find_first_of("<") -1);
 		}
+		commandType = commandType.substr(0, commandType.find_first_of(" "));
+
+		cout << "commandType: " + commandType + "    commandArgument: " + commandArgument << endl;
+		if (commandType == "loadmap") {
+			loadMap(commandArgument);
+		}
+		else if (commandType == "validatemap") {
+			validateMap();
+		}
+		else if (commandType == "addplayer") {
+			addPlayer(commandType);
+		}
+		else if (commandType == "gamestart") {
+			gameStart();
+		} 
 	} while (state != GameState::exitProgram);
 }
 
 void GameEngine::loadMap(string fileName) {
 	state = GameState::mapLoaded;
 	deleteMap();
-	*currentMap = MapLoader::addMap(fileName);
-	cout << "Adding or changing Map";
+	currentMap = MapLoader::addMap(fileName);
+	cout << "Adding or changing Map\n";
 }
 
-bool GameEngine::validateMap() {
+void GameEngine::validateMap() {
 
 	if (currentMap->validate()) {
 		state = GameState::mapValidated;
-		return true;
 		cout << "Map is valid, please add players";
+		return;
 	}
 
 	state = GameState::start;
-	deleteMap();
 	cout << "Map is not valid, return to start screen";
-	return false;
 }
 
 void GameEngine::deleteMap() {
@@ -63,7 +59,6 @@ void GameEngine::deleteMap() {
 		delete currentMap;
 		currentMap = nullptr;
 	}
-
 }
 
 void GameEngine::addPlayer(string name) {
@@ -211,9 +206,9 @@ void GameEngine::gameOver() {
 //	Notify(this);
 //}
 //
-//string GameEngine::stringToLog() {
-//	return "Running Game Engine: " + userCmd;
-//}
+string GameEngine::stringToLog() {
+	return "Running Game Engine: ";
+}
 
 GameEngine::GameEngine() {
 	playerList = vector<string>();

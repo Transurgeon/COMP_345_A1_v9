@@ -31,7 +31,7 @@ public:
 	
 	//Follows structure of flow chart
 	void loadMap(string fileName);
-	bool validateMap();
+	void validateMap();
 	void deleteMap();
 	void addPlayer(string name);
 	
@@ -51,8 +51,8 @@ public:
 	//Methods for Game
 	/*void setState(GameState gs);
 	GameState getState();
-	void Transition();
-	string stringToLog() override;*/
+	void Transition();*/
+	string stringToLog() override;
 
 	//Constructors, Assignment Operator and Destructor
 	GameEngine();

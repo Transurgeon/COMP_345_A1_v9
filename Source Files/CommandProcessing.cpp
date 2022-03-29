@@ -34,24 +34,31 @@ void CommandProcessor::saveCommand(const string& cmd) {
 
 string CommandProcessor::validate(GameState gs) {
     string c = lc->back().getCommandText();
+    static int players = 0;
+    
 
-    regex loadRegex("loadmap\\s.+");
-    regex playerRegex("addplayer\\s.+");
-
+    regex loadRegex("loadmap <[a-zA-Z0-9.]+>");
+    regex playerRegex("addplayer <[a-zA-Z]+>");
     if (regex_match(c, loadRegex) && (gs == GameState::start || gs == GameState::mapLoaded))
         lc->back().saveEffect("maploaded");
-    else if (c == "validatemap" && gs == GameState::mapLoaded)
+    else if (c == "validatemap" && gs == GameState::mapLoaded) {
         lc->back().saveEffect("mapvalidated");
-    else if (regex_match(c, playerRegex) && (gs == GameState::mapValidated || gs == GameState::playersAdded))
+        players = 0;
+    }
+    else if (regex_match(c, playerRegex) && (gs == GameState::mapValidated || gs == GameState::playersAdded)) {
         lc->back().saveEffect("playersadded");
-    else if (c == "gamestart" && gs == GameState::playersAdded)
+        players++;
+    }
+    else if (c == "gamestart" && gs == GameState::playersAdded && players >= 2 && players <= 6)
         lc->back().saveEffect("assignreinforcement");
     else if (c == "replay" && gs == GameState::win)
         lc->back().saveEffect("start");
     else if (c == "quit" && gs == GameState::win)
         lc->back().saveEffect("exit program");
-    else
+    else {
         lc->back().saveEffect("Error: Invalid input.");
+        return "";
+    }
     return c;
 }
 string CommandProcessor::stringToLog() {

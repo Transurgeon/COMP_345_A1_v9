@@ -4,6 +4,7 @@
 
 
 void gameEngineMain() {
-	
-	GameEngine game();
+
+	GameEngine game;
+	game.startupPhase();
 }
