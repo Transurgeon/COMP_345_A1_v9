@@ -1,33 +1,59 @@
 #include "../Header Files/LoggingObserver.h"
 using namespace std;
 
+/// <summary>
+/// ILoggable constructors
+/// </summary>
 
+//Empty Constructor and Destructor for ILoggable
+ILoggable::ILoggable() {
+
+}
+
+ILoggable::~ILoggable() {
+
+}
+
+/// <summary>
+/// Subject class
+/// </summary>
 Subject::Subject() {
     new LogObserver(this);
 }
 
 Subject::~Subject() {}
 
-void Subject::Attach(Observer* obs) {
-    _observers.push_back(obs);
+void Subject::Attach(Observer* o) {
+    _observers.push_back(o);
 }
 
-void Subject::Detach(Observer* obs) {
-    _observers.remove(obs);
+void Subject::Detach(Observer* o) {
+    _observers.remove(o);
 }
-
-void Subject::Notify(ILoggable* il) {
+//Notify is called when a change is happening to the objects of the game, then update will log and do console output
+void Subject::Notify(ILoggable* i) {
     for (Observer* o : _observers) {
-        o->Update(il);
+        o->Update(i);
     }
 }
 
-// Observer
+/// <summary>
+/// Observer
+/// </summary>
 
-Observer::Observer() {}
-Observer::~Observer() {}
-// LogObserver class methods
+//Empty Constructor and Destructor for Observer
+Observer::Observer() 
+{
 
+}
+Observer::~Observer() 
+{
+
+}
+
+/// <summary>
+/// LogObserver methods
+/// </summary>
 LogObserver::LogObserver(Subject* s) {
     _subjects = s;
     _subjects->Attach(this);
@@ -42,12 +68,4 @@ void LogObserver::Update(ILoggable* il) {
     ofs.open("gameLog.txt", ofstream::app);
     ofs << il->stringToLog() << endl;
     ofs.close();
-}
-
-ILoggable::ILoggable() {
-
-}
-
-ILoggable::~ILoggable() {
-
 }

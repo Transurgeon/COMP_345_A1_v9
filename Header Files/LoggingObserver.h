@@ -8,50 +8,51 @@
 #pragma once
 
 using namespace std;
-class ILoggable;
-class LogObserver;
-class Observer;
 
-class Subject {
-public:
-    Subject();
-    ~Subject();
-
-    void Detach(Observer* obs);
-    void Notify(ILoggable* il);
-
-    void Attach(Observer* obs);
-
-private:
-    list<Observer*> _observers;
-};
-
-class Observer {
-public:
-    Observer();
-    ~Observer();
-    virtual void Update(ILoggable* il) = 0;
-};
-
+/// <summary>
+/// ILoggable class
+/// </summary>
 class ILoggable {
 public:
     ILoggable();
     ~ILoggable();
-    virtual string stringToLog() = 0;
-
+    virtual string stringToLog() = 0; //pure virtual method to add input to gameLog
 };
-
-class LogObserver : public Observer {
+/// <summary>
+/// Observer class
+/// </summary>
+class Observer {
 public:
-    LogObserver() = default;
-    LogObserver(Subject* s);
-    ~LogObserver();
-    void Update(ILoggable* il) override;
-
+    Observer();
+    ~Observer();
+    //observer method: pure virtual update for logging
+    virtual void Update(ILoggable* il) = 0;
+};
+/// <summary>
+/// Subject class 
+/// </summary>
+class Subject {
+private:
+    list<Observer*> _observers;
+public:
+    Subject();
+    ~Subject();
+    //subject methods: attach/detach for observer link and Notify for Logging
+    void Detach(Observer* o);
+    void Notify(ILoggable* i);
+    void Attach(Observer* o);
+};
+/// <summary>
+/// LogObserver class child of Observer
+/// </summary>
+class LogObserver : public Observer {
 protected:
     Subject* _subjects;
+public:
+    LogObserver() = default; //default constructor
+    ~LogObserver();
+    LogObserver(Subject* s); //subject constructor
+    void Update(ILoggable* il) override;
 };
-
-
 
 #endif

@@ -16,6 +16,16 @@ class Territory;
 class Map;
 
 class Player {
+private:
+    vector<Territory*>* playerTerritoryList;
+    vector<Territory*>* playerDefendList;
+    vector<Territory*>* playerAttackList;
+    Hand* playerHand;
+    Orderslist* orderList;
+    int armyNum;
+    int playerId;
+    string playerName;
+
 public:
     Player();
     Player(string name);
@@ -62,15 +72,5 @@ public:
     bool containsOrder(string orderType);
    
     Order* getOrderbyType(string orderType);
-private:
-    vector<Territory*>* playerTerritoryList;
-    vector<Territory*>* playerDefendList;
-    vector<Territory*>* playerAttackList;
-    Hand* playerHand;
-    Orderslist* orderList;
-    int armyNum;
-    int playerId;
-    string playerName;
-
 };
 #endif
