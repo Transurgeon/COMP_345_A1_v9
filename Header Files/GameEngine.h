@@ -20,6 +20,7 @@ private:
 	GameState state;
 	CommandProcessor* cmdProc;
 	Map* currentMap;
+	Deck* deck;
 public:
 	
 

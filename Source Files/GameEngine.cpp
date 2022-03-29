@@ -5,8 +5,9 @@
 //runs game and follow structure of flow chart
 void GameEngine::startupPhase() {
 
+	
+	cout << "------------\nCommand list:\nloadmap <mapfile>\nvalidatemap\naddplayer <playername>\ngamestart\nreplay\nquit\n------------\n\n\n";
 	cout << "Starting game, load a map\n";
-	cout << "\n\n------------\nCommand list:\nloadmap <mapfile>\nvalidatemap\naddplayer <playername>\ngamestart\nreplay\nquit\n------------\n\n\n";
 	string commandType;
 	string commandArgument;
 	do {
@@ -36,6 +37,8 @@ void GameEngine::startupPhase() {
 			cout << "Starting a new game, load a map \n";
 			state = GameState::start;
 			playerList.clear();
+			delete deck;
+			deck = new Deck(50);
 		}
 		else if (commandType == "quit") {
 			cout << "Thanks for playing, all it cost you to play this was your time, it cost me my sanity.";
@@ -86,32 +89,32 @@ void GameEngine::addPlayer(string name) {
 
 void GameEngine::gameStart() {
 	
-	cout << "Fairly distributing territories to the players" << endl;
+	cout << "\nFairly distributing territories to the players" << endl;
 	vector<Territory*> territories = currentMap->getTerritories();
 	int leftOverTerritories = territories.size();
 	int currentTerritory = random(0, territories.size() -1);
 	int currentPlayer = 0;
 	while (leftOverTerritories > 0) {
-		if (territories[currentTerritory]->getPlayer() == -1) {
-			territories[currentTerritory]->setPlayer(currentPlayer);
-			//playerList[currentPlayer].addTerritory(currentTerritory);
+		if (territories[currentTerritory]->getPlayerName() == "") {
+			territories[currentTerritory]->setPlayer(playerList[currentPlayer]->getPlayerName());
+			playerList[currentPlayer]->addTerritory(territories[currentTerritory]);
 			currentPlayer = (currentPlayer + 1) % playerList.size();
 			leftOverTerritories--;
 		}
 		currentTerritory = (currentTerritory + random(1, leftOverTerritories)) % territories.size();
 	}
-	cout << "Determining a random order of play for the players" << endl;
+	cout << "\nDetermining a random order of play for the players" << endl;
 
 	std::random_shuffle(playerList.begin(), playerList.end());
 
-	cout << "The order will be: ";
+	cout << "\nThe order will be: ";
 	for (int i = 0; i < playerList.size()-1;i++)
 	{
 		cout << playerList[i]->getPlayerName() + ", ";
 	}
 	cout << playerList[playerList.size() - 1]->getPlayerName() << endl;
 
-	cout << "Giving 50 troops to each player" << endl;
+	cout << "\nGiving 50 troops to each player" << endl;
 	int troops;
 	string input;
 	for (int i = 0; i < playerList.size(); i++) {
@@ -120,7 +123,7 @@ void GameEngine::gameStart() {
 		currentTerritory = 0;
 		do {
 			cout << "Remaining troops: " << troops << endl;
-			while (territories[currentTerritory]->getPlayer() == i) {currentTerritory = (currentTerritory + 1) % territories.size();}
+			while (territories[currentTerritory]->getPlayerName() == playerList[i]->getPlayerName()) {currentTerritory = (currentTerritory + 1) % territories.size();}
 
 			cout << "How many troops do you want to place on " << territories[currentTerritory]->getName() <<"?\n";
 			cin >> input;
@@ -138,10 +141,11 @@ void GameEngine::gameStart() {
 		cout << "\n\n";
 	}
 
-	cout << "Each player draws 2 cards from the deck to their hand" << endl;
+	cout << "\nEach player draws 2 cards from the deck to their hand" << endl;
 	for (int j = 0; j < playerList.size(); j++) {
-		//playerList[j]->getPlayerCards.draw();
-		//playerList[j]->getPlayerCards.draw();
+		cout << playerList[j]->getPlayerName() << " picks the following 2 cards:";
+		deck->draw(*playerList[j]->getHand());
+		deck->draw(*playerList[j]->getHand());
 	}
 	cout << "\n\nGame is starting\n\n";
 	
@@ -190,7 +194,7 @@ void GameEngine::assignReinforcements() {
 		countriesOwned = 0;
 		continentsOwned = 0;
 		for (int j = 0; j < territories.size(); j++) {
-			if (territories[j]->getPlayer() == i); {
+			if (territories[j]->getPlayerName() == playerList[i]->getPlayerName()) {
 				troops++;
 				countriesOwned++;
 			}
@@ -201,7 +205,7 @@ void GameEngine::assignReinforcements() {
 			bonus = true;
 			for (int k = 0; k < territories.size(); k++) {
 
-				if (territories[k]->getContinentNum() == k + 1 && territories[k]->getPlayer() != i + 1) {
+				if (territories[k]->getContinentNum() == j + 1 && territories[k]->getPlayerName() != playerList[i]->getPlayerName()) {
 					bonus = false;
 				}
 			}
@@ -212,6 +216,8 @@ void GameEngine::assignReinforcements() {
 		}
 		if (troops < 3)
 			troops = 3;
+
+
 		
 		cout << "Assigned " << troops << " troops for " << playerList[i]->getPlayerName()<<", owning "<< countriesOwned <<
 			" territories and " << continentsOwned << " continents.\n\n";
@@ -268,6 +274,7 @@ GameEngine::GameEngine() {
 	state = GameState::start;
 	cmdProc = new CommandProcessor();
 	currentMap = nullptr;
+	deck = new Deck(50);
 }
 
 GameEngine::GameEngine(GameEngine& copy) {}
@@ -277,8 +284,10 @@ GameEngine& GameEngine::operator =(const GameEngine& copy) { return *this; }
 GameEngine::~GameEngine() {
 	delete cmdProc;
 	delete currentMap;
+	delete deck;
 	cmdProc = nullptr;
 	currentMap = nullptr;
+	deck = nullptr;
 }
 
 ostream& operator<<(ostream& output, GameEngine& t) { return output; }
