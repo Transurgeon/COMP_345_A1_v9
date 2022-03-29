@@ -257,25 +257,23 @@ bool Map::validate()
 
 	checkTerritoriesAndContinents(start, &reachedTerritories, &reachedContinents);
 
-	if (reachedTerritories.size() != territories.size() || reachedContinents.size() != continents.size())
+	if (reachedTerritories.size() != territories.size() || reachedContinents.size() != continents.size()){
 		return false;
-
+	}
 
 	//check 3: each country belongs to one and only one continent
 
 	for (Territory* i : territories) {
 
 		int continentMatch = 0;
-		for (Continent* j : continents)
-		{
+		for (Continent* j : continents){
+
 			if (i->getContinentNum() == j->getContinentNum())
 				continentMatch++;
 		}
-		if (continentMatch != 1) {
+		if (continentMatch != 1)
 			return false;
-		}
 	}
-
 	return true;
 }
 
@@ -312,8 +310,7 @@ void Map::addTerritory(int con, string t) {
 }
 
 void Map::addContinent(int b, string n) {
-	int size = continents.size() + 1;
-	continents.push_back(new Continent(continents.size(), b, n));
+	continents.push_back(new Continent(continents.size() + 1, b, n));
 }
 
 void Map::addBorderRoot(int r) {
