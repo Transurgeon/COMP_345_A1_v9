@@ -283,7 +283,7 @@ void Player::cancelDefend(Territory* territory) {
 
 //the player attack action, returns a list of territories being attacked
 vector<Territory*>* Player::toAttack(Map* map) {
-    for (int i = 0; i < playerTerritoryList->size(); i++) {
+    /*for (int i = 0; i < playerTerritoryList->size(); i++) {
         vector<Territory*> adjList = map->getAllAdjacentTerritories(*playerTerritoryList->at(i));
 
         for (int j = 0; j < adjList.size(); j++) {
@@ -292,7 +292,7 @@ vector<Territory*>* Player::toAttack(Map* map) {
                 this->attackTerritory(adjList.at(j));
             }
         }
-    }
+    }*/
 
     return playerAttackList;
 
