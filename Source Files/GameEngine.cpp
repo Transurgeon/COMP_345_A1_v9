@@ -243,7 +243,7 @@ void GameEngine::issueOrders() {
 		}
 		
 
-		cout << "\n\nTerritories to attack : \n";
+		cout << "\n\nTerritories to defend: \n";
 
 		list = playerList[i]->getDefendList(currentMap);
 		for (int j = 0; j < list.size(); j++) {
