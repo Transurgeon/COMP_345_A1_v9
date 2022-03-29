@@ -16,7 +16,7 @@ private:
     int continentNum;
     int countryNum;
     string title;
-    int playerNum;
+    string playerName;
     int numberOfArmies;
 
 public:
@@ -28,13 +28,13 @@ public:
     ~Territory();
 
     //Setters and Getters
-    void setPlayer(int p);
+    void setPlayer(string p);
     void setArmy(int a);
     void addArmy(int a);
     int getContinentNum();
     int getCountryNum();
     string getName();
-    int getPlayer();
+    string getPlayerName();
     int getArmy();
 
     void neutralState();

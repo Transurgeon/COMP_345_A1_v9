@@ -213,7 +213,7 @@ void Advance::execute() {
                     cout << "Now there is " << toTerritory->getArmy() << " armies left on the " << toTerritory->getName() << endl;
                 }
                 if (toTerritory->getArmy() == 0) {
-                    toTerritory->setPlayer(player->getPlayerId());
+                    toTerritory->setPlayer(player->getPlayerName());
                     player->addTerritory(toTerritory);
                     targetPlayer->removeTerritory(toTerritory);
                     toTerritory->setArmy(toTerritory->getArmy() + armies);

@@ -86,3 +86,31 @@ CommandProcessor stringToLog: addplayer <William>
 Command stringToLog: playersadded
 CommandProcessor stringToLog: gamestart
 Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <william>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <William>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement

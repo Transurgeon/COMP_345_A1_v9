@@ -10,7 +10,7 @@ Territory::Territory()
 	continentNum = 0;
 	countryNum = 0;
 	title = "";
-	playerNum = -1;
+	playerName = "";
 	numberOfArmies = 0;
 }
 
@@ -19,7 +19,7 @@ Territory::Territory(int con, int cou, int arm, string t)
 	continentNum = con;
 	countryNum = cou;
 	title = t;
-	playerNum = -1;
+	playerName = "";
 	numberOfArmies = arm;
 }
 
@@ -28,7 +28,7 @@ Territory::Territory(const Territory& copy)
 	continentNum = copy.continentNum;
 	countryNum = copy.countryNum;
 	title = copy.title;
-	playerNum = copy.playerNum;
+	playerName = copy.playerName;
 	numberOfArmies = copy.numberOfArmies;
 }
 
@@ -37,14 +37,14 @@ Territory& Territory::operator =(const Territory& copy)
 	continentNum = copy.continentNum;
 	countryNum = copy.countryNum;
 	title = copy.title;
-	playerNum = copy.playerNum;
+	playerName = copy.playerName;
 	numberOfArmies = copy.numberOfArmies;
 	return *this;
 }
 
-void Territory::setPlayer(int p)
+void Territory::setPlayer(string p)
 {
-	playerNum = p;
+	playerName = p;
 }
 
 void Territory::setArmy(int a)
@@ -72,9 +72,9 @@ string Territory::getName()
 	return title;
 }
 
-int Territory::getPlayer()
+string Territory::getPlayerName()
 {
-	return playerNum;
+	return playerName;
 }
 
 int Territory::getArmy() {
@@ -83,7 +83,7 @@ int Territory::getArmy() {
 }
 
 void Territory::neutralState() {
-	playerNum = -1;
+	playerName = "";
 }
 
 Territory::~Territory()
@@ -92,11 +92,11 @@ Territory::~Territory()
 
 ostream& operator<<(ostream& output, Territory& t)
 {
-	if (t.getPlayer() == 0) {
+	if (t.getPlayerName() == "") {
 		output << "Territory number " << t.getCountryNum() << ", " << t.getName() << ", is in continent number " << t.getContinentNum() << ", and is owned by no player." << endl;
 	}
 	else {
-		output << "Territory number " << t.getCountryNum() << ", " << t.getName() << ", is in continent number " << t.getContinentNum() << "is owned by player " << t.getPlayer() << " and has " << t.getArmy() << " armies on it." << endl;
+		output << "Territory number " << t.getCountryNum() << ", " << t.getName() << ", is in continent number " << t.getContinentNum() << "is owned by player " << t.getPlayerName() << " and has " << t.getArmy() << " armies on it." << endl;
 	}
 	return output;
 }

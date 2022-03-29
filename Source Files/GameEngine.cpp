@@ -37,6 +37,8 @@ void GameEngine::startupPhase() {
 			cout << "Starting a new game, load a map \n";
 			state = GameState::start;
 			playerList.clear();
+			delete deck;
+			deck = new Deck(50);
 		}
 		else if (commandType == "quit") {
 			cout << "Thanks for playing, all it cost you to play this was your time, it cost me my sanity.";
@@ -93,8 +95,8 @@ void GameEngine::gameStart() {
 	int currentTerritory = random(0, territories.size() -1);
 	int currentPlayer = 0;
 	while (leftOverTerritories > 0) {
-		if (territories[currentTerritory]->getPlayer() == -1) {
-			territories[currentTerritory]->setPlayer(currentPlayer);
+		if (territories[currentTerritory]->getPlayerName() == "") {
+			territories[currentTerritory]->setPlayer(playerList[currentPlayer]->getPlayerName());
 			playerList[currentPlayer]->addTerritory(territories[currentTerritory]);
 			currentPlayer = (currentPlayer + 1) % playerList.size();
 			leftOverTerritories--;
@@ -121,7 +123,7 @@ void GameEngine::gameStart() {
 		currentTerritory = 0;
 		do {
 			cout << "Remaining troops: " << troops << endl;
-			while (territories[currentTerritory]->getPlayer() == i) {currentTerritory = (currentTerritory + 1) % territories.size();}
+			while (territories[currentTerritory]->getPlayerName() == playerList[i]->getPlayerName()) {currentTerritory = (currentTerritory + 1) % territories.size();}
 
 			cout << "How many troops do you want to place on " << territories[currentTerritory]->getName() <<"?\n";
 			cin >> input;
@@ -141,8 +143,9 @@ void GameEngine::gameStart() {
 
 	cout << "\nEach player draws 2 cards from the deck to their hand" << endl;
 	for (int j = 0; j < playerList.size(); j++) {
-		//playerList[j]->getPlayerCards.draw();
-		//playerList[j]->getPlayerCards.draw();
+		cout << playerList[j]->getPlayerName() << " picks the following 2 cards:";
+		deck->draw(*playerList[j]->getHand());
+		deck->draw(*playerList[j]->getHand());
 	}
 	cout << "\n\nGame is starting\n\n";
 	
@@ -191,7 +194,7 @@ void GameEngine::assignReinforcements() {
 		countriesOwned = 0;
 		continentsOwned = 0;
 		for (int j = 0; j < territories.size(); j++) {
-			if (territories[j]->getPlayer() == i) {
+			if (territories[j]->getPlayerName() == playerList[i]->getPlayerName()) {
 				troops++;
 				countriesOwned++;
 			}
@@ -202,7 +205,7 @@ void GameEngine::assignReinforcements() {
 			bonus = true;
 			for (int k = 0; k < territories.size(); k++) {
 
-				if (territories[k]->getContinentNum() == j + 1 && territories[k]->getPlayer() != i + 1) {
+				if (territories[k]->getContinentNum() == j + 1 && territories[k]->getPlayerName() != playerList[i]->getPlayerName()) {
 					bonus = false;
 				}
 			}
@@ -222,8 +225,6 @@ void GameEngine::assignReinforcements() {
 }
 
 void GameEngine::issueOrders() {
-
-	cout << *currentMap;
 
 	cout << "Issue Orders Stage" << endl;
 	string input;
@@ -273,6 +274,7 @@ GameEngine::GameEngine() {
 	state = GameState::start;
 	cmdProc = new CommandProcessor();
 	currentMap = nullptr;
+	deck = new Deck(50);
 }
 
 GameEngine::GameEngine(GameEngine& copy) {}
@@ -282,8 +284,10 @@ GameEngine& GameEngine::operator =(const GameEngine& copy) { return *this; }
 GameEngine::~GameEngine() {
 	delete cmdProc;
 	delete currentMap;
+	delete deck;
 	cmdProc = nullptr;
 	currentMap = nullptr;
+	deck = nullptr;
 }
 
 ostream& operator<<(ostream& output, GameEngine& t) { return output; }
