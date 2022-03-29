@@ -50,8 +50,8 @@ public:
 
 	//Methods for Game
 	/*void setState(GameState gs);
-	GameState getState();
-	void Transition();*/
+	GameState getState();*/
+	void Transition();
 	string stringToLog() override;
 
 	//Constructors, Assignment Operator and Destructor

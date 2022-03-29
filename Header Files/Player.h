@@ -37,8 +37,8 @@ public:
     vector<Territory*>* toDefend();
 
     vector<Territory*>* getTerritoryList();
-    vector<Territory*>* getAttackList();
-    vector<Territory*>* getDefendList();
+    vector<Territory*> getAttackList(Map* m);
+    vector<Territory*> getDefendList(Map* m);
     Territory* getTerritoryByName(string name, vector<Territory*>* territoryList);
 
     void displayTerritory(vector<Territory*>*);

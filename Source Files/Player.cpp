@@ -291,14 +291,54 @@ vector<Territory*>* Player::getTerritoryList() {
     return playerTerritoryList;
 }
 
-vector<Territory*>* Player::getAttackList() {
+vector<Territory*> Player::getAttackList(Map* m) {
 
-    return playerAttackList;
+    vector<Territory*> attacklist;
+    bool repeat;
+    for (int i = 0; i < m->getTerritories().size(); i++) {
+        if (m->getTerritories()[i]->getPlayerName() == playerName) {
+            for (int j = 0; j < m->getBorders()[i]->getEdges().size(); j++) {
+                if (m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]->getPlayerName() != playerName) {
+                    repeat = false;
+                    for (int k = 0; k < attacklist.size(); k++) {
+                        if (attacklist[k]->getCountryNum() == m->getBorders()[i]->getEdges()[j]) {
+                            repeat = true;
+                        }
+                    }
+                    if (!repeat) {
+                        attacklist.push_back(m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]);
+                    }
+                }
+            }
+        }
+    }
+
+    return attacklist;
 }
 
-vector<Territory*>* Player::getDefendList() {
+vector<Territory*> Player::getDefendList(Map* m) {
 
-    return playerDefendList;
+    vector<Territory*> defendlist;
+    bool repeat;
+    for (int i = 0; i < m->getTerritories().size(); i++) {
+        if (m->getTerritories()[i]->getPlayerName() == playerName) {
+            for (int j = 0; j < m->getBorders()[i]->getEdges().size(); j++) {
+                if (m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]->getPlayerName() != playerName) {
+                    repeat = false;
+                    for (int k = 0; k < defendlist.size(); k++) {
+                        if (defendlist[k]->getCountryNum() == i+1) {
+                            repeat = true;
+                        }
+                    }
+                    if (!repeat) {
+                        defendlist.push_back(m->getTerritories()[i]);
+                    }
+                }
+            }
+        }
+    }
+
+    return defendlist;
 }
 
 void Player::setPlayerId(int id) {

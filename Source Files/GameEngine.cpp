@@ -150,6 +150,9 @@ void GameEngine::gameStart() {
 	cout << "\n\nGame is starting\n\n";
 	
 	do {} while (mainGameLoop());
+
+	cout << "Sombody has won the game, do you want to play again?";
+	state = GameState::win;
 }
 
 int random(int a, int b) {
@@ -182,6 +185,7 @@ bool GameEngine::mainGameLoop() {
 
 void GameEngine::assignReinforcements() {
 
+	state = GameState::assignReinforcements;
 	string input;
 	int troops;
 	int countriesOwned;
@@ -217,7 +221,7 @@ void GameEngine::assignReinforcements() {
 		if (troops < 3)
 			troops = 3;
 
-
+		playerList[i]->addArmyNum(troops);
 		
 		cout << "Assigned " << troops << " troops for " << playerList[i]->getPlayerName()<<", owning "<< countriesOwned <<
 			" territories and " << continentsOwned << " continents.\n\n";
@@ -225,26 +229,47 @@ void GameEngine::assignReinforcements() {
 }
 
 void GameEngine::issueOrders() {
-
+	state = GameState::issueOrders;
 	cout << "Issue Orders Stage" << endl;
-	string input;
-	do {
-		cout << "**Issuing Orders**" << endl;
-		cout << "Are you done issuing orders? (Type \"yes\" if you agree, anything else otherwise) ";
-		cin >> input;
-	} while (input != "yes");
+	string buffer;
+	vector<Territory*> list;
+	for (int i = 0; i < playerList.size(); i++) {
+		cout << playerList[i]->getPlayerName() << " has " <<playerList[i]->getArmyNum() << " troops in reserve.\n";
+		cout << "Territories to attack:\n";
+
+		list = playerList[i]->getAttackList(currentMap);
+		for (int j = 0; j < list.size(); j++) {
+			cout << *list[j] << endl;
+		}
+		
+
+		cout << "\n\nTerritories to attack : \n";
+
+		list = playerList[i]->getDefendList(currentMap);
+		for (int j = 0; j < list.size(); j++) {
+			cout << *list[j] << endl;
+		}
+		
+
+		cin >> buffer;
+
+	}
 }
 
 bool GameEngine::executeOrders() {
+	state = GameState::executeOrders;
 	cout << "Execute Orders Stage" << endl;
 	string input;
 	for (int i = 0; i < 5; i++) {
 		cout << "**Executing Orders**" << endl;
 
 	}
-	cout << "Did you capture all territories? This means you won (Type \"yes\" if you agree, anything else otherwise) ";
-	cin >> input;
+	if (random(1, 3) == 1) {
+		cout << "Somebody has captured all territries\n";
+		return false;
+	}
 
+	cout << "next round\n";
 	return true;
 }
 
@@ -261,10 +286,10 @@ void GameEngine::gameOver() {
 //	return state;
 //}
 //
-//void GameEngine::Transition() {
-//	Notify(this);
-//}
-//
+void GameEngine::Transition() {
+	Notify(this);
+}
+
 string GameEngine::stringToLog() {
 	return "Running Game Engine: ";
 }
