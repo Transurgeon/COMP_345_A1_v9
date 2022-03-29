@@ -20,57 +20,60 @@ void ordersMain() {
 
     p1->addTerritory(t1); p1->addTerritory(t2);
     p2->addTerritory(t3); p2->addTerritory(t4);
-   
+    cout << "////////////////////////////////////////////////////////" << endl;
     cout << "Initialising the Deploy Order " << endl;
     Deploy* DEPLOY_1 = new Deploy(p1, t1, 3);
 
     cout << "Showing Validation of the Deploy Order " << endl; DEPLOY_1->validate();
     cout << "Executing Deploy Order" << endl; DEPLOY_1->execute();
 
+    cout << "////////////////////////////////////////////////////////" << endl;
     cout << "Initialising the Bomb Order " << endl;
     Bomb* BOMB_1 = new Bomb(p1, t3);
 
     cout << "Showing Validation of the Bomb Order" << endl; BOMB_1->validate();
     cout << "Executing Bomb Order" << endl; BOMB_1->execute();
 
+    cout << "////////////////////////////////////////////////////////" << endl;
     cout << "Initialising the Blockade Order " << endl;
     Blockade* BLOCK_1 = new Blockade(p1, t2);
 
     cout << "Showing Validation of the Blockade Order" << endl; BLOCK_1->validate();
     cout << "Executing Blockade Order" << endl; BLOCK_1->execute();
 
+    cout << "////////////////////////////////////////////////////////" << endl;
     cout << "Initialising the Airlift Order " << endl;
     Airlift* AIR_1 = new Airlift(p1, t1, t2, 1);
 
     cout << "Showing Validation of the Airlift Order" << endl; AIR_1->validate();
     cout << "Executing Airlift Order" << endl; AIR_1->execute();
 
+    cout << "////////////////////////////////////////////////////////" << endl;
     cout << "Initialising the Advance Order " << endl;
     Advance* ADV_1 = new Advance(p1, p2, t1, t2, 1);
 
     cout << "Showing Validation of the Advance Order" << endl;
-    //ADV_1->validate();
+    AIR_1->validate();
     cout << "Executing Advance Order" << endl;
-    //ADV_1->execute();
+    AIR_1->execute();
+    Orderslist ordersList;
 
     p1->issueOrders(DEPLOY_1); p1->issueOrders(ADV_1);
     p1->issueOrders(BOMB_1); p1->issueOrders(BLOCK_1);
     p2->issueOrders(AIR_1);
 
-    Orderslist ordersList;
+    cout << "////////////////////////////////////////////////////////" << endl;
 
     ordersList.setOrderList(BOMB_1); ordersList.setOrderList(BLOCK_1);
     ordersList.setOrderList(AIR_1); ordersList.setOrderList(DEPLOY_1);
-    
-    cout << "Initialising the Airlift Order" << endl;
+
+    cout << "////////////////////////////////////////////////////////" << endl;
+    cout << "Initialising the Negotiate Order" << endl;
     Negotiate* NEGOTIATE_1 = new Negotiate(p1, p2);
 
     p1->issueOrders(NEGOTIATE_1);
 
     cout << "Showing Validation of the Negotiate Order" << endl; NEGOTIATE_1->validate();
     cout << "Executing Negotiate Order" << endl; NEGOTIATE_1->execute();
-
-    p1->issueOrders(BOMB_1);
-    BOMB_1->validate(); BOMB_1->execute();
 }
 

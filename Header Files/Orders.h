@@ -18,14 +18,16 @@ class Map;
 class Card;
 class Deck;
 class Hand;
-
+/// <summary>
+/// Order Class (Parent of all sub-orders)
+/// </summary>
 struct Order {
 private:
     int id;
     bool valid;
-    vector<string> orders = { "deploy","advance","bomb","blockade","airlift","negotiate" };
     bool attackable = true;
 
+    vector<string> orders = { "deploy","advance","bomb","blockade","airlift","negotiate" };
 public:
     //constructor & destructor
     Order();
@@ -50,7 +52,9 @@ public:
     void setOrderIssuer(Player* issuer);
 };
 
-
+/// <summary>
+/// Deploy Class
+/// </summary>
 struct Deploy : public Order, public ILoggable, public Subject {
 private:
     Territory* targetTerritory;
@@ -68,6 +72,10 @@ public:
     //stringTolog from observer
     string stringToLog() override;
 };
+
+/// <summary>
+/// Bomb Class 
+/// </summary>
 struct Bomb : public Order, public ILoggable, public Subject {
 private:
     Territory* targetTerritory;
@@ -87,6 +95,9 @@ public:
 
 };
 
+/// <summary>
+/// Advance Class 
+/// </summary>
 struct Advance : public Order, public ILoggable, public Subject {
 private:
     Territory* fromTerritory;
@@ -109,6 +120,9 @@ public:
     string stringToLog() override;
 };
 
+/// <summary>
+/// Blockade Class 
+/// </summary>
 struct Blockade : public Order, public ILoggable, public Subject {
 private:
     Territory* targetTerritory;
@@ -127,6 +141,9 @@ public:
     string stringToLog() override;
 };
 
+/// <summary>
+/// Airlift Class 
+/// </summary>
 struct Airlift : public Order, public ILoggable, public Subject {
 private:
     Territory* fromTerritory;
@@ -135,7 +152,7 @@ private:
     string airliftExecute;
 public:
     Airlift();
-    Airlift(Player* player, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
+    Airlift(Player* p, Territory* source, Territory* dest, unsigned int armies);
     ~Airlift();
     Airlift(const Airlift& copoedAir);
     Airlift& operator = (const Airlift& Airo);
@@ -147,6 +164,9 @@ public:
     string stringToLog() override;
 };
 
+/// <summary>
+/// Negotiate Class 
+/// </summary>
 struct Negotiate : public Order, public ILoggable, public Subject {
 private:
     Player* targetPlayer;
@@ -165,10 +185,13 @@ public:
     string stringToLog() override;
 };
 
+/// <summary>
+/// Orderslist Class 
+/// </summary>
 class Orderslist :public ILoggable, public Subject {
 private:
     vector<Order*> orderlist;
-    string orderForObs;
+    string observer_Order;
 public:
     Orderslist();
     Orderslist(const Orderslist& copiedOl);
@@ -180,7 +203,7 @@ public:
     void setOrderList(Order* order);
     vector<Order*>* getOrderList();
 
-    //methods to modify the list
+    //methods to add and change the list
     void remove(Order* order);
     void move(int origin, int targetPosition);
     void printOrderlist();

@@ -77,7 +77,7 @@ void Order::setOrderIssuer(Player* issuer) {
 
 Deploy::Deploy() {
     setID(0);
-    cout << "The order" << " " << getOrderType() << " has been placed\n" << endl;
+    cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
 };
 
 Deploy::Deploy(Player* player, Territory* targetTerritory, unsigned int armies) : Order(player) {
@@ -125,12 +125,12 @@ void Deploy::execute() {
 
     if (validate()) {
         targetTerritory->setArmy(targetTerritory->getArmy() + armies);
-        cout << "Deploy is executed: " << armies << " armies has been deployed to the territory " << targetTerritory->getName() << "\n" << endl;
+        cout << "Deploy is being executed: " << armies << " armies have been deployed to the territory called: " << targetTerritory->getName() << "\n" << endl;
         Notify(this); 
         return;
     }
-        cout << "deploy cannot be executed\n" << endl;
-        deployExecute = "deploy cannot be executed\n";
+        cout << "Deploy cannot be executed\n" << endl;
+        deployExecute = "Deploy cannot be executed\n";
     Notify(this);
 }
 
@@ -140,7 +140,7 @@ string Deploy::stringToLog() {
 
 Advance::Advance() {
     setID(1);
-    cout << "The order" << " " << getOrderType() << " is been placed\n" << endl;
+    cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
 }
 
 Advance::Advance(Player* player, Player* targetPlayer, Territory* fromTerritory, Territory* toTerritory, unsigned int armies) : Order(player) {
@@ -149,7 +149,8 @@ Advance::Advance(Player* player, Player* targetPlayer, Territory* fromTerritory,
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
     this->armies = armies;
-    cout << "The order advance is been placed with issuer " << player->getPlayerId() << " from Territory " << fromTerritory->getName() << " to Territory " << toTerritory->getName() << "with number of armies " << armies << "\n" << endl;
+    cout << "The Order Advance has been placed by the player called: " << player->getPlayerId() << " it transports "<< armies <<" number of armies "
+        <<"from Territory called: " << fromTerritory->getName() << " to Territory called: " << toTerritory->getName() << "\n" << endl;
 }
 
 Advance::Advance(const Advance& copiedAd) {
@@ -163,12 +164,12 @@ Advance::~Advance() {
     delete this->toTerritory;
 }
 
-Advance& Advance::operator = (const Advance& Ao) {
-    Order::operator=(Ao);
-    player = Ao.player;
-    fromTerritory = Ao.fromTerritory;
-    toTerritory = Ao.toTerritory;
-    armies = Ao.armies;
+Advance& Advance::operator = (const Advance& Adva) {
+    Order::operator=(Adva);
+    player = Adva.player;
+    fromTerritory = Adva.fromTerritory;
+    toTerritory = Adva.toTerritory;
+    armies = Adva.armies;
     return *this;
 }
 
@@ -178,7 +179,7 @@ bool Advance::validate() {
         return true;
     }
     else {
-        cout << "advance is invalid\n" << endl;
+        cout << "Advance is invalid\n" << endl;
         return false;
     }
 
@@ -236,7 +237,7 @@ string Advance::stringToLog() {
 
 Bomb::Bomb() {
     setID(2);
-    cout << "The order" << " " << getOrderType() << " is been placed" << endl;
+    cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
 }
 
 Bomb::Bomb(Player* player, Territory* targetTerritory) : Order(player) {
@@ -295,8 +296,9 @@ string Bomb::stringToLog() {
 
 Blockade::Blockade() {
     setID(3);
-    cout << "The order" << " " << getOrderType() << " is been placed" << endl;
+    cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
 }
+
 Blockade::Blockade(Player* player, Territory* targetTerritory) : Order(player) {
     setID(3);
     this->targetTerritory = targetTerritory;
@@ -362,7 +364,8 @@ Airlift::Airlift(Player* player, Territory* fromTerritory, Territory* toTerritor
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
     this->armies = armies;
-    cout << "The order Blockade is been placed with issuer " << player->getPlayerId() << " from territory " << fromTerritory->getName() << " to territory " << toTerritory->getName() << "\n" << endl;
+    cout << "The order Blockade is been placed with issuer " << player->getPlayerId() << " from territory " << fromTerritory->getName() 
+        << " to territory " << toTerritory->getName() << "\n" << endl;
 
 }
 
@@ -399,7 +402,8 @@ void Airlift::execute() {
     if (validate() && player->getHand()->getCardByType(airlift)) {
         fromTerritory->setArmy(fromTerritory->getArmy() - armies);
         toTerritory->setArmy(toTerritory->getArmy() + armies);
-        cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory " << fromTerritory->getName() << " to the target territory " << toTerritory->getName() << "\n" << endl;
+        cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory "
+            << fromTerritory->getName() << " to the target territory " << toTerritory->getName() << "\n" << endl;
         Notify(this);
         return;
     }
@@ -414,7 +418,7 @@ string Airlift::stringToLog() {
 
 Negotiate::Negotiate() {
     setID(5);
-    cout << "The order" << " " << getOrderType() << " is been placed" << endl;
+    cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
 }
 
 Negotiate::Negotiate(Player* player, Player* targetPlayer) : Order(player) {
@@ -434,10 +438,10 @@ Negotiate::Negotiate(const Negotiate& copiedNe) {
     this->targetPlayer = copiedNe.targetPlayer;
 }
 
-Negotiate& Negotiate::operator = (const Negotiate& Neo) {
-    Order::operator=(Neo);
-    player = Neo.player;
-    targetPlayer = Neo.targetPlayer;
+Negotiate& Negotiate::operator = (const Negotiate& Negot) {
+    Order::operator=(Negot);
+    player = Negot.player;
+    targetPlayer = Negot.targetPlayer;
     return *this;
 }
 
@@ -473,7 +477,6 @@ void Negotiate::execute() {
         cout << "The Negotiate order cannot be executed\n" << endl;
         negotiateExecute = "The Negotiate order cannot be executed\n";
     }
-
     Notify(this);
 }
 
@@ -482,6 +485,7 @@ string Negotiate::stringToLog() {
 }
 
 Orderslist::Orderslist() = default;
+
 Orderslist::~Orderslist() = default;
 
 Orderslist::Orderslist(const Orderslist & copiedOl) {
@@ -505,8 +509,8 @@ istream& operator >> (istream & in, Orderslist & o)
 void Orderslist::setOrderList(Order * order) {
     orderlist.push_back(order);
 
-    cout << "OrderList add order: " + order->getOrderType() << " has been added by " << order->player->getPlayerName() << "\n" << endl;
-    orderForObs = "OrderList add order: " + order->player->getPlayerName() + " added " + order->getOrderType() + " to the list.\n";
+    cout << "Adding a " + order->getOrderType() << " order to  " << order->player->getPlayerName() << "\n" << endl;
+    observer_Order = "OrderList add order: " + order->player->getPlayerName() + " added " + order->getOrderType() + " to the list.\n";
     Notify(this);
 }
 
