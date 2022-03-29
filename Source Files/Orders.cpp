@@ -4,7 +4,9 @@
 
 
 using namespace std;
-
+/// <summary>
+/// Order class (Parent)
+/// </summary>
 Order::Order()
 {
 }
@@ -74,7 +76,9 @@ const Player* Order::getOrderIssuer() {
 void Order::setOrderIssuer(Player* issuer) {
     player = issuer;
 }
-
+/// <summary>
+/// Deploy Class
+/// </summary>
 Deploy::Deploy() {
     setID(0);
     cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
@@ -137,7 +141,9 @@ void Deploy::execute() {
 string Deploy::stringToLog() {
     return "Deploy Order Executing: " + deployExecute;
 }
-
+/// <summary>
+/// Advance
+/// </summary>
 Advance::Advance() {
     setID(1);
     cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
@@ -192,34 +198,40 @@ void Advance::execute() {
         {
             fromTerritory->setArmy(fromTerritory->getArmy() - armies);
             toTerritory->setArmy(toTerritory->getArmy() + armies);
-            cout << "Advance is executed: Advance " << armies << " armies from " << fromTerritory->getName() << " to " << toTerritory->getName() << "\n" << endl;
+            cout << "Advance is executed: Advancing this number of " << armies << " armies from the territory called: " << fromTerritory->getName() <<
+                " to another territory called: " << toTerritory->getName() << "\n" << endl;
         }
+
         else {
             if (getAttackable()) {
                 fromTerritory->setArmy(fromTerritory->getArmy() - armies);
                 while (toTerritory->getArmy() > 0 && armies > 0) {
 
-                    srand(time(NULL));
-                    if (rand() % 10 < 6) {
+                    //60% of chance to kill a defending territory with one attacking one
+                    
+                    if (rand() % 100 < 60) {
                         toTerritory->setArmy(toTerritory->getArmy() - 1);
-                        cout << "Advance is executed: There is one army on " << toTerritory->getName() << "has been killed.\n";
-                        advanceExecute = "Advance is executed: There is one army on " + toTerritory->getName() + " as defender has been killed.\n";
+                        cout << "Successful attack!!!! A troop from the territory: " << toTerritory->getName() << " was absolutely annihilated";
                     }
-                    else if (rand() % 10 < 7) {
+
+                    //70% if chance to kill an attacking territory with a defending one
+                    else if (rand() % 100 < 70) {
                         armies--;
-                        cout << "Advance is executed: There is one army from" + fromTerritory->getName() + " as attacker has been killed. \n";
-                        advanceExecute = "Advance is executed: There is one army on " + fromTerritory->getName() + " as attacker has been killed. \n";
+                        cout << "Successful defense!!!! A troop from the territory: " + fromTerritory->getName() + " was absolutely decimated \n";
                     }
-                    cout << "Now there is " << toTerritory->getArmy() << " armies left on the " << toTerritory->getName() << endl;
+                    cout << "After the first round there are " << toTerritory->getArmy() << " armies left on the territory called: " << toTerritory->getName() << endl;
                 }
+
+                //if the target territories has no more troops, we conquer that nation 
                 if (toTerritory->getArmy() == 0) {
                     toTerritory->setPlayer(player->getPlayerName());
                     player->addTerritory(toTerritory);
                     targetPlayer->removeTerritory(toTerritory);
+
+                    //adding card after succesful attack/conquest of the territory
                     toTerritory->setArmy(toTerritory->getArmy() + armies);
                     player->getHand()->addCard(card);
-                    cout << "The target territory now is belongs to player" + player->getPlayerName() + " and gets a random card" << endl;
-                    advanceExecute += "The target territory now is belongs to player" + player->getPlayerName() + " and gets a random card";
+                    cout << "The target territory belongs to: " + player->getPlayerName() + " Congrats!, you will gain a random card" << endl;
                 }
             }
         }
@@ -234,7 +246,9 @@ void Advance::execute() {
 string Advance::stringToLog() {
     return "Advance Order Executing: " + advanceExecute;
 }
-
+/// <summary>
+/// Bomb class
+/// </summary>
 Bomb::Bomb() {
     setID(2);
     cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
@@ -244,7 +258,8 @@ Bomb::Bomb(Player* player, Territory* targetTerritory) : Order(player) {
     setID(2);
     this->player = player;
     this->targetTerritory = targetTerritory;
-    cout << "The order Bomb is been placed with issuer " << player->getPlayerId() << " targeting to the territory " << targetTerritory->getName() << "\n" << endl;
+    cout << "The order Bomb is been placed with issuer " << player->getPlayerId() << 
+        " targeting to the territory " << targetTerritory->getName() << "\n" << endl;
 
 }
 
@@ -256,7 +271,6 @@ Bomb::Bomb(const Bomb& copiedBo) {
 
 Bomb::~Bomb() {
     delete this->targetTerritory;
-    delete this;
 }
 
 Bomb& Bomb::operator = (const Bomb& Bo) {
@@ -280,8 +294,7 @@ bool Bomb::validate() {
 void Bomb::execute() {
     if (validate() && player->getHand()->getCardByType(bomb) && getAttackable()) {
         targetTerritory->setArmy(targetTerritory->getArmy() / 2);
-        cout << "Bomb is executed: the armies on target Territory " << targetTerritory->getName() << " has been removed half by the issuer. \n" << endl;
-        bombExecute = "Bomb is executed: the armies on target Territory " + targetTerritory->getName() + " has been removed half by the issuer. \n";
+        cout << "The armies on target Territory called: " << targetTerritory->getName() << " were cut in half by the issuer. \n" << endl;
         Notify(this);
         return;
     }
@@ -293,7 +306,9 @@ void Bomb::execute() {
 string Bomb::stringToLog() {
     return "Bomb Order Executing: " + bombExecute;
 }
-
+/// <summary>
+/// Blockade class 
+/// </summary>
 Blockade::Blockade() {
     setID(3);
     cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
@@ -303,12 +318,11 @@ Blockade::Blockade(Player* player, Territory* targetTerritory) : Order(player) {
     setID(3);
     this->targetTerritory = targetTerritory;
     this->player = player;
-    cout << "The order Blockade is been placed with issuer " << player->getPlayerId() << " targeting to the territory "
+    cout << "The order Blockade has been placed by the player number: " << player->getPlayerId() << " to the territory called: "
         << targetTerritory->getName() << "\n" << endl;
 }
 
 Blockade::Blockade(const Blockade& copiedBl) {
-    /*    this->type = *new string (copiedBl.type);*/
     this->player = copiedBl.player;
     this->targetTerritory = copiedBl.targetTerritory;
 }
@@ -341,8 +355,6 @@ void Blockade::execute() {
         targetTerritory->neutralState();
         cout << "Blockade is executed: The army on territory " << targetTerritory->getName() 
             << " has been doubled ,and the ownership of this territory has been transferred to neutral.\n" << endl;
-        blockadeExecute = "Blockade is executed: The army on territory " + targetTerritory->getName() + 
-            " has been doubled ,and the ownership of this territory has been transferred to neutral.\n";
         Notify(this);
         return;
     }
@@ -354,7 +366,9 @@ void Blockade::execute() {
 string Blockade::stringToLog() {
     return "Blockade Order Executing: " + blockadeExecute;
 }
-
+/// <summary>
+/// AirLift class
+/// </summary>
 Airlift::Airlift() {
     setID(4);
     cout << "The order" << " " << getOrderType() << " is been placed" << endl;
@@ -364,7 +378,7 @@ Airlift::Airlift(Player* player, Territory* fromTerritory, Territory* toTerritor
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
     this->armies = armies;
-    cout << "The order Blockade is been placed with issuer " << player->getPlayerId() << " from territory " << fromTerritory->getName() 
+    cout << "The order airlift has been placed with by the player " << player->getPlayerId() << " from territory " << fromTerritory->getName() 
         << " to territory " << toTerritory->getName() << "\n" << endl;
 
 }
@@ -402,8 +416,8 @@ void Airlift::execute() {
     if (validate() && player->getHand()->getCardByType(airlift)) {
         fromTerritory->setArmy(fromTerritory->getArmy() - armies);
         toTerritory->setArmy(toTerritory->getArmy() + armies);
-        cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory "
-            << fromTerritory->getName() << " to the target territory " << toTerritory->getName() << "\n" << endl;
+        cout << "Airlift is executed: The player has moved " << armies << " armies from the source territory called: "
+            << fromTerritory->getName() << " to the target territory called: " << toTerritory->getName() << "\n" << endl;
         Notify(this);
         return;
     }
@@ -415,7 +429,9 @@ void Airlift::execute() {
 string Airlift::stringToLog() {
     return "Airlift Order Executing: " + airliftExecute;
 }
-
+/// <summary>
+/// Negotiate class
+/// </summary>
 Negotiate::Negotiate() {
     setID(5);
     cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
@@ -459,18 +475,21 @@ bool Negotiate::validate() {
 void Negotiate::execute() {
     if (validate() && player->getHand()->getCardByType(diplomacy)) {
         if (player->containsOrder("bomb") || player->containsOrder("advance")) {
-            player->getOrderbyType("bomb")->setAttackable(false);
-            player->getOrderbyType("advance")->setAttackable(false);
-            cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getPlayerId() << " targeting to player " << targetPlayer->getPlayerId() << ". No attack can be executed between them\n" << endl;
-            negotiateExecute = "Negotiate is executed: The Negotiate has been executed by player " + player->getPlayerName() + " targeting to player " + targetPlayer->getPlayerName() + ". No attack can be executed between them\n";
+            player->getOrderbyType("bomb")->setAttackable(false);player->getOrderbyType("advance")->setAttackable(false);
+
+            //outputting negotiate if our player has bomb or advance order
+            cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getPlayerId() << 
+                " targeting to player " << targetPlayer->getPlayerId() << ". No attack can be executed between them\n" << endl;
         }
+
+
         else if (targetPlayer->containsOrder("bomb") || targetPlayer->containsOrder("advance")) {
-            Order* targetBomb = targetPlayer->getOrderbyType("bomb");
-            targetBomb->setAttackable(false);
-            Order* targetAdvance = targetPlayer->getOrderbyType("advance");
-            targetAdvance->setAttackable(false);
-            cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getPlayerId() << " targeting to player " << targetPlayer->getPlayerId() << ". No attack can be executed between them\n" << endl;
-            negotiateExecute = "Negotiate is executed: The Negotiate has been executed by player " + player->getPlayerName() + " targeting to player " + targetPlayer->getPlayerName() + ". No attack can be executed between them\n";
+            Order* targetBomb = targetPlayer->getOrderbyType("bomb"); targetBomb->setAttackable(false);
+            Order* targetAdvance = targetPlayer->getOrderbyType("advance"); targetAdvance->setAttackable(false);
+
+            //outputting negotiate if our player has bomb or advance order
+            cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getPlayerId() << 
+                " targeting to player " << targetPlayer->getPlayerId() << ". No attack can be executed between them\n" << endl;
         }
     }
     else {
@@ -483,13 +502,12 @@ void Negotiate::execute() {
 string Negotiate::stringToLog() {
     return "Negotiate Order Executing: " + negotiateExecute;
 }
+/// <summary>
+/// OrderList class, a class that saves orders into a list
+/// </summary>
 
-Orderslist::Orderslist() = default;
-
-Orderslist::~Orderslist() = default;
-
-Orderslist::Orderslist(const Orderslist & copiedOl) {
-    this->orderlist = *new vector<Order*>(copiedOl.orderlist);
+Orderslist::Orderslist(const Orderslist & cl) {
+    this->orderlist = *new vector<Order*>(cl.orderlist);
 }
 
 Orderslist& Orderslist::operator = (const Orderslist & Ol) {
@@ -554,7 +572,7 @@ void Orderslist::printOrderlist() {
     cout << endl;
 
 }
-
+//string to log function for the orderlist
 string Orderslist::stringToLog() {
     string toLog = "OrderList Calling stringToLog: Order to be added is of type: ";
     toLog.append(orderlist.back()->getOrderType());

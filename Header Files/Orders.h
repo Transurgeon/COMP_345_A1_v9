@@ -18,6 +18,8 @@ class Map;
 class Card;
 class Deck;
 class Hand;
+
+
 /// <summary>
 /// Order Class (Parent of all sub-orders)
 /// </summary>
@@ -30,9 +32,8 @@ private:
     vector<string> orders = { "deploy","advance","bomb","blockade","airlift","negotiate" };
 public:
     //constructor & destructor
-    Order();
+    Order();~Order();
     Order(Player* player);
-    ~Order();
     Order(const Order& copiedO);
     Order& operator = (const Order& O);
     friend ostream& operator <<(ostream& out, const Order& o);
@@ -193,9 +194,9 @@ private:
     vector<Order*> orderlist;
     string observer_Order;
 public:
-    Orderslist();
+    Orderslist() = default; ~Orderslist() = default;
     Orderslist(const Orderslist& copiedOl);
-    ~Orderslist();
+    
     Orderslist& operator = (const Orderslist& Ol);
     friend ostream& operator <<(ostream& out, const Orderslist& ol);
     friend istream& operator >> (istream& in, Orderslist& ol);
