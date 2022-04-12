@@ -89,7 +89,7 @@ Deploy::Deploy(Player* player, Territory* targetTerritory, unsigned int armies) 
     this->player = player; this->targetTerritory = targetTerritory;
     this->armies = armies;
     cout << "The Order" << " " << getOrderType() << " has been placed" << " by the Player: " 
-        << player->getPlayerId() << " We added  " <<armies << " number of armies to this territory: " 
+        << player->getName() << " We added  " <<armies << " number of armies to this territory: " 
     << targetTerritory->getName() << "\n" << endl;
 }
 
@@ -115,14 +115,15 @@ Deploy& Deploy::operator = (const Deploy& Deo) {
 
 bool Deploy::validate() {
 
-    if (player->containsTerritory(targetTerritory) && player->getArmyNum() > armies) {
+   /* if (player->containsTerritory(targetTerritory) && player->getArmyNum() > armies) {
         cout << "Deploy has been validated and will be good to execute\n" << endl;
         return true;
     }
     else {
         cout << "Deploy is invalid\n" << endl;
         return false;
-    }
+    }*/
+    return true;
 }
 
 void Deploy::execute() {
@@ -155,7 +156,7 @@ Advance::Advance(Player* player, Player* targetPlayer, Territory* fromTerritory,
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
     this->armies = armies;
-    cout << "The Order Advance has been placed by the player called: " << player->getPlayerId() << " it transports "<< armies <<" number of armies "
+    cout << "The Order Advance has been placed by the player called: " << player->getName() << " it transports "<< armies <<" number of armies "
         <<"from Territory called: " << fromTerritory->getName() << " to Territory called: " << toTerritory->getName() << "\n" << endl;
 }
 
@@ -180,21 +181,21 @@ Advance& Advance::operator = (const Advance& Adva) {
 }
 
 bool Advance::validate() {
-    if (player->containsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getArmy() >= armies) {
+    /*if (player->containsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getArmy() >= armies) {
         cout << "Advance has been validated and will be good to execute.\n" << endl;
         return true;
     }
     else {
         cout << "Advance is invalid\n" << endl;
         return false;
-    }
-
+    }*/
+    return false;
 }
 
 void Advance::execute() {
 
     if (validate()) {
-        if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory))
+        if (/*player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory)*/ 0==0)
         {
             fromTerritory->setArmy(fromTerritory->getArmy() - armies);
             toTerritory->setArmy(toTerritory->getArmy() + armies);
@@ -224,14 +225,14 @@ void Advance::execute() {
 
                 //if the target territories has no more troops, we conquer that nation 
                 if (toTerritory->getArmy() == 0) {
-                    toTerritory->setPlayer(player->getPlayerName());
-                    player->addTerritory(toTerritory);
-                    targetPlayer->removeTerritory(toTerritory);
+                    toTerritory->setPlayer(player->getName());
+                    /*player->addTerritory(toTerritory);
+                    targetPlayer->removeTerritory(toTerritory);*/
 
                     //adding card after succesful attack/conquest of the territory
                     toTerritory->setArmy(toTerritory->getArmy() + armies);
                     player->getHand()->addCard(card);
-                    cout << "The target territory belongs to: " + player->getPlayerName() + " Congrats!, you will gain a random card" << endl;
+                    cout << "The target territory belongs to: " + player->getName() + " Congrats!, you will gain a random card" << endl;
                 }
             }
         }
@@ -258,7 +259,7 @@ Bomb::Bomb(Player* player, Territory* targetTerritory) : Order(player) {
     setID(2);
     this->player = player;
     this->targetTerritory = targetTerritory;
-    cout << "The order Bomb is been placed with issuer " << player->getPlayerId() << 
+    cout << "The order Bomb is been placed with issuer " << player->getName() << 
         " targeting to the territory " << targetTerritory->getName() << "\n" << endl;
 
 }
@@ -281,12 +282,12 @@ Bomb& Bomb::operator = (const Bomb& Bo) {
 }
 
 bool Bomb::validate() {
-    if (!player->containsTerritory(targetTerritory)) {
+    /*if (!player->containsTerritory(targetTerritory)) {
         cout << "Bomb has been validated and will be good to execute. \n" << endl;
         return true;
     }
     else
-        cout << "the player cannot issue bomb order on own territories.\n" << endl;
+        cout << "the player cannot issue bomb order on own territories.\n" << endl;*/
     return false;
 
 }
@@ -318,7 +319,7 @@ Blockade::Blockade(Player* player, Territory* targetTerritory) : Order(player) {
     setID(3);
     this->targetTerritory = targetTerritory;
     this->player = player;
-    cout << "The order Blockade has been placed by the player number: " << player->getPlayerId() << " to the territory called: "
+    cout << "The order Blockade has been placed by the player number: " << player->getName() << " to the territory called: "
         << targetTerritory->getName() << "\n" << endl;
 }
 
@@ -340,12 +341,12 @@ Blockade& Blockade::operator = (const Blockade& Blo) {
 }
 
 bool Blockade::validate() {
-    if (player->containsTerritory(targetTerritory)) {
+    /*if (player->containsTerritory(targetTerritory)) {
         cout << "Blockade has been validated and will be good to execute.\n" << endl;
         return true;
     }
     else
-        cout << "this territory is not belongs to the order issuer, the blockade is invalid" << endl;
+        cout << "this territory is not belongs to the order issuer, the blockade is invalid" << endl;*/
     return false;
 }
 
@@ -378,7 +379,7 @@ Airlift::Airlift(Player* player, Territory* fromTerritory, Territory* toTerritor
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
     this->armies = armies;
-    cout << "The order airlift has been placed with by the player " << player->getPlayerId() << " from territory " << fromTerritory->getName() 
+    cout << "The order airlift has been placed with by the player " << player->getName() << " from territory " << fromTerritory->getName() 
         << " to territory " << toTerritory->getName() << "\n" << endl;
 
 }
@@ -402,12 +403,12 @@ Airlift& Airlift::operator = (const Airlift& Airo) {
 }
 
 bool Airlift::validate() {
-    if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory) && fromTerritory->getArmy() > armies) {
+    /*if (player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory) && fromTerritory->getArmy() > armies) {
         cout << "Airlift has been validated and will be good to execute\n" << endl;
         return true;
     }
     else
-        cout << "The airlift order is invalid\n";
+        cout << "The airlift order is invalid\n";*/
     return false;
 }
 
@@ -441,7 +442,7 @@ Negotiate::Negotiate(Player* player, Player* targetPlayer) : Order(player) {
     setID(5);
     this->player = player;
     this->targetPlayer = targetPlayer;
-    cout << "The order Negotiate is been placed by player " << player->getPlayerId() << " to target player " << targetPlayer->getPlayerId() << "\n" << endl;
+    cout << "The order Negotiate is been placed by player " << player->getName() << " to target player " << targetPlayer->getName() << "\n" << endl;
 }
 Negotiate::~Negotiate() {
     delete this->player;
@@ -462,7 +463,7 @@ Negotiate& Negotiate::operator = (const Negotiate& Negot) {
 }
 
 bool Negotiate::validate() {
-    if (targetPlayer->getPlayerId() == player->getPlayerId()) {
+    if (targetPlayer->getName() == player->getName()) {
         cout << "Target player cannot be the Negotiate Issuer\n" << endl;
         return false;
     }
@@ -473,30 +474,30 @@ bool Negotiate::validate() {
 }
 
 void Negotiate::execute() {
-    if (validate() && player->getHand()->getCardByType(diplomacy)) {
-        if (player->containsOrder("bomb") || player->containsOrder("advance")) {
-            player->getOrderbyType("bomb")->setAttackable(false);player->getOrderbyType("advance")->setAttackable(false);
+    //if (validate() && player->getHand()->getCardByType(diplomacy)) {
+    //    if (player->containsOrder("bomb") || player->containsOrder("advance")) {
+    //        player->getOrderbyType("bomb")->setAttackable(false);player->getOrderbyType("advance")->setAttackable(false);
 
-            //outputting negotiate if our player has bomb or advance order
-            cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getPlayerId() << 
-                " targeting to player " << targetPlayer->getPlayerId() << ". No attack can be executed between them\n" << endl;
-        }
+    //        //outputting negotiate if our player has bomb or advance order
+    //        cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getName() << 
+    //            " targeting to player " << targetPlayer->getName() << ". No attack can be executed between them\n" << endl;
+    //    }
 
 
-        else if (targetPlayer->containsOrder("bomb") || targetPlayer->containsOrder("advance")) {
-            Order* targetBomb = targetPlayer->getOrderbyType("bomb"); targetBomb->setAttackable(false);
-            Order* targetAdvance = targetPlayer->getOrderbyType("advance"); targetAdvance->setAttackable(false);
+    //    else if (targetPlayer->containsOrder("bomb") || targetPlayer->containsOrder("advance")) {
+    //        Order* targetBomb = targetPlayer->getOrderbyType("bomb"); targetBomb->setAttackable(false);
+    //        Order* targetAdvance = targetPlayer->getOrderbyType("advance"); targetAdvance->setAttackable(false);
 
-            //outputting negotiate if our player has bomb or advance order
-            cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getPlayerId() << 
-                " targeting to player " << targetPlayer->getPlayerId() << ". No attack can be executed between them\n" << endl;
-        }
-    }
-    else {
-        cout << "The Negotiate order cannot be executed\n" << endl;
-        negotiateExecute = "The Negotiate order cannot be executed\n";
-    }
-    Notify(this);
+    //        //outputting negotiate if our player has bomb or advance order
+    //        cout << "Negotiate is executed: The Negotiate has been executed by player " << player->getName() << 
+    //            " targeting to player " << targetPlayer->getName() << ". No attack can be executed between them\n" << endl;
+    //    }
+    //}
+    //else {
+    //    cout << "The Negotiate order cannot be executed\n" << endl;
+    //    negotiateExecute = "The Negotiate order cannot be executed\n";
+    //}
+    //Notify(this);
 }
 
 string Negotiate::stringToLog() {
@@ -527,8 +528,8 @@ istream& operator >> (istream & in, Orderslist & o)
 void Orderslist::setOrderList(Order * order) {
     orderlist.push_back(order);
 
-    cout << "Adding a " + order->getOrderType() << " order to  " << order->player->getPlayerName() << "\n" << endl;
-    observer_Order = "OrderList add order: " + order->player->getPlayerName() + " added " + order->getOrderType() + " to the list.\n";
+    cout << "Adding a " + order->getOrderType() << " order to  " << order->player->getName() << "\n" << endl;
+    observer_Order = "OrderList add order: " + order->player->getName() + " added " + order->getOrderType() + " to the list.\n";
     Notify(this);
 }
 

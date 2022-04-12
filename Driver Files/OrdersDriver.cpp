@@ -4,8 +4,8 @@
 
 void ordersMain() {
     Player* p1 = new Player();Player* p2 = new Player();
-    p1->setPlayerId(1); p2->setPlayerId(2);
-    p1->setPlayerName("William"); p2->setPlayerName("Gabriel");
+    /*p1->setPlayerId(1); p2->setPlayerId(2);
+    p1->setPlayerName("William"); p2->setPlayerName("Gabriel");*/
     const int SIZE = 4;
 
     Card* BOMB = new Card(bomb); Card* DIPLO = new Card(diplomacy);
@@ -18,8 +18,8 @@ void ordersMain() {
     Territory* t1 = new Territory(1, 1, 0, "Kendrick"); Territory* t2 = new Territory(2, 2, 3, "MortalMan");
     Territory* t3 = new Territory(3, 3, 5, "Tank-Shebab"); Territory* t4 = new Territory(4, 4, 8, "Gabbie");
 
-    p1->addTerritory(t1); p1->addTerritory(t2);
-    p2->addTerritory(t3); p2->addTerritory(t4);
+    /*p1->addTerritory(t1); p1->addTerritory(t2);
+    p2->addTerritory(t3); p2->addTerritory(t4);*/
     cout << "////////////////////////////////////////////////////////" << endl;
     cout << "Initialising the Deploy Order " << endl;
     Deploy* DEPLOY_1 = new Deploy(p1, t1, 3);
@@ -58,9 +58,9 @@ void ordersMain() {
     AIR_1->execute();
     Orderslist ordersList;
 
-    p1->issueOrders(DEPLOY_1); p1->issueOrders(ADV_1);
+    /*p1->issueOrders(DEPLOY_1); p1->issueOrders(ADV_1);
     p1->issueOrders(BOMB_1); p1->issueOrders(BLOCK_1);
-    p2->issueOrders(AIR_1);
+    p2->issueOrders(AIR_1);*/
 
     cout << "////////////////////////////////////////////////////////" << endl;
 
@@ -71,7 +71,7 @@ void ordersMain() {
     cout << "Initialising the Negotiate Order" << endl;
     Negotiate* NEGOTIATE_1 = new Negotiate(p1, p2);
 
-    p1->issueOrders(NEGOTIATE_1);
+    /*p1->issueOrders(NEGOTIATE_1);*/
 
     cout << "Showing Validation of the Negotiate Order" << endl; NEGOTIATE_1->validate();
     cout << "Executing Negotiate Order" << endl; NEGOTIATE_1->execute();
