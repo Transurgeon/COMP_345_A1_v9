@@ -21,36 +21,36 @@ public:
 
 class HumanPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder();
-	vector<Territory*> toAttack();
-	vector<Territory*> toDefend();
+	void issueOrder(Map* m);
+	vector<Territory*> toAttack(Map* m);
+	vector<Territory*> toDefend(Map* m);
 };
 
 class AggressivePlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder();
-	vector<Territory*> toAttack();
-	vector<Territory*> toDefend();
+	void issueOrder(Map* m);
+	vector<Territory*> toAttack(Map* m);
+	vector<Territory*> toDefend(Map* m);
 };
 
 class BenevolentPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder();
-	vector<Territory*> toAttack();
-	vector<Territory*> toDefend();
+	void issueOrder(Map* m);
+	vector<Territory*> toAttack(Map* m);
+	vector<Territory*> toDefend(Map* m);
 };
 
 class NeutralPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder();
-	vector<Territory*> toAttack();
-	vector<Territory*> toDefend();
+	void issueOrder(Map* m);
+	vector<Territory*> toAttack(Map* m);
+	vector<Territory*> toDefend(Map* m);
 };
 
 class CheaterPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder();
-	vector<Territory*> toAttack();
-	vector<Territory*> toDefend();
+	void issueOrder(Map* m);
+	vector<Territory*> toAttack(Map* m);
+	vector<Territory*> toDefend(Map* m);
 };
 #endif

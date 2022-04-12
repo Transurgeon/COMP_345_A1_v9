@@ -5,74 +5,74 @@
 /// <summary>
 /// HumanPlayer
 /// </summary>
-void HumanPlayerStrategy::issueOrder() {
+void HumanPlayerStrategy::issueOrder(Map* m) {
 
 }
 
-vector<Territory*> HumanPlayerStrategy::toAttack() {
+vector<Territory*> HumanPlayerStrategy::toAttack(Map* m) {
 	return vector<Territory*>();
 }
 
-vector<Territory*> HumanPlayerStrategy::toDefend() {
+vector<Territory*> HumanPlayerStrategy::toDefend(Map* m) {
 	return vector<Territory*>();
 }
 
 /// <summary>
 /// Aggressive
 /// </summary>
-void AggressivePlayerStrategy::issueOrder() {
+void AggressivePlayerStrategy::issueOrder(Map* m) {
 
 }
 
-vector<Territory*> AggressivePlayerStrategy::toAttack() {
+vector<Territory*> AggressivePlayerStrategy::toAttack(Map* m) {
 	return vector<Territory*>();
 }
 
-vector<Territory*> AggressivePlayerStrategy::toDefend() {
+vector<Territory*> AggressivePlayerStrategy::toDefend(Map* m) {
 	return vector<Territory*>();
 }
 
 /// <summary>
 /// Benevolent
 /// </summary>
-void BenevolentPlayerStrategy::issueOrder() {
+void BenevolentPlayerStrategy::issueOrder(Map* m) {
 
 }
 
-vector<Territory*> BenevolentPlayerStrategy::toAttack() {
+vector<Territory*> BenevolentPlayerStrategy::toAttack(Map* m) {
 	return vector<Territory*>();
 }
 
-vector<Territory*> BenevolentPlayerStrategy::toDefend() {
+vector<Territory*> BenevolentPlayerStrategy::toDefend(Map* m) {
 	return vector<Territory*>();
 }
 
 /// <summary>
 /// Neutral
 /// </summary>
-void NeutralPlayerStrategy::issueOrder() {
+void NeutralPlayerStrategy::issueOrder(Map* m) {
 
 }
 
-vector<Territory*> NeutralPlayerStrategy::toAttack() {
+vector<Territory*> NeutralPlayerStrategy::toAttack(Map* m) {
 	return vector<Territory*>();
 }
 
-vector<Territory*> NeutralPlayerStrategy::toDefend() {
+vector<Territory*> NeutralPlayerStrategy::toDefend(Map* m) {
 	return vector<Territory*>();
 }
 
 /// <summary>
 /// Cheater
 /// </summary>
-void CheaterPlayerStrategy::issueOrder() {
+void CheaterPlayerStrategy::issueOrder(Map* m) {
 
 }
 
-vector<Territory*> CheaterPlayerStrategy::toAttack() {
+vector<Territory*> CheaterPlayerStrategy::toAttack(Map* m) {
 	return vector<Territory*>();
 }
 
-vector<Territory*> CheaterPlayerStrategy::toDefend() {
+vector<Territory*> CheaterPlayerStrategy::toDefend(Map* m) {
 	return vector<Territory*>();
 }
