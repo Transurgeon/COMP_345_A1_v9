@@ -154,6 +154,7 @@
     <ClCompile Include="Driver Files\OrdersDriver.cpp" />
     <ClCompile Include="Source Files\Player.cpp" />
     <ClCompile Include="Driver Files\PlayerDriver.cpp" />
+    <ClCompile Include="Source Files\PlayerStrategies.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\Cards.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Header Files\Map.h" />
     <ClInclude Include="Header Files\Orders.h" />
     <ClInclude Include="Header Files\Player.h" />
+    <ClInclude Include="Header Files\PlayerStrategies.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
