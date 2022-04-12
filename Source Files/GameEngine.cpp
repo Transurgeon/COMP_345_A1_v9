@@ -229,7 +229,22 @@ void GameEngine::assignReinforcements() {
 
 void GameEngine::issueOrders() {
 	state = GameState::issueOrders;
-	cout << "Issue Orders Stage" << endl;
+	
+	for (int i = 0; i < playerList.size(); i++) {
+		cout << "Issue Orders Stage 1: Deploying \n" << endl;
+	}
+
+	string input = "";
+	for (int i = 0; i < playerList.size(); i++) {
+		cout << "Issue Orders Stage 2: Other Orders \n" << endl;
+		cout << "Here is the list of orders\n1.Advance\n2.Bomb\n3.Blockade\n4.Airlift\n5.Negotiate\n";
+		cin >> input;
+	if (input == "Advance") {
+		cout << "Preparation for advance order :\n";
+		}
+
+	}
+	
 	string buffer;
 	vector<Territory*> list;
 	for (int i = 0; i < playerList.size(); i++) {

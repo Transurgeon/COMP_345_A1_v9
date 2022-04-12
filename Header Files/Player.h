@@ -8,6 +8,7 @@
 #include "../Header Files/Map.h"
 #include "../Header Files/Cards.h"
 #include "../Header Files/Orders.h"
+#include "../Header Files/PlayerStrategies.h"
 using namespace std;
 
 
@@ -24,7 +25,7 @@ private:
     bool aliveStatus;
     vector<Territory*> defendList;
     vector<Territory*> attackList;
-
+    PlayerStrategy* ps;
 public:
     Player();
     Player(string name);
@@ -47,6 +48,8 @@ public:
     void killPlayer();
     bool isAlive();
 
+    //new code for A3
+    void setPlayerStrategy(PlayerStrategy* newStrat);
     Hand* getHand();
 };
 #endif

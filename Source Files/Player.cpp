@@ -117,6 +117,10 @@ bool Player::isAlive() {
     return aliveStatus;
 }
 
+void Player::setPlayerStrategy(PlayerStrategy* newStrat) {
+    this->ps = newStrat;
+}
+
 Hand* Player::getHand() {
     return playerHand;
 }
