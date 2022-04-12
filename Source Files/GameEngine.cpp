@@ -95,9 +95,8 @@ void GameEngine::gameStart() {
 	int currentTerritory = random(0, territories.size() -1);
 	int currentPlayer = 0;
 	while (leftOverTerritories > 0) {
-		if (territories[currentTerritory]->getPlayerName() == "") {
-			territories[currentTerritory]->setPlayer(playerList[currentPlayer]->getPlayerName());
-			playerList[currentPlayer]->addTerritory(territories[currentTerritory]);
+		if (territories[currentTerritory]->getName() == "") {
+			territories[currentTerritory]->setPlayer(playerList[currentPlayer]->getName());
 			currentPlayer = (currentPlayer + 1) % playerList.size();
 			leftOverTerritories--;
 		}
@@ -110,20 +109,20 @@ void GameEngine::gameStart() {
 	cout << "\nThe order will be: ";
 	for (int i = 0; i < playerList.size()-1;i++)
 	{
-		cout << playerList[i]->getPlayerName() + ", ";
+		cout << playerList[i]->getName() + ", ";
 	}
-	cout << playerList[playerList.size() - 1]->getPlayerName() << endl;
+	cout << playerList[playerList.size() - 1]->getName() << endl;
 
 	cout << "\nGiving 50 troops to each player" << endl;
 	int troops;
 	string input;
 	for (int i = 0; i < playerList.size(); i++) {
-		cout << playerList[i]->getPlayerName() << " will choose where to place their troops:\n";
+		cout << playerList[i]->getName() << " will choose where to place their troops:\n";
 		troops = 50;
 		currentTerritory = 0;
 		do {
 			cout << "Remaining troops: " << troops << endl;
-			while (territories[currentTerritory]->getPlayerName() == playerList[i]->getPlayerName()) {currentTerritory = (currentTerritory + 1) % territories.size();}
+			while (territories[currentTerritory]->getName() == playerList[i]->getName()) {currentTerritory = (currentTerritory + 1) % territories.size();}
 
 			cout << "How many troops do you want to place on " << territories[currentTerritory]->getName() <<"?\n";
 			cin >> input;
@@ -143,7 +142,7 @@ void GameEngine::gameStart() {
 
 	cout << "\nEach player draws 2 cards from the deck to their hand" << endl;
 	for (int j = 0; j < playerList.size(); j++) {
-		cout << playerList[j]->getPlayerName() << " picks the following 2 cards:";
+		cout << playerList[j]->getName() << " picks the following 2 cards:";
 		deck->draw(*playerList[j]->getHand());
 		deck->draw(*playerList[j]->getHand());
 	}
@@ -198,7 +197,7 @@ void GameEngine::assignReinforcements() {
 		countriesOwned = 0;
 		continentsOwned = 0;
 		for (int j = 0; j < territories.size(); j++) {
-			if (territories[j]->getPlayerName() == playerList[i]->getPlayerName()) {
+			if (territories[j]->getName() == playerList[i]->getName()) {
 				troops++;
 				countriesOwned++;
 			}
@@ -209,7 +208,7 @@ void GameEngine::assignReinforcements() {
 			bonus = true;
 			for (int k = 0; k < territories.size(); k++) {
 
-				if (territories[k]->getContinentNum() == j + 1 && territories[k]->getPlayerName() != playerList[i]->getPlayerName()) {
+				if (territories[k]->getContinentNum() == j + 1 && territories[k]->getName() != playerList[i]->getName()) {
 					bonus = false;
 				}
 			}
@@ -223,7 +222,7 @@ void GameEngine::assignReinforcements() {
 
 		playerList[i]->addArmyNum(troops);
 		
-		cout << "Assigned " << troops << " troops for " << playerList[i]->getPlayerName()<<", owning "<< countriesOwned <<
+		cout << "Assigned " << troops << " troops for " << playerList[i]->getName()<<", owning "<< countriesOwned <<
 			" territories and " << continentsOwned << " continents.\n\n";
 	}
 }
@@ -234,10 +233,10 @@ void GameEngine::issueOrders() {
 	string buffer;
 	vector<Territory*> list;
 	for (int i = 0; i < playerList.size(); i++) {
-		cout << playerList[i]->getPlayerName() << " has " <<playerList[i]->getArmyNum() << " troops in reserve.\n";
+		cout << playerList[i]->getName() << " has " <<playerList[i]->getArmyNum() << " troops in reserve.\n";
 		cout << "Territories to attack:\n";
 
-		list = playerList[i]->getAttackList(currentMap);
+		list = playerList[i]->toAttack(currentMap);
 		for (int j = 0; j < list.size(); j++) {
 			cout << *list[j] << endl;
 		}
@@ -245,7 +244,7 @@ void GameEngine::issueOrders() {
 
 		cout << "\n\nTerritories to defend: \n";
 
-		list = playerList[i]->getDefendList(currentMap);
+		list = playerList[i]->toDefend(currentMap);
 		for (int j = 0; j < list.size(); j++) {
 			cout << *list[j] << endl;
 		}
