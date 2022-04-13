@@ -126,7 +126,7 @@ void BenevolentPlayerStrategy::toAttack(Map* m, Player* p) {
 }
 
 void BenevolentPlayerStrategy::toDefend(Map* m, Player* p) {
-    for (int i = 0; i < p->getDefendList(); i++) {
+    for (int i = 0; i < p->getDefendList().size(); i++) {
         p->getDefendList().pop_back();
     }
     vector<Territory*> territories = m->getTerritories();
