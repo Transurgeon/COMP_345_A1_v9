@@ -85,6 +85,11 @@ bool Player::hasOrder() {
     return orderList->hasOrder();
 }
 
+
+bool Player::ownsTerritory(Territory* t) {
+    return t->getPlayerName() == playerName;
+}
+
 string Player::getName() {
     return playerName;
 }

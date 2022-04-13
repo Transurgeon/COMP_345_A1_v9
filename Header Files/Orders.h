@@ -18,6 +18,33 @@ class Map;
 class Card;
 class Deck;
 class Hand;
+class Order;
+
+/// <summary>
+/// Orderslist Class 
+/// </summary>
+class Orderslist :public ILoggable, public Subject {
+private:
+    vector<Order*> orderlist;
+    string observer_Order;
+public:
+    Orderslist() = default; ~Orderslist() = default;
+    Orderslist(const Orderslist& copiedOl);
+
+    Orderslist& operator = (const Orderslist& Ol);
+    //methods used to add orders to end of list or execute first order
+    bool addOrder(Order* order);
+    void executeOrder();
+
+    bool hasOrder();
+
+    //William has code hoarding syndrome
+    void move(int origin, int targetPosition);
+    void printOrderlist();
+
+    //method from ILoggable and Subject for Observer
+    string stringToLog() override;
+};
 
 
 /// <summary>
@@ -32,7 +59,8 @@ private:
     vector<string> orders = { "deploy","advance","bomb","blockade","airlift","negotiate" };
 public:
     //constructor & destructor
-    Order();~Order();
+    Order();
+    ~Order();
     Order(Player* player);
     Order(const Order& copiedO);
     Order& operator = (const Order& O);
@@ -56,7 +84,7 @@ public:
 /// <summary>
 /// Deploy Class
 /// </summary>
-struct Deploy : public Order, public ILoggable, public Subject {
+class Deploy : public Order, public ILoggable, public Subject {
 private:
     Territory* targetTerritory;
     unsigned int armies;
@@ -67,6 +95,31 @@ public:
     ~Deploy();
     Deploy(const Deploy& copiedDe);
     Deploy& operator = (const Deploy& Do);
+    virtual bool validate()override;
+    virtual void execute()override;
+
+    //stringTolog from observer
+    string stringToLog() override;
+};
+
+/// <summary>
+/// Advance Class 
+/// </summary>
+struct Advance : public Order, public ILoggable, public Subject {
+private:
+    Territory* fromTerritory;
+    Territory* toTerritory;
+    Player* targetPlayer;
+    unsigned int armies;
+    string advanceExecute;
+    Card* card = new Card();
+public:
+    Advance();
+    Advance(Player* player, Player* targetPlayer, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
+    ~Advance();
+    Advance(const Advance& copiedAd);
+    Advance& operator = (const Advance& Ao);
+
     virtual bool validate()override;
     virtual void execute()override;
 
@@ -94,31 +147,6 @@ public:
     //stringTolog from observer
     string stringToLog() override;
 
-};
-
-/// <summary>
-/// Advance Class 
-/// </summary>
-struct Advance : public Order, public ILoggable, public Subject {
-private:
-    Territory* fromTerritory;
-    Territory* toTerritory;
-    Player* targetPlayer;
-    unsigned int armies;
-    string advanceExecute;
-    Card* card = new Card();
-public:
-    Advance();
-    Advance(Player* player, Player* targetPlayer, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
-    ~Advance();
-    Advance(const Advance& copiedAd);
-    Advance& operator = (const Advance& Ao);
-
-    virtual bool validate()override;
-    virtual void execute()override;
-
-    //stringTolog from observer
-    string stringToLog() override;
 };
 
 /// <summary>
@@ -183,32 +211,6 @@ public:
     virtual void execute()override;
 
     //stringTolog from observer
-    string stringToLog() override;
-};
-
-/// <summary>
-/// Orderslist Class 
-/// </summary>
-class Orderslist :public ILoggable, public Subject {
-private:
-    vector<Order*> orderlist;
-    string observer_Order;
-public:
-    Orderslist() = default; ~Orderslist() = default;
-    Orderslist(const Orderslist& copiedOl);
-    
-    Orderslist& operator = (const Orderslist& Ol);
-    //methods used to add orders to end of list or execute first order
-    bool addOrder(Order* order);
-    void executeOrder();
-
-    bool hasOrder();
-
-    //William has code hoarding syndrome
-    void move(int origin, int targetPosition);
-    void printOrderlist();
-
-    //method from ILoggable and Subject for Observer
     string stringToLog() override;
 };
 #endif

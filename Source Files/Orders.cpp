@@ -4,6 +4,72 @@
 
 
 using namespace std;
+
+/// <summary>
+/// OrderList class, a class that saves orders into a list
+/// </summary>
+
+Orderslist::Orderslist(const Orderslist& cl) {
+    this->orderlist = *new vector<Order*>(cl.orderlist);
+}
+
+Orderslist& Orderslist::operator = (const Orderslist& Ol) {
+    return *this;
+}
+
+
+bool Orderslist::addOrder(Order* order) {
+    if (order->validate()) {
+        orderlist.push_back(order);
+        return true;
+    }
+    return false;
+}
+
+
+void Orderslist::executeOrder() {
+    orderlist[0]->execute();
+    orderlist.erase(orderlist.begin());
+}
+
+bool Orderslist::hasOrder() {
+    return orderlist.size() > 0;
+}
+
+void Orderslist::move(int origin, int targetPosition) {
+
+    if (origin >= 0 && origin < orderlist.size() && targetPosition >= 0 && targetPosition < orderlist.size())
+    {
+        orderlist.insert(orderlist.begin() + targetPosition, orderlist.at(origin));
+        orderlist.erase(orderlist.begin() + origin);
+    }
+    else if (targetPosition == orderlist.size())
+    {
+        orderlist.push_back(orderlist.at(origin));
+        orderlist.erase(orderlist.begin() + origin);
+    }
+    else {
+        cout << "\n Cannot move order to the desired position" << endl;
+    }
+}
+
+void Orderslist::printOrderlist() {
+    auto it = orderlist.begin();
+    for (; it != orderlist.end(); it++)
+    {
+        cout << (*it)->getOrderType() << " " << endl;
+    }
+    cout << endl;
+
+}
+//string to log function for the orderlist
+string Orderslist::stringToLog() {
+    string toLog = "OrderList Calling stringToLog: Order to be added is of type: ";
+    toLog.append(orderlist.back()->getOrderType());
+
+    return toLog;
+}
+
 /// <summary>
 /// Order class (Parent)
 /// </summary>
@@ -115,14 +181,14 @@ Deploy& Deploy::operator = (const Deploy& Deo) {
 
 bool Deploy::validate() {
 
-   /* if (player->containsTerritory(targetTerritory) && player->getArmyNum() > armies) {
+   if (player->ownsTerritory(targetTerritory) && player->getArmyNum() > armies) {
         cout << "Deploy has been validated and will be good to execute\n" << endl;
         return true;
     }
     else {
         cout << "Deploy is invalid\n" << endl;
         return false;
-    }*/
+    }
     return true;
 }
 
@@ -181,21 +247,21 @@ Advance& Advance::operator = (const Advance& Adva) {
 }
 
 bool Advance::validate() {
-    /*if (player->containsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getArmy() >= armies) {
+    if (player->ownsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && fromTerritory->getArmy() >= armies) {
         cout << "Advance has been validated and will be good to execute.\n" << endl;
         return true;
     }
     else {
         cout << "Advance is invalid\n" << endl;
         return false;
-    }*/
+    }
     return false;
 }
 
 void Advance::execute() {
 
     if (validate()) {
-        if (/*player->containsTerritory(fromTerritory) && player->containsTerritory(toTerritory)*/ 0==0)
+        if (player->ownsTerritory(fromTerritory) && player->ownsTerritory(toTerritory))
         {
             fromTerritory->setArmy(fromTerritory->getArmy() - armies);
             toTerritory->setArmy(toTerritory->getArmy() + armies);
@@ -503,67 +569,4 @@ void Negotiate::execute() {
 string Negotiate::stringToLog() {
     return "Negotiate Order Executing: " + negotiateExecute;
 }
-/// <summary>
-/// OrderList class, a class that saves orders into a list
-/// </summary>
 
-Orderslist::Orderslist(const Orderslist & cl) {
-    this->orderlist = *new vector<Order*>(cl.orderlist);
-}
-
-Orderslist& Orderslist::operator = (const Orderslist & Ol) {
-    return *this;
-}
-
-
-bool Orderslist::addOrder(Order * order) {
-    if (order->validate()) {
-        orderlist.push_back(order);
-        return true;
-    }
-    return false;
-}
-
-
-void Orderslist::executeOrder() {
-    orderlist[0]->execute();
-    orderlist.erase(orderlist.begin());
-}
-
-bool Orderslist::hasOrder() {
-    return orderlist.size() > 0;
-}
-
-void Orderslist::move(int origin, int targetPosition){
-
-    if (origin >= 0 && origin < orderlist.size() && targetPosition >= 0 && targetPosition < orderlist.size())
-    {
-        orderlist.insert(orderlist.begin() + targetPosition, orderlist.at(origin));
-        orderlist.erase(orderlist.begin() + origin);
-    }
-    else if (targetPosition == orderlist.size())
-    {
-        orderlist.push_back(orderlist.at(origin));
-        orderlist.erase(orderlist.begin() + origin);
-    }
-    else {
-        cout << "\n Cannot move order to the desired position" << endl;
-    }
-}
-
-void Orderslist::printOrderlist() {
-    auto it = orderlist.begin();
-    for (; it != orderlist.end(); it++)
-    {
-        cout << (*it)->getOrderType() << " " << endl;
-    }
-    cout << endl;
-
-}
-//string to log function for the orderlist
-string Orderslist::stringToLog() {
-    string toLog = "OrderList Calling stringToLog: Order to be added is of type: ";
-    toLog.append(orderlist.back()->getOrderType());
-
-    return toLog;
-}

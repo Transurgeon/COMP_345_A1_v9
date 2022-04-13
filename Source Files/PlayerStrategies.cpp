@@ -118,30 +118,42 @@ void AggressivePlayerStrategy::toDefend(Map* m, Player* p) {
 /// Benevolent
 /// </summary>
 void BenevolentPlayerStrategy::issueOrder(Map* m, Player* p) {
-
+    p->getDefendList()[0];
 }
 
 void BenevolentPlayerStrategy::toAttack(Map* m, Player* p) {
-	
+    //Left empty on purpose
 }
 
 void BenevolentPlayerStrategy::toDefend(Map* m, Player* p) {
-	
+    for (int i = 0; i < p->getDefendList(); i++) {
+        p->getDefendList().pop_back();
+    }
+    vector<Territory*> territories = m->getTerritories();
+    Territory* weakest = nullptr;
+    for (Territory* t : territories) {
+        if (t->getPlayerName() == p->getName()) {
+            if (weakest == nullptr || weakest->getArmy() > t->getArmy() ) {
+                weakest = t;
+            }
+        }
+    }
+    p->getDefendList().push_back(weakest);
 }
 
 /// <summary>
 /// Neutral
 /// </summary>
 void NeutralPlayerStrategy::issueOrder(Map* m, Player* p) {
-
+    //Left empty on purpose
 }
 
 void NeutralPlayerStrategy::toAttack(Map* m, Player* p) {
-	
+    //Left empty on purpose
 }
 
 void NeutralPlayerStrategy::toDefend(Map* m, Player* p) {
-	
+    //Left empty on purpose
 }
 
 /// <summary>
@@ -156,4 +168,5 @@ void CheaterPlayerStrategy::toAttack(Map* m, Player* p) {
 }
 
 void CheaterPlayerStrategy::toDefend(Map* m, Player* p) {
+    //left empty on purpose
 }

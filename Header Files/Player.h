@@ -42,6 +42,8 @@ public:
     void executeOrder();
     bool hasOrder();
 
+    bool ownsTerritory(Territory* t);
+
     string getName();
 
     void addArmyNum(int number);

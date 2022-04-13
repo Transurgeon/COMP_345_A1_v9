@@ -195,6 +195,7 @@ void GameEngine::assignReinforcements() {
 	for (int i = 0; i < playerList.size(); i++) {
 		if (playerList[i]->isAlive()) {
 
+			//add troops based on number of territories/3
 			troops = 0;
 			countriesOwned = 0;
 			continentsOwned = 0;
@@ -205,6 +206,8 @@ void GameEngine::assignReinforcements() {
 				}
 			}
 			troops /= 3;
+
+			//add bonuses based off continents held
 			bool bonus;
 			for (int j = 0; j < currentMap->getContinents().size(); j++) {
 				bonus = true;
@@ -219,6 +222,8 @@ void GameEngine::assignReinforcements() {
 					continentsOwned++;
 				}
 			}
+
+			//sets mininum troop limit of 3 troops, then adds to reserves
 			if (troops < 3)
 				troops = 3;
 
@@ -232,6 +237,9 @@ void GameEngine::assignReinforcements() {
 
 void GameEngine::issueOrders() {
 	state = GameState::issueOrders;
+	//generates defend list and attack list with toAttack and toDefend
+	//Then let's player issue orders based on the player strategy
+
 	for (int i = 0; i < playerList.size(); i++) {
 		if (playerList[i]->isAlive()) {
 			cout << playerList[i]->getName() << " is issuing orders:\n";
@@ -246,6 +254,7 @@ void GameEngine::issueOrders() {
 bool GameEngine::executeOrders() {
 	state = GameState::executeOrders;
 	
+	//Executes orders for all players in round robin fashion
 	int i = 0, skipCounter = 0;
 	vector<bool> skip(playerList.size());
 	for (bool b : skip) {b = false;}
@@ -264,6 +273,8 @@ bool GameEngine::executeOrders() {
 
 	} while (skipCounter!= playerList.size());
 
+	//Kills players without territories
+
 	bool kill;
 	for (int i = playerList.size(); i >= 0; i--) {
 		kill = true;
@@ -279,17 +290,23 @@ bool GameEngine::executeOrders() {
 		}
 	}
 
+	//Checks if one players is left, meaning all territories are captured, game over
+
 	if (playerList.size()==1) {
 		cout << playerList[0]->getName() << " has captured all territories!!\n";
 		return false;
 	}
 	
+	//Checks if move rule is reached, if so, game is drawn
+
 	/*
 	if (rounds == limit) {
 		cout << "Move limit has been reached, game is a draw!";
 		return false;
 	}
 	*/
+
+	//Next round continues
 
 	cout << "next round\n";
 	return true;
