@@ -33,12 +33,13 @@ public:
     Player(const Player& player1);
     Player& operator=(const Player& player);
 
-    vector<Territory*> toAttack(Map* m);
-    vector<Territory*> toDefend(Map* m);
+    void toAttack(Map* m);
+    void toDefend(Map* m);
+    vector<Territory*> getAttackList();
+    vector<Territory*> getDefendList();
     void issueOrder(Map* map);
+    void executeOrder();
 
-    void displayTerritories(vector<Territory*>);
-    Orderslist* getOrderList();
     string getName();
 
     void addArmyNum(int number);

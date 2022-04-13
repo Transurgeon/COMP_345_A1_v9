@@ -8,6 +8,7 @@ Player::Player() {
     playerHand = new Hand();
     orderList = new Orderslist();
     playerName = "";
+    ps = new HumanPlayerStrategy();
     armyNum = 50;
     aliveStatus = true;
 }
@@ -16,14 +17,30 @@ Player::Player() {
 Player::Player(string name) {
     playerHand = new Hand();
     orderList = new Orderslist();
-    playerName = name;
     armyNum = 50;
     aliveStatus = true;
+    playerName = name;
+
+    if (name == "Aggressive") {
+        ps = new AggressivePlayerStrategy();
+    }
+    else if (name == "Benevolent") {
+        ps = new BenevolentPlayerStrategy();
+    } 
+    else if (name == "Neutral") {
+        ps = new NeutralPlayerStrategy();
+    }
+    else if (name == "Cheater") {
+        ps = new CheaterPlayerStrategy();
+    }
+    else {
+        ps = new HumanPlayerStrategy();
+    }
 }
 
 //Player destructor
-Player::~Player()
-{
+Player::~Player(){
+
     delete playerHand;
     delete orderList;
 }
@@ -36,63 +53,31 @@ Player& Player::operator=(const Player& player1) {
     return *this;
 }
 
-vector<Territory*> Player::toAttack(Map* m) {
-
-    for (int i = 0; i < attackList.size(); i++) {
-        attackList.pop_back();
-    }
-
-    bool repeat;
-    for (int i = 0; i < m->getTerritories().size(); i++) {
-        if (m->getTerritories()[i]->getPlayerName() == playerName) {
-            for (int j = 0; j < m->getBorders()[i]->getEdges().size(); j++) {
-                if (m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]->getPlayerName() != playerName) {
-                    repeat = false;
-                    for (int k = 0; k < attackList.size(); k++) {
-                        if (attackList[k]->getCountryNum() == m->getBorders()[i]->getEdges()[j]) {
-                            repeat = true;
-                        }
-                    }
-                    if (!repeat) {
-                        attackList.push_back(m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]);
-                    }
-                }
-            }
-        }
-    }
-
-    return attackList;
+void Player::toAttack(Map* m) {
+    ps->toAttack(m, this);
 }
 
-vector<Territory*> Player::toDefend(Map* m) {
-
-    for (int i = 0; i < defendList.size(); i++) {
-        defendList.pop_back();
-    }
-
-    for (int i = 0; i < m->getTerritories().size(); i++) {
-        if (m->getTerritories()[i]->getPlayerName() == playerName) {
-            defendList.push_back(m->getTerritories()[i]);
-        }
-    }
-
-    return defendList;
-}
-
-void Player::displayTerritories(vector<Territory*> territoryList) {
-
-    for (int i = 0; i < territoryList.size(); ++i) {
-        cout << territoryList[i]->getName() << '\n' << endl;
-    }
+void Player::toDefend(Map* m) {
+    ps->toDefend(m, this);
 }
 
 void Player::issueOrder(Map* m) {
-
+    ps->issueOrder(m, this);
 }
 
-Orderslist* Player::getOrderList() {
-    return orderList;
+
+vector<Territory*> Player::getAttackList() {
+    return attackList;
 }
+vector<Territory*> Player::getDefendList() {
+    return defendList;
+}
+
+
+void Player::executeOrder() {
+    orderList->executeOrder();
+}
+
 string Player::getName() {
     return playerName;
 }

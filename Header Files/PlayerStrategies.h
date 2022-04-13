@@ -7,50 +7,51 @@
 #include <string>
 #include <vector>
 #include "../Header Files/Player.h"
-using namespace std;
 
+using namespace std;
+class Player;
 
 class PlayerStrategy {
 private:
 	Player* p;
 public:
-	virtual void issueOrder() = 0;
-	virtual vector<Territory*> toAttack() = 0;
-	virtual vector<Territory*> toDefend() = 0;
+	virtual void issueOrder(Map* m, Player* p) = 0;
+	virtual void toAttack(Map* m, Player* p) = 0;
+	virtual void toDefend(Map* m, Player* p) = 0;
 };
 
 class HumanPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder(Map* m);
-	vector<Territory*> toAttack(Map* m);
-	vector<Territory*> toDefend(Map* m);
+	void issueOrder(Map* m, Player* p);
+	void toAttack(Map* m, Player* p);
+	void toDefend(Map* m, Player* p);
 };
 
 class AggressivePlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder(Map* m);
-	vector<Territory*> toAttack(Map* m);
-	vector<Territory*> toDefend(Map* m);
+	void issueOrder(Map* m, Player* p);
+	void toAttack(Map* m, Player* p);
+	void toDefend(Map* m, Player* p);
 };
 
 class BenevolentPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder(Map* m);
-	vector<Territory*> toAttack(Map* m);
-	vector<Territory*> toDefend(Map* m);
+	void issueOrder(Map* m, Player* p);
+	void toAttack(Map* m, Player* p);
+	void toDefend(Map* m, Player* p);
 };
 
 class NeutralPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder(Map* m);
-	vector<Territory*> toAttack(Map* m);
-	vector<Territory*> toDefend(Map* m);
+	void issueOrder(Map* m, Player* p);
+	void toAttack(Map* m, Player* p);
+	void toDefend(Map* m, Player* p);
 };
 
 class CheaterPlayerStrategy : public PlayerStrategy {
 public:
-	void issueOrder(Map* m);
-	vector<Territory*> toAttack(Map* m);
-	vector<Territory*> toDefend(Map* m);
+	void issueOrder(Map* m, Player* p);
+	void toAttack(Map* m, Player* p);
+	void toDefend(Map* m, Player* p);
 };
 #endif

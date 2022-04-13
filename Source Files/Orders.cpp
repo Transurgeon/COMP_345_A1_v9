@@ -515,40 +515,23 @@ Orderslist& Orderslist::operator = (const Orderslist & Ol) {
     return *this;
 }
 
-ostream& operator << (ostream & out, const Orderslist & o)
-{
-    return out;
-}
 
-istream& operator >> (istream & in, Orderslist & o)
-{
-    return in;
-}
-
-void Orderslist::setOrderList(Order * order) {
-    orderlist.push_back(order);
-
-    cout << "Adding a " + order->getOrderType() << " order to  " << order->player->getName() << "\n" << endl;
-    observer_Order = "OrderList add order: " + order->player->getName() + " added " + order->getOrderType() + " to the list.\n";
-    Notify(this);
-}
-
-vector<Order*>* Orderslist::getOrderList() {
-    return &orderlist;
-}
-
-void Orderslist::remove(Order * order) {
-    for (int i = 0; i < orderlist.size(); i++) {
-        if (order->getOrderType() == orderlist.at(i)->getOrderType()) {
-            orderlist.erase(orderlist.begin() + i);
-            cout << "The order " << order->getOrderType() << " has been removed from the list" << endl;
-            return;
-        }
+bool Orderslist::addOrder(Order * order) {
+    if (order->validate()) {
+        orderlist.push_back(order);
+        return true;
     }
+    return false;
 }
 
-void Orderslist::move(int origin, int targetPosition)
-{
+
+void Orderslist::executeOrder() {
+    orderlist[0]->execute();
+    orderlist.erase(orderlist.begin());
+}
+
+void Orderslist::move(int origin, int targetPosition){
+
     if (origin >= 0 && origin < orderlist.size() && targetPosition >= 0 && targetPosition < orderlist.size())
     {
         orderlist.insert(orderlist.begin() + targetPosition, orderlist.at(origin));

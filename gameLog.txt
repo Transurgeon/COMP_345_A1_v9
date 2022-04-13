@@ -78,3 +78,5 @@ CommandProcessor stringToLog:
 Command stringToLog: Error: Invalid input.
 CommandProcessor stringToLog: quit
 Command stringToLog: exit program
+CommandProcessor stringToLog: guacomole
+Command stringToLog: Error: Invalid input.

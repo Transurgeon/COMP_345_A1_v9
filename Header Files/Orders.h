@@ -23,7 +23,7 @@ class Hand;
 /// <summary>
 /// Order Class (Parent of all sub-orders)
 /// </summary>
-struct Order {
+class Order {
 private:
     int id;
     bool valid;
@@ -198,18 +198,15 @@ public:
     Orderslist(const Orderslist& copiedOl);
     
     Orderslist& operator = (const Orderslist& Ol);
-    friend ostream& operator <<(ostream& out, const Orderslist& ol);
-    friend istream& operator >> (istream& in, Orderslist& ol);
-    //getter setter of the orderlist
-    void setOrderList(Order* order);
-    vector<Order*>* getOrderList();
+    //methods used to add orders to end of list or execute first order
+    bool addOrder(Order* order);
+    void executeOrder();
 
-    //methods to add and change the list
-    void remove(Order* order);
+    //William has code hoarding syndrome
     void move(int origin, int targetPosition);
     void printOrderlist();
+
     //method from ILoggable and Subject for Observer
     string stringToLog() override;
 };
-
 #endif
