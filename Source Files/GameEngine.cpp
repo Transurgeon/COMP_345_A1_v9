@@ -176,11 +176,11 @@ bool checkNumber(string str) {
 }
 
 bool GameEngine::mainGameLoop() {
-	cout << "reinforcementPhase" << endl;
+	cout << "Reinforcement Phase" << endl;
 	assignReinforcements();
-	cout << "issueOrdersPhase" << endl;
+	cout << "Issue Orders Phase" << endl;
 	issueOrders();
-	cout << "executeOrdersPhase" << endl;
+	cout << "Execute Orders Phase" << endl;
 	return executeOrders();
 }
 
@@ -232,80 +232,64 @@ void GameEngine::assignReinforcements() {
 
 void GameEngine::issueOrders() {
 	state = GameState::issueOrders;
-	
 	for (int i = 0; i < playerList.size(); i++) {
 		if (playerList[i]->isAlive()) {
 			cout << playerList[i]->getName() << " is issuing orders:\n";
-			if (0==0/*playerList[i].getPlayerStrategy()=="human"*/) {
-
-				cout << "Friendly territories to deploy or advance to:\n";
-				for (Territory* t: playerList[i]->toDefend(currentMap))	{
-					cout << *t << endl;
-				}
-				
-				cout << "\n\n\nEnemy territories to advance to:\n";
-				for (Territory* t : playerList[i]->toAttack(currentMap)) {
-					cout << *t << endl;
-				}
-			}
 			
 			playerList[i]->toDefend(currentMap);
 			playerList[i]->toAttack(currentMap);
 			playerList[i]->issueOrder(currentMap);
 		}
 	}
-	/*for (int i = 0; i < playerList.size(); i++) {
-		cout << "Issue Orders Stage 1: Deploying \n" << endl;
-	}
-
-	string input = "";
-	for (int i = 0; i < playerList.size(); i++) {
-		cout << "Issue Orders Stage 2: Other Orders \n" << endl;
-		cout << "Here is the list of orders\n1.Advance\n2.Bomb\n3.Blockade\n4.Airlift\n5.Negotiate\n";
-		cin >> input;
-	if (input == "Advance") {
-		cout << "Preparation for advance order :\n";
-		}
-
-	}
-	
-	string buffer;
-	vector<Territory*> list;
-	for (int i = 0; i < playerList.size(); i++) {
-		cout << playerList[i]->getName() << " has " <<playerList[i]->getArmyNum() << " troops in reserve.\n";
-		cout << "Territories to attack:\n";
-
-		list = playerList[i]->toAttack(currentMap);
-		for (int j = 0; j < list.size(); j++) {
-			cout << *list[j] << endl;
-		}
-		
-
-		cout << "\n\nTerritories to defend: \n";
-
-		list = playerList[i]->toDefend(currentMap);
-		for (int j = 0; j < list.size(); j++) {
-			cout << *list[j] << endl;
-		}
-		
-
-		cin >> buffer;
-
-	}*/
 }
 
 bool GameEngine::executeOrders() {
 	state = GameState::executeOrders;
-	cout << "Execute Orders Stage" << endl;
-	string input;
-	for (int i = 0; i < 5; i++) {
-		cout << "**Executing Orders**" << endl;
+	
+	int i = 0, skipCounter = 0;
+	vector<bool> skip(playerList.size());
+	for (bool b : skip) {b = false;}
 
+	do {
+		if (skip[i]) {
+			if (playerList[i]->hasOrder()) {
+
+			}
+			else {
+				skip[i] = true;
+				skipCounter++;
+			}
+		}
+		i = (i + 1) % playerList.size();
+
+	} while (skipCounter!= playerList.size());
+
+	bool kill;
+	for (int i = playerList.size(); i >= 0; i--) {
+		kill = true;
+
+		for (Territory* t : currentMap->getTerritories()) {
+			if (t->getPlayerName() == playerList[i]->getName()) {
+				kill = false;
+			}
+		}
+		if (kill) {
+			cout << playerList[i]->getName() << " has been killed\n";
+			playerList.erase(playerList.begin() + i);
+		}
 	}
-	if (random(1, 3) == 1) {
-		cout << "Somebody has captured all territries\n";
+
+	if (playerList.size()==1) {
+		cout << playerList[0]->getName() << " has captured all territories!!\n";
 		return false;
 	}
+	
+	/*
+	if (rounds == limit) {
+		cout << "Move limit has been reached, game is a draw!";
+		return false;
+	}
+	*/
 
 	cout << "next round\n";
 	return true;

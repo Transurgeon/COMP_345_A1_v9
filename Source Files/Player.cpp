@@ -9,6 +9,7 @@ Player::Player() {
     orderList = new Orderslist();
     playerName = "";
     ps = new HumanPlayerStrategy();
+    isNeutral = false;
     armyNum = 50;
     aliveStatus = true;
 }
@@ -21,6 +22,7 @@ Player::Player(string name) {
     aliveStatus = true;
     playerName = name;
 
+    isNeutral = false;
     if (name == "Aggressive") {
         ps = new AggressivePlayerStrategy();
     }
@@ -29,6 +31,7 @@ Player::Player(string name) {
     } 
     else if (name == "Neutral") {
         ps = new NeutralPlayerStrategy();
+        isNeutral = true;
     }
     else if (name == "Cheater") {
         ps = new CheaterPlayerStrategy();
@@ -78,6 +81,10 @@ void Player::executeOrder() {
     orderList->executeOrder();
 }
 
+bool Player::hasOrder() {
+    return orderList->hasOrder();
+}
+
 string Player::getName() {
     return playerName;
 }
@@ -102,8 +109,12 @@ bool Player::isAlive() {
     return aliveStatus;
 }
 
-void Player::setPlayerStrategy(PlayerStrategy* newStrat) {
-    this->ps = newStrat;
+void Player::checkAggressive() {
+    if (isNeutral) {
+        isNeutral = false;
+        delete ps;
+        ps = new AggressivePlayerStrategy();
+    }
 }
 
 Hand* Player::getHand() {

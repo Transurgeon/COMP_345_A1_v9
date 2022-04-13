@@ -7,6 +7,53 @@
 /// </summary>
 void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
 
+    cout << "Friendly territories to deploy or advance to:\n";
+    for (Territory* t : p->getDefendList()) {
+        cout << *t << endl;
+    }
+    cout << "\n\n\nEnemy territories to advance to:\n";
+    for (Territory* t : p->getAttackList()) {
+        cout << *t << endl;
+    }
+
+    /*for (int i = 0; i < playerList.size(); i++) {
+        cout << "Issue Orders Stage 1: Deploying \n" << endl;
+    }
+
+    string input = "";
+    for (int i = 0; i < playerList.size(); i++) {
+        cout << "Issue Orders Stage 2: Other Orders \n" << endl;
+        cout << "Here is the list of orders\n1.Advance\n2.Bomb\n3.Blockade\n4.Airlift\n5.Negotiate\n";
+        cin >> input;
+    if (input == "Advance") {
+        cout << "Preparation for advance order :\n";
+        }
+
+    }
+
+    string buffer;
+    vector<Territory*> list;
+    for (int i = 0; i < playerList.size(); i++) {
+        cout << playerList[i]->getName() << " has " <<playerList[i]->getArmyNum() << " troops in reserve.\n";
+        cout << "Territories to attack:\n";
+
+        list = playerList[i]->toAttack(currentMap);
+        for (int j = 0; j < list.size(); j++) {
+            cout << *list[j] << endl;
+        }
+
+
+        cout << "\n\nTerritories to defend: \n";
+
+        list = playerList[i]->toDefend(currentMap);
+        for (int j = 0; j < list.size(); j++) {
+            cout << *list[j] << endl;
+        }
+
+
+        cin >> buffer;
+
+    }*/
 
 }
 

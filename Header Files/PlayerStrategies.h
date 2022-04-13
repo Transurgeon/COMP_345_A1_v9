@@ -12,8 +12,6 @@ using namespace std;
 class Player;
 
 class PlayerStrategy {
-private:
-	Player* p;
 public:
 	virtual void issueOrder(Map* m, Player* p) = 0;
 	virtual void toAttack(Map* m, Player* p) = 0;

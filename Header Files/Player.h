@@ -26,6 +26,7 @@ private:
     vector<Territory*> defendList;
     vector<Territory*> attackList;
     PlayerStrategy* ps;
+    bool isNeutral;
 public:
     Player();
     Player(string name);
@@ -39,6 +40,7 @@ public:
     vector<Territory*> getDefendList();
     void issueOrder(Map* map);
     void executeOrder();
+    bool hasOrder();
 
     string getName();
 
@@ -50,7 +52,7 @@ public:
     bool isAlive();
 
     //new code for A3
-    void setPlayerStrategy(PlayerStrategy* newStrat);
+    void checkAggressive();
     Hand* getHand();
 };
 #endif

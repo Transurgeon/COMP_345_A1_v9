@@ -202,6 +202,8 @@ public:
     bool addOrder(Order* order);
     void executeOrder();
 
+    bool hasOrder();
+
     //William has code hoarding syndrome
     void move(int origin, int targetPosition);
     void printOrderlist();

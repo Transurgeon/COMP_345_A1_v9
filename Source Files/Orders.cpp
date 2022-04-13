@@ -530,6 +530,10 @@ void Orderslist::executeOrder() {
     orderlist.erase(orderlist.begin());
 }
 
+bool Orderslist::hasOrder() {
+    return orderlist.size() > 0;
+}
+
 void Orderslist::move(int origin, int targetPosition){
 
     if (origin >= 0 && origin < orderlist.size() && targetPosition >= 0 && targetPosition < orderlist.size())
