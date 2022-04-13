@@ -47,14 +47,14 @@ void Territory::setPlayer(string p)
 	playerName = p;
 }
 
-void Territory::setArmy(int a)
-{
-	numberOfArmies = a;
-}
-
 void Territory::addArmy(int a) 
 {
 	numberOfArmies += a;
+}
+
+void Territory::subtractArmy(int a)
+{
+	numberOfArmies -= a;
 }
 
 int Territory::getContinentNum()

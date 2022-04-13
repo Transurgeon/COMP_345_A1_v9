@@ -22,7 +22,6 @@ private:
     Orderslist* orderList;
     int armyNum;
     string playerName;
-    bool aliveStatus;
     vector<Territory*> defendList;
     vector<Territory*> attackList;
     PlayerStrategy* ps;
@@ -49,9 +48,6 @@ public:
     void addArmyNum(int number);
     void subtractArmyNum(int number);
     int getArmyNum();
-
-    void killPlayer();
-    bool isAlive();
 
     //new code for A3
     void checkAggressive();

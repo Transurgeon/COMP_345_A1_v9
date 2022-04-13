@@ -27,6 +27,10 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
     string troop;
 
     //do while loop for deploying phase
+
+    bool done = true;
+    cout << "You must deploy all reserve troops before advancing";
+
     do {
         cout << "Remaining troops: " << p->getArmyNum() << "\n" << endl;
         cout << "Which territory do you wish to deploy to? Please refer to your defendList above^^^" << endl;
@@ -49,7 +53,7 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
     } while (p->getArmyNum() != 0);
 
     string input;
-    bool done = false;
+    
 
     //do while loop for other orders
     do {
@@ -78,6 +82,9 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
         cin >> input;
         if (input != "yes") {
             done = true;
+        }
+        else {
+            done = false;
         }
     } while (!done);
 

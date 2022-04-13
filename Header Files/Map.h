@@ -29,8 +29,8 @@ public:
 
     //Setters and Getters
     void setPlayer(string p);
-    void setArmy(int a);
     void addArmy(int a);
+    void subtractArmy(int a);
     int getContinentNum();
     int getCountryNum();
     string getName();

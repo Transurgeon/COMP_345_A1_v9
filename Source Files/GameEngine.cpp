@@ -255,7 +255,7 @@ bool GameEngine::executeOrders() {
 	do {
 		if (skip[i]) {
 			if (playerList[i]->hasOrder()) {
-
+				playerList[i]->executeOrder();
 			}
 			else {
 				skip[i] = true;

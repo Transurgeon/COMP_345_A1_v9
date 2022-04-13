@@ -11,7 +11,6 @@ Player::Player() {
     ps = new HumanPlayerStrategy();
     isNeutral = false;
     armyNum = 50;
-    aliveStatus = true;
 }
 
 //Player constructor (with name)
@@ -19,7 +18,6 @@ Player::Player(string name) {
     playerHand = new Hand();
     orderList = new Orderslist();
     armyNum = 50;
-    aliveStatus = true;
     playerName = name;
 
     isNeutral = false;
@@ -104,14 +102,6 @@ void Player::addArmyNum(int number) {
 
 void Player::subtractArmyNum(int number) {
     armyNum -= number;
-}
-
-void Player::killPlayer() {
-    aliveStatus = false;
-}
-
-bool Player::isAlive() {
-    return aliveStatus;
 }
 
 void Player::checkAggressive() {

@@ -9,6 +9,7 @@
 #include "../Header Files/Cards.h"
 #include "../Header Files/Player.h"
 #include "../Header Files/Map.h"
+#include "../Header Files/GameEngine.h"
 using namespace std;
 
 
@@ -109,13 +110,13 @@ struct Advance : public Order, public ILoggable, public Subject {
 private:
     Territory* fromTerritory;
     Territory* toTerritory;
-    Player* targetPlayer;
     unsigned int armies;
     string advanceExecute;
-    Card* card = new Card();
+    bool cheat;
 public:
     Advance();
-    Advance(Player* player, Player* targetPlayer, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
+    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
+    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory);
     ~Advance();
     Advance(const Advance& copiedAd);
     Advance& operator = (const Advance& Ao);
