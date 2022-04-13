@@ -67,7 +67,7 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
             cout << "how many troops do you wish to advance from " << territory << " to "<< target << "?\n";
             cin >> troop;
 
-            //initiating deploy : need to figure out territory and target as parameter (cannot accept string)
+            //initiating advance : need to figure out territory and target as parameter (cannot accept string)
             //auto* a = new Advance(p, territory, target, troop);
             //adding to OrderList of player
             //p.orderList.push_back(d)
@@ -144,7 +144,11 @@ void AggressivePlayerStrategy::toDefend(Map* m, Player* p) {
 /// Benevolent
 /// </summary>
 void BenevolentPlayerStrategy::issueOrder(Map* m, Player* p) {
-    p->getDefendList()[0];
+    
+    //initiating deploy 
+        auto* d = new Deploy(p, p->getDefendList()[0], p->getArmyNum());
+        //adding to OrderList of player
+        //p.orderList.push_back(d)
 }
 
 void BenevolentPlayerStrategy::toAttack(Map* m, Player* p) {
