@@ -168,13 +168,6 @@ int random(int a, int b) {
 	return a + rand() % (abs(b-a));
 }
 
-bool checkNumber(string str) {
-	for (int i = 0; i < str.length(); i++)
-		if (!isdigit(str[i]))
-			return false;
-	return true;
-}
-
 bool GameEngine::mainGameLoop() {
 	cout << "Reinforcement Phase" << endl;
 	assignReinforcements();

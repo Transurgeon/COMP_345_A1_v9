@@ -1,7 +1,12 @@
 #include "../Header Files/Player.h"
 #include "../Header Files/PlayerStrategies.h"
 
-
+bool checkNumber(string str) {
+    for (int i = 0; i < str.length(); i++)
+        if (!isdigit(str[i]))
+            return false;
+    return true;
+}
 /// <summary>
 /// Human
 /// </summary>
@@ -16,44 +21,65 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
         cout << *t << endl;
     }
 
-    /*for (int i = 0; i < playerList.size(); i++) {
-        cout << "Issue Orders Stage 1: Deploying \n" << endl;
-    }
+    //input variables : target is for advance
+    string territory;
+    string target;
+    string troop;
 
-    string input = "";
-    for (int i = 0; i < playerList.size(); i++) {
+    //do while loop for deploying phase
+    do {
+        cout << "Remaining troops: " << p->getArmyNum() << "\n" << endl;
+        cout << "Which territory do you wish to deploy to? Please refer to your defendList above^^^" << endl;
+        cin >> territory;
+        cout << "how many troops do you want to place on " << territory << "?\n";
+        cin >> troop;
+        //copied from startup Phase
+        while (!checkNumber(troop) || stoi(troop) < 0 || stoi(troop) > p->getArmyNum()) {
+            cout << "incorrect input! please make sure to write a whole number between 0 and " << p->getArmyNum() << endl;
+            cin >> troop;
+        }
+        
+        //initiating deploy : need to figure out territory as parameter (cannot accept string)
+        //auto* d = new Deploy(p, territory, troop);
+        //adding to OrderList of player
+        //p.orderList.push_back(d)
+        
+        //removing troops from the player
+        p->subtractArmyNum(stoi(troop));
+    } while (p->getArmyNum() != 0);
+
+    string input;
+    bool done = false;
+
+    //do while loop for other orders
+    do {
+
         cout << "Issue Orders Stage 2: Other Orders \n" << endl;
         cout << "Here is the list of orders\n1.Advance\n2.Bomb\n3.Blockade\n4.Airlift\n5.Negotiate\n";
         cin >> input;
-    if (input == "Advance") {
-        cout << "Preparation for advance order :\n";
+        //creating advance order given user input
+        if (input == "Advance") {
+            cout << "Preparation for advance order :\n";
+            cout << "Which territory do you wish to deploy from? Please refer to your defendList above^^^" << endl;
+            cin >> territory;
+            cout << "Which territory do you wish to deploy to? Please refer to your attackList/defendList above^^^" << endl;
+            cin >> target;
+            cout << "how many troops do you wish to advance from " << territory << " to "<< target << "?\n";
+            cin >> troop;
+
+            //initiating deploy : need to figure out territory and target as parameter (cannot accept string)
+            //auto* a = new Advance(p, territory, target, troop);
+            //adding to OrderList of player
+            //p.orderList.push_back(d)
         }
 
-    }
-
-    string buffer;
-    vector<Territory*> list;
-    for (int i = 0; i < playerList.size(); i++) {
-        cout << playerList[i]->getName() << " has " <<playerList[i]->getArmyNum() << " troops in reserve.\n";
-        cout << "Territories to attack:\n";
-
-        list = playerList[i]->toAttack(currentMap);
-        for (int j = 0; j < list.size(); j++) {
-            cout << *list[j] << endl;
+        //asking if user wants to issue more orders, will break out of while if not
+        cout << "Do you still want to issue more orders? \n" << endl;
+        cin >> input;
+        if (input != "yes") {
+            done = true;
         }
-
-
-        cout << "\n\nTerritories to defend: \n";
-
-        list = playerList[i]->toDefend(currentMap);
-        for (int j = 0; j < list.size(); j++) {
-            cout << *list[j] << endl;
-        }
-
-
-        cin >> buffer;
-
-    }*/
+    } while (!done);
 
 }
 
