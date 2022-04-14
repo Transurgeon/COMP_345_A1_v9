@@ -228,7 +228,8 @@ bool GameEngine::executeOrders() {
 	for (bool b : skip) {b = false;}
 
 	do {
-		if (skip[i]) {
+		if (!skip[i]) {
+			
 			if (playerList[i]->hasOrder()) {
 				cout << "executing order : " + i;
 				playerList[i]->executeOrder();
@@ -239,13 +240,12 @@ bool GameEngine::executeOrders() {
 			}
 		}
 		i = (i + 1) % playerList.size();
-		cout << i;
 	} while (skipCounter!= playerList.size());
 
 	//Kills players without territories
 
 	bool kill;
-	for (int i = playerList.size(); i >= 0; i--) {
+	for (int i = playerList.size()-1; i >= 0; i--) {
 		kill = true;
 
 		for (Territory* t : currentMap->getTerritories()) {
