@@ -19,7 +19,7 @@ Player::Player(string name) {
     orderList = new Orderslist();
     armyNum = 50;
     playerName = name;
-
+    defendList = vector<Territory*>();
     isNeutral = false;
     if (name == "Aggressive") {
         ps = new AggressivePlayerStrategy();
@@ -67,13 +67,9 @@ void Player::issueOrder(Map* m) {
 }
 
 
-vector<Territory*> Player::getAttackList() {
-    return attackList;
+void Player::addOrder(Order* o) {
+    orderList->addOrder(o);
 }
-vector<Territory*> Player::getDefendList() {
-    return defendList;
-}
-
 
 void Player::executeOrder() {
     orderList->executeOrder();

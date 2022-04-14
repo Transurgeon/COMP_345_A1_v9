@@ -34,7 +34,7 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
     cin >> input;
     while (input != "yes"){
         if (armies > 0) {
-            cout << "Remaining troops: " << armies << "\n" << endl;
+            cout << "Remaining troops: " << p->getArmyNum() << "\n" << endl;
             cout << "Which territory do you wish to deploy to? Please refer to your defendList above^^^" << endl;
             cin >> territory;
             while (!checkNumber(territory) || stoi(territory) <= 0 || stoi(territory) > m->getTerritories().size()) {

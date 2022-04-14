@@ -2,6 +2,7 @@
 #include "../Header Files/Map.h"
 
 
+
 //runs game and follow structure of flow chart
 void GameEngine::startupPhase() {
 
@@ -88,14 +89,14 @@ void GameEngine::addPlayer(string name) {
 }
 
 void GameEngine::gameStart() {
-	
+	cout << *currentMap;
 	cout << "\nFairly distributing territories to the players" << endl;
 	vector<Territory*> territories = currentMap->getTerritories();
 	int leftOverTerritories = territories.size();
 	int currentTerritory = random(0, territories.size() -1);
 	int currentPlayer = 0;
 	while (leftOverTerritories > 0) {
-		if (territories[currentTerritory]->getName() == "") {
+		if (territories[currentTerritory]->getPlayerName() == "") {
 			territories[currentTerritory]->setPlayer(playerList[currentPlayer]->getName());
 			currentPlayer = (currentPlayer + 1) % playerList.size();
 			leftOverTerritories--;
@@ -118,30 +119,7 @@ void GameEngine::gameStart() {
 	string input;
 	for (int i = 0; i < playerList.size(); i++) {
 		playerList[i]->addArmyNum(50);
-
-		/*cout << playerlist[i]->getname() << " will choose where to place their troops:\n";
-		troops = 50;
-		currentterritory = 0;
-		do {
-			cout << "remaining troops: " << troops << endl;
-			while (territories[currentterritory]->getname() == playerlist[i]->getname()) {currentterritory = (currentterritory + 1) % territories.size();}
-
-			cout << "how many troops do you want to place on " << territories[currentterritory]->getname() <<"?\n";
-			cin >> input;
-			while (!checknumber(input) || stoi(input) < 0 || stoi(input) > troops) {
-				cout << "incorrect input! please make sure to write a whole number between 0 and " << troops << endl;
-				cin >> input;
-			}
-			territories[currentterritory]->addarmy(stoi(input));
-			troops -= stoi(input);
-			cout <<"\n" + input + " troops were added to " + territories[currentterritory]->getname() + ", making the total troops "
-				<< territories[currentterritory]->getarmy() << " on that terrtitory.\n";
-
-			currentterritory = (currentterritory+1)%territories.size();
-		} while (troops > 0);
-		cout << "\n\n";*/
 	}
-
 	cout << "\nEach player draws 2 cards from the deck to their hand" << endl;
 	for (int j = 0; j < playerList.size(); j++) {
 		cout << playerList[j]->getName() << " picks the following 2 cards:";
@@ -186,45 +164,44 @@ void GameEngine::assignReinforcements() {
 	int continentsOwned;
 	vector<Territory*> territories = currentMap->getTerritories();
 	for (int i = 0; i < playerList.size(); i++) {
-		if (playerList[i]->isAlive()) {
-
-			//add troops based on number of territories/3
-			troops = 0;
-			countriesOwned = 0;
-			continentsOwned = 0;
-			for (int j = 0; j < territories.size(); j++) {
-				if (territories[j]->getName() == playerList[i]->getName()) {
-					troops++;
-					countriesOwned++;
-				}
+		
+		//add troops based on number of territories/3
+		troops = 0;
+		countriesOwned = 0;
+		continentsOwned = 0;
+		for (int j = 0; j < territories.size(); j++) {
+			if (territories[j]->getPlayerName() == playerList[i]->getName()) {
+				troops++;
+				countriesOwned++;
 			}
-			troops /= 3;
-
-			//add bonuses based off continents held
-			bool bonus;
-			for (int j = 0; j < currentMap->getContinents().size(); j++) {
-				bonus = true;
-				for (int k = 0; k < territories.size(); k++) {
-
-					if (territories[k]->getContinentNum() == j + 1 && territories[k]->getName() != playerList[i]->getName()) {
-						bonus = false;
-					}
-				}
-				if (bonus) {
-					troops += currentMap->getContinents()[j]->getBonus();
-					continentsOwned++;
-				}
-			}
-
-			//sets mininum troop limit of 3 troops, then adds to reserves
-			if (troops < 3)
-				troops = 3;
-
-			playerList[i]->addArmyNum(troops);
-
-			cout << "Assigned " << troops << " troops for " << playerList[i]->getName() << ", owning " << countriesOwned <<
-				" territories and " << continentsOwned << " continents.\n\n";
 		}
+		troops /= 3;
+
+		//add bonuses based off continents held
+		bool bonus;
+		for (int j = 0; j < currentMap->getContinents().size(); j++) {
+			bonus = true;
+			for (int k = 0; k < territories.size(); k++) {
+
+				if (territories[k]->getContinentNum() == j + 1 && territories[k]->getPlayerName() != playerList[i]->getName()) {
+					bonus = false;
+				}
+			}
+			if (bonus) {
+				troops += currentMap->getContinents()[j]->getBonus();
+				continentsOwned++;
+			}
+		}
+
+		//sets mininum troop limit of 3 troops, then adds to reserves
+		if (troops < 3)
+			troops = 3;
+
+		playerList[i]->addArmyNum(troops);
+
+		cout << "Assigned " << troops << " troops for " << playerList[i]->getName() << ", owning " << countriesOwned <<
+			" territories and " << continentsOwned << " continents.\n\n";
+
 	}
 }
 
@@ -234,13 +211,11 @@ void GameEngine::issueOrders() {
 	//Then let's player issue orders based on the player strategy
 
 	for (int i = 0; i < playerList.size(); i++) {
-		if (playerList[i]->isAlive()) {
-			cout << playerList[i]->getName() << " is issuing orders:\n";
-			
-			playerList[i]->toDefend(currentMap);
-			playerList[i]->toAttack(currentMap);
-			playerList[i]->issueOrder(currentMap);
-		}
+		cout << playerList[i]->getName() << " is issuing orders:\n";
+
+		playerList[i]->toDefend(currentMap);
+		playerList[i]->toAttack(currentMap);
+		playerList[i]->issueOrder(currentMap);
 	}
 }
 

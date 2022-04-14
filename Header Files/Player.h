@@ -15,6 +15,7 @@ using namespace std;
 class Orderslist;
 class Territory;
 class Map;
+class Order;
 
 class Player {
 private:
@@ -22,11 +23,11 @@ private:
     Orderslist* orderList;
     int armyNum;
     string playerName;
-    vector<Territory*> defendList;
-    vector<Territory*> attackList;
     PlayerStrategy* ps;
     bool isNeutral;
 public:
+    vector<Territory*> defendList;
+    vector<Territory*> attackList;
     Player();
     Player(string name);
     ~Player();
@@ -35,9 +36,8 @@ public:
 
     void toAttack(Map* m);
     void toDefend(Map* m);
-    vector<Territory*> getAttackList();
-    vector<Territory*> getDefendList();
     void issueOrder(Map* map);
+    void addOrder(Order* o);
     void executeOrder();
     bool hasOrder();
 

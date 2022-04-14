@@ -12,6 +12,7 @@
 #include <algorithm>
 using namespace std;
 
+class Player;
 
 class GameEngine : public ILoggable, public Subject {
 private:
