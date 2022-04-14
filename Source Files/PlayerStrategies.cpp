@@ -46,7 +46,7 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
             cin >> troop;
             //copied from startup Phase
             while (!checkNumber(troop) || stoi(troop) < 0 || stoi(troop) > armies) {
-                cout << "incorrect input! please make sure to write a whole number between 0 and " << p->getArmyNum() << endl;
+                cout << "incorrect input! please make sure to write a whole number between 0 and " << armies << endl;
                 cin >> troop;
             }
 

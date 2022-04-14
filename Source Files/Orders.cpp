@@ -428,7 +428,7 @@ bool Blockade::validate() {
 void Blockade::execute() {
     if (validate() && player->getHand()->getCardByType(blockade)) {
         targetTerritory->addArmy(targetTerritory->getArmy());
-        targetTerritory->neutralState();
+        //targetTerritory->neutralState();
         cout << "Blockade is executed: The army on territory " << targetTerritory->getName() 
             << " has been doubled ,and the ownership of this territory has been transferred to neutral.\n" << endl;
         Notify(this);
