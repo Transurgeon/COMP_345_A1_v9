@@ -181,7 +181,7 @@ Deploy& Deploy::operator = (const Deploy& Deo) {
 
 bool Deploy::validate() {
 
-   if (player->ownsTerritory(targetTerritory) && player->getArmyNum() > armies && armies > 0) {
+   if (player->ownsTerritory(targetTerritory) && player->getArmyNum() >= armies && armies > 0) {
         cout << "Deploy has been validated and will be good to execute\n" << endl;
         return true;
     }

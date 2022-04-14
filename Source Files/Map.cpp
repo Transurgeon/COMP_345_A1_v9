@@ -334,9 +334,14 @@ vector<Border*> Map::getBorders() {
 }
 
 bool Map::isAdjacentTerritory(Territory* source, Territory* target) {
-	for (int j = 0; j < borders[source->getCountryNum()-1]->getEdges().size(); j++) {
-		if (borders[source->getCountryNum() - 1]->getEdges()[j] == target->getCountryNum())
-			return true;
+	int index = 0;
+	for (int i = 0; i < territories.size(); i++) {
+		if (territories[i]->getCountryNum() == source->getCountryNum())
+			index = i;
+	}
+	for (int j = 0; j < borders[index]->getEdges().size(); j++) {
+		if (borders[index]->getEdges()[j] == target->getCountryNum())
+			return true;	
 	}
 	return false;
 }

@@ -51,17 +51,9 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
             }
 
             //initiating deploy
-            Deploy* d = new Deploy(p, m->getTerritories()[stoi(territory)-1], stoi(troop));
-            if (d->validate()) {
-                p->addOrder(d);
-                cout << "Order is valid\n";
-                armies -= stoi(troop);
-            }
-            else {
-                cout << "invalid order, better luck next time!" << endl;
-                delete d;
-            }
-            d = nullptr;
+            
+            p->addOrder(new Deploy(p, m->getTerritories()[stoi(territory) - 1], stoi(troop)));
+            armies -= stoi(troop);
         }
         else {
             //creating advance order given user input
@@ -87,17 +79,8 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
                 cin >> troop;
             }
             //initiating deploy
-            Advance* a = new Advance(p, m->getTerritories()[stoi(territory) - 1], m->getTerritories()[stoi(target) - 1], stoi(troop));
-            if (a->validate()) {
-                p->addOrder(a);
-                cout << "Order is valid\n";
-            }
-            else {
-                cout << "invalid order, better luck next time!" << endl;
-                delete a;
-            }
-            a = nullptr;
-            
+            p->addOrder(new Advance(p, m->getTerritories()[stoi(territory) - 1], m->getTerritories()[stoi(target) - 1], stoi(troop)));
+               
         }
         //asking if user wants to issue more orders, will break out of while if not
 
