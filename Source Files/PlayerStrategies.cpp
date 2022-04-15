@@ -12,11 +12,11 @@ bool checkNumber(string str) {
 /// </summary>
 void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
 
-    cout << "Friendly territories to deploy or advance to:\n";
+    cout << p->defendList.size() <<" friendly territories to deploy or advance to:\n";
     for (Territory* t : p->defendList) {
         m->printTerritory(t->getCountryNum()-1);
     }
-    cout << "\n\nEnemy territories to advance to:\n";
+    cout << "\n\n" << p->attackList.size() << " enemy territories to advance to:\n";
     for (Territory* t : p->attackList) {
         m->printTerritory(t->getCountryNum() - 1);
     }
@@ -110,7 +110,7 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
 void HumanPlayerStrategy::toAttack(Map* m, Player* p) {
 
 
-    for (int i = 0; i < p->attackList.size(); i++) {
+    for (int i = p->attackList.size()-1; i >= 0; i--) {
         p->attackList.pop_back();
     }
 
@@ -136,7 +136,7 @@ void HumanPlayerStrategy::toAttack(Map* m, Player* p) {
 
 void HumanPlayerStrategy::toDefend(Map* m, Player* p) {
 
-    for (int i = 0; i < p->defendList.size(); i++) {
+    for (int i = p->defendList.size() -1; i >= 0; i--) {
         p->defendList.pop_back();
     }
 

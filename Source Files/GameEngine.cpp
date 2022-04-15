@@ -80,8 +80,12 @@ void GameEngine::addPlayer(string name) {
 
 	state = GameState::playersAdded;
 	if (playerList.size() < 6) {
+		
 		playerList.push_back(new Player(name));
-		cout << "Player " + name + " was added\n\n";
+		if (name == "Aggressive" || name == "Benevolent" || name == "Neutral" || name == "Cheater")
+			cout << "Bot " + name + " was added\n\n";
+		else
+			cout << "Player " + name + " was added\n\n";
 	}
 	else {
 		cout << "Too many players, " + name + " was not added\n\n";

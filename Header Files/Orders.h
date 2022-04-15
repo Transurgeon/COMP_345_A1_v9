@@ -112,6 +112,7 @@ private:
     Territory* toTerritory;
     unsigned int armies;
     string advanceExecute;
+    Card* card = new Card();
     bool cheat;
 public:
     Advance();
