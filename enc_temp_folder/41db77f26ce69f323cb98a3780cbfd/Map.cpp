@@ -209,7 +209,7 @@ ostream& operator<<(ostream& output, Border& b)
 	{
 		output << b.getEdges()[i] << ", ";
 	}
-	output << b.getEdges()[b.getEdges().size()-1] << "\n\n";
+	output << b.getEdges()[b.getEdges().size()-1] << "\n";
 	return output;
 }
 

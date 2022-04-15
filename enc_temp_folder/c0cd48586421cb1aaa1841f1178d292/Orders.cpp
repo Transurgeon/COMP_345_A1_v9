@@ -218,7 +218,6 @@ Advance::Advance() {
 
 Advance::Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, unsigned int armies) : Order(player) {
     setID(1);
-    cout << "test1";
     cheat = false;
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
@@ -259,7 +258,7 @@ Advance& Advance::operator = (const Advance& Adva) {
 
 bool Advance::validate() {
     //&& map->isAdjacentTerritory(fromTerritory, toTerritory)
-    if (player->ownsTerritory(fromTerritory) && (cheat || armies <= fromTerritory->getArmy())) {
+    if (player->ownsTerritory(fromTerritory) && (cheat || armies >= fromTerritory->getArmy())) {
         cout << "Advance has been validated and will be good to execute.\n" << endl;
         return true;
     }

@@ -89,7 +89,6 @@ void GameEngine::addPlayer(string name) {
 }
 
 void GameEngine::gameStart() {
-	cout << *currentMap;
 	cout << "\nFairly distributing territories to the players" << endl;
 	vector<Territory*> territories = currentMap->getTerritories();
 	int leftOverTerritories = territories.size();
@@ -157,6 +156,9 @@ bool GameEngine::mainGameLoop() {
 
 void GameEngine::assignReinforcements() {
 
+	cout << "Current map state:\n";
+	currentMap->printMap();
+	cout << "\n\n";
 	state = GameState::assignReinforcements;
 	string input;
 	int troops;

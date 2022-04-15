@@ -1,0 +1,34 @@
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <William>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <William>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: gamestart
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <William>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <AbuRashid>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement

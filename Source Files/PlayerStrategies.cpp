@@ -14,11 +14,11 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
 
     cout << "Friendly territories to deploy or advance to:\n";
     for (Territory* t : p->defendList) {
-        cout << *t << endl;
+        m->printTerritory(t->getCountryNum()-1);
     }
-    cout << "\n\n\nEnemy territories to advance to:\n";
+    cout << "\n\nEnemy territories to advance to:\n";
     for (Territory* t : p->attackList) {
-        cout << *t << endl;
+        m->printTerritory(t->getCountryNum() - 1);
     }
      int armies = p->getArmyNum();
     //input variables : target is for advance

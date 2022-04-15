@@ -10,14 +10,14 @@ Player::Player() {
     playerName = "";
     ps = new HumanPlayerStrategy();
     isNeutral = false;
-    armyNum = 0;
+    armyNum = 50;
 }
 
 //Player constructor (with name)
 Player::Player(string name) {
     playerHand = new Hand();
     orderList = new Orderslist();
-    armyNum = 0;
+    armyNum = 50;
     playerName = name;
     defendList = vector<Territory*>();
     isNeutral = false;
