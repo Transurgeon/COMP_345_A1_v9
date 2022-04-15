@@ -205,7 +205,7 @@ vector<int> Border::getEdges()
 ostream& operator<<(ostream& output, Border& b)
 {
 	output << "It connects to territories ";
-	for (int i = 0; i < b.getEdges().size(); i++)
+	for (int i = 0; i < b.getEdges().size()-1; i++)
 	{
 		output << b.getEdges()[i] << ", ";
 	}
