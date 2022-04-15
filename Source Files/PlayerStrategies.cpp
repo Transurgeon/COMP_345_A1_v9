@@ -84,8 +84,8 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
 
             cout << "how many troops do you wish to advance from " << territory << " to " << target << "?\n";
             cin >> troop;
-            while (!checkNumber(troop) || stoi(troop) < 0 || stoi(troop) > p->getArmyNum()) {
-                cout << "incorrect input! please make sure to write a whole number between 0 and " << p->getArmyNum() << endl;
+            while (!checkNumber(troop) || stoi(troop) < 0 || stoi(troop) > m->getTerritories()[stoi(territory) - 1]->getArmy()) {
+                cout << "incorrect input! please make sure to write a whole number between 0 and " << m->getTerritories()[stoi(territory) - 1]->getArmy() << endl;
                 cin >> troop;
             }
             //initiating advance
@@ -168,9 +168,7 @@ void AggressivePlayerStrategy::toDefend(Map* m, Player* p) {
 void BenevolentPlayerStrategy::issueOrder(Map* m, Player* p) {
     
     //initiating deploy 
-        auto* d = new Deploy(p, p->defendList[0], p->getArmyNum());
-       
-        p->addOrder(d);
+    p->addOrder(new Deploy(p, p->defendList[0], p->getArmyNum()));
 }
 
 void BenevolentPlayerStrategy::toAttack(Map* m, Player* p) {

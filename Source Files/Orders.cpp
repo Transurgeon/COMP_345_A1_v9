@@ -196,6 +196,7 @@ void Deploy::execute() {
 
     if (validate()) {
         targetTerritory->addArmy(armies);
+        player->subtractArmyNum(armies);
         cout << "Deploy is being executed: " << armies << " armies have been deployed to the territory called: " << targetTerritory->getName() << "\n" << endl;
         Notify(this); 
         return;
@@ -273,7 +274,7 @@ bool Advance::validate() {
 void Advance::execute() {
 
     if (validate()) {
-        if (cheat) {
+        if (!cheat) {
             if (player->ownsTerritory(toTerritory)) {
 
                 fromTerritory->subtractArmy(armies);
