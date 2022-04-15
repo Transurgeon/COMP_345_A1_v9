@@ -229,9 +229,10 @@ bool GameEngine::executeOrders() {
 
 	do {
 		if (!skip[i]) {
-			
+			cout << "-------------------------------------------\n";
+			cout << "Executing orders phase: Checking if the player has an order\n";
 			if (playerList[i]->hasOrder()) {
-				cout << "executing order : " + i;
+				cout << "executing order for : " + playerList[i]->getName();
 				playerList[i]->executeOrder();
 			}
 			else {

@@ -257,7 +257,8 @@ Advance& Advance::operator = (const Advance& Adva) {
 }
 
 bool Advance::validate() {
-    if (player->ownsTerritory(fromTerritory) && map->isAdjacentTerritory(fromTerritory, toTerritory) && (cheat || fromTerritory->getArmy() >= armies)) {
+    //&& map->isAdjacentTerritory(fromTerritory, toTerritory)
+    if (player->ownsTerritory(fromTerritory) && (cheat || armies >= fromTerritory->getArmy())) {
         cout << "Advance has been validated and will be good to execute.\n" << endl;
         return true;
     }
