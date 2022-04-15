@@ -111,6 +111,8 @@ public:
     void addContinent(int b, string n);
     void addBorderRoot(int r);
     void addBorderEdge(int r, int e);
+    void printTerritory(int index);
+    void printMap();
     vector<Territory*> getTerritories();
     vector<Continent*> getContinents();
     vector<Border*> getBorders();

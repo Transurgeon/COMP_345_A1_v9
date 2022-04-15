@@ -204,12 +204,12 @@ vector<int> Border::getEdges()
 
 ostream& operator<<(ostream& output, Border& b)
 {
-	output << "The border connects from " << b.getRoot() << " to ";
-	for (int i : b.getEdges())
+	output << "It connects to territories ";
+	for (int i = 0; i < b.getEdges().size(); )
 	{
-		output << i << ", ";
+		output << b.getEdges()[i] << ", ";
 	}
-	output << endl;
+	output << b.getEdges()[b.getEdges().size()-1] << "\n";
 	return output;
 }
 
@@ -319,6 +319,22 @@ void Map::addBorderRoot(int r) {
 
 void Map::addBorderEdge(int r, int e) {
 	borders.back()->addEdge(e);
+}
+
+void Map::printTerritory(int index) {
+	if (territories[index]->getPlayerName() != "")
+		cout << index + 1 << " " << territories[index]->getName() << " is in " << continents[territories[index]->getContinentNum() - 1]->getContinentName()
+		<< " bonus: " << continents[territories[index]->getContinentNum() - 1]->getBonus() << ", is owned by " << territories[index]->getPlayerName() << " and has "
+		<< territories[index]->getArmy() << " troops stationed on it. " << *borders[index];
+	else
+		cout << index + 1 << " " << territories[index]->getName() << " is in " << continents[territories[index]->getContinentNum() - 1]->getContinentName()
+		<< " bonus: " << continents[territories[index]->getContinentNum() - 1]->getBonus() << ". " << *borders[index];
+}
+
+void Map::printMap() {
+	for (int i = 0; i < territories.size(); i++) {
+		printTerritory(i);
+	}
 }
 
 vector<Territory*> Map::getTerritories() {
