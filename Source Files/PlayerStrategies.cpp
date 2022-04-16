@@ -152,13 +152,33 @@ void HumanPlayerStrategy::toDefend(Map* m, Player* p) {
 /// Aggressive
 /// </summary>
 void AggressivePlayerStrategy::issueOrder(Map* m, Player* p) {
+    cout << p->defendList.size() << " friendly territories to deploy or advance to:\n";
+    for (Territory* t : p->defendList) {
+        m->printTerritory(t->getCountryNum() - 1);
+    }
+    cout << "\n\n" << p->attackList.size() << " enemy territories to advance to:\n";
+    for (Territory* t : p->attackList) {
+        m->printTerritory(t->getCountryNum() - 1);
+    }
 
+    cout << "Issuing orders for aggressive player\n";
+    p->addOrder(new Deploy(p, p->defendList[0], p->getArmyNum()));
+
+
+    if (p->attackList.size() > 0) {
+        int armies = p->defendList[0]->getArmy() / p->attackList.size();
+        for (int i = 0; i < p->attackList.size(); i++) {
+            cout << "Order: "<< i << "\n";
+            p->addOrder(new Advance(p, p->defendList[0], p->attackList[i], m, armies));
+        }
+    }
+    cout << "End of Issuing orders for aggressive player\n";
 }
 
 void AggressivePlayerStrategy::toAttack(Map* m, Player* p) {
-    
-    for (int i = p->defendList.size() - 1; i >= 0; i--) {
-        p->defendList.pop_back();
+    cout << "toAttack for aggressive player";
+    for (int i = p->attackList.size() - 1; i >= 0; i--) {
+        p->attackList.pop_back();
     }
 
     int counter;
@@ -188,11 +208,12 @@ void AggressivePlayerStrategy::toAttack(Map* m, Player* p) {
 }
 
 void AggressivePlayerStrategy::toDefend(Map* m, Player* p) {
+    cout << "toDefend for aggressive player";
     for (int i = p->defendList.size() - 1; i >= 0; i--) {
         p->defendList.pop_back();
     }
 
-    int counter;
+    int counter = 0;
     int strongestCount = 0;
     Territory* strongest = nullptr;
     for (int i = 0; i < m->getTerritories().size(); i++) {

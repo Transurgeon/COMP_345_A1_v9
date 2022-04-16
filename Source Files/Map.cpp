@@ -215,7 +215,7 @@ void Border::print() {
 	{
 		cout << edges[i] << ", ";
 	}
-	cout << edges[edges.size() - 1] << "\n\n";
+	cout << edges[edges.size() - 1];
 }
 
 ostream& operator<<(ostream& output, Border& b)
@@ -231,15 +231,12 @@ ostream& operator<<(ostream& output, Border& b)
 }
 
 bool Border::containsTerritory(int t) {
-	cout << "test2";
 	for (int j = 0; j < edges.size(); j++) {
 		cout << j;
 		if (edges[j] == t) {
-			cout << "test3";
 			return true;
 		}
 	}
-	cout << "test4";
 	return false;
 
 }
@@ -362,6 +359,7 @@ void Map::printTerritory(int index) {
 		cout << index + 1 << " " << territories[index]->getName() << " is in " << continents[territories[index]->getContinentNum() - 1]->getContinentName()
 		<< " bonus: " << continents[territories[index]->getContinentNum() - 1]->getBonus() << ". ";
 	borders[index]->print();
+	cout << "\n\n";
 }
 
 void Map::printMap() {
@@ -383,7 +381,6 @@ vector<Border*> Map::getBorders() {
 }
 
 bool Map::isAdjacentTerritory(Territory* source, Territory* target) {
-	cout << "test1";
 	return borders[source->getCountryNum()-1]->containsTerritory(target->getCountryNum());
 }
 

@@ -74,7 +74,6 @@ public:
     void setID(int i);
 
     string getOrderType();
-    Map* map;
     Player* player;
     bool getAttackable() { return attackable; };
     void setAttackable(bool isAttackable) { attackable = isAttackable; };
