@@ -7,10 +7,11 @@ bool checkNumber(string str) {
             return false;
     return true;
 }
+
 /// <summary>
 /// Human
 /// </summary>
-void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
+void HumanPlayerStrategy::issueOrder(Map* m, Player* p, vector<Player*> pl) {
 
     cout << p->defendList.size() <<" friendly territories to deploy or advance to:\n";
     for (Territory* t : p->defendList) {
@@ -89,7 +90,7 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
                 cin >> troop;
             }
             //initiating advance
-            Advance* a = new Advance(p, m->getTerritories()[stoi(territory) - 1], m->getTerritories()[stoi(target) - 1], m, stoi(troop));
+            Advance* a = new Advance(p, m->getTerritories()[stoi(territory) - 1], m->getTerritories()[stoi(target) - 1], m, pl, stoi(troop));
             if (a->validate()) {
                 p->addOrder(a);
                 cout << "Order is valid\n";
@@ -151,7 +152,7 @@ void HumanPlayerStrategy::toDefend(Map* m, Player* p) {
 /// <summary>
 /// Aggressive
 /// </summary>
-void AggressivePlayerStrategy::issueOrder(Map* m, Player* p) {
+void AggressivePlayerStrategy::issueOrder(Map* m, Player* p, vector<Player*> pl) {
     cout << p->defendList.size() << " friendly territories to deploy or advance to:\n";
     for (Territory* t : p->defendList) {
         m->printTerritory(t->getCountryNum() - 1);
@@ -169,7 +170,7 @@ void AggressivePlayerStrategy::issueOrder(Map* m, Player* p) {
         int armies = p->defendList[0]->getArmy() / p->attackList.size();
         for (int i = 0; i < p->attackList.size(); i++) {
             cout << "Order: "<< i << "\n";
-            p->addOrder(new Advance(p, p->defendList[0], p->attackList[i], m, armies));
+            p->addOrder(new Advance(p, p->defendList[0], p->attackList[i], m, pl, armies));
         }
     }
     cout << "End of Issuing orders for aggressive player\n";
@@ -236,7 +237,7 @@ void AggressivePlayerStrategy::toDefend(Map* m, Player* p) {
 /// <summary>
 /// Benevolent
 /// </summary>
-void BenevolentPlayerStrategy::issueOrder(Map* m, Player* p) {
+void BenevolentPlayerStrategy::issueOrder(Map* m, Player* p, vector<Player*> pl) {
     
     //initiating deploy 
     p->addOrder(new Deploy(p, p->defendList[0], p->getArmyNum()));
@@ -265,7 +266,7 @@ void BenevolentPlayerStrategy::toDefend(Map* m, Player* p) {
 /// <summary>
 /// Neutral
 /// </summary>
-void NeutralPlayerStrategy::issueOrder(Map* m, Player* p) {
+void NeutralPlayerStrategy::issueOrder(Map* m, Player* p, vector<Player*> pl) {
     //Left empty on purpose
 }
 
@@ -280,12 +281,42 @@ void NeutralPlayerStrategy::toDefend(Map* m, Player* p) {
 /// <summary>
 /// Cheater
 /// </summary>
-void CheaterPlayerStrategy::issueOrder(Map* m, Player* p) {
+void CheaterPlayerStrategy::issueOrder(Map* m, Player* p, vector<Player*> pl) {
 
+    cout << "We le cheating\n";
+    
+    for (Territory* t : p->attackList)    {
+        cout << *t;
+        p->addOrder(new Advance(p, t, m, pl));
+    }
 }
 
 void CheaterPlayerStrategy::toAttack(Map* m, Player* p) {
-	
+    for (int i = p->attackList.size() - 1; i >= 0; i--) {
+        p->attackList.pop_back();
+    }
+    cout << "coding cheats\n";
+
+    bool repeat;
+    for (int i = 0; i < m->getTerritories().size(); i++) {
+        if (m->getTerritories()[i]->getPlayerName() == p->getName()) {
+            for (int j = 0; j < m->getBorders()[i]->getEdges().size(); j++) {
+                if (m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]->getPlayerName() != p->getName()) {
+                    repeat = false;
+                    for (int k = 0; k < p->attackList.size(); k++) {
+                        if (p->attackList[k]->getCountryNum() == m->getBorders()[i]->getEdges()[j]) {
+                            repeat = true;
+                        }
+                    }
+                    if (!repeat) {
+                        p->attackList.push_back(m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]);
+                    }
+                }
+            }
+        }
+    }
+
+    sort(p->attackList.begin(), p->attackList.end(), compareTerritory);
 }
 
 void CheaterPlayerStrategy::toDefend(Map* m, Player* p) {

@@ -215,7 +215,7 @@ void GameEngine::issueOrders() {
 
 		playerList[i]->toDefend(currentMap);
 		playerList[i]->toAttack(currentMap);
-		playerList[i]->issueOrder(currentMap);
+		playerList[i]->issueOrder(currentMap,playerList);
 	}
 }
 

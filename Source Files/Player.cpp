@@ -62,8 +62,8 @@ void Player::toDefend(Map* m) {
     ps->toDefend(m, this);
 }
 
-void Player::issueOrder(Map* m) {
-    ps->issueOrder(m, this);
+void Player::issueOrder(Map* m, vector<Player*> pl) {
+    ps->issueOrder(m, this, pl);
 }
 
 

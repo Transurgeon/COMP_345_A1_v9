@@ -586,3 +586,567 @@ Advance Order Executing:
 Deploy Order Executing: 
 Deploy Order Executing: 
 Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: replaye
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: replay
+Command stringToLog: start
+CommandProcessor stringToLog: loadmap <europe.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Aggressive?
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 

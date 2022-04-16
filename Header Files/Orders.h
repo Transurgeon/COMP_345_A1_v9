@@ -113,10 +113,11 @@ private:
     string advanceExecute;
     bool cheat;
     Map* m;
+    vector<Player*> pl;
 public:
     Advance();
-    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, Map* map, unsigned int armies);
-    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, Map* map);
+    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, Map* map, vector<Player*> playerList, unsigned int armies);
+    Advance(Player* player, Territory* toTerritory, Map* map, vector<Player*> playerList);
     ~Advance();
     Advance(const Advance& copiedAd);
     Advance& operator = (const Advance& Ao);
