@@ -120,7 +120,7 @@ public:
     vector<Continent*> getContinents();
     vector<Border*> getBorders();
     //new functions
-    bool isAdjacentTerritory(Territory* source, Territory* target); 
+    bool isAdjacentTerritory(Territory* source, Territory* target);
     vector<int> getAllAdjacentTerritories(Territory territory);
     int getNumOfTerritoriesInContinent(int id);
     int getArmyContinentBonus(int continentId);

@@ -156,11 +156,60 @@ void AggressivePlayerStrategy::issueOrder(Map* m, Player* p) {
 }
 
 void AggressivePlayerStrategy::toAttack(Map* m, Player* p) {
-	
+    
+    for (int i = p->defendList.size() - 1; i >= 0; i--) {
+        p->defendList.pop_back();
+    }
+
+    int counter;
+    int strongestCount = 0;
+    Territory* strongest = nullptr;
+    for (int i = 0; i < m->getTerritories().size(); i++) {
+        if (m->getTerritories()[i]->getPlayerName() == p->getName()) {
+            counter = 0;
+            for (int j = 0; j < m->getBorders()[i]->getEdges().size(); j++) {
+                if (m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]->getPlayerName() != p->getName()) {
+                    counter++;
+                }
+            }
+            if (strongest == nullptr || counter > strongestCount) {
+                strongest = m->getTerritories()[i];
+                strongestCount = counter;
+            }
+        }
+    }
+    int index = strongest->getCountryNum() - 1;
+    for (int i = 0; i < m->getBorders()[index]->getEdges().size(); i++) {
+        if (m->getTerritories()[m->getBorders()[index]->getEdges()[i]-1]->getPlayerName() != p->getName()) {
+            p->attackList.push_back(m->getTerritories()[m->getBorders()[index]->getEdges()[i] - 1]);
+        }
+    }
+    
 }
 
 void AggressivePlayerStrategy::toDefend(Map* m, Player* p) {
-	
+    for (int i = p->defendList.size() - 1; i >= 0; i--) {
+        p->defendList.pop_back();
+    }
+
+    int counter;
+    int strongestCount = 0;
+    Territory* strongest = nullptr;
+    for (int i = 0; i < m->getTerritories().size(); i++) {
+        if (m->getTerritories()[i]->getPlayerName() == p->getName()) {
+            counter = 0;
+            for (int j = 0; j < m->getBorders()[i]->getEdges().size(); j++) {
+                if (m->getTerritories()[m->getBorders()[i]->getEdges()[j] - 1]->getPlayerName() != p->getName()) {
+                    counter++;
+                }
+            }
+            if (strongest == nullptr || counter > strongestCount) {
+                strongest = m->getTerritories()[i];
+                strongestCount = counter;
+            }
+        }
+    }
+    p->defendList.push_back(strongest);
 }
 
 /// <summary>
@@ -177,7 +226,7 @@ void BenevolentPlayerStrategy::toAttack(Map* m, Player* p) {
 }
 
 void BenevolentPlayerStrategy::toDefend(Map* m, Player* p) {
-    for (int i = 0; i < p->defendList.size(); i++) {
+    for (int i = p->defendList.size() - 1; i >= 0; i--) {
         p->defendList.pop_back();
     }
     vector<Territory*> territories = m->getTerritories();
