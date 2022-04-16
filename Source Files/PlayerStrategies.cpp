@@ -89,7 +89,7 @@ void HumanPlayerStrategy::issueOrder(Map* m, Player* p) {
                 cin >> troop;
             }
             //initiating advance
-            Advance* a = new Advance(p, m->getTerritories()[stoi(territory) - 1], m->getTerritories()[stoi(target) - 1], stoi(troop));
+            Advance* a = new Advance(p, m->getTerritories()[stoi(territory) - 1], m->getTerritories()[stoi(target) - 1], m, stoi(troop));
             if (a->validate()) {
                 p->addOrder(a);
                 cout << "Order is valid\n";
@@ -132,6 +132,7 @@ void HumanPlayerStrategy::toAttack(Map* m, Player* p) {
             }
         }
     }
+    sort(p->attackList.begin(), p->attackList.end(), compareTerritory);
 }
 
 void HumanPlayerStrategy::toDefend(Map* m, Player* p) {

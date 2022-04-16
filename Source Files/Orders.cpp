@@ -213,26 +213,25 @@ string Deploy::stringToLog() {
 /// Advance
 /// </summary>
 Advance::Advance() {
-    setID(1);
-    cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
 }
 
-Advance::Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, unsigned int armies) : Order(player) {
+Advance::Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, Map* map, unsigned int armies) : Order(player) {
     setID(1);
-    cout << "test1";
     cheat = false;
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
     this->armies = armies;
+    m = map;
     cout << "The Order Advance has been placed by the player called: " << player->getName() << " it transports "<< armies <<" number of armies "
         <<"from Territory called: " << fromTerritory->getName() << " to Territory called: " << toTerritory->getName() << "\n" << endl;
 }
 
-Advance::Advance(Player* player, Territory* fromTerritory, Territory* toTerritory) : Order(player) {
+Advance::Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, Map* map) : Order(player) {
     setID(1);
     cheat = true;
     this->fromTerritory = fromTerritory;
     this->toTerritory = toTerritory;
+    m = map;
     cout << "The Order Advance has been placed by the player called: " << player->getName() << " it transports " << armies << " number of armies "
         << "from Territory called: " << fromTerritory->getName() << " to Territory called: " << toTerritory->getName() << "\n" << endl;
 }
@@ -245,8 +244,8 @@ Advance::Advance(const Advance& copiedAd) {
 }
 
 Advance::~Advance() {
-    delete this->fromTerritory;
-    delete this->toTerritory;
+    fromTerritory = nullptr;
+    toTerritory = nullptr;
 }
 
 Advance& Advance::operator = (const Advance& Adva) {
@@ -259,8 +258,7 @@ Advance& Advance::operator = (const Advance& Adva) {
 }
 
 bool Advance::validate() {
-    //&& map->isAdjacentTerritory(fromTerritory, toTerritory)
-    if (player->ownsTerritory(fromTerritory) && (cheat || armies <= fromTerritory->getArmy())) {
+    if (player->ownsTerritory(fromTerritory)&& fromTerritory->getCountryNum() != toTerritory->getCountryNum() && m->isAdjacentTerritory(fromTerritory, toTerritory) && (cheat || armies <= fromTerritory->getArmy())) {
         cout << "Advance has been validated and will be good to execute.\n" << endl;
         return true;
     }
@@ -288,17 +286,17 @@ void Advance::execute() {
 
                     //60% of chance to kill a defending territory with one attacking one
 
-                    if (random(1, 100) <= 60) {
+                    if (random(1, 10) <= 6) {
                         toTerritory->subtractArmy(1);
-                        cout << "Successful attack!!!! A troop from the territory: " << toTerritory->getName() << " was absolutely annihilated";
+                        cout << "Successful attack!!!! A troop from the territory: " << toTerritory->getName() << " was absolutely annihilated\n";
                     }
 
                     //70% if chance to kill an attacking territory with a defending one
-                    else if (random(1, 100) <= 70) {
+                    if (random(1, 10) <= 7) {
                         armies--;
                         cout << "Successful defense!!!! A troop from the territory: " + fromTerritory->getName() + " was absolutely decimated \n";
                     }
-                    cout << "After the first round there are " << toTerritory->getArmy() << " armies left on the territory called: " << toTerritory->getName() << endl;
+                    cout << "After the first round there are " << toTerritory->getArmy() << " armies left on the territory called: " << toTerritory->getName() << " and " << armies << " troops left attacking" << endl;
                 }
 
                 //if the target territories has no more troops, we conquer that nation 

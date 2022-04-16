@@ -40,6 +40,7 @@ public:
     void neutralState();
 };
 
+bool compareTerritory(Territory* a, Territory*);
 
 class Continent {
 private:
@@ -76,11 +77,13 @@ public:
     Border(const Border& copy);
     Border& operator =(const Border& copy);
     ~Border();
+    void print();
 
     //Setters and Getters
     void addRoot(int r);
     void addEdge(int e);
     int getRoot();
+    bool containsTerritory(int t);
     vector<int> getEdges();
 
     
@@ -120,7 +123,6 @@ public:
     bool isAdjacentTerritory(Territory* source, Territory* target); 
     vector<int> getAllAdjacentTerritories(Territory territory);
     int getNumOfTerritoriesInContinent(int id);
-    int getLastContinentId();
     int getArmyContinentBonus(int continentId);
 };
 

@@ -1,0 +1,285 @@
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Benovlent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Benevolent>'
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benvolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <Gabi
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabe>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: 'gamestart
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing: 

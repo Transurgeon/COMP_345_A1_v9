@@ -112,12 +112,12 @@ private:
     Territory* toTerritory;
     unsigned int armies;
     string advanceExecute;
-    Card* card = new Card();
     bool cheat;
+    Map* m;
 public:
     Advance();
-    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, unsigned int armies);
-    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory);
+    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, Map* map, unsigned int armies);
+    Advance(Player* player, Territory* fromTerritory, Territory* toTerritory, Map* map);
     ~Advance();
     Advance(const Advance& copiedAd);
     Advance& operator = (const Advance& Ao);

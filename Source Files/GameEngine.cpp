@@ -123,12 +123,6 @@ void GameEngine::gameStart() {
 	for (int i = 0; i < playerList.size(); i++) {
 		playerList[i]->addArmyNum(50);
 	}
-	cout << "\nEach player draws 2 cards from the deck to their hand" << endl;
-	for (int j = 0; j < playerList.size(); j++) {
-		cout << playerList[j]->getName() << " picks the following 2 cards:";
-		deck->draw(*playerList[j]->getHand());
-		deck->draw(*playerList[j]->getHand());
-	}
 	cout << "\n\nGame is starting\n\n";
 	
 	do {} while (mainGameLoop());
@@ -238,7 +232,7 @@ bool GameEngine::executeOrders() {
 			cout << "-------------------------------------------\n";
 			cout << "Executing orders phase: Checking if the player has an order\n";
 			if (playerList[i]->hasOrder()) {
-				cout << "executing order for : " + playerList[i]->getName();
+				cout << "executing order for : " + playerList[i]->getName() + "\n";
 				playerList[i]->executeOrder();
 			}
 			else {

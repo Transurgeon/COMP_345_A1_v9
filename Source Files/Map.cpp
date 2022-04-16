@@ -1,4 +1,6 @@
 #include "../Header Files/Map.h"
+#include <algorithm>
+
 using namespace std;
 
 
@@ -99,6 +101,10 @@ ostream& operator<<(ostream& output, Territory& t)
 		output << "Territory number " << t.getCountryNum() << ", " << t.getName() << ", is in continent number " << t.getContinentNum() << "is owned by player " << t.getPlayerName() << " and has " << t.getArmy() << " armies on it." << endl;
 	}
 	return output;
+}
+
+bool compareTerritory(Territory* a, Territory* b) {
+	return a->getCountryNum() < b->getCountryNum();
 }
 /// <summary>
 /// Continent
@@ -202,8 +208,19 @@ vector<int> Border::getEdges()
 	return edges;
 }
 
+void Border::print() {
+	sort(edges.begin(), edges.end());
+	cout << "It connects to territories ";
+	for (int i = 0; i < edges.size() - 1; i++)
+	{
+		cout << edges[i] << ", ";
+	}
+	cout << edges[edges.size() - 1] << "\n\n";
+}
+
 ostream& operator<<(ostream& output, Border& b)
 {
+	sort(b.getEdges().begin(), b.getEdges().end());
 	output << "It connects to territories ";
 	for (int i = 0; i < b.getEdges().size()-1; i++)
 	{
@@ -212,6 +229,21 @@ ostream& operator<<(ostream& output, Border& b)
 	output << b.getEdges()[b.getEdges().size()-1] << "\n\n";
 	return output;
 }
+
+bool Border::containsTerritory(int t) {
+	cout << "test2";
+	for (int j = 0; j < edges.size(); j++) {
+		cout << j;
+		if (edges[j] == t) {
+			cout << "test3";
+			return true;
+		}
+	}
+	cout << "test4";
+	return false;
+
+}
+
 
 Border::~Border()
 {
@@ -325,10 +357,11 @@ void Map::printTerritory(int index) {
 	if (territories[index]->getPlayerName() != "")
 		cout << index + 1 << " " << territories[index]->getName() << " is in " << continents[territories[index]->getContinentNum() - 1]->getContinentName()
 		<< " bonus: " << continents[territories[index]->getContinentNum() - 1]->getBonus() << ", is owned by " << territories[index]->getPlayerName() << " and has "
-		<< territories[index]->getArmy() << " troops stationed on it. " << *borders[index];
+		<< territories[index]->getArmy() << " troops stationed on it. " ;
 	else
 		cout << index + 1 << " " << territories[index]->getName() << " is in " << continents[territories[index]->getContinentNum() - 1]->getContinentName()
-		<< " bonus: " << continents[territories[index]->getContinentNum() - 1]->getBonus() << ". " << *borders[index];
+		<< " bonus: " << continents[territories[index]->getContinentNum() - 1]->getBonus() << ". ";
+	borders[index]->print();
 }
 
 void Map::printMap() {
@@ -350,16 +383,8 @@ vector<Border*> Map::getBorders() {
 }
 
 bool Map::isAdjacentTerritory(Territory* source, Territory* target) {
-	int index = 0;
-	for (int i = 0; i < territories.size(); i++) {
-		if (territories[i]->getCountryNum() == source->getCountryNum())
-			index = i;
-	}
-	for (int j = 0; j < borders[index]->getEdges().size(); j++) {
-		if (borders[index]->getEdges()[j] == target->getCountryNum())
-			return true;	
-	}
-	return false;
+	cout << "test1";
+	return borders[source->getCountryNum()-1]->containsTerritory(target->getCountryNum());
 }
 
 vector<int> Map::getAllAdjacentTerritories(Territory territory) {
@@ -375,11 +400,6 @@ int Map::getNumOfTerritoriesInContinent(int id) {
 		}
 	}
 	return numOfTerritories;
-}
-
-int Map::getLastContinentId() {
-	Territory lastTerritory = territories[this->territories.size() - 1][0];
-	return lastTerritory.getContinentNum();
 }
 
 int Map::getArmyContinentBonus(int continentId) {
@@ -472,7 +492,7 @@ Map* MapLoader::addMap(string fileName) {
 							returnMap->addBorderRoot(stoi(split[0]));
 							for (int i = 1; i < split.size(); i++) {
 								returnMap->addBorderEdge(stoi(split[0]), stoi(split[i]));
-						}
+							}
 						}
 						break;
 					}
