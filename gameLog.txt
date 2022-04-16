@@ -1150,3 +1150,1439 @@ Deploy Order Executing:
 Deploy Order Executing: 
 Deploy Order Executing: 
 Deploy Order Executing: 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: Deploy cannot be executed
+
+Deploy Order Executing: Deploy cannot be executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: Deploy cannot be executed
+
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: Deploy cannot be executed
+
+Deploy Order Executing: Deploy cannot be executed
+
+Advance Order Executing:  advance cannot be executed
+
+CommandProcessor stringToLog: loadmap <brasil.map<
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: Deploy cannot be executed
+
+Deploy Order Executing: Deploy cannot be executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: Deploy cannot be executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Deploy Order Executing: 
+Advance Order Executing:  advance cannot be executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was not executed
+
+Deploy was not executed
+
+Deploy was not executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+
+
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+
+
+Deploy was executed
+
+Deploy was executed
+
+
+Deploy was executed
+
+Deploy was executed
+
+
+Deploy was executed
+
+Deploy was executed
+
+
+Deploy was executed
+
+Deploy was executed
+
+
+Deploy was executed
+
+Deploy was executed
+
+
+Deploy was executed
+
+Deploy was executed
+
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Cheater>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was not executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was not executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was not executed
+
+CommandProcessor stringToLog: yes
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: replay
+Command stringToLog: start
+CommandProcessor stringToLog: loadmap <europe.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Neutral>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+CommandProcessor stringToLog: quit
+Command stringToLog: exit program
+CommandProcessor stringToLog: loadmap <europe.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Aggressive>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+

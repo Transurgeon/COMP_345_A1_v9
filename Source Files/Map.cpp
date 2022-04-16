@@ -232,7 +232,6 @@ ostream& operator<<(ostream& output, Border& b)
 
 bool Border::containsTerritory(int t) {
 	for (int j = 0; j < edges.size(); j++) {
-		cout << j;
 		if (edges[j] == t) {
 			return true;
 		}

@@ -43,11 +43,6 @@ public:
 	void assignReinforcements();
 	void issueOrders();
 	bool executeOrders();
-	
-	
-	void gameOver();
-
-
 
 	//Methods for Game
 	/*void setState(GameState gs);

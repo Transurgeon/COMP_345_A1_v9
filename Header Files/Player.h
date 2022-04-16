@@ -37,7 +37,7 @@ public:
     void toAttack(Map* m);
     void toDefend(Map* m);
     void issueOrder(Map* m, vector<Player*> pl);
-    void addOrder(Order* o);
+    bool addOrder(Order* o);
     void executeOrder();
     bool hasOrder();
 

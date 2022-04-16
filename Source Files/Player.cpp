@@ -67,8 +67,8 @@ void Player::issueOrder(Map* m, vector<Player*> pl) {
 }
 
 
-void Player::addOrder(Order* o) {
-    orderList->addOrder(o);
+bool Player::addOrder(Order* o) {
+    return orderList->addOrder(o);
 }
 
 void Player::executeOrder() {

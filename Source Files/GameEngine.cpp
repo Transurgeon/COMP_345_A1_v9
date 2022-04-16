@@ -38,8 +38,6 @@ void GameEngine::startupPhase() {
 			cout << "Starting a new game, load a map \n";
 			state = GameState::start;
 			playerList.clear();
-			delete deck;
-			deck = new Deck(50);
 		}
 		else if (commandType == "quit") {
 			cout << "Thanks for playing, all it cost you to play this was your time, it cost me my sanity.";
@@ -127,7 +125,7 @@ void GameEngine::gameStart() {
 	
 	do {} while (mainGameLoop());
 
-	cout << "Sombody has won the game, do you want to play again?";
+	cout << "Do you want to play again?\n";
 	state = GameState::win;
 }
 
@@ -144,16 +142,13 @@ int random(int a, int b) {
 }
 
 bool GameEngine::mainGameLoop() {
-	cout << "Reinforcement Phase" << endl;
 	assignReinforcements();
-	cout << "Issue Orders Phase" << endl;
 	issueOrders();
-	cout << "Execute Orders Phase" << endl;
 	return executeOrders();
 }
 
 void GameEngine::assignReinforcements() {
-
+	cout << "--------------------------------------------------------------\n";
 	cout << "Current map state:\n";
 	currentMap->printMap();
 	cout << "\n\n";
@@ -210,6 +205,8 @@ void GameEngine::issueOrders() {
 	//generates defend list and attack list with toAttack and toDefend
 	//Then let's player issue orders based on the player strategy
 
+	cout << "Issuing orders phase\n";
+	cout << "--------------------------------------------------------------\n";
 	for (int i = 0; i < playerList.size(); i++) {
 		cout << playerList[i]->getName() << " is issuing orders:\n";
 
@@ -227,13 +224,14 @@ bool GameEngine::executeOrders() {
 	vector<bool> skip(playerList.size());
 	for (bool b : skip) {b = false;}
 
+	cout << "Executing orders phase\n";
+	cout << "--------------------------------------------------------------\n";
 	do {
 		if (!skip[i]) {
-			cout << "-------------------------------------------\n";
-			cout << "Executing orders phase: Checking if the player has an order\n";
 			if (playerList[i]->hasOrder()) {
-				cout << "executing order for : " + playerList[i]->getName() + "\n";
+				cout << "Executing order for : " + playerList[i]->getName() + "\n\n";
 				playerList[i]->executeOrder();
+				cout << endl;
 			}
 			else {
 				skip[i] = true;
@@ -263,7 +261,7 @@ bool GameEngine::executeOrders() {
 	//Checks if one players is left, meaning all territories are captured, game over
 
 	if (playerList.size()==1) {
-		cout << playerList[0]->getName() << " has captured all territories!!\n";
+		cout << playerList[0]->getName() << " has captured all territories!!\n\nGAME OVER\n\n";
 		return false;
 	}
 	
@@ -280,11 +278,6 @@ bool GameEngine::executeOrders() {
 
 	cout << "next round\n";
 	return true;
-}
-
-void GameEngine::gameOver() {
-	cout << "Thank you for playing!!" << endl <<
-			"Please don't make us lose to many marks :)";
 }
 
 //void GameEngine::setState(GameState gs) {
