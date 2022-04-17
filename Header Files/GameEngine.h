@@ -23,6 +23,7 @@ private:
 	Map* currentMap;
 	int maxTurns;
 	int turns;
+	string output;
 public:
 	
 	//Begins game engine

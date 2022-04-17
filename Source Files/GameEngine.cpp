@@ -19,70 +19,68 @@ void GameEngine::startupPhase() {
 		if (commandType.substr(0, 10) == "tournament") {
 			tournamentMode(commandType);
 		}
-		commandArgument = "";
-		if (commandType.find_first_of("<") != -1) {
-			commandArgument = commandType.substr(commandType.find_first_of("<") + 1,
-			commandType.find_first_of(">") - commandType.find_first_of("<") - 1);
-		}
-		commandType = commandType.substr(0, commandType.find_first_of(" "));
-
-		if (commandType == "loadmap") {
-			loadMap(commandArgument);
-		}
-		else if (commandType == "validatemap") {
-			validateMap();
-		}
-		else if (commandType == "addplayer") {
-			addPlayer(commandArgument);
-		}
-		else if (commandType == "gamestart") {
-			maxTurns = 0;
-			gameStart();
-			cout << "Do you want to play again?\n";
-		}
-		else if (commandType == "replay") {
-			cout << "Starting a new game, load a map \n";
-			state = GameState::start;
-			playerList.clear();
-		}
-		else if (commandType == "quit") {
-			cout << "Thanks for playing, all it cost you to play this was your time, it cost me my sanity.";
-		}
 		else {
-			cout << "Invalid command/command cannot be called!";
-		}
+			commandArgument = "";
+			if (commandType.find_first_of("<") != -1) {
+				commandArgument = commandType.substr(commandType.find_first_of("<") + 1,
+					commandType.find_first_of(">") - commandType.find_first_of("<") - 1);
+			}
+			commandType = commandType.substr(0, commandType.find_first_of(" "));
 
+			if (commandType == "loadmap") {
+				loadMap(commandArgument);
+			}
+			else if (commandType == "validatemap") {
+				validateMap();
+			}
+			else if (commandType == "addplayer") {
+				addPlayer(commandArgument);
+			}
+			else if (commandType == "gamestart") {
+				maxTurns = 0;
+				gameStart();
+				cout << "Do you want to play again?\n";
+			}
+			else if (commandType == "replay") {
+				cout << "Starting a new game, load a map or start a new tournament\n";
+				state = GameState::start;
+				playerList.clear();
+			}
+			else if (commandType == "quit") {
+				cout << "Thanks for playing, all it cost you to play this was your time, it cost me my sanity.";
+			}
+			else {
+				cout << "Invalid command/command cannot be called!\n";
+			}
+		}
 	} while (commandType != "quit");
 }
 
 void GameEngine::tournamentMode(string command) {
 
-	string output = "Tournament Results:\n\n"+format("");
+	output = "Tournament is starting\n";
+	cout << output;
+	Notify(this);
+
+	string results = "\n\nTournament Mode:\nM: " + getParameter(command, 1) + "\nP: " + getParameter(command, 2) + "\nG: " + getParameter(command, 3) + "\nD: " + getParameter(command, 4) + "\n\nResults:\n"+format("");
 	maxTurns = stoi(getParameter(command, 4));
 
 	for (int game = 1; game <= stoi(getParameter(command, 3)); game++) 
-		output += format("Game " + to_string(game));
+		results += format("Game " + to_string(game));
 
-	output += "\n";
+	results += "\n";
 
 	for (string m : getVector(getParameter(command, 1))) {
 
-		cout << "_______________________________________________________________\n"
-			<< "_______________________________________________________________\n"
-			<< "                         Map " << m << "\n"
-			<< "_______________________________________________________________\n"
-			<< "_______________________________________________________________\n";
-
-		output += format(m);
+		output = m + " is being played\n";
+		Notify(this);
+		results += format(m);
 
 		for (int game = 1; game <= stoi(getParameter(command, 3)); game++) {
 
+			output = "Game " + to_string(game) + " is starting\n";
+			Notify(this);
 
-			cout << "***************************************************************\n"
-				 << "***************************************************************\n"
-				 << "                        Game " << game << "\n"
-				 << "***************************************************************\n"
-				 << "***************************************************************\n";
 			loadMap(m);
 			validateMap();
 
@@ -92,18 +90,24 @@ void GameEngine::tournamentMode(string command) {
 			gameStart();
 
 			if (playerList.size() == 1)
-				output += format(playerList[0]->getName());
+				results += format(playerList[0]->getName());
 
 			else
-				output += format("draw");
+				results += format("draw");
 
 			playerList.clear();
 		}
 
-		output += "\n";
+		results += "\n";
 	}
-	cout << output;
-	state= GameState::win;
+
+	cout << results;
+
+	cout << "\nThanks for playing our tournament mode\n\nReplay or quit\n";
+
+	output = "Tournament is over, compiling results\n\n" + results;
+	Notify(this);
+	state = GameState::win;
 }
 
 void GameEngine::loadMap(string fileName) {
@@ -201,9 +205,6 @@ int random(int a, int b) {
 }
 
 bool GameEngine::mainGameLoop() {
-	cout << "***************************************************************\n"
-		 << "                        Round " << turns << "\n"
-		 << "***************************************************************\n";
 	assignReinforcements();
 	issueOrders();
 	return executeOrders();
@@ -342,12 +343,12 @@ bool GameEngine::executeOrders() {
 	return true;
 }
 
-void GameEngine::Transition() {
+void GameEngine::Transition(){
 	Notify(this);
 }
 
 string GameEngine::stringToLog() {
-	return "Running Game Engine: ";
+	return output;
 }
 
 GameEngine::GameEngine() {
@@ -372,11 +373,9 @@ ostream& operator<<(ostream& output, GameEngine& t) { return output; }
 
 string format(string str) {
 
-	if (str.size() < 8)
-		return str + "\t\t";
+	string output;
+	for (int i = 0; i < 16 - str.length(); i++)
+		output += " ";
 
-	if (str.size() < 16)
-		return str + "\t";
-
-	return str;
+	return str + output;
 }

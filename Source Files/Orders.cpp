@@ -182,16 +182,14 @@ void Deploy::execute() {
         player->subtractArmyNum(armies);
         cout << armies << " troops have been deployed to " << targetTerritory->getName() << "\n" << endl;
         deployExecute = "Deploy was executed\n";
-        Notify(this); 
         return;
     }
     cout << "Deploy was not executed\n" << endl;
     deployExecute = "Deploy was not executed\n";
-    Notify(this);
 }
 
 string Deploy::stringToLog() {
-    return deployExecute;
+    return "";
 }
 /// <summary>
 /// Advance
@@ -233,13 +231,11 @@ void Advance::execute() {
     if (!validate()) {
         cout << "Advance was not executed\n" << endl;
         advanceExecute = " Advance was not executed\n";
-        Notify(this);
         return;
     }
 
 
     advanceExecute = " Advance was executed\n";
-    Notify(this);
 
     if (cheat) {
         for (Player* p : pl) {
@@ -287,7 +283,7 @@ void Advance::execute() {
 }
 
 string Advance::stringToLog() {
-    return advanceExecute;
+    return "";
 }
 
 Advance::Advance(const Advance& copiedAd) {
