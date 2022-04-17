@@ -170,12 +170,19 @@
   <ItemGroup>
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
+    <None Include="Map Files\austria.map" />
     <None Include="Map Files\brasil.map" />
+    <None Include="Map Files\canada.map" />
+    <None Include="Map Files\cow.map" />
     <None Include="Map Files\europe.map" />
     <None Include="Map Files\germany2.map" />
+    <None Include="Map Files\greece.map" />
     <None Include="Map Files\Illes_Balears.map" />
+    <None Include="Map Files\sudoku.map" />
+    <None Include="Map Files\us.map" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="gameLog.txt" />
     <Text Include="Map Files\test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
