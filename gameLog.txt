@@ -2586,3 +2586,70 @@ Deploy was executed
 
  Advance was not executed
 
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament 
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: tournament
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M woekfwoekf
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <2> -D <15>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <2> -D <50>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <2> -D <2>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <2> -D <14>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <2> -D <15>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <mapfiles> -P <playerStrategies> -G <2> -D <15>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map> -P <playerStrategies> -G <2> -D <15>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map> -P <playerStrategies> -G <2> -D <50>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, eur ope .map> -P <Neutral> -G <1> -D <50>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral> -G <1> -D <50>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map> -P <Neutral> -G <1> -D <50>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map> -P <Neutral> -G <1> -D <50>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map> -P <Neutral, Aggressive> -G <1> -D <50>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map> -P <Neutral> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map,> -P <Neutral> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, > -P <Neutral> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil > -P <Neutral> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil> -P <Neutral> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map,europe.map> -P <Neutral> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.ma\\\p> -P <Neutral, Aggressive> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.

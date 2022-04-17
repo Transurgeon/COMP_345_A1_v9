@@ -5,7 +5,7 @@
 
 
 void commandProcessingMain() {
-
+    /*
     bool play = true;
     bool* playPtr = &play;
     bool readFromFile = false;
@@ -25,5 +25,11 @@ void commandProcessingMain() {
     }
     else
         cp = new CommandProcessor();
+    */
 
+    string test = "b";
+    int  test2 = test.find("a");
+    cout << test2 <<endl;
+    cout << getParameter("<aa><testin, testing 123>", 2) <<endl;
+    cout << getVector("aaa, ssa s, f")[1];
 };

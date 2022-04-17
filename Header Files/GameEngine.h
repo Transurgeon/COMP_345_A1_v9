@@ -24,8 +24,6 @@ private:
 	Deck* deck;
 public:
 	
-
-	
 	//Begins game engine
 	//changed runGameEngine to startupPhase();
 	void startupPhase();

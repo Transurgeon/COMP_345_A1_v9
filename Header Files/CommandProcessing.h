@@ -3,11 +3,12 @@
 #define COMP_345_CommandProcessing_h
 
 #include <iostream>
+#include <vector>
 #include "../Header Files/LoggingObserver.h"
 using namespace std;
 
 enum class GameState {
-	start, mapLoaded, mapValidated, playersAdded, assignReinforcements, issueOrders, executeOrders, win, exitProgram
+	start, tournament, mapLoaded, mapValidated, playersAdded, assignReinforcements, issueOrders, executeOrders, win, exitProgram
 };
 
 class Command :public ILoggable, public Subject {
@@ -58,4 +59,7 @@ protected:
 private:
     FileLineReader* flr;
 };
+
+string getParameter(string c, int i);
+vector<string> getVector(string c);
 #endif

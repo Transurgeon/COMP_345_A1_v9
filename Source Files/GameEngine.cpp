@@ -7,7 +7,8 @@
 void GameEngine::startupPhase() {
 
 	
-	cout << "------------\nCommand list:\nloadmap <mapfile>\nvalidatemap\naddplayer <playername>\ngamestart\nreplay\nquit\n------------\n\n\n";
+	cout << "------------\nCommand list:\ntournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>\n"
+		<<"loadmap <mapfile>\nvalidatemap\naddplayer <playername>\ngamestart\nreplay\nquit\n------------\n\n\n";
 	cout << "Starting game, load a map\n";
 	string commandType;
 	string commandArgument;
@@ -24,6 +25,9 @@ void GameEngine::startupPhase() {
 
 		if (commandType == "loadmap") {
 			loadMap(commandArgument);
+		}
+		else if (commandType == "tournament") {
+			//calling implementation for tournament
 		}
 		else if (commandType == "validatemap") {
 			validateMap();
@@ -280,14 +284,6 @@ bool GameEngine::executeOrders() {
 	return true;
 }
 
-//void GameEngine::setState(GameState gs) {
-//	state = gs;
-//}
-//
-//GameState GameEngine::getState() {
-//	return state;
-//}
-//
 void GameEngine::Transition() {
 	Notify(this);
 }
