@@ -44,15 +44,29 @@ string CommandProcessor::validate(GameState gs) {
 
     //new code for tournament mode
     if (regex_match(c, tournamentRegex) && (gs == GameState::start)) {
-        for (string s : getVector(getParameter(c,1)))
+
+        vector<string> parameters = getVector(getParameter(c, 1));
+
+        if (parameters.size() == 0 || parameters.size() > 5) {
+            lc->back().saveEffect("Error: Invalid input.");
+            return "";
+        }
+
+        for (string s : parameters)
             if (!MapLoader::addMap(s)->validate()) {
                 lc->back().saveEffect("Error: Invalid input.");
-                cout << "test1";
                 return "";
             }
         string counter ="";
+        parameters.clear();
+        parameters = getVector(getParameter(c, 2));
 
-        for (string s : getVector(getParameter(c, 2)))
+        if (parameters.size() < 2 || parameters.size() > 4) {
+            lc->back().saveEffect("Error: Invalid input.");
+            return "";
+        }
+
+        for (string s : parameters)
 
             if (s == "Aggressive")
                 counter += "0";
@@ -68,21 +82,16 @@ string CommandProcessor::validate(GameState gs) {
 
             else {
                 lc->back().saveEffect("Error: Invalid input.");
-                cout << "test2"; return "";
+                return "";
             }
-        if (counter.length() < 2) {
-            lc->back().saveEffect("Error: Invalid input.");
-            cout << "test2.5"; return "";
-        }
+        
         
         for (int i = 0; i < 4; i++) {
             if (count(counter.begin(), counter.end(), '0' + i) > 1){
                 lc->back().saveEffect("Error: Invalid input.");
-                cout << "test3"; return "";
+                return "";
             }
         }
-
-        cout << "test4";
         lc->back().saveEffect("tournament");
     }
     else if (regex_match(c, loadRegex) && (gs == GameState::start || gs == GameState::mapLoaded))

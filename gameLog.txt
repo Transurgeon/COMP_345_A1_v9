@@ -2653,3 +2653,12327 @@ CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral
 Command stringToLog: tournament
 CommandProcessor stringToLog: tournament -M <brasil.map, europe.ma\\\p> -P <Neutral, Aggressive> -G <3> -D <10>
 Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive,  C    heater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <> -P <Neutral, Aggressive,  C    heater> -G <3> -D <10>
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: 
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>\
+Command stringToLog: Error: Invalid input.
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map> -P <Neutral, Aggressive, Cheater> -G <3> -D <10>
+Command stringToLog: tournament
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was not executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map, germany2.map> -P <Neutral, Aggressive, Benevolent> -G <5> -D <50>
+Command stringToLog: tournament
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map, germany2.map> -P <Neutral, Aggressive, Benevolent> -G <5> -D <50>
+Command stringToLog: tournament
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map, germany2.map> -P <Neutral, Aggressive, Benevolent> -G <5> -D <50>
+Command stringToLog: tournament
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map, germany2.map> -P <Neutral, Aggressive, Benevolent> -G <5> -D <50>
+Command stringToLog: tournament
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map, germany2.map> -P <Neutral, Aggressive, Benevolent> -G <5> -D <50>
+Command stringToLog: tournament
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was not executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was not executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was not executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+
+ Advance was executed
+
+Deploy was executed
+
+Deploy was executed
+
+ Advance was executed
+
+ Advance was executed
+

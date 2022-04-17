@@ -21,13 +21,15 @@ private:
 	GameState state;
 	CommandProcessor* cmdProc;
 	Map* currentMap;
-	Deck* deck;
+	int maxTurns;
+	int turns;
 public:
 	
 	//Begins game engine
 	//changed runGameEngine to startupPhase();
 	void startupPhase();
 	
+	void tournamentMode(string command);
 	//Follows structure of flow chart
 	void loadMap(string fileName);
 	void validateMap();
@@ -57,6 +59,7 @@ public:
 
 int random(int min, int max);
 bool checkNumber(string str);
+string format(string str);
 
 ostream& operator<<(ostream& output, GameEngine& t);
 

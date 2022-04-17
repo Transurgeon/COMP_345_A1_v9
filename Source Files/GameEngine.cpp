@@ -9,25 +9,25 @@ void GameEngine::startupPhase() {
 	
 	cout << "------------\nCommand list:\ntournament -M <mapfiles> -P <playerStrategies> -G <numberOfgames> -D <maxTurns>\n"
 		<<"loadmap <mapfile>\nvalidatemap\naddplayer <playername>\ngamestart\nreplay\nquit\n------------\n\n\n";
-	cout << "Starting game, load a map\n";
+	cout << "Starting game, load a map or a tournament scheme\n";
 	string commandType;
 	string commandArgument;
 	do {
 		cmdProc->getCommand();
 		commandType = cmdProc->validate(state);
+		
+		if (commandType.substr(0, 10) == "tournament") {
+			tournamentMode(commandType);
+		}
 		commandArgument = "";
-		if (commandType.find_first_of("<") != -1)
-		{
+		if (commandType.find_first_of("<") != -1) {
 			commandArgument = commandType.substr(commandType.find_first_of("<") + 1,
-			commandType.find_first_of(">") - commandType.find_first_of("<") -1);
+			commandType.find_first_of(">") - commandType.find_first_of("<") - 1);
 		}
 		commandType = commandType.substr(0, commandType.find_first_of(" "));
 
 		if (commandType == "loadmap") {
 			loadMap(commandArgument);
-		}
-		else if (commandType == "tournament") {
-			//calling implementation for tournament
 		}
 		else if (commandType == "validatemap") {
 			validateMap();
@@ -36,7 +36,9 @@ void GameEngine::startupPhase() {
 			addPlayer(commandArgument);
 		}
 		else if (commandType == "gamestart") {
+			maxTurns = 0;
 			gameStart();
+			cout << "Do you want to play again?\n";
 		}
 		else if (commandType == "replay") {
 			cout << "Starting a new game, load a map \n";
@@ -49,7 +51,59 @@ void GameEngine::startupPhase() {
 		else {
 			cout << "Invalid command/command cannot be called!";
 		}
+
 	} while (commandType != "quit");
+}
+
+void GameEngine::tournamentMode(string command) {
+
+	string output = "Tournament Results:\n\n"+format("");
+	maxTurns = stoi(getParameter(command, 4));
+
+	for (int game = 1; game <= stoi(getParameter(command, 3)); game++) 
+		output += format("Game " + to_string(game));
+
+	output += "\n";
+
+	for (string m : getVector(getParameter(command, 1))) {
+
+		cout << "_______________________________________________________________\n"
+			<< "_______________________________________________________________\n"
+			<< "                         Map " << m << "\n"
+			<< "_______________________________________________________________\n"
+			<< "_______________________________________________________________\n";
+
+		output += format(m);
+
+		for (int game = 1; game <= stoi(getParameter(command, 3)); game++) {
+
+
+			cout << "***************************************************************\n"
+				 << "***************************************************************\n"
+				 << "                        Game " << game << "\n"
+				 << "***************************************************************\n"
+				 << "***************************************************************\n";
+			loadMap(m);
+			validateMap();
+
+			for (string p : getVector(getParameter(command, 2)))
+				addPlayer(p);
+			
+			gameStart();
+
+			if (playerList.size() == 1)
+				output += format(playerList[0]->getName());
+
+			else
+				output += format("draw");
+
+			playerList.clear();
+		}
+
+		output += "\n";
+	}
+	cout << output;
+	state= GameState::win;
 }
 
 void GameEngine::loadMap(string fileName) {
@@ -95,6 +149,7 @@ void GameEngine::addPlayer(string name) {
 }
 
 void GameEngine::gameStart() {
+	turns = 0;
 	cout << "\nFairly distributing territories to the players" << endl;
 	vector<Territory*> territories = currentMap->getTerritories();
 	int leftOverTerritories = territories.size();
@@ -127,9 +182,9 @@ void GameEngine::gameStart() {
 	}
 	cout << "\n\nGame is starting\n\n";
 	
+
 	do {} while (mainGameLoop());
 
-	cout << "Do you want to play again?\n";
 	state = GameState::win;
 }
 
@@ -146,6 +201,9 @@ int random(int a, int b) {
 }
 
 bool GameEngine::mainGameLoop() {
+	cout << "***************************************************************\n"
+		 << "                        Round " << turns << "\n"
+		 << "***************************************************************\n";
 	assignReinforcements();
 	issueOrders();
 	return executeOrders();
@@ -271,12 +329,12 @@ bool GameEngine::executeOrders() {
 	
 	//Checks if move rule is reached, if so, game is drawn
 
-	/*
-	if (rounds == limit) {
+	turns++;
+	if (maxTurns !=0 && turns >= maxTurns) {
 		cout << "Move limit has been reached, game is a draw!";
 		return false;
 	}
-	*/
+	
 
 	//Next round continues
 
@@ -297,7 +355,6 @@ GameEngine::GameEngine() {
 	state = GameState::start;
 	cmdProc = new CommandProcessor();
 	currentMap = nullptr;
-	deck = new Deck(50);
 }
 
 GameEngine::GameEngine(GameEngine& copy) {}
@@ -307,10 +364,19 @@ GameEngine& GameEngine::operator =(const GameEngine& copy) { return *this; }
 GameEngine::~GameEngine() {
 	delete cmdProc;
 	delete currentMap;
-	delete deck;
 	cmdProc = nullptr;
 	currentMap = nullptr;
-	deck = nullptr;
 }
 
 ostream& operator<<(ostream& output, GameEngine& t) { return output; }
+
+string format(string str) {
+
+	if (str.size() < 8)
+		return str + "\t\t";
+
+	if (str.size() < 16)
+		return str + "\t";
+
+	return str;
+}
