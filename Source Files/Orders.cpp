@@ -142,7 +142,7 @@ void Order::setOrderIssuer(Player* issuer) {
 Deploy::Deploy() {
     setID(0);
     cout << "The order" << " " << getOrderType() << " has been placed to the OrderList\n" << endl;
-};
+}
 
 Deploy::Deploy(Player* player, Territory* targetTerritory, unsigned int armies) : Order(player) {
     setID(0);
@@ -279,7 +279,7 @@ void Advance::execute() {
         return;
     } 
 
-    cout << player->getName() << " failed to attack " << toTerritory->getName() << " from " << toTerritory->getPlayerName() << ", leaving it with " << armies << " troops left\n";;
+    cout << player->getName() << " failed to attack " << toTerritory->getName() << " from " << toTerritory->getPlayerName() << ", leaving it with " << toTerritory->getArmy() << " troops left\n";;
 }
 
 string Advance::stringToLog() {

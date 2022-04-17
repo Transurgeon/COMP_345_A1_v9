@@ -893,3 +893,81 @@ brasil.map      draw            draw            draw            draw            
 europe.map      draw            draw            draw            draw            draw            
 germany2.map    draw            draw            draw            draw            draw            
 
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gabi>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: loadmap <brasil.map>
+Command stringToLog: maploaded
+CommandProcessor stringToLog: validatemap
+Command stringToLog: mapvalidated
+CommandProcessor stringToLog: addplayer <Gaboo>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: addplayer <Benevolent>
+Command stringToLog: playersadded
+CommandProcessor stringToLog: gamestart
+Command stringToLog: assignreinforcement
+CommandProcessor stringToLog: tournament -M <brasil.map, europe.map, germany2.map> -P <Neutral, Aggressive> -G <5> -D <50>
+Command stringToLog: tournament
+Tournament is starting
+
+brasil.map is being played
+
+Game 1 is starting
+
+Game 2 is starting
+
+Game 3 is starting
+
+Game 4 is starting
+
+Game 5 is starting
+
+europe.map is being played
+
+Game 1 is starting
+
+Game 2 is starting
+
+Game 3 is starting
+
+Game 4 is starting
+
+Game 5 is starting
+
+germany2.map is being played
+
+Game 1 is starting
+
+Game 2 is starting
+
+Game 3 is starting
+
+Game 4 is starting
+
+Game 5 is starting
+
+Tournament is over, compiling results
+
+
+
+Tournament Mode:
+M: brasil.map, europe.map, germany2.map
+P: Neutral, Aggressive
+G: 5
+D: 50
+
+Results:
+                Game 1          Game 2          Game 3          Game 4          Game 5          
+brasil.map      Neutral         Aggressive      Aggressive      Aggressive      Aggressive      
+europe.map      Aggressive      Aggressive      Aggressive      draw            Aggressive      
+germany2.map    Aggressive      Aggressive      Aggressive      Aggressive      Aggressive      
+
+CommandProcessor stringToLog: quit
+Command stringToLog: exit program
