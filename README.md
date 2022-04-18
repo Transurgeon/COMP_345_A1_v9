@@ -8,12 +8,12 @@ Group Project Risk-Based Game: Warzone for Advanced program design with C++; Win
 * Instructor: Dr. Amin Ranj Bar, amin.ranjbar@.concordia.ca
 ---
 ### Problem statement
-This is a team assignment. It is divided into distinct parts. Each part is about the development of a part of the topic 
+*This is a team assignment. It is divided into distinct parts. Each part is about the development of a part of the topic 
 presented as the team project. Even though it is about the development of a part of your team project, each 
 assignment is to be developed/presented/tested separately. The description of each part describes what are the 
 features that the part should implement, and what you should demonstrate. Note that the following descriptions 
 describe the baseline of the assignment, and are related to the project description. See the course web page for a 
-full description of the team project, as well as links to the details of the game rules to be implemented. 
+full description of the team project, as well as links to the details of the game rules to be implemented.* 
 ---
 #### Assignment 1: 
 * Specific design requirements
